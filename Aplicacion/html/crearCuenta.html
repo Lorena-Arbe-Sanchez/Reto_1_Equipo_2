@@ -20,19 +20,24 @@
 
         <section id="datos">
             <b>DNI</b> <input type="text" id="dni"> <br>
-            <b>Administrador</b> <input type="text" id="dni"> <br>
-            <b>Nombre</b><br>
-            <b>Primer Apellido</b><br>
-            <b>Segundo Apellido</b><br>
-            <b>Email</b><br>
-            <b>Teléfono</b><br>
-            <b>Usuario</b><br>
-            <b>Contraseña</b><br>
-            <b>Repetir contraseña</b><br>
+            <b>Administrador</b> 
+            <input type="radio" id="adminSi" name="administrador" value="1"> Sí
+            <input type="radio" id="adminNo" name="administrador" value="0"> No <br>
+            <b>Nombre</b><input type="text" id="nombre"><br>
+            <b>Primer Apellido</b><input type="text" id="primerApellido"><br>
+            <b>Segundo Apellido</b><input type="text" id="segundoApellido"><br>
+            <b>Email</b><input type="text" id="email"><br>
+            <b>Teléfono</b><input type="text" id="telefono"><br>
+            <b>Usuario</b><input type="text" id="usuario"><br>
+            <b>Contraseña</b><input type="text" id="contrasena"><br>
+            <b>Repetir contraseña</b><input type="text" id="repetirContrasena"><br>
         </section>
 
         <section id="botones">
 
+            <button id="bRegistrar">Registrar</button>
+            <button id="bModificar">Modificar</button>
+        
         </section>
     </main>
 
@@ -40,5 +45,9 @@
     <footer style="border-top: 1px black;">
 
     </footer>
+
+
+    <script src="../javascript/crearCuenta.js"></script>
+
 </body>
 </html>
