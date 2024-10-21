@@ -6,24 +6,43 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Foro</title>
-</head>
-<body>
+    <link rel="stylesheet" href="../assets/style.css">
+    <!-- Poner un favicon (icono en la pestaña de una página web). -->
+    <!-- TODO : Puede que cambiar la imagen. -->
+    <link rel="icon" type="image/png" href="../assets/imagenes/icono_avion.jpg">
 
-    <main class="pag_foro">
+    <!-- TODO : Poner el css en el "style.css". -->
+    <style>
+        .pag_foro{
+            background: linear-gradient(to bottom, #BCCAD6, white);
+        }
+        header{
+
+        }
+    </style>
+
+</head>
+<body class="pag_foro">
+
+    <main>
 
         <header>
 
             <!-- TODO : Crear imagen de la empresa y poner el enlace. -->
             <div class="d_logo_empresa"><img class="logo_empresa" src="" alt="Logo Aergibide SL"></div>
 
-            <!-- TODO : Poner un enlace correcto en los botones. -->
-            <div class="d_botonForo"><a href="index.php?controller=&action=" class="botonForo">Foro</a></div>
+            <div class="d_botonesHeader">
 
-            <div class="d_botonPreguntas"><a href="index.php?controller=pregunta&action=list" class="botonPreguntas">
-                Preguntas frecuentes</a></div>
+                <!-- TODO : Poner un enlace correcto en los botones. -->
+                <div class="d_botonForo"><a href="index.php?controller=&action=" class="botonForo">Foro</a></div>
 
-            <div class="d_botonCrear"><a href="index.php?controller=pregunta&action=create" class="botonCrear">
-                Crear pregunta</a></div>
+                <div class="d_botonPreguntas"><a href="index.php?controller=pregunta&action=list" class="botonPreguntas">
+                    Preguntas frecuentes</a></div>
+
+                <div class="d_botonCrear"><a href="index.php?controller=pregunta&action=create" class="botonCrear">
+                    Crear pregunta</a></div>
+
+            </div>
 
             <!-- TODO : Añadir un botón que al clicarle salga un desplegable con las posibles opciones. El botón solo tendrá la imagen de un usuario. -->
             <div class="d_botonPerfil"><a href="index.php?controller=&action=" class="botonPerfil">Perfil</a></div>
@@ -33,6 +52,9 @@
         <contenido>
 
             <!-- TODO : Cargar de la base de datos los datos de las preguntas, respuestas y usuarios. -->
+            <!-- Título de la pregunta, tema, nombre de usuario, fecha (se guardara la del mismo día de la creación de la pregunta),
+                    descripción de la pregunta, botón de añadir respuesta, respuestas existentes con nombre de usuario, fecha,
+                    botón de 'like' y botón de 'dislike'. -->
 
         </contenido>
 
@@ -45,15 +67,17 @@
 
             <!-- TODO : Poner 3 botones con el logo de cada RS, uno detrás de otro en fila. -->
             <div class="d_botonesRS">
-                <a href="" class="botonInstagram">I</a>
-                <a href="" class="botonFacebook">F</a>
-                <a href="" class="botonX">X</a>
+                <a href="https://www.facebook.com/Egibide/" class="botonFacebook">F</a>
+                <a href="https://twitter.com/egibide?lang=es" class="botonX">X</a>
+                <a href="https://www.youtube.com/user/Egibide" class="botonYouTube">YT</a>
+                <a href="https://www.instagram.com/egibide_vg/?hl=es" class="botonInstagram">I</a>
+                <a href="https://es.linkedin.com/school/egibide/" class="botonLinkedin">L</a>
             </div>
 
             <div class="d_equipo">
                 <p>Con la participación de:</p>
                 <!-- TODO : Subir la imagen y poner el enlace. -->
-                <img class="logo_equipo" src="" alt="Logo Dev Dragons">
+                <img class="logo_equipo" src="../assets/imagenes/logo_equipo2.png" alt="Logo Dev Dragons" width="120" height="120">
             </div>
 
         </footer>
