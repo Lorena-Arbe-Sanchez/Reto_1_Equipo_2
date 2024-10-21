@@ -6,33 +6,33 @@
     <title>Login</title>
     <link rel="stylesheet" href="../assets/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Poner un favicon (icono en la pestaña de una página web). -->
+    <link rel="icon" type="image/png" href="../assets/imagenes/icono_avion.png">
 </head>
-<body>
-    <div class="container">
+<body class="pag_login">
+<div class="container">
 
-        <img src="../assets/imagenes/perfil.png" class="superpuesta">
+    <img src="../assets/imagenes/perfil.png" class="superpuesta" alt="Imagen perfil">
 
+    <h1>Aquí va el logo</h1>
 
+    <form>
+        <div>
+            <label for="usuario">Usuario</label>
+            <input type="text" id="usuario" name="usuario" required>
+        </div>
+        <div>
+            <label for="contrasena">Contraseña</label>
+            <input type="contrasena" id="contrasena" name="contrasena" required>
+        </div>
+        <button id="bIniciar">Iniciar Sesión</button>
+    </form>
 
-        <h1>Aquí va el logo</h1>
+    <a href="#">¿Se te ha olvidado tu contraseña?</a>
 
-        <form>
-            <div>
-                <label for="usuario">Usuario</label>
-                <input type="text" id="usuario" name="usuario" required>
-            </div>
-            <div>
-                <label for="contrasena">Contraseña</label>
-                <input type="contrasena" id="contrasena" name="contrasena" required>
-            </div>
-            <button id="bIniciar">Iniciar Sesión</button>
-        </form>
+</div>
 
-        <a href="#">¿Se te ha olvidado tu contraseña?</a>
-    
-    </div>
-
-    <script src="../javascript/login.js"></script>
+<script src="../javascript/login.js"></script>
 
 
 </body>

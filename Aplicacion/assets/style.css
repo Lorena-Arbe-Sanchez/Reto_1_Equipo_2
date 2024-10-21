@@ -2,33 +2,51 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 body{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
     background-image: url("../assets/imagenes/cielo.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
-    font-family: 'Roboto', sans-serif;
 }
 
-.container {
+.container, .pag_crearCuenta main{
     position: relative;
-    display: flex;
     flex-direction: column;
-    align-items: center;
     text-align: center;
-    background-color: #D9D9D9;
+    background-color: #bccad6;
     padding: 2em;
     border-radius: 10px;
     z-index: 1;
     margin-top: 5em;
 }
 
-.superpuesta {
+main{
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilos relacionados con la página del foro. */
+.pag_foro{
+    background: linear-gradient(to bottom, #bccad6, white);
+}
+.pag_foro main{
+    height: 100%;
+    width: 100%;
+}
+.d_botonPreguntas{
+    text-align: center;
+}
+.d_botonesRS{
+    gap: .5em;
+}
+
+.superpuesta{
     position: absolute;
     top: -50px;
     left: 41%;
@@ -39,14 +57,14 @@ body{
     border-radius: 50%;
 }
 
-form {
+form{
     padding: 3em;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-div {
+div{
     display: flex;
     align-items: center;
     padding: 1em;
@@ -58,7 +76,7 @@ label{
     font-weight: bold;
 }
 
-button {
+button{
     margin-top: 2em;
     width: 120px;
     height: 30px;
@@ -67,7 +85,40 @@ button {
     font-style: oblique;
 }
 
-a {
-    margin-top: 1em;
+a{
     color: black;
+}
+
+/* TODO : Poner que se empequeñezca con el tamaño de la página. */
+/* TODO : Poner que se cambien de sitio los elementos dependiendo del dispositivo (en todas las páginas). */
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid black;
+    position: fixed;
+}
+
+header a{
+    text-decoration: none;
+    background-color: white;
+    width: 120px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido{
+
+}
+
+footer{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 0;
+    height: 90px;
+    background-color: #8d9db6;
 }
