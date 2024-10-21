@@ -8,7 +8,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("../css/imagenes/cielo.jpg");
+    background-image: url("../assets/imagenes/cielo.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
