@@ -26,7 +26,7 @@ function validar(){
 
             alert("Bienvenido " + usuario.value);
 
-            
+
         }else{
 
             alert("La contraseña no es valida");
@@ -35,5 +35,3 @@ function validar(){
 
     }
 }
-
-

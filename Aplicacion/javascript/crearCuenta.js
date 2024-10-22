@@ -25,7 +25,7 @@ function validarRegistro() {
 
     if (!dni.value || !nombre.value || !primerApellido.value || !segundoApellido.value || !email.value || !telefono.value || !usuario.value || !contrasena.value || !repetirContrasena.value) {
         alert("No puede estar ningún campo vacío");
-        
+
         contador +=1;
 
     }else{
@@ -35,31 +35,31 @@ function validarRegistro() {
             contador +=1;
 
         }
-    
+
         if (!expreg.test(primerApellido.value)) {
             alert("Solo puedes poner letras en el primer apellido");
             contador +=1;
 
         }
-    
+
         if (!expreg.test(segundoApellido.value)) {
             alert("Solo puedes poner letras en el segundo apellido");
             contador +=1;
 
         }
-    
+
         if (!expreg1.test(telefono.value)) {
             alert("El teléfono debe tener exactamente 9 dígitos");
             contador +=1;
 
         }
-    
+
         if (!expreg2.test(contrasena.value)) {
             alert("La contraseña debe contener al menos una mayúscula, una minúscula y un número");
             contador +=1;
 
         }
-    
+
         if (contrasena.value !== repetirContrasena.value) {
             alert("Las contraseñas no coinciden");
             contador +=1;
@@ -73,7 +73,7 @@ function validarRegistro() {
         alert("Registro hecho")
 
     }
-    
+
 }
 
 //Cuando escriba el DNI mirar si existe en caso de que exista sacar sus datos
