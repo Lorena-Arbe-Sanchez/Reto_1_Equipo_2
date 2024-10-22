@@ -8,6 +8,8 @@ botonCambiar.addEventListener("click",recuperarContrasena)
 
 function recuperarContrasena(){
 
+    let expreg = new RegExp("^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d).{0,}$");
+
     if(!usuario.value){
         alert("El usuario esta vacio")
     }
@@ -20,13 +22,17 @@ function recuperarContrasena(){
 
         alert("La repeticion de la contraseña no puede estar vacia");
 
+    }else if(!expreg.test(contrasena1.value || !expreg.test(contrasena2.value))){
+
+        alert("La contraseña no tiene un formato adecuado");
+
     }else if(contrasena1.value != contrasena2.value){
 
         alert("La contraseña no coincide con la contraseña repetida");
 
     }else{
-       
+
         alert("Se ha cambiado la contraseña")
-    
+
     }
 }
