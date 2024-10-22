@@ -5,23 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6abb039-d7f5-4f73-8b47-492ba288a50f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Aplicacion/assets/imagenes/icono_avion.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aplicacion/assets/imagenes/logo_empresa.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aplicacion/assets/imagenes/logo_facebook.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aplicacion/assets/imagenes/logo_instagram.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aplicacion/assets/imagenes/logo_linkedin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aplicacion/assets/imagenes/logo_x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aplicacion/assets/imagenes/logo_youtube.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/assets/imagenes/icono_avion.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/assets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/assets/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/html/crearCuenta.html" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/html/crearCuenta.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Aplicacion/html/foro.html" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/html/foro.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/html/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/html/recuperarContrasena.html" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/html/recuperarContrasena.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/javascript/crearCuenta.js" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/javascript/crearCuenta.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/javascript/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/javascript/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/javascript/recuperarContrasena.js" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/javascript/recuperarContrasena.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/Lorena" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -116,5 +101,8 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>
