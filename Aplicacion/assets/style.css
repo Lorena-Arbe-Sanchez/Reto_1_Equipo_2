@@ -33,6 +33,8 @@ header{
     justify-content: space-around;
     border-bottom: 1px solid black;
     position: fixed;
+    background-color: #c8d4e1;
+    z-index: 2;
 }
 
 header a{
@@ -88,7 +90,7 @@ header a{
     border: .2em solid gainsboro;
     box-shadow: 0 7px 30px rgb(102, 114, 146);
     border-radius: .8em;
-    z-index: 1000;
+    z-index: 3;
 }
 
 .menuDesplegable ul{
@@ -113,8 +115,6 @@ footer{
     width: 100%;
     display: flex;
     justify-content: space-around;
-    position: absolute;
-    bottom: 0;
     height: 90px;
     background-color: #8D9DB6;
 }
@@ -122,8 +122,11 @@ footer{
 
 /* MISMOS ESTILOS EN ELEMENTOS DE PÁGINAS DIFERENTES */
 
-.pag_foro, .pag_crearCuenta, .pag_perfil{
+/* TODO : ARREGLAR ESTE PORQUE SALE FONDO COMO REPETIDO ABAJO. */
+.pag_foro, .pag_crearPregunta, .pag_crearCuenta, .pag_perfil{
     background: linear-gradient(to bottom, #BCCAD6, white);
+    min-height: 100vh; /* Al menos el 100% de la ventana. */
+    background-attachment: fixed; /* Mantiener el degradado fijo mientras se hace scroll. */
 }
 
 .container, .pag_crearCuenta .contenido, .pag_perfil .contenido{
@@ -227,22 +230,19 @@ select{
 }
 
 .info{
-    background-color: #F0F0F0;
+    background-color: #f0f0f0;
     border-radius: 35px;
-    gap: 2em;
-    height: 448.66px;
-    width: 800px;
-    display: flex;
-    flex-direction: column;
+    gap: 1em;
+    height: 20em;
+    width: 50em;
     display: grid;
-    grid-template-columns: repeat(3, 20fr);
-    grid-template-rows: repeat(3, 10fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
 }
 
 .info div{
     display: flex;
     flex-direction: column;
-    text-align: left;
 }
 
 .emailDiv{
@@ -255,18 +255,43 @@ select{
 .info div input, .info div label{
     width: 100%;
     height: 2em;
-    display: flex;
     text-align: left;
 }
 
 .foto{
     display: flex;
     flex-direction: column;
+    margin-right: 5em;
 }
 
 .foto img{
-    width: 290px;
-    height: 290px;
+    width: 230px;
+    height: 230px;
+}
+
+/* TODO : CORREGIR LAS POSICIONES PARA QUE SE VEA BIEN... */
+.pag_foro .contenido{
+    position: relative;
+    top: 15em;
+    justify-content: center;
+}
+
+.pag_crearPregunta .contenido{
+    position: relative;
+    top: 6em;
+    justify-content: center;
+}
+
+.pag_crearCuenta .contenido{
+    position: relative;
+    top: 5em;
+    justify-content: center;
+}
+
+.pag_perfil .contenido{
+    position: relative;
+    top: -11em;
+    justify-content: center;
 }
 
 

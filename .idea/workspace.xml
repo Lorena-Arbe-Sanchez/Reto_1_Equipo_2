@@ -5,14 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6abb039-d7f5-4f73-8b47-492ba288a50f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Aplicacion/html/perfil.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/javascript/crearPregunta.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Aplicacion/assets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/assets/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Aplicacion/html/crearCuenta.html" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/html/crearCuenta.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Aplicacion/html/crearPregunta.html" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/html/crearPregunta.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Aplicacion/html/foro.html" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/html/foro.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/html/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/html/recuperarContrasena.html" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/html/recuperarContrasena.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/html/perfil.html" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/html/perfil.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +65,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "feature/Lorena",
-    "last_opened_file_path": "C:/Users/Lorena/Downloads/Ejercicios_DWEC",
+    "last_opened_file_path": "C:/laragon/www/proyectobodegas-Lorena-Arbe-Sanchez",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",

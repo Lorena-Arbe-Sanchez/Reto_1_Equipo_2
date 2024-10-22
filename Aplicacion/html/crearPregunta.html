@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" href="../assets/imagenes/icono_avion.png">
 
 </head>
-<body class="pag_foro">
+<body class="pag_crearPregunta">
 
     <main>
 
@@ -32,16 +32,12 @@
 
             </div>
 
-            <!-- Botón del perfil con menú desplegable ~~> Posibles opciones ("Ver perfil", "Crear cuenta" {solo si el
-                    usuario actual es "administrador"; 'TINYINT' con valor 1 para verdadero y 0 para falso}, y "Cerrar sesión"). -->
-
             <div class="d_botonPerfil">
 
                 <a href="#" id="botonPerfil">
                     <img src="../assets/imagenes/perfil.png" alt="Perfil" width="50" height="50">
                 </a>
 
-                <!-- Menú desplegable -->
                 <div id="menuPerfil" class="menuDesplegable">
                     <ul>
                         <li><a href="perfil.html">Ver perfil</a></li>
@@ -54,9 +50,10 @@
 
         </header>
 
-        <contenido>
+        <div class="contenido">
 
-            <form action="index.php?controller=pregunta&action=create" method="post">
+            <!-- TODO : <form action="index.php?controller=pregunta&action=create" method="post"> -->
+            <form>
 
                 <div>
                     <label for="enunciado">Enunciado</label>
@@ -82,12 +79,14 @@
                     <input type="text" id="descripcion" name="descripcion" required>
                 </div>
 
-                <input type="submit" class="bCrearPregunta" value="Crear pregunta">
+                <!-- TODO : <input type="submit" class="bCrearPregunta" value="Crear pregunta"> -->
+                <button id="bCrearPregunta">Crear pregunta</button>
+
                 <a href="foro.html" class="bVolver">Cancelar</a>
 
             </form>
 
-        </contenido>
+        </div>
 
         <footer>
 
@@ -95,7 +94,6 @@
 
             <div class="d_direccionEmpresa">Dirección: C/ Pozoa s/n (01013)</div>
 
-            <!-- Poner 3 botones con el logo de cada RS, uno detrás de otro en fila. -->
             <div class="d_botonesRS">
                 <a href="https://www.facebook.com/Egibide/" class="botonRS">
                     <img src="../assets/imagenes/logo_facebook.png" alt="Facebook" width="40" height="40">
@@ -125,6 +123,7 @@
     </main>
 
     <script src="../javascript/menuPerfil.js"></script>
+    <script src="../javascript/crearPregunta.js"></script>
 
 </body>
 </html>
