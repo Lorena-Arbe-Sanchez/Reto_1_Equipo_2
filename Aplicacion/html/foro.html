@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -8,76 +8,207 @@
     <title>Foro</title>
     <link rel="stylesheet" href="../assets/style.css">
     <link rel="icon" type="image/png" href="../assets/imagenes/icono_avion.png">
+
+    <!-- TODO : Poner en el style oficial. -->
+    <style>
+
+        .d_botonesHeader a{
+            border-radius: 1.5em;
+        }
+
+        /* Este será el estilo del enlace del header que debe estar deshabilitado (porque ya estamos en él). */
+        #botonBloqueado a{
+            background-color: #96a2ab;
+            color: white;
+            /* TODO : Mirar si los 2 siguientes son compatibles con otros navegadores. */
+            pointer-events: none; /* Desactivar el clic. */
+            cursor: not-allowed; /* Cambiar el cursor a "no permitido". */
+        }
+
+        /* Estilo de los enlaces del header cuando se pase el cursor por encima. */
+        .d_botonForo:hover a, .d_botonPreguntas:hover a, .d_botonCrear:hover a{
+            background-color: #8d9db6;
+        }
+
+        /* Estilos del botón de perfil y el menú desplegable: */
+
+        .d_botonPerfil a{
+            background: none;
+        }
+
+        .d_botonPerfil{
+            position: relative; /* Para posicionar el menú desplegable. */
+        }
+
+        .menuDesplegable{
+            display: none; /* El menú está oculto por defecto. */
+            position: absolute;
+            top: 95px; /* Debajo del botón de perfil. */
+            right: 0;
+            background-color: #fff;
+            border: .2em solid gainsboro;
+            box-shadow: 0 7px 30px rgb(102, 114, 146);
+            border-radius: .8em;
+            z-index: 1000;
+        }
+
+        .menuDesplegable ul{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menuDesplegable ul li{ border-bottom: 1px solid darkgrey; }
+
+        .menuDesplegable ul li:hover{ background-color: #f0f0f0; }
+
+        .menuDesplegable ul li:last-child{ border-bottom: none; }
+
+    </style>
+
 </head>
 <body class="pag_foro">
 
-    <main>
+<main>
 
-        <header>
+    <header>
 
-            <div class="d_logo_empresa"><img class="logo_empresa" src="../assets/imagenes/logo_empresa.png" alt="Logo Aergibide SL" width="190" height="90"></div>
+        <div class="d_logo_empresa"><img class="logo_empresa" src="../assets/imagenes/logo_empresa.png"
+                                         alt="Logo Aergibide SL" width="190" height="90"></div>
 
-            <div class="d_botonesHeader">
+        <div class="d_botonesHeader">
 
-                <!-- TODO : Poner un enlace correcto en los botones. -->
-                <div class="d_botonForo"><a href="index.php?controller=&action=" class="botonForo">Foro</a></div>
+            <div class="d_botonForo" id="botonBloqueado"><a href="#" class="botonForo">Foro</a></div>
 
-                <div class="d_botonPreguntas"><a href="index.php?controller=pregunta&action=list" class="botonPreguntas">
-                    Preguntas frecuentes</a></div>
+            <!-- TODO : Poner un enlace correcto en los botones o crear archivos de php. -->
+            <div class="d_botonPreguntas"><a href="index.php?controller=pregunta&action=listFrecuentes"
+                                             class="botonPreguntas">
+                Preguntas frecuentes</a></div>
 
-                <div class="d_botonCrear"><a href="index.php?controller=pregunta&action=create" class="botonCrear">
-                    Crear pregunta</a></div>
+            <div class="d_botonCrear"><a href="index.php?controller=pregunta&action=create" class="botonCrear">
+                Crear pregunta</a></div>
 
+        </div>
+
+        <!-- Botón del perfil con menú desplegable ~~> Posibles opciones ("Ver perfil", "Crear cuenta" {solo si el
+                usuario actual es "administrador"; 'TINYINT' con valor 1 para verdadero y 0 para falso}, y "Cerrar sesión"). -->
+
+        <div class="d_botonPerfil">
+
+            <a href="#" id="botonPerfil">
+                <img src="../assets/imagenes/perfil.png" alt="Perfil" width="50" height="50">
+            </a>
+
+            <!-- Menú desplegable -->
+            <div id="menuPerfil" class="menuDesplegable">
+                <ul>
+                    <li><a href="#">Ver perfil</a></li>
+                    <li id="opcionCrearCuenta"><a href="#">Crear cuenta</a></li> <!-- Solo para administradores. -->
+                    <li><a href="#">Cerrar sesión</a></li>
+                </ul>
             </div>
 
-            <!-- TODO : Añadir un botón que al clicarle salga un desplegable con las posibles opciones. El botón solo tendrá la imagen de un usuario. -->
-            <div class="d_botonPerfil"><a href="index.php?controller=&action=" class="botonPerfil">Perfil</a></div>
+        </div>
 
-        </header>
+    </header>
 
-        <contenido>
+    <contenido>
 
-            <!-- TODO : Cargar de la base de datos los datos de las preguntas, respuestas y usuarios. -->
-            <!-- Título de la pregunta, tema, nombre de usuario, fecha (se guardara la del mismo día de la creación de la pregunta),
-                    descripción de la pregunta, botón de añadir respuesta, respuestas existentes con nombre de usuario, fecha,
-                    botón de 'like' y botón de 'dislike'. -->
+        <!-- TODO : Cargar de la base de datos los datos de las preguntas, respuestas y usuarios. -->
+        <!-- Título de la pregunta, tema, nombre de usuario, fecha (se guardara la del mismo día de la creación de la pregunta),
+                descripción de la pregunta, botón de añadir respuesta, respuestas existentes con nombre de usuario, fecha,
+                botón de 'like' y botón de 'dislike'. -->
 
-        </contenido>
+    </contenido>
 
-        <footer>
+    <footer>
 
-            <div class="d_telefonoEmpresa"><p>+34 945 01 01 10</p></div>
+        <div class="d_telefonoEmpresa"><p>+34 945 01 01 10</p></div>
 
-            <!-- TODO : A poder ser poner un mapa con la dirección de Egibide Arriaga en vez de texto. -->
-            <div class="d_direccionEmpresa">Dirección</div>
+        <!-- TODO : Si da tiempo y apetece se puede poner un mapa interactivo con la dirección de Egibide Arriaga en vez de texto. -->
+        <div class="d_direccionEmpresa">Dirección: C/ Pozoa s/n (01013)</div>
 
-            <!-- TODO : Poner 3 botones con el logo de cada RS, uno detrás de otro en fila. -->
-            <div class="d_botonesRS">
-                <a href="https://www.facebook.com/Egibide/" class="botonRS">
-                    <img src="../assets/imagenes/logo_facebook.png" alt="Facebook" width="40" height="40">
-                </a>
-                <a href="https://twitter.com/egibide?lang=es" class="botonRS">
-                    <img src="../assets/imagenes/logo_x.png" alt="X (Twitter)" width="40" height="40">
-                </a>
-                <a href="https://www.youtube.com/user/Egibide" class="botonRS">
-                    <img src="../assets/imagenes/logo_youtube.png" alt="YouTube" width="40" height="40">
-                </a>
-                <a href="https://www.instagram.com/egibide_vg/?hl=es" class="botonRS">
-                    <img src="../assets/imagenes/logo_instagram.png" alt="Instagram" width="40" height="40">
-                </a>
-                <a href="https://es.linkedin.com/school/egibide/" class="botonRS">
-                    <img src="../assets/imagenes/logo_linkedin.png" alt="LinkedIn" width="40" height="40">
-                </a>
-            </div>
+        <!-- Poner 3 botones con el logo de cada RS, uno detrás de otro en fila. -->
+        <div class="d_botonesRS">
+            <a href="https://www.facebook.com/Egibide/" class="botonRS">
+                <img src="../assets/imagenes/logo_facebook.png" alt="Facebook" width="40" height="40">
+            </a>
+            <a href="https://twitter.com/egibide?lang=es" class="botonRS">
+                <img src="../assets/imagenes/logo_x.png" alt="X (Twitter)" width="40" height="40">
+            </a>
+            <a href="https://www.youtube.com/user/Egibide" class="botonRS">
+                <img src="../assets/imagenes/logo_youtube.png" alt="YouTube" width="40" height="40">
+            </a>
+            <a href="https://www.instagram.com/egibide_vg/?hl=es" class="botonRS">
+                <img src="../assets/imagenes/logo_instagram.png" alt="Instagram" width="40" height="40">
+            </a>
+            <a href="https://es.linkedin.com/school/egibide/" class="botonRS">
+                <img src="../assets/imagenes/logo_linkedin.png" alt="LinkedIn" width="40" height="40">
+            </a>
+        </div>
 
-            <div class="d_equipo">
-                <p>Principal equipo desarrollador:</p>
-                <img class="logo_equipo" src="../assets/imagenes/logo_equipo2.png" alt="Logo Dev Dragons" width="110" height="110">
-            </div>
+        <div class="d_equipo">
+            <p>Principal equipo desarrollador:</p>
+            <img class="logo_equipo" src="../assets/imagenes/logo_equipo2.png" alt="Logo Dev Dragons"
+                 width="110" height="110">
+        </div>
 
-        </footer>
+    </footer>
 
-    </main>
+</main>
+
+<!-- TODO : Crear. -->
+<script src="../javascript/foro.js"></script>
+
+<!-- TODO : Poner en "foro.js". -->
+<script>
+
+    // DOMContentLoaded --> Se dispara cuando el HTML del documento ha sido completamente cargado y analizado por el navegador (sin esperar a los estilos, imágenes, etc.).
+    document.addEventListener("DOMContentLoaded", function(){
+
+        // Se buscará en la BBDD el valor de la columna "administrador" del usuario, para saber si es admin (1) o no (0).
+        let esAdmin;
+
+        // TODO : Descomentar cuando esté implementado.
+        /*
+        if (UserController -> usuarioEsAdmin() = 1)
+            esAdmin = true;
+        else
+            esAdmin = false;
+         */
+
+        // TODO : De momento se pondrá como true.
+        esAdmin = true;
+
+        const botonPerfil = document.getElementById("botonPerfil");
+        const menuPerfil = document.getElementById("menuPerfil");
+        const opcionCrearCuenta = document.getElementById("opcionCrearCuenta");
+
+        // Ocultar la opción de "Crear cuenta" si no es administrador.
+        if (!esAdmin) {
+            opcionCrearCuenta.style.display = "none";
+        }
+
+        // Mostrar / Ocultar el menú al hacer clic en el botón del perfil.
+        botonPerfil.addEventListener("click", function(e){
+            e.preventDefault(); // Evitar el comportamiento por defecto del enlace [navegar a la URL especificada].
+            e.stopPropagation(); // Detener la propagación del clic para evitar que el siguiente evento (el del documento) lo capture.
+            menuPerfil.style.display = (menuPerfil.style.display === "block") ? "none" : "block";
+        });
+
+        // Ocultar el menú si se hace clic fuera de él.
+        document.addEventListener("click", function(e){
+            // Verificar si el menú de perfil está visible, y si el clic no ocurrió dentro del botón de perfil o del menú.
+            if (menuPerfil.style.display === "block" && !botonPerfil.contains(e.target) &&
+                !menuPerfil.contains(e.target)){
+                menuPerfil.style.display = "none";
+            }
+        });
+
+    });
+
+</script>
 
 </body>
+
 </html>
