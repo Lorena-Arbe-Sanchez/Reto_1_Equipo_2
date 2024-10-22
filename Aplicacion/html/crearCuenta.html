@@ -30,7 +30,21 @@
         </div>
 
         <!-- TODO : Añadir un botón que al clicarle salga un desplegable con las posibles opciones. El botón solo tendrá la imagen de un usuario. -->
-        <div class="d_botonPerfil"><a href="index.php?controller=&action=" class="botonPerfil">Perfil</a></div>
+        <div class="d_botonPerfil">
+
+            <a href="#" id="botonPerfil">
+                <img src="../assets/imagenes/perfil.png" alt="Perfil" width="50" height="50">
+            </a>
+
+            <!-- Menú desplegable -->
+            <div id="menuPerfil" class="menuDesplegable" style="display: none;">
+                <ul>
+                    <li><a href="#">Ver perfil</a></li>
+                    <li><a href="#">Cerrar sesión</a></li>
+                </ul>
+            </div>
+
+        </div>
 
     </header>
 

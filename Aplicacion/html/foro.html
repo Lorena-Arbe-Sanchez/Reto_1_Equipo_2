@@ -9,62 +9,8 @@
     <link rel="stylesheet" href="../assets/style.css">
     <link rel="icon" type="image/png" href="../assets/imagenes/icono_avion.png">
 
-    <!-- TODO : Poner en el style oficial. -->
-    <style>
-
-        .d_botonesHeader a{
-            border-radius: 1.5em;
-        }
-
-        /* Este será el estilo del enlace del header que debe estar deshabilitado (porque ya estamos en él). */
-        #botonBloqueado a{
-            background-color: #96a2ab;
-            color: white;
-            /* TODO : Mirar si los 2 siguientes son compatibles con otros navegadores. */
-            pointer-events: none; /* Desactivar el clic. */
-            cursor: not-allowed; /* Cambiar el cursor a "no permitido". */
-        }
-
-        /* Estilo de los enlaces del header cuando se pase el cursor por encima. */
-        .d_botonForo:hover a, .d_botonPreguntas:hover a, .d_botonCrear:hover a{
-            background-color: #8d9db6;
-        }
-
-        /* Estilos del botón de perfil y el menú desplegable: */
-
-        .d_botonPerfil a{
-            background: none;
-        }
-
-        .d_botonPerfil{
-            position: relative; /* Para posicionar el menú desplegable. */
-        }
-
-        .menuDesplegable{
-            display: none; /* El menú está oculto por defecto. */
-            position: absolute;
-            top: 95px; /* Debajo del botón de perfil. */
-            right: 0;
-            background-color: #fff;
-            border: .2em solid gainsboro;
-            box-shadow: 0 7px 30px rgb(102, 114, 146);
-            border-radius: .8em;
-            z-index: 1000;
-        }
-
-        .menuDesplegable ul{
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .menuDesplegable ul li{ border-bottom: 1px solid darkgrey; }
-
-        .menuDesplegable ul li:hover{ background-color: #f0f0f0; }
-
-        .menuDesplegable ul li:last-child{ border-bottom: none; }
-
-    </style>
+    
+    
 
 </head>
 <body class="pag_foro">
