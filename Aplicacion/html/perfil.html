@@ -2,14 +2,13 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear cuenta</title>
+    <title>Perfil de usuario</title>
     <link rel="stylesheet" href="../assets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="../assets/imagenes/icono_avion.png">
 </head>
-<body class="pag_crearCuenta">
-
+<body class="pag_perfil">
 <main>
     <header>
 
@@ -39,6 +38,7 @@
             <div id="menuPerfil" class="menuDesplegable" style="display: none;">
                 <ul>
                     <li><a href="#">Ver perfil</a></li>
+                    <li id="opcionCrearCuenta"><a href="#">Crear cuenta</a></li> <!-- Solo para administradores. -->
                     <li><a href="#">Cerrar sesión</a></li>
                 </ul>
             </div>
@@ -49,76 +49,53 @@
 
 
     <div class="contenido">
-        <div id="titulo">
-            <h2>Registro / Edición</h2>
+
+        <div class="foto">
+            <img src="../assets/imagenes/perfil.png">
+
+            <form>
+                <button id="anadirImg">+ Añadir imagen
+            </form>
         </div>
 
-        <form>
-            <div id="datos">
-                <div>
-                    <label for="DNI">DNI</label>
-                    <input type="text" id="dni" name="dni" required>
-                </div>
 
-                <div>
-                    <label for="admin">Administrador</label>
-                    <input type="radio" id="adminSi" name="administrador" value="1" required> Sí
-                    <input type="radio" id="adminNo" name="administrador" value="0" required> No
-                </div>
+        <div class="info">
 
-                <div>
-                    <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" required>
-                </div>
-
-                <div>
-                    <label for="primerApellido">Primer Apellido</label>
-                    <input type="text" id="primerApellido" name="primerApellido" required>
-                </div>
-
-                <div>
-                    <label for="segundoApellido">Segundo Apellido</label>
-                    <input type="text" id="segundoApellido" name="segundoApellido" required>
-                </div>
-
-                <div>
-                    <label for="email">Email</label>
-                    <input type="text" id="email" name="email" required>
-                </div>
-
-                <div>
-                    <label for="telefono">Teléfono</label>
-                    <input type="text" id="telefono" name="telefono" required>
-                </div>
-
-                <div>
-                    <label for="usuario">Usuario</label>
-                    <input type="text" id="usuario" name="usuario" required>
-                </div>
-
-                <div>
-                    <label for="contrasena">Contraseña</label>
-                    <input type="text" id="contrasena" name="contrasena" required>
-                </div>
-
-                <div>
-                    <label for="repetirContrasena">Repetir contraseña</label>
-                    <input type="text" id="repetirContrasena" name="repetirContrasena" required>
-                </div>
-
+            <div class="usuarioDiv">
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario" name="usuario" readonly>
+            </div>
+            <div class="nombreDiv">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" readonly>
+            </div>
+            <div class="primerApeDiv">
+                <label for="primerApellido">Primer apellido</label>
+                <input type="text" id="primerApellido" name="primerApellido" readonly>
+            </div>
+            <div class="segundoApeDiv">
+                <label for="segundoApellido">Segundo apellido</label>
+                <input type="text" id="segundoApellido" name="segundoApellido" readonly>
+            </div>
+            <div class="dniDiv">
+                <label for="DNI">DNI</label>
+                <input type="text" id="DNI" name="DNI" readonly>
+            </div>
+            <div class="telefonoDiv">
+                <label for="telefono">Teléfono</label>
+                <input type="text" id="telefono" name="telefono" readonly>
+            </div>
+            <div class="emailDiv">
+                <label for="email">Correo electrónico</label>
+                <input type="text" id="email" name="email" readonly>
             </div>
 
-            <div id="botones">
+        </div>
 
-                <button id="bRegistrar">Registrar</button>
-                <button id="bModificar">Modificar</button>
-
-            </div>
-        </form>
     </div>
 
 
-    <footer style="border-top: 1px black;">
+    <footer>
 
         <div class="d_telefonoEmpresa"><p>+34 945 01 01 10</p></div>
 
@@ -152,8 +129,6 @@
     </footer>
 
 </main>
-
-<script src="../javascript/crearCuenta.js"></script>
 
 </body>
 </html>

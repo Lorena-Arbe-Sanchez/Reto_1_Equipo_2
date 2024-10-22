@@ -2,173 +2,129 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0,
+        minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Crear pregunta</title>
     <link rel="stylesheet" href="../assets/style.css">
     <link rel="icon" type="image/png" href="../assets/imagenes/icono_avion.png">
 
-    <!-- TODO : Poner en el style oficial. -->
-    <style>
-
-        .d_botonesHeader a{
-            border-radius: 1.5em;
-        }
-
-        /* Este será el estilo del enlace del header que debe estar deshabilitado (porque ya estamos en él). */
-        #botonBloqueado a{
-            background-color: #96a2ab;
-            color: white;
-            pointer-events: none; /* Desactivar el clic. */
-            cursor: not-allowed; /* Cambiar el cursor a "no permitido". */
-        }
-
-        /* Estilo de los enlaces del header cuando se pase el cursor por encima. */
-        .d_botonForo:hover a, .d_botonPreguntas:hover a, .d_botonCrear:hover a{
-            background-color: #8d9db6;
-        }
-
-        /* Estilos del botón de perfil y el menú desplegable: */
-
-        .d_botonPerfil a{
-            background: none;
-        }
-
-        .d_botonPerfil{
-            position: relative; /* Para posicionar el menú desplegable. */
-        }
-
-        .menuDesplegable{
-            display: none; /* El menú está oculto por defecto. */
-            position: absolute;
-            top: 95px; /* Debajo del botón de perfil. */
-            right: 0;
-            background-color: #fff;
-            border: .2em solid gainsboro;
-            box-shadow: 0 7px 30px rgb(102, 114, 146);
-            border-radius: .8em;
-            z-index: 1000;
-        }
-
-        .menuDesplegable ul{
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .menuDesplegable ul li{ border-bottom: 1px solid darkgrey; }
-
-        .menuDesplegable ul li:hover{ background-color: #f0f0f0; }
-
-        .menuDesplegable ul li:last-child{ border-bottom: none; }
-
-    </style>
-
 </head>
 <body class="pag_foro">
 
-<main>
+    <main>
 
-    <header>
+        <header>
 
-        <div class="d_logo_empresa"><img class="logo_empresa" src="../assets/imagenes/logo_empresa.png"
-                                         alt="Logo Aergibide SL" width="190" height="90"></div>
-
-        <div class="d_botonesHeader">
-
-            <div class="d_botonForo"><a href="foro.html" class="botonForo">Foro</a></div>
-
-            <div class="d_botonPreguntas"><a href="#" class="botonPreguntas">Preguntas frecuentes</a></div>
-
-            <div class="d_botonCrear" id="botonBloqueado"><a href="crearPregunta.html" class="botonCrear">
-                Crear pregunta</a></div>
-
-        </div>
-
-        <!-- Botón del perfil con menú desplegable ~~> Posibles opciones ("Ver perfil", "Crear cuenta" {solo si el
-                usuario actual es "administrador"; 'TINYINT' con valor 1 para verdadero y 0 para falso}, y "Cerrar sesión"). -->
-
-        <div class="d_botonPerfil">
-
-            <a href="#" id="botonPerfil">
-                <img src="../assets/imagenes/perfil.png" alt="Perfil" width="50" height="50">
-            </a>
-
-            <!-- Menú desplegable -->
-            <div id="menuPerfil" class="menuDesplegable">
-                <ul>
-                    <li><a href="#">Ver perfil</a></li>
-                    <li id="opcionCrearCuenta"><a href="crearCuenta.html">Crear cuenta</a></li> <!-- Solo para administradores. -->
-                    <li><a href="#">Cerrar sesión</a></li>
-                </ul>
+            <div class="d_logo_empresa">
+                <img class="logo_empresa" src="../assets/imagenes/logo_empresa.png" alt="Logo Aergibide SL"
+                     width="190" height="90">
             </div>
 
-        </div>
+            <div class="d_botonesHeader">
 
-    </header>
+                <div class="d_botonForo"><a href="foro.html" class="botonForo">Foro</a></div>
 
-    <contenido>
+                <!-- TODO : Enlace. -->
+                <div class="d_botonPreguntas"><a href="#" class="botonPreguntas">Preguntas frecuentes</a></div>
 
-        <form action="index.php?controller=pregunta&action=create" method="post">
+                <div class="d_botonCrear" id="botonBloqueado"><a class="botonCrear">Crear pregunta</a></div>
 
-            <div>
-                <label for="enunciado">Enunciado</label>
-                <input type="text" id="enunciado" name="enunciado" required>
-            </div>
-            <div>
-                <label for="tema">Tema</label>
-                <input type="text" id="tema" name="tema" required>
-            </div>
-            <div>
-                <label for="descripcion">Descripción</label>
-                <input type="text" id="descripcion" name="descripcion" required>
             </div>
 
-            <input type="submit" class="botonCrearPregunta" value="Crear pregunta">
-            <button id="botonCancelar">Cancelar</button>
+            <!-- Botón del perfil con menú desplegable ~~> Posibles opciones ("Ver perfil", "Crear cuenta" {solo si el
+                    usuario actual es "administrador"; 'TINYINT' con valor 1 para verdadero y 0 para falso}, y "Cerrar sesión"). -->
 
-        </form>
+            <div class="d_botonPerfil">
 
-    </contenido>
+                <a href="#" id="botonPerfil">
+                    <img src="../assets/imagenes/perfil.png" alt="Perfil" width="50" height="50">
+                </a>
 
-    <footer>
+                <!-- Menú desplegable -->
+                <div id="menuPerfil" class="menuDesplegable">
+                    <ul>
+                        <li><a href="perfil.html">Ver perfil</a></li>
+                        <li id="opcionCrearCuenta"><a href="crearCuenta.html">Crear cuenta</a></li> <!-- Solo para administradores. -->
+                        <li><a href="login.html">Cerrar sesión</a></li>
+                    </ul>
+                </div>
 
-        <div class="d_telefonoEmpresa"><p>+34 945 01 01 10</p></div>
+            </div>
 
-        <div class="d_direccionEmpresa">Dirección: C/ Pozoa s/n (01013)</div>
+        </header>
 
-        <!-- Poner 3 botones con el logo de cada RS, uno detrás de otro en fila. -->
-        <div class="d_botonesRS">
-            <a href="https://www.facebook.com/Egibide/" class="botonRS">
-                <img src="../assets/imagenes/logo_facebook.png" alt="Facebook" width="40" height="40">
-            </a>
-            <a href="https://twitter.com/egibide?lang=es" class="botonRS">
-                <img src="../assets/imagenes/logo_x.png" alt="X (Twitter)" width="40" height="40">
-            </a>
-            <a href="https://www.youtube.com/user/Egibide" class="botonRS">
-                <img src="../assets/imagenes/logo_youtube.png" alt="YouTube" width="40" height="40">
-            </a>
-            <a href="https://www.instagram.com/egibide_vg/?hl=es" class="botonRS">
-                <img src="../assets/imagenes/logo_instagram.png" alt="Instagram" width="40" height="40">
-            </a>
-            <a href="https://es.linkedin.com/school/egibide/" class="botonRS">
-                <img src="../assets/imagenes/logo_linkedin.png" alt="LinkedIn" width="40" height="40">
-            </a>
-        </div>
+        <contenido>
 
-        <div class="d_equipo">
-            <p>Principal equipo desarrollador:</p>
-            <img class="logo_equipo" src="../assets/imagenes/logo_equipo2.png" alt="Logo Dev Dragons"
-                 width="110" height="110">
-        </div>
+            <form action="index.php?controller=pregunta&action=create" method="post">
 
-    </footer>
+                <div>
+                    <label for="enunciado">Enunciado</label>
+                    <input type="text" id="enunciado" name="enunciado" required>
+                </div>
+                <div>
+                    <label for="tema">Tema</label>
+                    <select name="tema" id="tema" required>
+                        <option value="diseno_aeronaves">Diseño y Desarrollo de Aeronaves</option>
+                        <option value="fabricacion_produccion">Fabricación y Producción</option>
+                        <option value="mantenimiento_operaciones">Mantenimiento y Operaciones</option>
+                        <option value="innovacion_sostenibilidad">Innovación y Sostenibilidad</option>
+                        <option value="certificaciones_reglamentacion">Certificaciones y Reglamentación</option>
+                        <option value="problemas_tecnicos">Problemas Técnicos y Soluciones</option>
+                        <option value="colaboracion_interdepartamental">Colaboración Interdepartamental</option>
+                        <option value="software_herramientas">Software y Herramientas de Ingeniería</option>
+                        <option value="gestion_conocimiento">Gestión del Conocimiento</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="descripcion">Descripción</label>
+                    <input type="text" id="descripcion" name="descripcion" required>
+                </div>
 
-</main>
+                <input type="submit" class="bCrearPregunta" value="Crear pregunta">
+                <a href="foro.html" class="bVolver">Cancelar</a>
 
-<script src="../javascript/menuPerfil.js"></script>
+            </form>
+
+        </contenido>
+
+        <footer>
+
+            <div class="d_telefonoEmpresa"><p>+34 945 01 01 10</p></div>
+
+            <div class="d_direccionEmpresa">Dirección: C/ Pozoa s/n (01013)</div>
+
+            <!-- Poner 3 botones con el logo de cada RS, uno detrás de otro en fila. -->
+            <div class="d_botonesRS">
+                <a href="https://www.facebook.com/Egibide/" class="botonRS">
+                    <img src="../assets/imagenes/logo_facebook.png" alt="Facebook" width="40" height="40">
+                </a>
+                <a href="https://twitter.com/egibide?lang=es" class="botonRS">
+                    <img src="../assets/imagenes/logo_x.png" alt="X (Twitter)" width="40" height="40">
+                </a>
+                <a href="https://www.youtube.com/user/Egibide" class="botonRS">
+                    <img src="../assets/imagenes/logo_youtube.png" alt="YouTube" width="40" height="40">
+                </a>
+                <a href="https://www.instagram.com/egibide_vg/?hl=es" class="botonRS">
+                    <img src="../assets/imagenes/logo_instagram.png" alt="Instagram" width="40" height="40">
+                </a>
+                <a href="https://es.linkedin.com/school/egibide/" class="botonRS">
+                    <img src="../assets/imagenes/logo_linkedin.png" alt="LinkedIn" width="40" height="40">
+                </a>
+            </div>
+
+            <div class="d_equipo">
+                <p>Principal equipo desarrollador:</p>
+                <img class="logo_equipo" src="../assets/imagenes/logo_equipo2.png" alt="Logo Dev Dragons"
+                     width="110" height="110">
+            </div>
+
+        </footer>
+
+    </main>
+
+    <script src="../javascript/menuPerfil.js"></script>
 
 </body>
-
 </html>

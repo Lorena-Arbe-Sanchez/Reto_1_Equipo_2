@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- TODO : Poner bien los "meta" de todas las páginas (lo mismo + propiedades funcionales). -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
@@ -10,30 +11,32 @@
     <link rel="icon" type="image/png" href="../assets/imagenes/icono_avion.png">
 </head>
 <body class="pag_login">
-<div class="container">
 
-    <img src="../assets/imagenes/perfil.png" class="superpuesta" alt="Imagen perfil">
+    <div class="container">
 
-    <h1>Aquí va el logo</h1>
+        <img src="../assets/imagenes/logo_empresa_conFondo.png" class="superpuesta" alt="Logo Aergibide SL">
+        <!-- <img src="../assets/imagenes/perfil.png" class="superpuesta" alt="Imagen perfil"> -->
 
-    <form>
-        <div>
-            <label for="usuario">Usuario</label>
-            <input type="text" id="usuario" name="usuario" required>
-        </div>
-        <div>
-            <label for="contrasena">Contraseña</label>
-            <input type="contrasena" id="contrasena" name="contrasena" required>
-        </div>
-        <button id="bIniciar">Iniciar Sesión</button>
-    </form>
+        <!-- TODO : <form action="index.php?controller=user&action=login" method="post"> -->
+        <form>
+            <div>
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario" name="usuario" required>
+            </div>
+            <div>
+                <label for="contrasena">Contraseña</label>
+                <input type="password" id="contrasena" name="contrasena" required>
+            </div>
 
-    <a href="#">¿Se te ha olvidado tu contraseña?</a>
+            <!-- TODO : <input type="submit" class="bIniciar" value="Iniciar sesión"> -->
+            <button id="bIniciar">Iniciar sesión</button>
+        </form>
 
-</div>
+        <a href="recuperarContrasena.html">¿Se te ha olvidado tu contraseña?</a>
 
-<script src="../javascript/login.js"></script>
+    </div>
 
+    <script src="../javascript/login.js"></script>
 
 </body>
 </html>
