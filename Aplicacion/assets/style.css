@@ -15,7 +15,7 @@ body{
     background-repeat: no-repeat;
 }
 
-.container, .pag_crearCuenta .contenido{
+.container, .pag_crearCuenta .contenido, .pag_perfil .contenido{
     position: relative;
     flex-direction: column;
     text-align: center;
@@ -26,7 +26,7 @@ body{
     margin-top: 5em;
 }
 
-.pag_crearCuenta .contenido {
+.pag_crearCuenta .contenido, .pag_perfil .contenido {
     background: none;
 }
 
@@ -36,7 +36,7 @@ main{
 }
 
 /* Estilos relacionados con la página del foro. */
-.pag_foro, .pag_crearCuenta{
+.pag_foro, .pag_crearCuenta, .pag_perfil{
     background: linear-gradient(to bottom, #bccad6, white);
 }
 .pag_foro main{
@@ -80,7 +80,7 @@ div input[type="radio"] {
 }
 
 label{
-    width: 100px;
+    width: 150px;
     font-weight: bold;
 }
 
@@ -132,6 +132,50 @@ header a{
     flex-direction: column;
 }
 
+.info {
+    background-color: #F0F0F0;
+    border-radius: 35px;
+    gap: 2em;
+    height: 448.66px;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, 20fr);
+    grid-template-rows: repeat(3, 10fr);
+}
+
+.info div{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.emailDiv {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+}
+
+.info div input, .info div label{
+    width: 100%;
+    height: 2em;
+    display: flex;
+    text-align: left;
+}
+
+.pag_perfil .contenido {
+    margin-top: 300px;
+    display: grid;
+    grid-template-columns: repeat(2, 20fr);
+}
+
+.foto {
+    display: flex;
+    flex-direction: column;
+}
+
 footer{
     width: 100%;
     display: flex;
@@ -140,4 +184,9 @@ footer{
     bottom: 0;
     height: 90px;
     background-color: #8d9db6;
+}
+
+.foto img {
+    width: 290px;
+    height: 290px;
 }
