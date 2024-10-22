@@ -15,7 +15,7 @@ body{
     background-repeat: no-repeat;
 }
 
-.container, .pag_crearCuenta main{
+.container, .pag_crearCuenta .contenido{
     position: relative;
     flex-direction: column;
     text-align: center;
@@ -26,13 +26,17 @@ body{
     margin-top: 5em;
 }
 
+.pag_crearCuenta .contenido {
+    background: none;
+}
+
 main{
     width: 100%;
     height: 100%;
 }
 
 /* Estilos relacionados con la página del foro. */
-.pag_foro{
+.pag_foro, .pag_crearCuenta{
     background: linear-gradient(to bottom, #bccad6, white);
 }
 .pag_foro main{
@@ -69,6 +73,10 @@ div{
     align-items: center;
     padding: 1em;
     justify-content: center;
+}
+
+div input[type="radio"] {
+    margin-left: 25px;
 }
 
 label{
@@ -109,8 +117,19 @@ header a{
     justify-content: center;
 }
 
-.contenido{
+.contenido {
+    height: auto;
+    width: 70%;
+    margin: 0 auto;
+}
 
+#titulo h2 {
+    margin-bottom: -40px;
+}
+
+#datos {
+    display: flex;
+    flex-direction: column;
 }
 
 footer{
