@@ -1,3 +1,14 @@
+/* TODO
+* En la parte izquierda tendrá un listado de usuarios (cada uno con un botón de
+* editar y eliminar) que se podrá filtrar (por algún dato).
+* Arriba a la izquierda habrá un botón para crear un usuario nuevo.
+*   Al clicar en crear, en la parte derecha se pondrá visible un contenedor con las
+*       casillas que rellenar y el botón de registrar.
+*   Al clicar en editar, se pondrán visibles las casillas que rellenar (y ya
+*       rellenadas con los datos existentes) y el botón de modificar.
+*   Al clicar en eliminar, aparecerá un mensaje de confirmación.
+* */
+
 let dni = document.getElementById("dni");
 let administrador = document.getElementById("administrador");
 let nombre = document.getElementById("nombre");
@@ -9,10 +20,14 @@ let usuario = document.getElementById("usuario");
 let contrasena = document.getElementById("contrasena");
 let repetirContrasena = document.getElementById("repetirContrasena");
 
-let registrar = document.getElementById("bRegistrar");
-let modificar = document.getElementById("bModificar");
+let botonRegistrar = document.getElementById("bRegistrar");
+let botonModificar = document.getElementById("bModificar");
 
-function validarRegistro() {
+botonRegistrar.addEventListener("click", (event) => validarRegistro(event));
+
+function validarRegistro(event){
+
+    event.preventDefault();
 
     let contador = 0;
 
@@ -76,6 +91,6 @@ function validarRegistro() {
 
 }
 
-//Cuando escriba el DNI mirar si existe en caso de que exista sacar sus datos
+// Cuando escriba el DNI mirar si existe, y en caso de que exista sacar sus datos.
 
 registrar.addEventListener("click", validarRegistro);
