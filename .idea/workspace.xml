@@ -8,11 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Aplicacion/assets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/assets/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Aplicacion/html/crearCuenta.html" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/html/crearCuenta.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/html/crearPregunta.html" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/html/crearPregunta.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/html/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Aplicacion/javascript/crearCuenta.js" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/javascript/crearCuenta.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/javascript/crearPregunta.js" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/javascript/crearPregunta.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/javascript/recuperarContrasena.js" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/javascript/recuperarContrasena.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +62,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "feature/Lorena",
-    "last_opened_file_path": "C:/laragon/www/proyectobodegas-Lorena-Arbe-Sanchez",
+    "last_opened_file_path": "C:/Users/Lorena/Downloads/Ejercicios_DWEC",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",

@@ -122,6 +122,7 @@ footer{
     background-color: #8D9DB6;
     position: absolute;
     bottom: 0;
+    border-top: 1px solid black;
 }
 
 

@@ -59,7 +59,8 @@
             <h2>Registro / Edición</h2>
         </div>
 
-        <form>
+        <!-- TODO : <form action="index.php?controller=user&action=registro" method="post"> -->
+        <form id="formRegistro" action="#" method="post">
             <div id="datos">
                 <div>
                     <label for="dni">DNI</label>
@@ -89,12 +90,12 @@
 
                 <div>
                     <label for="email">Email</label>
-                    <input type="text" id="email" name="email" required>
+                    <input type="email" id="email" name="email" required>
                 </div>
 
                 <div>
                     <label for="telefono">Teléfono</label>
-                    <input type="text" id="telefono" name="telefono" required>
+                    <input type="tel" id="telefono" name="telefono" required>
                 </div>
 
                 <div>
@@ -104,26 +105,24 @@
 
                 <div>
                     <label for="contrasena">Contraseña</label>
-                    <input type="text" id="contrasena" name="contrasena" required>
+                    <input type="password" id="contrasena" name="contrasena" required>
                 </div>
 
                 <div>
                     <label for="repetirContrasena">Repita la contraseña</label>
-                    <input type="text" id="repetirContrasena" name="repetirContrasena" required>
+                    <input type="password" id="repetirContrasena" name="repetirContrasena" required>
                 </div>
 
             </div>
 
             <div id="botones">
-
-                <button id="bRegistrar">Registrar</button>
-                <button id="bModificar">Modificar</button>
-
+                <!-- TODO : A este botón se le irá cambiando el "value" dependiendo de la acción seleccionada (crear / modificar). -->
+                <input type="submit" id="bAccion" class="bAccion" value="">
             </div>
         </form>
     </div>
 
-    <footer style="border-top: 1px black;">
+    <footer>
 
         <div class="d_telefonoEmpresa"><p>+34 945 01 01 10</p></div>
 
@@ -156,8 +155,8 @@
 
 </main>
 
-<script src="../javascript/crearCuenta.js"></script>
 <script src="../javascript/menuPerfil.js"></script>
+<script src="../javascript/crearCuenta.js"></script>
 
 </body>
 </html>
