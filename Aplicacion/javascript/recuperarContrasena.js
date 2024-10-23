@@ -1,7 +1,7 @@
 let botonCambiar = document.getElementById("bCambiar");
 let formulario = document.getElementById("formRecuperarContra");
 
-botonCambiar.addEventListener("click", (event) => recuperarContrasena(event))
+botonCambiar.addEventListener("click", (event) => recuperarContrasena(event));
 
 function recuperarContrasena(event){
 
