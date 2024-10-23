@@ -1,20 +1,22 @@
-let enunciado = document.getElementById("enunciado");
-let tema = document.getElementById("tema");
-let descripcion = document.getElementById("descripcion");
-
 let crearPregunta = document.getElementById("bCrearPregunta");
 
-crearPregunta.addEventListener("click",validarCreacion)
+crearPregunta.addEventListener("click", (event) => validarCreacion(event));
 
-function validarCreacion() {
+function validarCreacion(event) {
 
-    if(enunciado.value==""){
-        alert('El enunciado no puede estar vacío');
+    event.preventDefault();
+
+    let enunciado = document.getElementById("enunciado").value;
+    let tema = document.getElementById("tema").value;
+    let descripcion = document.getElementById("descripcion").value;
+
+    if(!enunciado){
+        alert('El enunciado debe ser rellenado.');
         enunciado.focus();
     }
-
-    if(descripcion.value==""){
-        alert('La descripción no puede estar vacía');
+    // TODO : Poner la validación del tema (que haya algo seleccionado (y no se la opción -1; añadir un "Seleccionar")).
+    if(!descripcion){
+        alert('La descripción debe ser rellenada.');
         descripcion.focus();
     }
 
