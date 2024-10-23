@@ -18,43 +18,16 @@ body{
     background-repeat: no-repeat;
 }
 
-<<<<<<< HEAD
-.container, .pag_crearCuenta .contenido, .pag_perfil .contenido{
-    position: relative;
-    flex-direction: column;
-    text-align: center;
-    background-color: #bccad6;
-    padding: 2em;
-    border-radius: 10px;
-    z-index: 1;
-    margin-top: 5em;
-}
-
-.pag_crearCuenta .contenido, .pag_perfil .contenido {
-    background: none;
-}
-
-=======
->>>>>>> develop
 main{
     width: 100%;
     height: 100%;
 }
 
-<<<<<<< HEAD
-/* Estilos relacionados con la página del foro. */
-.pag_foro, .pag_crearCuenta, .pag_perfil{
-    background: linear-gradient(to bottom, #bccad6, white);
-}
-.pag_foro main{
-    height: 100%;
-=======
 
 /* ESTILOS DE LOS HEADER Y FOOTER */
 
 /* TODO : Poner que se empequeñezca el contenido con cambio del tamaño de la página. */
 header{
->>>>>>> develop
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -84,73 +57,6 @@ header a{
 
 .d_botonesHeader a{
     border-radius: 1.5em;
-<<<<<<< HEAD
-}
-
-/* Este será el estilo del enlace del header que debe estar deshabilitado (porque ya estamos en él). */
-#botonBloqueado a{
-    background-color: #96a2ab;
-    color: white;
-    /* TODO : Mirar si los 2 siguientes son compatibles con otros navegadores. */
-    pointer-events: none; /* Desactivar el clic. */
-    cursor: not-allowed; /* Cambiar el cursor a "no permitido". */
-}
-
-/* Estilo de los enlaces del header cuando se pase el cursor por encima. */
-.d_botonForo:hover a, .d_botonPreguntas:hover a, .d_botonCrear:hover a{
-    background-color: #8d9db6;
-}
-
-/* Estilos del botón de perfil y el menú desplegable: */
-.d_botonPerfil a{
-    background: none;
-}
-
-.d_botonPerfil{
-    position: relative; /* Para posicionar el menú desplegable. */
-}
-
-.menuDesplegable{
-    display: none; /* El menú está oculto por defecto. */
-    position: absolute;
-    top: 95px; /* Debajo del botón de perfil. */
-    right: 0;
-    background-color: #fff;
-    border: .2em solid gainsboro;
-    box-shadow: 0 7px 30px rgb(102, 114, 146);
-    border-radius: .8em;
-    z-index: 1000;
-}
-
-.menuDesplegable ul{
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.menuDesplegable ul li{
-    border-bottom: 1px solid darkgrey;
-}
-
-.menuDesplegable ul li:hover{
-    background-color: #f0f0f0;
-}
-
-.menuDesplegable ul li:last-child{
-    border-bottom: none;
-}
-
-.superpuesta{
-    position: absolute;
-    top: -50px;
-    left: 41%;
-    height: 20%;
-    width: 17%;
-    object-fit: cover;
-    z-index: 2;
-    border-radius: 50%;
-=======
->>>>>>> develop
 }
 
 /* Estilo del enlace del header que debe estar deshabilitado (porque será el actual). */
@@ -211,6 +117,8 @@ footer{
     justify-content: space-around;
     height: 90px;
     background-color: #8D9DB6;
+    position: absolute;
+    bottom: 0;
 }
 
 
@@ -223,7 +131,7 @@ footer{
     background-attachment: fixed; /* Mantiener el degradado fijo mientras se hace scroll. */
 }
 
-.container, .pag_crearCuenta .contenido, .pag_perfil .contenido{
+.container, .pag_crearCuenta .contenido, .pag_perfil .contenido, .pag_crearPregunta .contenido{
     position: relative;
     flex-direction: column;
     text-align: center;
@@ -234,7 +142,7 @@ footer{
     margin-top: 5em;
 }
 
-.pag_crearCuenta .contenido, .pag_perfil .contenido{
+.pag_crearCuenta .contenido, .pag_perfil .contenido, .pag_crearPregunta .contenido{
     background: none;
 }
 
@@ -323,72 +231,12 @@ select{
     flex-direction: column;
 }
 
-<<<<<<< HEAD
-.info {
-    background-color: #F0F0F0;
+.info{
+    background-color: #f0f0f0;
     border-radius: 35px;
     gap: 2em;
     height: 448.66px;
     width: 800px;
-    display: flex;
-    flex-direction: column;
-    display: grid;
-    grid-template-columns: repeat(3, 20fr);
-    grid-template-rows: repeat(3, 10fr);
-}
-
-.info div{
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-}
-
-.emailDiv {
-    display: grid;
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 3;
-}
-
-.info div input, .info div label{
-    width: 100%;
-    height: 2em;
-    display: flex;
-    text-align: left;
-}
-
-.pag_perfil .contenido {
-    margin-top: 300px;
-    display: grid;
-    grid-template-columns: repeat(2, 20fr);
-}
-
-.foto {
-    display: flex;
-    flex-direction: column;
-}
-
-footer{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    position: absolute;
-    bottom: 0;
-    height: 90px;
-    background-color: #8d9db6;
-}
-
-.foto img {
-    width: 290px;
-    height: 290px;
-}
-=======
-.info{
-    background-color: #f0f0f0;
-    border-radius: 35px;
-    gap: 1em;
-    height: 20em;
-    width: 50em;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -415,12 +263,12 @@ footer{
 .foto{
     display: flex;
     flex-direction: column;
-    margin-right: 5em;
+    
 }
 
 .foto img{
-    width: 230px;
-    height: 230px;
+    width: 290px;
+    height: 290px;
 }
 
 /* TODO : CORREGIR LAS POSICIONES PARA QUE SE VEA BIEN... */
@@ -444,10 +292,8 @@ footer{
 
 .pag_perfil .contenido{
     position: relative;
-    top: -11em;
     justify-content: center;
 }
 
 
 /* TODO : Poner que se cambien de sitio los elementos dependiendo del dispositivo (ponerlo en las páginas que lo necesiten). */
->>>>>>> develop
