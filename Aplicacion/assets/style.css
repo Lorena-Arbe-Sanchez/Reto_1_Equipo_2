@@ -124,7 +124,6 @@ footer{
 
 /* MISMOS ESTILOS EN ELEMENTOS DE PÁGINAS DIFERENTES */
 
-/* TODO : ARREGLAR ESTE PORQUE SALE FONDO COMO REPETIDO ABAJO. */
 .pag_foro, .pag_crearPregunta, .pag_crearCuenta, .pag_perfil{
     background: linear-gradient(to bottom, #BCCAD6, white);
     min-height: 100vh; /* Al menos el 100% de la ventana. */

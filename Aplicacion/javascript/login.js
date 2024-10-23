@@ -1,36 +1,54 @@
-let usuario = document.getElementById("usuario");
-let contrasena = document.getElementById("contrasena");
 let botonIniciar = document.getElementById("bIniciar");
+let formulario = document.getElementById("formLogin");
 
-botonIniciar.addEventListener("click",validar)
+botonIniciar.addEventListener("click", (event) => validar(event));
 
-function validar(){
+function validar(event){
 
-    if(!usuario.value){
+    // Evitar la recarga de la página y conservar el contenido de los campos si ocurre algún error.
+    event.preventDefault();
 
-        alert("El usuario no puede estar vacio");
+    let usuario = document.getElementById("usuario").value;
+    let contrasena = document.getElementById("contrasena").value;
 
+    // Comprobar si alguna de las casillas está vacía.
+    if (!usuario || !contrasena){
+
+        if (!usuario && !contrasena) {
+            alert("Las casillas del usuario y la contraseña deben ser rellenadas.");
+            document.getElementById("usuario").focus();
+        }
+
+        else{
+            if(!usuario) {
+                alert("El usuario debe ser rellenado.");
+                document.getElementById("usuario").focus();
+            }
+            else {
+                alert("La contraseña debe ser rellenada.");
+                document.getElementById("contrasena").focus();
+            }
+        }
     }
+    else{
 
-    if(!contrasena.value){
+        // Validar la contraseña con su patrón.
 
-        alert("La contraseña no puede estar vacia");
+        // TODO : ¿Tendrían que estar encriptadas, no?
 
+        let expreg = new RegExp("^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)[A-Za-z\\d]{8,}$");
 
-    }else{
+        if(expreg.test(contrasena)){
 
+            // TODO : Habría que comprobar en la BBDD q existe...
 
-        let expreg = new RegExp("^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d).{0,}$");
+            alert("¡Bienvenido/a " +usuario+ "!");
 
-        if(expreg.test(contrasena.value)){
+            formulario.submit(); // Enviar el formulario manualmente
 
-            alert("Bienvenido " + usuario.value);
-
-
-        }else{
-
-            alert("La contraseña no es valida");
-
+        }
+        else{
+            alert("La contraseña debe ser válida.");
         }
 
     }
