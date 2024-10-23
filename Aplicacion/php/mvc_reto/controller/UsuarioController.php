@@ -24,13 +24,68 @@ class UsuarioController {
     public function getUsuario($usuario, $contrasenya) {
 
         $this->page_title = "Usuario";
-        $param = $_POST;
         $result =$this->model->getBodegaByUsuarioContrasenya($usuario, $contrasenya);
-        $_GET["responde"] = true;
+        $_GET["responde"] =  !empty($result);
         return $result;
 
     }
 
+
+    // Comprueba si es admin o no para sacar una ventana o otra
+    public function isAdmin(){
+
+        $this->page_title = "Usuario";
+        $this->view = "usuario";
+        return $this->model-> getAdminByUsuario($_GET["usuario"]);
+
+    }
+
+
+    //Crear Usuario Nuevo
+    public function create(){
+
+        $this->page_title = "Create Usuario";
+        $this->view = "create";
+
+    }
+
+
+    public function save(){
+
+        $this->page_title = "Create Usuario";
+        $this->view = "create";
+
+        $param = $_POST;
+        $id = $this-> model -> saveUsuario($param);
+        $result = $this->model->getUsuarioById($id);
+
+        $_GET["responde"] =  true;
+        return $result;
+
+    }
+
+    //Eliminar usuario
+    public function delete(){
+
+        $this->page_title = "Borrar Usuario";
+        $this->view = "delete";
+        return $this->model->deleteUsuarioById($_GET["id"]);
+
+    }
+
+
+
+    //Modificar usuario
+    public function update(){
+
+        $this->page_title = "Editar Usuario";
+        $this->view = "update";
+        $id = $this->model->updateUsuario($_GET["id"]);
+        $result = $this->model->getUsuarioById($id);
+        $_GET["responde"] =  true;
+        return $result;
+
+    }
 
 
 }
