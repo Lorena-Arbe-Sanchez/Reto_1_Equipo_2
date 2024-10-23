@@ -117,19 +117,20 @@ footer{
     justify-content: space-around;
     height: 90px;
     background-color: #8D9DB6;
+    position: absolute;
+    bottom: 0;
 }
 
 
 /* MISMOS ESTILOS EN ELEMENTOS DE PÁGINAS DIFERENTES */
 
-/* TODO : ARREGLAR ESTE PORQUE SALE FONDO COMO REPETIDO ABAJO. */
 .pag_foro, .pag_crearPregunta, .pag_crearCuenta, .pag_perfil{
     background: linear-gradient(to bottom, #BCCAD6, white);
     min-height: 100vh; /* Al menos el 100% de la ventana. */
     background-attachment: fixed; /* Mantiener el degradado fijo mientras se hace scroll. */
 }
 
-.container, .pag_crearCuenta .contenido, .pag_perfil .contenido{
+.container, .pag_crearCuenta .contenido, .pag_perfil .contenido, .pag_crearPregunta .contenido{
     position: relative;
     flex-direction: column;
     text-align: center;
@@ -140,7 +141,7 @@ footer{
     margin-top: 5em;
 }
 
-.pag_crearCuenta .contenido, .pag_perfil .contenido{
+.pag_crearCuenta .contenido, .pag_perfil .contenido, .pag_crearPregunta .contenido{
     background: none;
 }
 
@@ -232,9 +233,9 @@ select{
 .info{
     background-color: #f0f0f0;
     border-radius: 35px;
-    gap: 1em;
-    height: 20em;
-    width: 50em;
+    gap: 2em;
+    height: 448.66px;
+    width: 800px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -261,12 +262,12 @@ select{
 .foto{
     display: flex;
     flex-direction: column;
-    margin-right: 5em;
+    
 }
 
 .foto img{
-    width: 230px;
-    height: 230px;
+    width: 290px;
+    height: 290px;
 }
 
 /* TODO : CORREGIR LAS POSICIONES PARA QUE SE VEA BIEN... */
@@ -290,7 +291,6 @@ select{
 
 .pag_perfil .contenido{
     position: relative;
-    top: -11em;
     justify-content: center;
 }
 
