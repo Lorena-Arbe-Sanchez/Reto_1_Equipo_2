@@ -64,7 +64,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feature/Lorena",
+    "git-widget-placeholder": "develop",
     "last_opened_file_path": "C:/laragon/www/proyectobodegas-Lorena-Arbe-Sanchez",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -85,7 +85,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.14015.96" />
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-PS-242.21829.154" />
+        <option value="bundled-php-predefined-a98d8de5180a-4d9f4c849d09-com.jetbrains.php.sharedIndexes-PS-242.21829.154" />
       </set>
     </attachedChunks>
   </component>
@@ -104,6 +105,7 @@
       <workItem from="1729507045282" duration="188000" />
       <workItem from="1729507234761" duration="4248000" />
       <workItem from="1729528050135" duration="8194000" />
+      <workItem from="1729686267784" duration="321000" />
     </task>
     <servers />
   </component>
