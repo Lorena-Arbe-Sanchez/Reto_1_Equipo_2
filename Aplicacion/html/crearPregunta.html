@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0,
         minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Foro</title>
+    <title>Crear pregunta</title>
     <link rel="stylesheet" href="../assets/style.css">
     <link rel="icon" type="image/png" href="../assets/imagenes/icono_avion.png">
+
 </head>
-<body class="pag_foro">
+<body class="pag_crearPregunta">
 
     <main>
 
@@ -22,17 +23,14 @@
 
             <div class="d_botonesHeader">
 
-                <div class="d_botonForo" id="botonBloqueado"><a class="botonForo">Foro</a></div>
+                <div class="d_botonForo"><a href="foro.html" class="botonForo">Foro</a></div>
 
-                <!-- TODO : Poner un enlace correcto en los botones. -->
+                <!-- TODO : Enlace. -->
                 <div class="d_botonPreguntas"><a href="#" class="botonPreguntas">Preguntas frecuentes</a></div>
 
-                <div class="d_botonCrear"><a href="crearPregunta.html" class="botonCrear">Crear pregunta</a></div>
+                <div class="d_botonCrear" id="botonBloqueado"><a class="botonCrear">Crear pregunta</a></div>
 
             </div>
-
-            <!-- Botón del perfil con menú desplegable ~~> Posibles opciones ("Ver perfil", "Crear cuenta" {solo si el
-                    usuario actual es "administrador"; 'TINYINT' con valor 1 para verdadero y 0 para falso}, y "Cerrar sesión"). -->
 
             <div class="d_botonPerfil">
 
@@ -40,7 +38,6 @@
                     <img src="../assets/imagenes/perfil.png" alt="Perfil" width="50" height="50">
                 </a>
 
-                <!-- Menú desplegable -->
                 <div id="menuPerfil" class="menuDesplegable">
                     <ul>
                         <li><a href="perfil.html">Ver perfil</a></li>
@@ -55,24 +52,39 @@
 
         <div class="contenido">
 
-            <!-- TODO : Cargar de la base de datos los datos de las preguntas, respuestas y usuarios. -->
-            <!-- Título de la pregunta, tema, nombre de usuario, fecha (se guardara la del mismo día de la creación de la pregunta),
-                    descripción de la pregunta, botón de añadir respuesta, respuestas existentes con nombre de usuario, fecha,
-                    botón de 'like' y botón de 'dislike'. -->
+            <!-- TODO : <form action="index.php?controller=pregunta&action=create" method="post"> -->
+            <form>
 
-            <!-- TODO : Luego borrar; es para probar. -->
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
-                Eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
-                Nisi ut aliquip ex ea commodo consequat duis aute.
-                Irure dolor in reprehenderit in voluptate velit esse cillum.
-                Dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat.
-                Non proident sunt in culpa qui officia deserunt mollit.
-                Anim id est laborum curabitur gravida arcu ac tortor.
-                Aenean et tortor at risus viverra adipiscing at in.
-                Non tellus orci ac auctor augue mauris augue neque.
-            </p>
+                <div>
+                    <label for="enunciado">Enunciado</label>
+                    <input type="text" id="enunciado" name="enunciado" required>
+                </div>
+                <div>
+                    <label for="tema">Tema</label>
+                    <select name="tema" id="tema" required>
+                        <option value="diseno_aeronaves">Diseño y Desarrollo de Aeronaves</option>
+                        <option value="fabricacion_produccion">Fabricación y Producción</option>
+                        <option value="mantenimiento_operaciones">Mantenimiento y Operaciones</option>
+                        <option value="innovacion_sostenibilidad">Innovación y Sostenibilidad</option>
+                        <option value="certificaciones_reglamentacion">Certificaciones y Reglamentación</option>
+                        <option value="problemas_tecnicos">Problemas Técnicos y Soluciones</option>
+                        <option value="colaboracion_interdepartamental">Colaboración Interdepartamental</option>
+                        <option value="software_herramientas">Software y Herramientas de Ingeniería</option>
+                        <option value="gestion_conocimiento">Gestión del Conocimiento</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="descripcion">Descripción</label>
+                    <input type="text" id="descripcion" name="descripcion" required>
+                </div>
+
+                <!-- TODO : <input type="submit" class="bCrearPregunta" value="Crear pregunta"> -->
+                <button id="bCrearPregunta">Crear pregunta</button>
+
+                <a href="foro.html" class="bVolver">Cancelar</a>
+
+            </form>
 
         </div>
 
@@ -80,10 +92,8 @@
 
             <div class="d_telefonoEmpresa"><p>+34 945 01 01 10</p></div>
 
-            <!-- TODO : Si da tiempo y apetece se puede poner un mapa interactivo con la dirección de Egibide Arriaga en vez de texto. -->
-            <div class="d_direccionEmpresa">C/ Pozoa s/n (01013)</div>
+            <div class="d_direccionEmpresa">Dirección: C/ Pozoa s/n (01013)</div>
 
-            <!-- Poner 3 botones con el logo de cada RS, uno detrás de otro en fila. -->
             <div class="d_botonesRS">
                 <a href="https://www.facebook.com/Egibide/" class="botonRS">
                     <img src="../assets/imagenes/logo_facebook.png" alt="Facebook" width="40" height="40">
@@ -113,6 +123,7 @@
     </main>
 
     <script src="../javascript/menuPerfil.js"></script>
+    <script src="../javascript/crearPregunta.js"></script>
 
 </body>
 </html>

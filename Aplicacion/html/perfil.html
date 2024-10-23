@@ -1,15 +1,14 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0,
-        minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Foro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de usuario</title>
     <link rel="stylesheet" href="../assets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="../assets/imagenes/icono_avion.png">
 </head>
-<body class="pag_foro">
+<body class="pag_perfil">
 
     <main>
 
@@ -22,17 +21,14 @@
 
             <div class="d_botonesHeader">
 
-                <div class="d_botonForo" id="botonBloqueado"><a class="botonForo">Foro</a></div>
+                <div class="d_botonForo"><a href="foro.html" class="botonForo">Foro</a></div>
 
-                <!-- TODO : Poner un enlace correcto en los botones. -->
+                <!-- TODO : Enlace. -->
                 <div class="d_botonPreguntas"><a href="#" class="botonPreguntas">Preguntas frecuentes</a></div>
 
                 <div class="d_botonCrear"><a href="crearPregunta.html" class="botonCrear">Crear pregunta</a></div>
 
             </div>
-
-            <!-- Botón del perfil con menú desplegable ~~> Posibles opciones ("Ver perfil", "Crear cuenta" {solo si el
-                    usuario actual es "administrador"; 'TINYINT' con valor 1 para verdadero y 0 para falso}, y "Cerrar sesión"). -->
 
             <div class="d_botonPerfil">
 
@@ -40,10 +36,9 @@
                     <img src="../assets/imagenes/perfil.png" alt="Perfil" width="50" height="50">
                 </a>
 
-                <!-- Menú desplegable -->
                 <div id="menuPerfil" class="menuDesplegable">
                     <ul>
-                        <li><a href="perfil.html">Ver perfil</a></li>
+                        <li id="botonBloqueado"><a href="#">Ver perfil</a></li>
                         <li id="opcionCrearCuenta"><a href="crearCuenta.html">Crear cuenta</a></li> <!-- Solo para administradores. -->
                         <li><a href="login.html">Cerrar sesión</a></li>
                     </ul>
@@ -53,37 +48,59 @@
 
         </header>
 
+
         <div class="contenido">
 
-            <!-- TODO : Cargar de la base de datos los datos de las preguntas, respuestas y usuarios. -->
-            <!-- Título de la pregunta, tema, nombre de usuario, fecha (se guardara la del mismo día de la creación de la pregunta),
-                    descripción de la pregunta, botón de añadir respuesta, respuestas existentes con nombre de usuario, fecha,
-                    botón de 'like' y botón de 'dislike'. -->
+            <div class="foto">
+                <img src="../assets/imagenes/perfil.png" alt="Imagen perfil">
 
-            <!-- TODO : Luego borrar; es para probar. -->
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
-                Eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
-                Nisi ut aliquip ex ea commodo consequat duis aute.
-                Irure dolor in reprehenderit in voluptate velit esse cillum.
-                Dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat.
-                Non proident sunt in culpa qui officia deserunt mollit.
-                Anim id est laborum curabitur gravida arcu ac tortor.
-                Aenean et tortor at risus viverra adipiscing at in.
-                Non tellus orci ac auctor augue mauris augue neque.
-            </p>
+                <form>
+                    <button id="anadirImg">+ Añadir imagen</button>
+                </form>
+            </div>
+
+            <div class="info">
+
+                <div class="usuarioDiv">
+                    <label for="usuario">Usuario</label>
+                    <input type="text" id="usuario" name="usuario" readonly>
+                </div>
+                <div class="nombreDiv">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" readonly>
+                </div>
+                <div class="primerApeDiv">
+                    <label for="primerApellido">Primer apellido</label>
+                    <input type="text" id="primerApellido" name="primerApellido" readonly>
+                </div>
+                <div class="segundoApeDiv">
+                    <label for="segundoApellido">Segundo apellido</label>
+                    <input type="text" id="segundoApellido" name="segundoApellido" readonly>
+                </div>
+                <div class="dniDiv">
+                    <label for="DNI">DNI</label>
+                    <input type="text" id="DNI" name="DNI" readonly>
+                </div>
+                <div class="telefonoDiv">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" readonly>
+                </div>
+                <div class="emailDiv">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" readonly>
+                </div>
+
+            </div>
 
         </div>
+
 
         <footer>
 
             <div class="d_telefonoEmpresa"><p>+34 945 01 01 10</p></div>
 
-            <!-- TODO : Si da tiempo y apetece se puede poner un mapa interactivo con la dirección de Egibide Arriaga en vez de texto. -->
-            <div class="d_direccionEmpresa">C/ Pozoa s/n (01013)</div>
+            <div class="d_direccionEmpresa">Dirección: C/ Pozoa s/n (01013)</div>
 
-            <!-- Poner 3 botones con el logo de cada RS, uno detrás de otro en fila. -->
             <div class="d_botonesRS">
                 <a href="https://www.facebook.com/Egibide/" class="botonRS">
                     <img src="../assets/imagenes/logo_facebook.png" alt="Facebook" width="40" height="40">
