@@ -14,7 +14,7 @@ class UsuarioController {
     public function __construct() {
 
         $this->page_title = "";
-        $this->view = "usuario";
+        $this->view = "login";
         $this->model = new Usuario();
 
     }
@@ -31,7 +31,10 @@ class UsuarioController {
 
     }
 
-
+    public function login(){
+        $this->view= "login";
+        $this->page_title = "Inicia sesión";
+    }
 
 }
 
