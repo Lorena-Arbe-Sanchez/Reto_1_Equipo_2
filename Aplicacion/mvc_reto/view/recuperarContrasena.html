@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recuperar contraseña</title>
-    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="icon" type="image/png" href="../assets/imagenes/icono_avion.png">
 </head>
 <body>
@@ -34,7 +34,7 @@
 
     </div>
 
-    <script src="../javascript/recuperarContrasena.js"></script>
+    <script src="../assets/javascript/recuperarContrasena.js"></script>
 
 </body>
 </html>
