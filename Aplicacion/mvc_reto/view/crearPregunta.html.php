@@ -6,7 +6,7 @@
         minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Crear pregunta</title>
-    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="icon" type="image/png" href="../assets/imagenes/icono_avion.png">
 
 </head>
@@ -124,8 +124,8 @@
 
     </main>
 
-    <script src="../javascript/menuPerfil.js"></script>
-    <script src="../javascript/crearPregunta.js"></script>
+    <script src="../assets/javascript/menuPerfil.js"></script>
+    <script src="../assets/javascript/crearPregunta.js"></script>
 
 </body>
 </html>

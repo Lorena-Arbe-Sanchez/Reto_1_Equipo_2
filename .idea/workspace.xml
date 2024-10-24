@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6abb039-d7f5-4f73-8b47-492ba288a50f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="b6abb039-d7f5-4f73-8b47-492ba288a50f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,8 +56,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "develop",
-    "last_opened_file_path": "C:/Users/Lorena/Downloads/Ejercicios_DWEC",
+    "git-widget-placeholder": "Merging develop",
+    "last_opened_file_path": "C:/Users/2gdaw03/Desktop/Reto_1_Equipo_2/Aplicacion/mvc_reto/view/layout",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -70,9 +68,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\2gdaw03\Desktop\Reto_1_Equipo_2\Aplicacion\mvc_reto\view\layout" />
       <recent name="C:\Users\2gdaw03\Desktop\Reto_1_Equipo_2\Aplicacion\html" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\2gdaw03\Desktop\Reto_1_Equipo_2\Aplicacion\php\mvc_reto\assets\css" />
+      <recent name="C:\Users\2gdaw03\Desktop\Reto_1_Equipo_2\Aplicacion\php\mvc_reto\assets" />
+      <recent name="C:\Users\2gdaw03\Desktop\Reto_1_Equipo_2\Aplicacion\php\mvc_reto\view" />
+      <recent name="C:\Users\2gdaw03\Desktop\Reto_1_Equipo_2\Aplicacion\php\mvc_reto" />
       <recent name="C:\Users\2gdaw03\Desktop\Reto_1_Equipo_2\Aplicacion\assets\imagenes" />
     </key>
   </component>
