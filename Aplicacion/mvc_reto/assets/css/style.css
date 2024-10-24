@@ -12,7 +12,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url("fondo5_gif.gif");
+    background-image: url("../imagenes/fondo5_gif.gif");
     background-size: cover; /* Cubrir toda la pantalla */
     background-position: center; /* Centrar el GIF. */
     background-attachment: fixed; /* Fijar el fondo para que no se desplace con el scroll. */
