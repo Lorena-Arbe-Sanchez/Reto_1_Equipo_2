@@ -6,9 +6,36 @@
   <component name="ChangeListManager">
     <list default="true" id="b6abb039-d7f5-4f73-8b47-492ba288a50f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/assets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/assets/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/html/crearCuenta.html" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/html/crearCuenta.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/javascript/crearCuenta.js" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/javascript/crearCuenta.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/assets/imagenes/cielo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/cielo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/assets/imagenes/fondo1_gif.gif" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/fondo1_gif.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/assets/imagenes/fondo2_gif.gif" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/fondo2_gif.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/assets/imagenes/fondo3_gif.gif" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/fondo3_gif.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/assets/imagenes/fondo4_gif.gif" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/fondo4_gif.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/assets/imagenes/fondo5_gif.gif" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/fondo5_gif.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/assets/imagenes/fondo_azul.png" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/fondo_azul.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/assets/imagenes/icono_avion.png" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/icono_avion.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/assets/imagenes/logo_empresa.png" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/logo_empresa.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/assets/imagenes/logo_empresa_conFondo.png" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/logo_empresa_conFondo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/assets/imagenes/logo_equipo2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/logo_equipo2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/assets/imagenes/logo_facebook.png" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/logo_facebook.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/assets/imagenes/logo_instagram.png" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/logo_instagram.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/assets/imagenes/logo_linkedin.png" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/logo_linkedin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/assets/imagenes/logo_x.png" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/logo_x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/assets/imagenes/logo_youtube.png" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/logo_youtube.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/assets/imagenes/perfil.png" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/perfil.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/assets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/html/crearCuenta.html" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/view/crearCuenta.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/html/crearPregunta.html" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/view/crearPregunta.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/html/foro.html" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/view/foro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/view/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/html/perfil.html" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/view/perfil.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/html/recuperarContrasena.html" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/view/recuperarContrasena.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/javascript/crearCuenta.js" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/javascript/crearCuenta.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/javascript/crearPregunta.js" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/javascript/crearPregunta.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/javascript/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/javascript/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/javascript/menuPerfil.js" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/javascript/menuPerfil.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/javascript/recuperarContrasena.js" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/javascript/recuperarContrasena.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/php/ejemplo.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,25 +84,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feature/Lorena",
-    "last_opened_file_path": "C:/Users/Lorena/Downloads/Ejercicios_DWEC",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/Lorena&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lorena/Downloads/Ejercicios_DWEC&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\2gdaw03\Desktop\Reto_1_Equipo_2\Aplicacion\html" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\2gdaw03\Desktop\Reto_1_Equipo_2\Aplicacion\php\mvc_reto\assets\css" />
+      <recent name="C:\Users\2gdaw03\Desktop\Reto_1_Equipo_2\Aplicacion\php\mvc_reto\assets" />
+      <recent name="C:\Users\2gdaw03\Desktop\Reto_1_Equipo_2\Aplicacion\php\mvc_reto\view" />
+      <recent name="C:\Users\2gdaw03\Desktop\Reto_1_Equipo_2\Aplicacion\php\mvc_reto" />
       <recent name="C:\Users\2gdaw03\Desktop\Reto_1_Equipo_2\Aplicacion\assets\imagenes" />
     </key>
   </component>
