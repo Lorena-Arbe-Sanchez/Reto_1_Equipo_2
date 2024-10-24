@@ -58,6 +58,14 @@
 
             <div class="mitad contenido1">
 
+                <!-- TODO : Comprobar que sea así como se pone una caja de búsqueda + implementar. -->
+                <div class="busqueda">
+                    <form method="GET" action="index.php">
+                        <input type="text" name="search" placeholder="Buscar por DNI, Nombre, Email..." value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>">
+                        <input type="submit" value="Buscar">
+                    </form>
+                </div>
+
                 <?php
                 // Si el array '$dataToView' del 'index.php' tiene filas (la función "list()" del "UserController" obtiene resultados), entonces se creará la tabla.
                 if(count($dataToView["data"])>0){

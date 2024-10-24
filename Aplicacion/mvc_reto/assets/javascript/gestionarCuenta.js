@@ -13,6 +13,7 @@ let contador = 0;
 
 let botonCrear = document.getElementById("bCrear");
 let botonEditar = document.getElementById("bEditar");
+let formulario = document.getElementById("formRegistro");
 
 // Si se selecciona el botón de crear o de editar --> se tendrá que mostrar el contenedor nº2.
 botonCrear.addEventListener("click", mostrarContenedor2);
@@ -23,30 +24,25 @@ function mostrarContenedor2(e){
 
     if (e.target.id === "bCrear")
         botonAccion.value = "Registrar";
-    else
+    else{
         botonAccion.value = "Modificar";
+        // TODO : Rellenar las casillas con los datos existentes.
+    }
 
-    botonAccion.addEventListener("click", (event) => validarRegistro(event));
+    botonAccion.addEventListener("click", (event) => validarDatos(event, e.target.id));
 
     // Volver visible el contenedor.
     document.getElementById("contenedor2").style.display = "flex";
 }
 
-
-
-
-
-
-
-
-function validarRegistro(event){
+function validarDatos(event, idBoton){
 
     event.preventDefault();
 
     let dniCasilla = document.getElementById("dni");
     let dni = dni.value;
-    let administradorCasilla = document.getElementById("administrador");
-    let administrador = administrador.value;
+    let administradorCasilla = document.querySelectorAll('input[name="admin"]');
+    let adminSeleccionado = [...administradorCasilla].find(radio => radio.checked).value;
     let nombreCasilla = document.getElementById("nombre");
     let nombre = nombre.value;
     let primerApellidoCasilla = document.getElementById("primerApellido");
@@ -111,8 +107,42 @@ function validarRegistro(event){
         }
     }
 
+    // Si no hay errores (casillas vacías y/o patrones incorrectos), se creará o actualizará la cuenta.
     if(contador === 0){
-        alert("Registro realizado correctamente.")
+
+        if (idBoton === "bCrear"){
+
+            // TODO : Habría que hacer un 'insert' en la BBDD...
+
+            crearUsuario();
+
+            alert("Registro realizado correctamente.");
+            //formulario.submit();
+
+        }
+        else{
+
+            // TODO : Habría que hacer un 'update' en la BBDD...
+
+            editarUsuario();
+
+            alert("Modificación realizada correctamente.");
+
+        }
+
     }
+
+}
+
+/*
+crearUsuario(): Debería enviar una petición al backend para registrar el nuevo usuario en la base de datos.
+editarUsuario(): Debería enviar los cambios al servidor, haciendo una actualización (UPDATE) en la base de datos.
+ */
+
+function crearUsuario(){
+
+}
+
+function editarUsuario(){
 
 }

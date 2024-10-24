@@ -12,8 +12,8 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url("../imagenes/fondo5_gif.gif");
-    background-size: cover; /* Cubrir toda la pantalla */
+    background-image: url("../imagenes/fondo4_gif.gif"); /* TODO : Mirar por qué a veces sale otro fondo. */
+    background-size: cover; /* Cubrir toda la pantalla. */
     background-position: center; /* Centrar el GIF. */
     background-attachment: fixed; /* Fijar el fondo para que no se desplace con el scroll. */
     background-repeat: no-repeat;
@@ -189,7 +189,7 @@ form{
 div{
     display: flex;
     align-items: center;
-    padding: 1em;
+    padding: .8em;
     justify-content: center;
 }
 
@@ -203,7 +203,7 @@ label{
 }
 
 button, input[type="submit"], .botonGuardar{
-    margin-top: 2em;
+    margin-top: 1em;
     padding: .7em;
     font-size: 1em;
     background-color: #8D9DB6;
@@ -357,4 +357,22 @@ select{
 
 #contenedor2{
     visibility: hidden; /* Ocultar el elemento, pero sigue ocupando espacio en el diseño. */
+}
+
+.pag_login .container{
+    min-width: 20%;
+}
+
+#formLogin div{
+    flex-direction: column;
+}
+
+#formLogin .fila_datos{
+    flex-direction: row;
+}
+
+#formLogin .mensajeError{
+    color: red;
+    font-size: 0.8em;
+    display: block;
 }

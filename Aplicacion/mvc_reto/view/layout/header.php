@@ -11,7 +11,6 @@ También se le pasará una variable llamada "botonBloqueado" para que controle l
         minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Aergibide</title>
-    <!-- TODO : ¿ "../../assets/css/style.css" ? -->
     <link rel="stylesheet" href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/css/style.css">
     <link rel="icon" type="image/png" href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/icono_avion.png">
 </head>

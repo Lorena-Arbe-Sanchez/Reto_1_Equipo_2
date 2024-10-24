@@ -17,14 +17,21 @@
     <img src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/logo_empresa_conFondo.png" class="superpuesta" alt="Logo Aergibide SL">
 
     <!-- TODO : <form action="index.php?controller=user&action=login" method="post"> -->
-    <form id="formLogin" action="index.php?controller=usuario&action=login" method="post">
+    <form id="formLogin" action="index.php?controller=usuario&action=foro" method="post">
         <div>
-            <label for="usuario">Usuario</label>
-            <input type="text" id="usuario" name="usuario" required>
+            <div class="fila_datos">
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario" name="usuario" required>
+            </div>
+            <!-- Etiqueta en la que se escribirá el error si ocurre. -->
+            <div id="mensajeErrorUsuario" class="mensajeError"></div>
         </div>
         <div>
-            <label for="contrasena">Contraseña</label>
-            <input type="password" id="contrasena" name="contrasena" required>
+            <div class="fila_datos">
+                <label for="contrasena">Contraseña</label>
+                <input type="password" id="contrasena" name="contrasena" required>
+            </div>
+            <div id="mensajeErrorContrasena" class="mensajeError"></div>
         </div>
 
         <input type="submit" id="bIniciar" class="bIniciar" value="Iniciar sesión">

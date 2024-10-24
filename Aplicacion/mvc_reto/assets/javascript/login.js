@@ -8,6 +8,9 @@ function validar(event){
     // Evitar la recarga de la página y conservar el contenido de los campos si ocurre algún error.
     event.preventDefault();
 
+    document.getElementById("mensajeErrorUsuario").innerText = "";
+    document.getElementById("mensajeErrorContrasena").innerText = "";
+
     let usuario = document.getElementById("usuario").value;
     let contrasena = document.getElementById("contrasena").value;
 
@@ -15,17 +18,18 @@ function validar(event){
     if (!usuario || !contrasena){
 
         if (!usuario && !contrasena){
-            // TODO : Se puede poner un estilo a los "alert".
-            alert("Las casillas del usuario y la contraseña deben ser rellenadas.");
+            document.getElementById("mensajeErrorContrasena").innerText =
+                "Las casillas del usuario y la contraseña deben ser rellenadas.";
             document.getElementById("usuario").focus();
         }
         else{
             if(!usuario){
-                alert("El usuario debe ser rellenado.");
+                document.getElementById("mensajeErrorUsuario").innerText = "El usuario debe ser rellenado.";
                 document.getElementById("usuario").focus();
             }
-            else{
-                alert("La contraseña debe ser rellenada.");
+            if(!contrasena){
+                document.getElementById("mensajeErrorContrasena").innerText =
+                    "La contraseña debe ser rellenada.";
                 document.getElementById("contrasena").focus();
             }
         }
@@ -35,6 +39,9 @@ function validar(event){
         // Validar la contraseña con su patrón.
 
         // TODO : ¿Tendrían que estar encriptadas, no?
+        /*
+        password_hash() en PHP para su almacenamiento y password_verify() para su verificación.
+         */
 
         let expreg = new RegExp("^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)[A-Za-z\\d]{8,}$");
 
@@ -48,7 +55,8 @@ function validar(event){
 
         }
         else{
-            alert("La contraseña debe ser válida.");
+            document.getElementById("mensajeErrorContrasena").innerText = "La contraseña debe ser válida.";
+            document.getElementById("contrasena").focus();
         }
 
     }
