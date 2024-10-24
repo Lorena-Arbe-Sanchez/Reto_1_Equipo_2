@@ -1,4 +1,9 @@
-<!doctype html>
+<!-- TODO
+Va a haber que poner una variable de "$title" en "<title>" para los títulos de las páginas que van cambiando.
+También se le pasará una variable llamada "botonBloqueado" para que controle la página actual el en menú del header.
+-->
+
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +11,7 @@
         minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Aergibide</title>
+    <!-- TODO : ¿ "../../assets/css/style.css" ? -->
     <link rel="stylesheet" href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/css/style.css">
     <link rel="icon" type="image/png" href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/icono_avion.png">
 </head>
@@ -42,7 +48,7 @@
                 <div id="menuPerfil" class="menuDesplegable">
                     <ul>
                         <li><a href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/view/perfil.html">Ver perfil</a></li>
-                        <li id="opcionCrearCuenta"><a href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/view/crearCuenta.html">Crear cuenta</a></li> <!-- Solo para administradores. -->
+                        <li id="opcionCrearCuenta"><a href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/view/crearCuenta.html">Gestionar cuentas</a></li> <!-- Solo para administradores. -->
                         <li><a href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/view/login.html">Cerrar sesión</a></li>
                     </ul>
                 </div>

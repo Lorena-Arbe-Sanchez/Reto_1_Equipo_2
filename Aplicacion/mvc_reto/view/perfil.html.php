@@ -39,7 +39,7 @@
                 <div id="menuPerfil" class="menuDesplegable">
                     <ul>
                         <li id="botonBloqueado"><a href="#">Ver perfil</a></li>
-                        <li id="opcionCrearCuenta"><a href="crearCuenta.html">Crear cuenta</a></li> <!-- Solo para administradores. -->
+                        <li id="opcionCrearCuenta"><a href="crearCuenta.html">Gestionar cuentas</a></li>
                         <li><a href="login.html">Cerrar sesión</a></li>
                     </ul>
                 </div>

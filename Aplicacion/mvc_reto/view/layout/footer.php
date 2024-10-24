@@ -3,4 +3,4 @@
 </html> <!-- Cerrar "<html>" -->
 
 
-<!-- TODO : Cambiar. -->
+<!-- TODO : Cambiar según convenga. -->

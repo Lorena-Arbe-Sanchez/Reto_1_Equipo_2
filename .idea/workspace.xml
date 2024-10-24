@@ -5,7 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6abb039-d7f5-4f73-8b47-492ba288a50f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/gestionarCuenta.html.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Base_datos/base_datos_reto1_laragon.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/crearCuenta.js" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/crearCuenta.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/crearCuenta.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/crearPregunta.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/crearPregunta.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/foro.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/foro.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/layout/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/layout/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/layout/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/layout/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/perfil.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/perfil.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base_datos/base_datos_reto1.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Base_datos/base_datos_reto1_phpMyAdmin.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,8 +69,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "develop",
-    "last_opened_file_path": "C:/Users/2gdaw03/Desktop/Reto_1_Equipo_2/Aplicacion/mvc_reto/view/layout",
+    "git-widget-placeholder": "feature/Lorena",
+    "last_opened_file_path": "C:/Users/Lorena/Desktop/Proyecto1/Reto_1_Equipo_2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -105,6 +116,7 @@
       <workItem from="1729507234761" duration="4248000" />
       <workItem from="1729528050135" duration="8194000" />
       <workItem from="1729686267784" duration="1042000" />
+      <workItem from="1729786522788" duration="5132000" />
     </task>
     <servers />
   </component>

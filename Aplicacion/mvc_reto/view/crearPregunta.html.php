@@ -41,7 +41,7 @@
                 <div id="menuPerfil" class="menuDesplegable">
                     <ul>
                         <li><a href="perfil.html">Ver perfil</a></li>
-                        <li id="opcionCrearCuenta"><a href="crearCuenta.html">Crear cuenta</a></li> <!-- Solo para administradores. -->
+                        <li id="opcionCrearCuenta"><a href="crearCuenta.html">Gestionar cuentas</a></li> <!-- Solo para administradores. -->
                         <li><a href="login.html">Cerrar sesión</a></li>
                     </ul>
                 </div>

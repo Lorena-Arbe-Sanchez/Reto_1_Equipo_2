@@ -69,6 +69,7 @@ header a{
     /* TODO : Mirar si los 2 siguientes son compatibles con otros navegadores. */
     pointer-events: none; /* Desactivar el clic. */
     cursor: not-allowed; /* Cambiar el cursor a "no permitido". */
+    text-align: center;
 }
 
 /* Estilo de los enlaces del header cuando se pase el cursor por encima. */
@@ -128,13 +129,13 @@ footer{
 
 /* MISMOS ESTILOS EN ELEMENTOS DE PÁGINAS DIFERENTES (Y PROPIEDADES RELACIONADAS CON LOS CONTENIDOS) */
 
-.pag_foro, .pag_crearPregunta, .pag_crearCuenta, .pag_perfil{
+.pag_foro, .pag_crearPregunta, .pag_gestionarCuenta, .pag_perfil{
     background: linear-gradient(to bottom, #BCCAD6, white);
     min-height: 100vh; /* Al menos el 100% de la ventana. */
     background-attachment: fixed; /* Mantiener el degradado fijo mientras se hace scroll. */
 }
 
-.container, .pag_crearCuenta .contenido, .pag_perfil .contenido, .pag_crearPregunta .contenido{
+.container, .pag_perfil .contenido, .pag_crearPregunta .contenido{
     position: relative;
     flex-direction: column;
     text-align: center;
@@ -146,11 +147,11 @@ footer{
     margin-top: 5em;
 }
 
-.pag_crearCuenta .contenido, .pag_perfil .contenido, .pag_crearPregunta .contenido{
+.pag_perfil .contenido, .pag_crearPregunta .contenido{
     background-color: #8d9db67e;
 }
 
-.pag_crearCuenta .contenido {
+.pag_gestionarCuenta .contenido{
     height: 70vh;
 }
 
@@ -185,11 +186,6 @@ form{
     align-items: center;
 }
 
-form #crear{
-    padding: 0;
-
-}
-
 div{
     display: flex;
     align-items: center;
@@ -206,16 +202,17 @@ label{
     font-weight: bold;
 }
 
-button, input[type="submit"]{
+button, input[type="submit"], .botonGuardar{
     margin-top: 2em;
     padding: .7em;
     font-size: 1em;
     background-color: #8D9DB6;
     border-color: #BCCAD6;
     font-style: oblique;
+    text-decoration: none;
 }
 
-#bRegistrar, #bModificar {
+#bRegistrar, #bModificar{
     margin-top: 0;
 }
 
@@ -301,9 +298,9 @@ select{
     justify-content: center;
 }
 
-.pag_crearCuenta .contenido{
+.pag_gestionarCuenta .contenido{
     position: relative;
-    top: 5em;
+    top: 15em;
     justify-content: center;
 }
 
@@ -312,6 +309,52 @@ select{
     justify-content: center;
 }
 
-#anadirImg {
+#anadirImg{
     margin-top: 0;
+}
+
+/* De la página de la gestión de cuentas (mitad con datos cuentas {lista}, y mitad con datos de 1 cuenta {casillas}). */
+
+.pag_gestionarCuenta .contenido{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.pag_gestionarCuenta .mitades{
+    display: flex;
+    width: 100%;
+    gap: 2em;
+}
+
+.pag_gestionarCuenta .mitad{
+    flex: 1;
+    background-color: #8d9db67e;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #667292;
+}
+
+.pag_gestionarCuenta .contenido1{
+    max-width: 50%;
+    min-width: 40%;
+}
+
+.pag_gestionarCuenta .contenido2{
+    flex-grow: 1;
+}
+
+.pag_gestionarCuenta #bCrear{
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    margin-top: 2em;
+    font-size: 1em;
+    background-color: #F1E3DD;
+    color: black;
+    border: 1px solid black;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#contenedor2{
+    visibility: hidden; /* Ocultar el elemento, pero sigue ocupando espacio en el diseño. */
 }

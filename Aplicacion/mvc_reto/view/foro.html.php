@@ -1,6 +1,5 @@
 <?php require_once "layout/header.php"; ?>
 
-
         <div class="contenido">
 
             <!-- TODO : Cargar de la base de datos los datos de las preguntas, respuestas y usuarios. -->
@@ -28,7 +27,7 @@
 
             <div class="d_telefonoEmpresa"><p>+34 945 01 01 10</p></div>
 
-            <!-- TODO : Si da tiempo y apetece se puede poner un mapa interactivo con la dirección de Egibide Arriaga en vez de texto. -->
+            <!-- TODO : Si da tiempo y apetece se puede poner un mapa interactivo con la dirección de Egibide Arriaga en vez de texto. (O si no otra cosa) -->
             <div class="d_direccionEmpresa">C/ Pozoa s/n (01013)</div>
 
             <!-- Poner 3 botones con el logo de cada RS, uno detrás de otro en fila. -->
