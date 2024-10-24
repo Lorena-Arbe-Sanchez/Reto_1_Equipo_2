@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e568b353-a766-49fa-928b-f16ae453db24" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../.idea/Reto_1_Equipo_2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/imagenes/fondo1_gif.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/imagenes/fondo2_gif.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/imagenes/fondo3_gif.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/imagenes/fondo4_gif.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/imagenes/fondo5_gif.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/imagenes/fondo_azul.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/imagenes/icono_avion.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/imagenes/logo_empresa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/imagenes/logo_empresa_conFondo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/imagenes/logo_equipo2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/imagenes/logo_facebook.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/imagenes/logo_instagram.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/imagenes/logo_linkedin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/imagenes/logo_x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/imagenes/logo_youtube.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/javascript/crearCuenta.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/javascript/crearPregunta.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/javascript/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/javascript/menuPerfil.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/javascript/recuperarContrasena.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/crearCuenta.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/crearPregunta.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/foro.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/perfil.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/recuperarContrasena.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/imagenes/cielo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/imagenes/cielo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/imagenes/perfil.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/imagenes/perfil.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html/crearCuenta.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html/recuperarContrasena.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javascript/crearCuenta.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javascript/login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javascript/recuperarContrasena.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ejemplo.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/PreguntasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/PreguntasController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/RespuestaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/RespuestaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/UsuarioController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/UsuarioController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Pregunta.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Pregunta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Respuesta.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Respuesta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Usuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Usuario.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/db.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2nmW2s6j0JN7e03tNFZbpsxcvDg" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Merging feature/Aritz",
+    "last_opened_file_path": "C:/ARITZ/DAW/Segundo/Reto1/Reto_1_Equipo_2/Aplicacion/php/mvc_reto",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-PS-242.21829.154" />
+        <option value="bundled-php-predefined-a98d8de5180a-4d9f4c849d09-com.jetbrains.php.sharedIndexes-PS-242.21829.154" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e568b353-a766-49fa-928b-f16ae453db24" name="Changes" comment="" />
+      <created>1729578527779</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1729578527779</updated>
+      <workItem from="1729578528839" duration="8050000" />
+      <workItem from="1729664288524" duration="515000" />
+      <workItem from="1729664809302" duration="12182000" />
+      <workItem from="1729751092288" duration="8995000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
