@@ -17,7 +17,7 @@ class Pregunta{
 
     public function getPregunta(){
 
-        $sql = "SELECT * FROM $this->tabla";
+        $sql = "SELECT * FROM " . $this->tabla;
 
         $stml = $this -> connection -> prepare($sql);
         $stml -> execute();
@@ -25,8 +25,19 @@ class Pregunta{
 
     }
 
-    public function save($param){
 
+
+    //Para sacar las preguntas fecuentes (Con los likes)
+    public function getPreguntaFrecuentes(){
+
+        $sql = "SELECT * FROM " . $this->tabla . "ORDER BY votosLike DESC";
+        $stml = $this -> connection -> prepare($sql);
+        $stml -> execute();
+        return $stml -> fetchAll();
+
+    }
+
+    public function save($param){
 
         $titulo = $descripcion = $tema = $fecha = $id_usuario = $archivo = $votosLike = $votosDislike = "";
 
@@ -44,11 +55,30 @@ class Pregunta{
                 values(?,?,?,?,?,?,?,?)";
 
         $stm = $this -> connection -> prepare($sql);
-
         $stm -> execute([$titulo,$descripcion,$tema,$fecha,$id_usuario,$archivo,$votosLike,$votosDislike]);
 
         $id = $this -> connection -> lastInsertId();
         return $id;
+
+    }
+
+
+    public function getPreguntaById($id){
+
+        $sql = "SELECT * FROM $this->tabla WHERE id=$id";
+        $stml = $this -> connection -> prepare($sql);
+        $stml -> execute([$id]);
+        return $stml -> fetch();
+
+    }
+
+
+    public function deleteUsuario($id){
+
+        $sql = "Detele from " . $this -> tabla . "WHERE id=$id";
+        $stmt = $this -> connection -> prepare($sql);
+        $stmt -> execute([$id]);
+        return $stmt -> fetch();
 
     }
 

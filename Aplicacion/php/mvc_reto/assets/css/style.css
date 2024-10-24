@@ -1,0 +1,317 @@
+/* ESTILOS GENERALES (PARA TODAS LAS VENTANAS) */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("fondo5_gif.gif");
+    background-size: cover; /* Cubrir toda la pantalla */
+    background-position: center; /* Centrar el GIF. */
+    background-attachment: fixed; /* Fijar el fondo para que no se desplace con el scroll. */
+    background-repeat: no-repeat;
+}
+
+main{
+    width: 100%;
+    height: 100%;
+}
+
+
+/* HEADER, FOOTER E HIJOS */
+
+/* TODO : Poner que se empequeñezca el contenido con cambio del tamaño de la página. */
+/* TODO : Poner que se cambien de sitio los elementos dependiendo del dispositivo (ponerlo en las páginas que lo necesiten). */
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid black;
+    position: fixed;
+    background-color: #c8d4e1;
+    z-index: 2;
+}
+
+header a{
+    text-decoration: none;
+    background-color: white;
+    width: 120px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.d_botonPreguntas{
+    text-align: center;
+}
+
+.d_botonesRS{
+    gap: .5em;
+}
+
+.d_botonesHeader a{
+    border-radius: 10px;
+}
+
+/* Estilo del enlace del header que debe estar deshabilitado (porque será el actual). */
+#botonBloqueado a{
+    background-color: #96A2AB;
+    color: white;
+    /* TODO : Mirar si los 2 siguientes son compatibles con otros navegadores. */
+    pointer-events: none; /* Desactivar el clic. */
+    cursor: not-allowed; /* Cambiar el cursor a "no permitido". */
+}
+
+/* Estilo de los enlaces del header cuando se pase el cursor por encima. */
+.d_botonForo:hover a, .d_botonPreguntas:hover a, .d_botonCrear:hover a{
+    background-color: #8D9DB6;
+}
+
+/* Estilos del botón de perfil y el menú desplegable. */
+
+.d_botonPerfil a{ background: none; }
+
+.d_botonPerfil{
+    position: relative; /* Para posicionar el menú desplegable. */
+}
+
+.menuDesplegable{
+    display: none; /* El menú está oculto por defecto. */
+    position: absolute;
+    top: 95px; /* Debajo del botón de perfil. */
+    right: 0;
+    background-color: #fff;
+    border: .2em solid gainsboro;
+    box-shadow: 0 7px 30px #667292;
+    border-radius: .8em;
+    z-index: 3;
+}
+
+.menuDesplegable ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menuDesplegable ul li{
+    border-bottom: 1px solid darkgrey;
+}
+
+.menuDesplegable ul li:hover{
+    background-color: #f0f0f0;
+}
+
+.menuDesplegable ul li:last-child{
+    border-bottom: none;
+}
+
+footer{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    height: 90px;
+    background-color: #8D9DB6;
+    position: absolute;
+    bottom: 0;
+    border-top: 1px solid black;
+}
+
+
+/* MISMOS ESTILOS EN ELEMENTOS DE PÁGINAS DIFERENTES (Y PROPIEDADES RELACIONADAS CON LOS CONTENIDOS) */
+
+.pag_foro, .pag_crearPregunta, .pag_crearCuenta, .pag_perfil{
+    background: linear-gradient(to bottom, #BCCAD6, white);
+    min-height: 100vh; /* Al menos el 100% de la ventana. */
+    background-attachment: fixed; /* Mantiener el degradado fijo mientras se hace scroll. */
+}
+
+.container, .pag_crearCuenta .contenido, .pag_perfil .contenido, .pag_crearPregunta .contenido{
+    position: relative;
+    flex-direction: column;
+    text-align: center;
+    background-color: #BCCAD6;
+    padding: 2em;
+    border-radius: 10px;
+    border: 1px solid #667292;
+    z-index: 1;
+    margin-top: 5em;
+}
+
+.pag_crearCuenta .contenido, .pag_perfil .contenido, .pag_crearPregunta .contenido{
+    background-color: #8d9db67e;
+}
+
+.pag_crearCuenta .contenido {
+    height: 70vh;
+}
+
+.contenido{
+    height: auto;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.pag_perfil .contenido{
+    margin-top: 300px;
+    display: grid;
+    grid-template-columns: repeat(2, 20fr);
+}
+
+.bVolver{
+    margin: 1em;
+    padding: .7em;
+    text-decoration: none;
+    background-color: rgba(141, 157, 182, 0.62);
+    border: .1em solid #8D9DB6;
+    border-radius: 1.5em;
+}
+
+
+/* ETIQUETAS O ELEMENTOS CONCRETOS */
+
+form{
+    padding: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form #crear{
+    padding: 0;
+
+}
+
+div{
+    display: flex;
+    align-items: center;
+    padding: 1em;
+    justify-content: center;
+}
+
+div input[type="radio"]{
+    margin-left: 25px;
+}
+
+label{
+    width: 150px;
+    font-weight: bold;
+}
+
+button, input[type="submit"]{
+    margin-top: 2em;
+    padding: .7em;
+    font-size: 1em;
+    background-color: #8D9DB6;
+    border-color: #BCCAD6;
+    font-style: oblique;
+}
+
+#bRegistrar, #bModificar {
+    margin-top: 0;
+}
+
+a{ color: black; }
+
+select{
+    font-size: 1em;
+}
+
+.superpuesta{
+    position: absolute;
+    top: -4em;
+    justify-content: center;
+    height: 100px;
+    width: 220px;
+    z-index: 2;
+    border-radius: 15px;
+}
+
+#titulo h2{
+    margin-bottom: -40px;
+}
+
+#datos{
+    display: flex;
+    flex-direction: column;
+}
+
+.info{
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    border: 1px solid #667292;
+    gap: 2em;
+    height: 448.66px;
+    width: 800px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.info div{
+    display: flex;
+    flex-direction: column;
+}
+
+.emailDiv{
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+}
+
+.info div input, .info div label{
+    width: 100%;
+    height: 2em;
+    text-align: left;
+}
+
+.foto{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+
+}
+
+.foto img{
+    width: 290px;
+    height: 290px;
+    border-radius: 100%;
+    box-shadow: 0 0 2em 0.5em #667292;
+
+}
+
+.pag_foro .contenido{
+    position: relative;
+    top: 15em;
+    justify-content: center;
+}
+
+.pag_crearPregunta .contenido{
+    position: relative;
+    top: 6em;
+    justify-content: center;
+}
+
+.pag_crearCuenta .contenido{
+    position: relative;
+    top: 5em;
+    justify-content: center;
+}
+
+.pag_perfil .contenido{
+    position: relative;
+    justify-content: center;
+}
+
+#anadirImg {
+    margin-top: 0;
+}

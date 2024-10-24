@@ -7,7 +7,7 @@ class DB{
     private $db;
     private $user;
     private $password;
-    private $conection;
+    public $connection;
 
 
     public function __construct(){
