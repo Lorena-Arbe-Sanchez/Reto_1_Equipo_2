@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear cuenta</title>
+    <title>Gestionar cuentas</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="icon" type="image/png" href="../assets/imagenes/icono_avion.png">
+    <style>
+        #botonBloqueado{ text-align: center; }
+    </style>
 </head>
 <body class="pag_crearCuenta">
 <main>
@@ -37,7 +40,7 @@
             <div id="menuPerfil" class="menuDesplegable">
                 <ul>
                     <li><a href="perfil.html">Ver perfil</a></li>
-                    <li id="botonBloqueado"><a>Crear cuenta</a></li> <!-- Solo para administradores. -->
+                    <li id="botonBloqueado"><a>Gestionar cuenta</a></li> <!-- Solo para administradores. -->
                     <li><a href="login.html">Cerrar sesión</a></li>
                 </ul>
             </div>
@@ -48,11 +51,7 @@
 
     <div class="contenido">
         <div>
-            <form>
-                <div id="crear">
-                    <button id="bCrear">+ Crear cuenta</button>
-                </div>
-            </form>
+            <a href="index.php?controller=bodega&action=create" id="bCrear" class="botonGuardar">+ Crear cuenta</a> <!-- TODO : Poner imagen suma... -->
         </div>
 
         <div id="titulo">

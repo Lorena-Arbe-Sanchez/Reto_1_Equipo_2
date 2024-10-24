@@ -5,48 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6abb039-d7f5-4f73-8b47-492ba288a50f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/.idea/mvc_reto.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/.idea/php.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/cielo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/fondo1_gif.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/fondo2_gif.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/fondo3_gif.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/fondo4_gif.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/fondo5_gif.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/fondo_azul.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/icono_avion.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/logo_empresa.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/logo_empresa_conFondo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/logo_equipo2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/logo_facebook.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/logo_instagram.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/logo_linkedin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/logo_x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/logo_youtube.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/imagenes/perfil.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/javascript/crearCuenta.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/javascript/crearPregunta.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/javascript/login.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/javascript/menuPerfil.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/assets/javascript/recuperarContrasena.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/config/config.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/controller/PreguntasController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/controller/RespuestaController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/controller/UsuarioController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/model/Pregunta.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/model/Respuesta.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/model/Usuario.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/view/crearCuenta.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/view/crearPregunta.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/view/foro.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/view/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/view/perfil.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/php/mvc_reto/view/recuperarContrasena.html" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/layout/footer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/layout/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/crearCuenta.html" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/crearCuenta.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,8 +61,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "develop",
-    "last_opened_file_path": "C:/Users/Lorena/Downloads/Ejercicios_DWEC",
+    "git-widget-placeholder": "feature/Lorena",
+    "last_opened_file_path": "C:/Users/2gdaw03/Desktop/Reto_1_Equipo_2/Aplicacion/mvc_reto/view/layout",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -111,6 +73,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\2gdaw03\Desktop\Reto_1_Equipo_2\Aplicacion\mvc_reto\view\layout" />
       <recent name="C:\Users\2gdaw03\Desktop\Reto_1_Equipo_2\Aplicacion\html" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
