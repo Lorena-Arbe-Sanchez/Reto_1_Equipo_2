@@ -12,9 +12,10 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url("../assets/imagenes/fondo_azul.png");
-    /* background-image: url("../assets/imagenes/cielo.jpg"); */
-    background-size: cover;
+    background-image: url("../assets/imagenes/fondo5_gif.gif");
+    background-size: cover; /* Cubrir toda la pantalla */
+    background-position: center; /* Centrar el GIF. */
+    background-attachment: fixed; /* Fijar el fondo para que no se desplace con el scroll. */
     background-repeat: no-repeat;
 }
 
@@ -24,9 +25,11 @@ main{
 }
 
 
-/* ESTILOS DE LOS HEADER Y FOOTER */
+/* HEADER, FOOTER E HIJOS */
 
 /* TODO : Poner que se empequeñezca el contenido con cambio del tamaño de la página. */
+/* TODO : Poner que se cambien de sitio los elementos dependiendo del dispositivo (ponerlo en las páginas que lo necesiten). */
+
 header{
     width: 100%;
     display: flex;
@@ -88,7 +91,7 @@ header a{
     right: 0;
     background-color: #fff;
     border: .2em solid gainsboro;
-    box-shadow: 0 7px 30px rgb(102, 114, 146);
+    box-shadow: 0 7px 30px #667292;
     border-radius: .8em;
     z-index: 3;
 }
@@ -119,10 +122,11 @@ footer{
     background-color: #8D9DB6;
     position: absolute;
     bottom: 0;
+    border-top: 1px solid black;
 }
 
 
-/* MISMOS ESTILOS EN ELEMENTOS DE PÁGINAS DIFERENTES */
+/* MISMOS ESTILOS EN ELEMENTOS DE PÁGINAS DIFERENTES (Y PROPIEDADES RELACIONADAS CON LOS CONTENIDOS) */
 
 .pag_foro, .pag_crearPregunta, .pag_crearCuenta, .pag_perfil{
     background: linear-gradient(to bottom, #BCCAD6, white);
@@ -137,7 +141,7 @@ footer{
     background-color: #BCCAD6;
     padding: 2em;
     border-radius: 10px;
-    border: 1px solid rgb(102, 114, 146);
+    border: 1px solid #667292;
     z-index: 1;
     margin-top: 5em;
 }
@@ -172,7 +176,7 @@ footer{
 }
 
 
-/* ESTILOS DE ETIQUETAS O ELEMENTOS CONCRETOS */
+/* ETIQUETAS O ELEMENTOS CONCRETOS */
 
 form{
     padding: 3em;
@@ -182,7 +186,7 @@ form{
 }
 
 form #crear{
-    padding: 0em;
+    padding: 0;
 
 }
 
@@ -221,9 +225,6 @@ select{
     font-size: 1em;
 }
 
-
-/* ESTILOS PUNTUALES */
-
 .superpuesta{
     position: absolute;
     top: -4em;
@@ -231,7 +232,6 @@ select{
     height: 100px;
     width: 220px;
     z-index: 2;
-    box-shadow: 0 0 2em 1.5em white;
     border-radius: 15px;
 }
 
@@ -247,7 +247,7 @@ select{
 .info{
     background-color: #f0f0f0;
     border-radius: 15px;
-    border: 1px solid rgb(102, 114, 146);
+    border: 1px solid #667292;
     gap: 2em;
     height: 448.66px;
     width: 800px;
@@ -278,18 +278,17 @@ select{
     display: flex;
     flex-direction: column;
     margin-top: 2em;
-    
+
 }
 
 .foto img{
     width: 290px;
     height: 290px;
     border-radius: 100%;
-    box-shadow: 0 0 2em 0.5em rgb(102, 114, 146);
+    box-shadow: 0 0 2em 0.5em #667292;
 
 }
 
-/* TODO : CORREGIR LAS POSICIONES PARA QUE SE VEA BIEN... */
 .pag_foro .contenido{
     position: relative;
     top: 15em;
@@ -316,5 +315,3 @@ select{
 #anadirImg {
     margin-top: 0;
 }
-
-/* TODO : Poner que se cambien de sitio los elementos dependiendo del dispositivo (ponerlo en las páginas que lo necesiten). */

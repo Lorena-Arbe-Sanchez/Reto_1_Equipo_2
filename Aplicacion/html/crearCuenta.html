@@ -9,155 +9,154 @@
     <link rel="icon" type="image/png" href="../assets/imagenes/icono_avion.png">
 </head>
 <body class="pag_crearCuenta">
-    <main>
-        <header>
+<main>
+    <header>
 
-            <div class="d_logo_empresa">
-                <img class="logo_empresa" src="../assets/imagenes/logo_empresa.png" alt="Logo Aergibide SL"
-                     width="190" height="90">
+        <div class="d_logo_empresa">
+            <img class="logo_empresa" src="../assets/imagenes/logo_empresa.png" alt="Logo Aergibide SL"
+                 width="190" height="90">
+        </div>
+
+        <div class="d_botonesHeader">
+
+            <div class="d_botonForo"><a href="foro.html" class="botonForo">Foro</a></div>
+
+            <!-- TODO : Enlace. -->
+            <div class="d_botonPreguntas"><a href="#" class="botonPreguntas">Preguntas frecuentes</a></div>
+
+            <div class="d_botonCrear"><a href="crearPregunta.html" class="botonCrear">Crear pregunta</a></div>
+
+        </div>
+
+        <div class="d_botonPerfil">
+
+            <a href="#" id="botonPerfil">
+                <img src="../assets/imagenes/perfil.png" alt="Perfil" width="50" height="50">
+            </a>
+
+            <div id="menuPerfil" class="menuDesplegable">
+                <ul>
+                    <li><a href="perfil.html">Ver perfil</a></li>
+                    <li id="botonBloqueado"><a>Crear cuenta</a></li> <!-- Solo para administradores. -->
+                    <li><a href="login.html">Cerrar sesión</a></li>
+                </ul>
             </div>
 
-            <div class="d_botonesHeader">
+        </div>
 
-                <div class="d_botonForo"><a href="foro.html" class="botonForo">Foro</a></div>
+    </header>
 
-                <!-- TODO : Enlace. -->
-                <div class="d_botonPreguntas"><a href="#" class="botonPreguntas">Preguntas frecuentes</a></div>
-
-                <div class="d_botonCrear"><a href="crearPregunta.html" class="botonCrear">Crear pregunta</a></div>
-
-            </div>
-
-            <div class="d_botonPerfil">
-
-                <a href="#" id="botonPerfil">
-                    <img src="../assets/imagenes/perfil.png" alt="Perfil" width="50" height="50">
-                </a>
-
-                <div id="menuPerfil" class="menuDesplegable">
-                    <ul>
-                        <li><a href="perfil.html">Ver perfil</a></li>
-                        <li id="botonBloqueado"><a>Crear cuenta</a></li> <!-- Solo para administradores. -->
-                        <li><a href="login.html">Cerrar sesión</a></li>
-                    </ul>
-                </div>
-
-            </div>
-
-        </header>
-
-        <div class="contenido">
-            <div>
-                <form>
-                    <div id="crear">
-                        <button id="bCrear">+ Crear cuenta</button>
-                    </div>
-                </form>
-            </div>
-
-            <div id="titulo">
-                <h2>Registro / Edición</h2>
-            </div>
-
+    <div class="contenido">
+        <div>
             <form>
-                <div id="datos">
-                    <div>
-                        <label for="dni">DNI</label>
-                        <input type="text" id="dni" name="dni" required>
-                    </div>
-
-                    <div>
-                        <label>Administrador</label>
-                        <input type="radio" id="adminSi" name="admin" value="1" required>Sí
-                        <input type="radio" id="adminNo" name="admin" value="0" required>No
-                    </div>
-
-                    <div>
-                        <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" name="nombre" required>
-                    </div>
-
-                    <div>
-                        <label for="primerApellido">Primer apellido</label>
-                        <input type="text" id="primerApellido" name="primerApellido" required>
-                    </div>
-
-                    <div>
-                        <label for="segundoApellido">Segundo apellido</label>
-                        <input type="text" id="segundoApellido" name="segundoApellido" required>
-                    </div>
-
-                    <div>
-                        <label for="email">Email</label>
-                        <input type="text" id="email" name="email" required>
-                    </div>
-
-                    <div>
-                        <label for="telefono">Teléfono</label>
-                        <input type="text" id="telefono" name="telefono" required>
-                    </div>
-
-                    <div>
-                        <label for="usuario">Usuario</label>
-                        <input type="text" id="usuario" name="usuario" required>
-                    </div>
-
-                    <div>
-                        <label for="contrasena">Contraseña</label>
-                        <input type="text" id="contrasena" name="contrasena" required>
-                    </div>
-
-                    <div>
-                        <label for="repetirContrasena">Repita la contraseña</label>
-                        <input type="text" id="repetirContrasena" name="repetirContrasena" required>
-                    </div>
-
-                </div>
-
-                <div id="botones">
-
-                    <button id="bRegistrar">Registrar</button>
-                    <button id="bModificar">Modificar</button>
-
+                <div id="crear">
+                    <button id="bCrear">+ Crear cuenta</button>
                 </div>
             </form>
         </div>
 
-        <footer style="border-top: 1px black;">
+        <div id="titulo">
+            <h2>Registro / Edición</h2>
+        </div>
 
-            <div class="d_telefonoEmpresa"><p>+34 945 01 01 10</p></div>
+        <!-- TODO : <form action="index.php?controller=user&action=registro" method="post"> -->
+        <form id="formRegistro" action="#" method="post">
+            <div id="datos">
+                <div>
+                    <label for="dni">DNI</label>
+                    <input type="text" id="dni" name="dni" required>
+                </div>
 
-            <div class="d_direccionEmpresa">Dirección</div>
+                <div>
+                    <label>Administrador</label>
+                    <input type="radio" id="adminSi" name="admin" value="1" required>Sí
+                    <input type="radio" id="adminNo" name="admin" value="0" required>No
+                </div>
 
-            <div class="d_botonesRS">
-                <a href="https://www.facebook.com/Egibide/" class="botonRS">
-                    <img src="../assets/imagenes/logo_facebook.png" alt="Facebook" width="40" height="40">
-                </a>
-                <a href="https://twitter.com/egibide?lang=es" class="botonRS">
-                    <img src="../assets/imagenes/logo_x.png" alt="X (Twitter)" width="40" height="40">
-                </a>
-                <a href="https://www.youtube.com/user/Egibide" class="botonRS">
-                    <img src="../assets/imagenes/logo_youtube.png" alt="YouTube" width="40" height="40">
-                </a>
-                <a href="https://www.instagram.com/egibide_vg/?hl=es" class="botonRS">
-                    <img src="../assets/imagenes/logo_instagram.png" alt="Instagram" width="40" height="40">
-                </a>
-                <a href="https://es.linkedin.com/school/egibide/" class="botonRS">
-                    <img src="../assets/imagenes/logo_linkedin.png" alt="LinkedIn" width="40" height="40">
-                </a>
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+
+                <div>
+                    <label for="primerApellido">Primer apellido</label>
+                    <input type="text" id="primerApellido" name="primerApellido" required>
+                </div>
+
+                <div>
+                    <label for="segundoApellido">Segundo apellido</label>
+                    <input type="text" id="segundoApellido" name="segundoApellido" required>
+                </div>
+
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div>
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+                </div>
+
+                <div>
+                    <label for="usuario">Usuario</label>
+                    <input type="text" id="usuario" name="usuario" required>
+                </div>
+
+                <div>
+                    <label for="contrasena">Contraseña</label>
+                    <input type="password" id="contrasena" name="contrasena" required>
+                </div>
+
+                <div>
+                    <label for="repetirContrasena">Repita la contraseña</label>
+                    <input type="password" id="repetirContrasena" name="repetirContrasena" required>
+                </div>
+
             </div>
 
-            <div class="d_equipo">
-                <p>Principal equipo desarrollador:</p>
-                <img class="logo_equipo" src="../assets/imagenes/logo_equipo2.png" alt="Logo Dev Dragons" width="110" height="110">
+            <div id="botones">
+                <!-- TODO : A este botón se le irá cambiando el "value" dependiendo de la acción seleccionada (crear / modificar). -->
+                <input type="submit" id="bAccion" class="bAccion" value="">
             </div>
+        </form>
+    </div>
 
-        </footer>
+    <footer>
 
-    </main>
+        <div class="d_telefonoEmpresa"><p>+34 945 01 01 10</p></div>
 
-    <script src="../javascript/crearCuenta.js"></script>
-    <script src="../javascript/menuPerfil.js"></script>
+        <div class="d_direccionEmpresa">Dirección</div>
+
+        <div class="d_botonesRS">
+            <a href="https://www.facebook.com/Egibide/" class="botonRS">
+                <img src="../assets/imagenes/logo_facebook.png" alt="Facebook" width="40" height="40">
+            </a>
+            <a href="https://twitter.com/egibide?lang=es" class="botonRS">
+                <img src="../assets/imagenes/logo_x.png" alt="X (Twitter)" width="40" height="40">
+            </a>
+            <a href="https://www.youtube.com/user/Egibide" class="botonRS">
+                <img src="../assets/imagenes/logo_youtube.png" alt="YouTube" width="40" height="40">
+            </a>
+            <a href="https://www.instagram.com/egibide_vg/?hl=es" class="botonRS">
+                <img src="../assets/imagenes/logo_instagram.png" alt="Instagram" width="40" height="40">
+            </a>
+            <a href="https://es.linkedin.com/school/egibide/" class="botonRS">
+                <img src="../assets/imagenes/logo_linkedin.png" alt="LinkedIn" width="40" height="40">
+            </a>
+        </div>
+
+        <div class="d_equipo">
+            <p>Principal equipo desarrollador:</p>
+            <img class="logo_equipo" src="../assets/imagenes/logo_equipo2.png" alt="Logo Dev Dragons" width="110" height="110">
+        </div>
+
+    </footer>
+
+</main>
+
+<script src="../javascript/menuPerfil.js"></script>
+<script src="../javascript/crearCuenta.js"></script>
 
 </body>
 </html>

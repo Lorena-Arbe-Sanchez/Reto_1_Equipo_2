@@ -56,7 +56,7 @@
                 <h2>Creación de pregunta</h2>
             </div>
             <!-- TODO : <form action="index.php?controller=pregunta&action=create" method="post"> -->
-            <form>
+            <form id="formCrearPregunta" action="foro.html" method="post">
 
                 <div>
                     <label for="enunciado">Enunciado</label>
@@ -65,6 +65,7 @@
                 <div>
                     <label for="tema">Tema</label>
                     <select name="tema" id="tema" required>
+                        <option>Seleccionar opción</option>
                         <option value="diseno_aeronaves">Diseño y Desarrollo de Aeronaves</option>
                         <option value="fabricacion_produccion">Fabricación y Producción</option>
                         <option value="mantenimiento_operaciones">Mantenimiento y Operaciones</option>
@@ -82,9 +83,7 @@
                     <input type="text" id="descripcion" name="descripcion" required>
                 </div>
 
-                <!-- TODO : <input type="submit" class="bCrearPregunta" value="Crear pregunta"> -->
-                <button id="bCrearPregunta">Crear pregunta</button>
-
+                <input type="submit" id="bCrearPregunta" class="bCrearPregunta" value="Crear pregunta">
                 <a href="foro.html" class="bVolver">Cancelar</a>
 
             </form>

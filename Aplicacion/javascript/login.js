@@ -14,17 +14,17 @@ function validar(event){
     // Comprobar si alguna de las casillas está vacía.
     if (!usuario || !contrasena){
 
-        if (!usuario && !contrasena) {
+        if (!usuario && !contrasena){
+            // TODO : Se puede poner un estilo a los "alert".
             alert("Las casillas del usuario y la contraseña deben ser rellenadas.");
             document.getElementById("usuario").focus();
         }
-
         else{
-            if(!usuario) {
+            if(!usuario){
                 alert("El usuario debe ser rellenado.");
                 document.getElementById("usuario").focus();
             }
-            else {
+            else{
                 alert("La contraseña debe ser rellenada.");
                 document.getElementById("contrasena").focus();
             }

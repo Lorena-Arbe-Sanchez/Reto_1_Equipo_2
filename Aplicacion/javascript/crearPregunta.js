@@ -1,21 +1,49 @@
-let enunciado = document.getElementById("enunciado");
-let tema = document.getElementById("tema");
-let descripcion = document.getElementById("descripcion");
-
 let crearPregunta = document.getElementById("bCrearPregunta");
+let formulario = document.getElementById("formCrearPregunta");
 
-crearPregunta.addEventListener("click",validarCreacion)
+crearPregunta.addEventListener("click", (event) => validarCreacion(event));
 
-function validarCreacion() {
+function validarCreacion(event) {
 
-    if(enunciado.value==""){
-        alert('El enunciado no puede estar vacío');
-        enunciado.focus();
+    event.preventDefault();
+
+    let enunciadoCasilla = document.getElementById("enunciado");
+    let enunciado = enunciadoCasilla.value;
+    let temaCasilla = document.getElementById("tema");
+    let tema = temaCasilla.value;
+    let descripcionCasilla = document.getElementById("descripcion");
+    let descripcion = descripcionCasilla.value;
+
+    // Comprobar si alguna de las casillas está vacía / sin seleccionar.
+    if (!enunciado || temaCasilla.selectedIndex === 0 || !descripcion){
+
+        if (!enunciado && temaCasilla.selectedIndex === 0 && !descripcion){
+            alert('Las 3 casillas deben ser rellenadas.');
+            enunciadoCasilla.focus();
+        }
+        else{
+            if(!enunciado){
+                alert('El enunciado debe ser rellenado.');
+                enunciadoCasilla.focus();
+            }
+            else{
+                if (temaCasilla.selectedIndex === 0){
+                    alert('El tema debe ser seleccionado.');
+                    temaCasilla.focus();
+                }
+                else{
+                    alert('La descripción debe ser rellenada.');
+                    descripcionCasilla.focus();
+                }
+            }
+        }
+
     }
+    else{
+        // TODO : Habría que hacer un insert en la BBDD...
 
-    if(descripcion.value==""){
-        alert('La descripción no puede estar vacía');
-        descripcion.focus();
+        alert("Acción realizada correctamente.");
+        formulario.submit();
     }
 
 }
