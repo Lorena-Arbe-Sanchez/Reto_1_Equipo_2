@@ -1,3 +1,14 @@
+/* TODO
+* En la parte izquierda tendrá un listado de usuarios (cada uno con un botón de
+* editar y eliminar) que se podrá filtrar (por algún dato).
+* Arriba a la izquierda habrá un botón para crear un usuario nuevo.
+*   Al clicar en crear, en la parte derecha se pondrá visible un contenedor con las
+*       casillas que rellenar y el botón de registrar.
+*   Al clicar en editar, se pondrán visibles las casillas que rellenar (y ya
+*       rellenadas con los datos existentes) y el botón de modificar.
+*   Al clicar en eliminar, aparecerá un mensaje de confirmación.
+* */
+
 let dni = document.getElementById("dni");
 let administrador = document.getElementById("administrador");
 let nombre = document.getElementById("nombre");
@@ -9,73 +20,60 @@ let usuario = document.getElementById("usuario");
 let contrasena = document.getElementById("contrasena");
 let repetirContrasena = document.getElementById("repetirContrasena");
 
-let registrar = document.getElementById("bRegistrar");
-let modificar = document.getElementById("bModificar");
+let botonRegistrar = document.getElementById("bAccion");
 
-function validarRegistro() {
+let contador = 0;
 
-    let contador = 0;
+botonRegistrar.addEventListener("click", (event) => validarRegistro(event));
 
-    // Patrón para validar que solo tenga letras
-    let expreg = new RegExp("^[a-zA-Z]+$");
-    // Patrón para validar el número de teléfono (9 dígitos)
-    let expreg1 = new RegExp("^[0-9]{9}$");
-    // Patrón para validar la contraseña (mínimo una mayúscula, una minúscula y un número)
-    let expreg2 = new RegExp("^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d).{0,}$");
+function validarRegistro(event){
 
-    if (!dni.value || !nombre.value || !primerApellido.value || !segundoApellido.value || !email.value || !telefono.value || !usuario.value || !contrasena.value || !repetirContrasena.value) {
-        alert("No puede estar ningún campo vacío");
+    event.preventDefault();
 
-        contador +=1;
+    // Patrón para validar que contenga un texto tal como un nombre.
+    let expregTexto = new RegExp("^[A-Z][a-z]+( [A-Za-z]+)*$");
+    // Patrón para validar el número de teléfono (9 dígitos empezando por un 6/7/8/9).
+    let expregTel = new RegExp("^[6-9][0-9]{8}$");
+    // Patrón para validar el email [se podría poner aún más completo/adaptable].
+    let expregEmail = new RegExp("^[A-Za-z0-9]+(@gmail[.]com)$");
+    // Patrón para validar la contraseña (mínimo 8 caracteres, entre ellos una mayúscula, una minúscula y un número).
+    let expregContra = new RegExp("^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)[A-Za-z\\d]{8,}$");
 
-    }else{
+    if (!dni.value || !nombre.value || !primerApellido.value || !segundoApellido.value || !email.value || !telefono.value || !usuario.value || !contrasena.value || !repetirContrasena.value){
+        alert("No puede estar ningún campo vacío.");
+        contador+=1;
+    }
+    else{
 
-        if (!expreg.test(nombre.value)) {
-            alert("Solo puedes poner letras en el nombre");
-            contador +=1;
-
+        if (!expregTexto.test(nombre.value)){
+            alert("El nombre debe estar formado por letras, empezar por mayúscula y tener mínimamente 2 caracteres.");
+            contador+=1;
         }
-
-        if (!expreg.test(primerApellido.value)) {
+        if (!expregTexto.test(primerApellido.value)){
             alert("Solo puedes poner letras en el primer apellido");
-            contador +=1;
-
+            contador+=1;
         }
-
-        if (!expreg.test(segundoApellido.value)) {
+        if (!expregTexto.test(segundoApellido.value)){
             alert("Solo puedes poner letras en el segundo apellido");
-            contador +=1;
-
+            contador+=1;
         }
-
-        if (!expreg1.test(telefono.value)) {
+        if (!expregTel.test(telefono.value)){
             alert("El teléfono debe tener exactamente 9 dígitos");
-            contador +=1;
-
+            contador+=1;
         }
-
-        if (!expreg2.test(contrasena.value)) {
+        if (!expregContra.test(contrasena.value)){
             alert("La contraseña debe contener al menos una mayúscula, una minúscula y un número");
-            contador +=1;
-
+            contador+=1;
         }
-
-        if (contrasena.value !== repetirContrasena.value) {
+        if (contrasena.value !== repetirContrasena.value){
             alert("Las contraseñas no coinciden");
-            contador +=1;
+            contador+=1;
 
         }
     }
 
-
-    if(contador = 0){
-
-        alert("Registro hecho")
-
+    if(contador === 0){
+        alert("Registro realizado correctamente.")
     }
 
 }
-
-//Cuando escriba el DNI mirar si existe en caso de que exista sacar sus datos
-
-registrar.addEventListener("click", validarRegistro);
