@@ -37,6 +37,11 @@ class preguntaController {
         $this->page_title = "Foro";
     }
 
+    public function crearPregunta(){
+        $this->view = "crear";
+        $this->page_title = "Crear pregunta";
+    }
+
 }
 
 

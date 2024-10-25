@@ -36,6 +36,11 @@ class UsuarioController {
         $this->page_title = "Inicia sesión";
     }
 
+
+    public function create(){
+        $this->view="crear";
+        $this->page_title ="Crear Usuario";
+    }
 }
 
 
