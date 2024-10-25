@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/css/style.css">
     <link rel="icon" type="image/png" href="../assets/imagenes/icono_avion.png">
 </head>
-<body>
+<body class="pag_recuperarContrasena">
 
     <div class="container">
 
