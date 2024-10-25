@@ -37,7 +37,7 @@
         <input type="submit" id="bIniciar" class="bIniciar" value="Iniciar sesión">
     </form>
 
-    <a href="view/usuario/recuperarContrasena.html.php">¿Se te ha olvidado tu contraseña?</a>
+    <a href="index.php?controller=usuario&action=recuperarContrasena">¿Se te ha olvidado tu contraseña?</a>
 
 </div>
 

@@ -37,9 +37,19 @@ class UsuarioController {
     }
 
 
-    public function create(){
-        $this->view="crear";
-        $this->page_title ="Crear Usuario";
+    public function gestionarCuenta(){
+        $this->view="gestionarCuenta";
+        $this->page_title ="Gestionar Usuario";
+    }
+
+    public function perfil(){
+        $this->view="perfil";
+        $this->page_title ="Perfil";
+    }
+
+    public function recuperarContrasena(){
+        $this->view="recuperarContrasena";
+        $this->page_title="Recuperar contraseña";
     }
 }
 

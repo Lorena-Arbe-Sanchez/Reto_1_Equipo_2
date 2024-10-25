@@ -1,4 +1,4 @@
-<?php require_once "../layout/header.php"; ?>
+
 
     <div class="contenido">
 
@@ -153,7 +153,7 @@
 
     </div>
 
-    <?php require_once "../layout/footer.php"; ?>
+   
 
 </main>
 

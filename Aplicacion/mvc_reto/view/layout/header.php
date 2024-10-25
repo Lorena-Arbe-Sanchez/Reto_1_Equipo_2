@@ -46,8 +46,8 @@ También se le pasará una variable llamada "botonBloqueado" para que controle l
                 <!-- Menú desplegable -->
                 <div id="menuPerfil" class="menuDesplegable">
                     <ul>
-                        <li><a href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/view/perfil.html">Ver perfil</a></li>
-                        <li id="opcionCrearCuenta"><a href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/view/crearCuenta.html">Gestionar cuentas</a></li> <!-- Solo para administradores. -->
+                        <li><a href="index.php?controller=usuario&action=perfil">Ver perfil</a></li>
+                        <li id="opcionCrearCuenta"><a href="index.php?controller=pregunta&action=gestionarCuenta">Gestionar cuentas</a></li> <!-- Solo para administradores. -->
                         <li><a href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/view/login.html">Cerrar sesión</a></li>
                     </ul>
                 </div>
