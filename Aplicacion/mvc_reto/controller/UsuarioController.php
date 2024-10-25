@@ -1,6 +1,6 @@
 <?php
 
-require_once "model/Usuario.php";
+require_once "model/usuario.php";
 
 
 class UsuarioController {
@@ -20,55 +20,67 @@ class UsuarioController {
     }
 
 
+
     //Funcion para al hacer login mirar si existe el usuario
-    public function getUsuario($usuario, $contrasenya) {
+    public function login() {
 
-        $this->page_title = "Usuario";
-        $result =$this->model->getValidateByUsuarioContrasenya($usuario, $contrasenya);
-        $_GET["responde"] =  true;
+        $this->page_title = "login";
+        $this->view = "login";
 
-        if ($result){
+        // Llama al modelo para validar usuario y contraseña
+       // $result = $this->model->getValidateByUsuarioContrasenya($usuario, $contrasenya);
 
-            $admin = $this ->isAdmin();
+       /*
+        *  // Si la autenticación es correcta
+        if ($result) {
 
-            if ($admin){
+            // Verifica si es administrador
+            $admin = $this->isAdmin();
 
-                //Si es administrados
-                // $this->view -> "foroAdmin"
-
-            }else{
-
-                //Si no es administrador
-                // $this->view -> "foro"
-
+            if ($admin) {
+                // Si es administrador, redirige a la vista de administrador
+                $_GET["responde"] = true;
+                header("Location: foroAdmin.php");
+            } else {
+                // Si no es administrador, redirige a la vista de usuario estándar
+                $_GET["responde"] = true;
+                header("Location: foro.php");
             }
+
+        } else {
+            // Si la autenticación falla, retorna false y muestra un mensaje de error
+            $_GET["responde"] = false;
+            echo "Usuario o contraseña incorrectos";
         }
 
         return $result;
-
+        *
+        * */
     }
+
 
     // Comprueba si es admin o no para sacar una ventana o otra
     public function isAdmin(){
 
-        $this->page_title = "Usuario";
+        $this->page_title = "usuario";
         $this->view = "login";
         return $this->model-> getAdminByUsuario($_GET["usuario"]);
 
     }
 
-    //Crear Usuario Nuevo
+    //Crear usuario Nuevo
     public function create(){
 
-        $this->page_title = "Create Usuario";
+        $this->page_title = "Create usuario";
         $this->view = "crearUsuario";
-
+        $param = $_POST;
+        //Mandar los datos atraves del param
     }
 
 
     public function save(){
 
-        $this->page_title = "Create Usuario";
+        $this->page_title = "Create usuario";
         $this->view = "crearUsuario";
 
         $param = $_POST;
@@ -83,7 +95,7 @@ class UsuarioController {
     //Eliminar usuario
     public function delete(){
 
-        $this->page_title = "Borrar Usuario";
+        $this->page_title = "Borrar usuario";
         $this->view = "borrarUsuario";
         return $this->model->deleteUsuarioById($_GET["id"]);
 
@@ -101,7 +113,7 @@ class UsuarioController {
     //Modificar usuario
     public function update(){
 
-        $this->page_title = "Editar Usuario";
+        $this->page_title = "Editar usuario";
         $this->view = "modificarUsuario";
         $id = $this->model->updateUsuario($_GET["id"]);
         $result = $this->model->getUsuarioById($id);

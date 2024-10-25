@@ -1,8 +1,8 @@
 <?php
 
-require_once "model/Pregunta.php";
+require_once "model/pregunta.php";
 
-class PreguntasController {
+class PreguntaController {
 
     public $page_title;
     public $view;
@@ -18,7 +18,6 @@ class PreguntasController {
 
     public function list(){
 
-        $this -> view = "";
         $this -> page_title = "Lista Preguntas";
         $this -> model -> getPregunta();
 
@@ -33,13 +32,13 @@ class PreguntasController {
     }
 
     public function create(){
-        $this->page_title ='Crear Pregunta';
+        $this->page_title ='Crear pregunta';
         $this->view ='crearPregunta';
     }
 
     public function save(){
 
-        $this -> page_title ='Crear Pregunta';
+        $this -> page_title ='Crear pregunta';
         $this->view ='crearPregunta';
 
         $param = $_POST;
@@ -53,7 +52,7 @@ class PreguntasController {
     }
 
 
-    //Borrar Pregunta
+    //Borrar pregunta
     public function delete(){
 
         $this->view ="borrarPregunta";

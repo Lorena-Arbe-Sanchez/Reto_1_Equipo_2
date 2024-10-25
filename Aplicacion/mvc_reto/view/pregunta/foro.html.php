@@ -34,25 +34,25 @@
             <!-- Poner 3 botones con el logo de cada RS, uno detrás de otro en fila. -->
             <div class="d_botonesRS">
                 <a href="https://www.facebook.com/Egibide/" class="botonRS">
-                    <img src="../assets/imagenes/logo_facebook.png" alt="Facebook" width="40" height="40">
+                    <img src="../../assets/imagenes/logo_facebook.png" alt="Facebook" width="40" height="40">
                 </a>
                 <a href="https://twitter.com/egibide?lang=es" class="botonRS">
-                    <img src="../assets/imagenes/logo_x.png" alt="X (Twitter)" width="40" height="40">
+                    <img src="../../assets/imagenes/logo_x.png" alt="X (Twitter)" width="40" height="40">
                 </a>
                 <a href="https://www.youtube.com/user/Egibide" class="botonRS">
-                    <img src="../assets/imagenes/logo_youtube.png" alt="YouTube" width="40" height="40">
+                    <img src="../../assets/imagenes/logo_youtube.png" alt="YouTube" width="40" height="40">
                 </a>
                 <a href="https://www.instagram.com/egibide_vg/?hl=es" class="botonRS">
-                    <img src="../assets/imagenes/logo_instagram.png" alt="Instagram" width="40" height="40">
+                    <img src="../../assets/imagenes/logo_instagram.png" alt="Instagram" width="40" height="40">
                 </a>
                 <a href="https://es.linkedin.com/school/egibide/" class="botonRS">
-                    <img src="../assets/imagenes/logo_linkedin.png" alt="LinkedIn" width="40" height="40">
+                    <img src="../../assets/imagenes/logo_linkedin.png" alt="LinkedIn" width="40" height="40">
                 </a>
             </div>
 
             <div class="d_equipo">
                 <p>Principal equipo desarrollador:</p>
-                <img class="logo_equipo" src="../assets/imagenes/logo_equipo2.png" alt="Logo Dev Dragons"
+                <img class="logo_equipo" src="../../assets/imagenes/logo_equipo2.png" alt="Logo Dev Dragons"
                      width="110" height="110">
             </div>
 
@@ -60,7 +60,7 @@
 
     </main>
 
-    <script src="../assets/javascript/menuPerfil.js"></script>
+    <script src="../../assets/javascript/menuPerfil.js"></script>
 
 </body>
 </html>

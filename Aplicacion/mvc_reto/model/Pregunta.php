@@ -37,30 +37,41 @@ class Pregunta{
 
     }
 
-    public function save($param){
 
-        $titulo = $descripcion = $tema = $fecha = $id_usuario = $archivo = $votosLike = $votosDislike = "";
-
+    public function create(){
+        $this->page_title ='Crear Pregunta';
+        $this->view ='create';
+    }
+    public function save($param) {
+        // Initialize variables with default values
+        $titulo = $descripcion = $tema = $archivo = "";
+        $fecha = date('Y-m-d');
+        $id_usuario = $votosLike = $votosDislike = 0;
 
         if (isset($param["titulo"])) $titulo = $param["titulo"];
         if (isset($param["descripcion"])) $descripcion = $param["descripcion"];
         if (isset($param["tema"])) $tema = $param["tema"];
-        if (isset($param["fecha"])) $fecha = $param["fecha"];
-        if (isset($param["id_usuario"])) $id_usuario = $param["id_usuario"];
+        if (isset($param["fecha"]) && !empty($param["fecha"])) {
+            $fecha = $param["fecha"];  // Use the provided date if it's not empty
+        }
+        if (isset($param["id_usuario"]) && !empty($param["id_usuario"])) {
+            $id_usuario = $param["id_usuario"];
+        }
         if (isset($param["archivo"])) $archivo = $param["archivo"];
         if (isset($param["votosLike"])) $votosLike = $param["votosLike"];
         if (isset($param["votosDislike"])) $votosDislike = $param["votosDislike"];
 
-        $sql = "Insert into " . $this->tabla . "(titulo,descripcion,tema,fecha,id_usuario,archivo,votos_like,votos_dislike) 
-                values(?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO " . $this->tabla . " (titulo, descripcion, tema, fecha, id_usuario, archivo, votosLike, votosDislike) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
-        $stm = $this -> connection -> prepare($sql);
-        $stm -> execute([$titulo,$descripcion,$tema,$fecha,$id_usuario,$archivo,$votosLike,$votosDislike]);
+        $stm = $this->connection->prepare($sql);
+        $stm->execute([$titulo, $descripcion, $tema, $fecha, $id_usuario, $archivo, $votosLike, $votosDislike]);
 
-        $id = $this -> connection -> lastInsertId();
+        // Return the last inserted ID
+        $id = $this->connection->lastInsertId();
         return $id;
-
     }
+
 
 
     public function getPreguntaById($id){

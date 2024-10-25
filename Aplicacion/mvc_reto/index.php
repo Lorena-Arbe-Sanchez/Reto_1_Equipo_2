@@ -9,7 +9,7 @@ if(!isset($_GET["action"])) $_GET["action"] = constant("DEFAULT_ACTION");
 $controller_path = "controller/" .$_GET["controller"]."Controller.php";
 
 if(!file_exists($controller_path)) $controller_path =
-    "controller/".constant("DEFAULT_CONTROLLER").".php";
+    "controller/".constant("DEFAULT_CONTROLLER")."Controller.php";
 
 require_once $controller_path;
 $controllerName = $_GET["controller"]."Controller";
@@ -20,6 +20,7 @@ if(method_exists($controller, $_GET["action"])) $dataToView["data"] = $controlle
 
 if ($_GET["controller"] != "usuario" && $_GET["action"] != "login" && $_GET["action"] != "recuperar") {
     require_once "view/layout/header.php";
+    require_once "view/".$_GET["controller"]."/".$controller->view.".html.php";
     require_once "view/layout/footer.php";
 }
 

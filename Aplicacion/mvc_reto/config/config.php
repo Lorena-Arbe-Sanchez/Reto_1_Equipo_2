@@ -6,8 +6,8 @@ define("DB_USER", "root");
 define("DB_PASS", "");
 
 //Controlador que entra por defecto
-define("DEFAULT_CONTROLLER", "Usuario");
+define("DEFAULT_CONTROLLER", "usuario");
 
 //Accion de inicio
-define("DEFAULT_ACTION", "");
+define("DEFAULT_ACTION", "login");
 ?>
