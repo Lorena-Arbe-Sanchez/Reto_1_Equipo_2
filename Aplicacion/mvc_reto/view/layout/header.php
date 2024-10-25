@@ -14,45 +14,44 @@ También se le pasará una variable llamada "botonBloqueado" para que controle l
     <link rel="stylesheet" href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/css/style.css">
     <link rel="icon" type="image/png" href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/icono_avion.png">
 </head>
-<body>
-    <main>
-        <header>
+<body class="<?php echo isset($bodyClass) ? $bodyClass : 'defaultBodyClass'; ?>">
+    <header>
 
-            <div class="d_logo_empresa">
-                <img class="logo_empresa" src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/logo_empresa.png" alt="Logo Aergibide SL"
-                    width="190" height="90">
+        <div class="d_logo_empresa">
+            <img class="logo_empresa" src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/logo_empresa.png" alt="Logo Aergibide SL"
+                width="190" height="90">
+        </div>
+
+        <div class="d_botonesHeader">
+
+            <div class="d_botonForo" id="botonBloqueado"><a class="botonForo">Foro</a></div>
+
+            <!-- TODO : Poner un enlace correcto en los botones. -->
+            <div class="d_botonPreguntas"><a href="#" class="botonPreguntas">Preguntas frecuentes</a></div>
+
+            <div class="d_botonCrear"><a href="index.php?controller=pregunta&action=crearPregunta" class="botonCrear">Crear pregunta</a></div>
+
+        </div>
+
+        <!-- Botón del perfil con menú desplegable ~~> Posibles opciones ("Ver perfil", "Crear cuenta" {solo si el
+                usuario actual es "administrador"; 'TINYINT' con valor 1 para verdadero y 0 para falso}, y "Cerrar sesión"). -->
+
+        <div class="d_botonPerfil">
+
+            <a href="#" id="botonPerfil">
+                <img src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/perfil.png" alt="Perfil" width="50" height="50">
+            </a>
+
+            <!-- Menú desplegable -->
+            <div id="menuPerfil" class="menuDesplegable">
+                <ul>
+                    <li><a href="index.php?controller=usuario&action=perfil">Ver perfil</a></li>
+                    <li id="opcionCrearCuenta"><a href="index.php?controller=pregunta&action=gestionarCuenta">Gestionar cuentas</a></li> <!-- Solo para administradores. -->
+                    <li><a href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/view/login.html">Cerrar sesión</a></li>
+                </ul>
             </div>
+        </div>
 
-            <div class="d_botonesHeader">
-
-                <div class="d_botonForo" id="botonBloqueado"><a class="botonForo">Foro</a></div>
-
-                <!-- TODO : Poner un enlace correcto en los botones. -->
-                <div class="d_botonPreguntas"><a href="#" class="botonPreguntas">Preguntas frecuentes</a></div>
-
-                <div class="d_botonCrear"><a href="index.php?controller=pregunta&action=crearPregunta" class="botonCrear">Crear pregunta</a></div>
-
-            </div>
-
-            <!-- Botón del perfil con menú desplegable ~~> Posibles opciones ("Ver perfil", "Crear cuenta" {solo si el
-                    usuario actual es "administrador"; 'TINYINT' con valor 1 para verdadero y 0 para falso}, y "Cerrar sesión"). -->
-
-            <div class="d_botonPerfil">
-
-                <a href="#" id="botonPerfil">
-                    <img src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/perfil.png" alt="Perfil" width="50" height="50">
-                </a>
-
-                <!-- Menú desplegable -->
-                <div id="menuPerfil" class="menuDesplegable">
-                    <ul>
-                        <li><a href="index.php?controller=usuario&action=perfil">Ver perfil</a></li>
-                        <li id="opcionCrearCuenta"><a href="index.php?controller=pregunta&action=gestionarCuenta">Gestionar cuentas</a></li> <!-- Solo para administradores. -->
-                        <li><a href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/view/login.html">Cerrar sesión</a></li>
-                    </ul>
-                </div>
-            </div>
-
-        </header>
+    </header>
 
     <!-- TODO : Cambiar. -->

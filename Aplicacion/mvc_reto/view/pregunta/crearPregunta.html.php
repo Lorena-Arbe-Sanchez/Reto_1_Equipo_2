@@ -41,8 +41,6 @@
         </div>
 
 
-    </main>
-
     <script src="../assets/javascript/menuPerfil.js"></script>
     <script src="../assets/javascript/crearPregunta.js"></script>
 

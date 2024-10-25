@@ -24,6 +24,5 @@
 
 
 
-    </main>
 
     <script src="\Proyecto1\Reto_1_Equipo_2\Aplicacion\mvc_reto/assets/javascript/menuPerfil.js"></script>
