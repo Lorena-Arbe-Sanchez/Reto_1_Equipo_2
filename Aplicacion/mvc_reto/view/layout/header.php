@@ -30,7 +30,7 @@ También se le pasará una variable llamada "botonBloqueado" para que controle l
                 <!-- TODO : Poner un enlace correcto en los botones. -->
                 <div class="d_botonPreguntas"><a href="#" class="botonPreguntas">Preguntas frecuentes</a></div>
 
-                <div class="d_botonCrear"><a href="index.php?controller=pregunta&action=crear" class="botonCrear">Crear pregunta</a></div>
+                <div class="d_botonCrear"><a href="index.php?controller=pregunta&action=crearPregunta" class="botonCrear">Crear pregunta</a></div>
 
             </div>
 
