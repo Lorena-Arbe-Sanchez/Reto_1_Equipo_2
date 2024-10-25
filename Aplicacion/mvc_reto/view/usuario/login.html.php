@@ -16,7 +16,7 @@
 
     <img src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/logo_empresa_conFondo.png" class="superpuesta" alt="Logo Aergibide SL">
 
-    <!-- TODO : <form action="index.php?controller=usuario&action=login" method="post"> -->
+    <!-- TODO : <form action="index.php?controller=pregunta&action=foro" method="post"> -->
     <form id="formLogin" action="index.php?controller=pregunta&action=foro" method="post">
         <div>
             <div class="fila_datos">
