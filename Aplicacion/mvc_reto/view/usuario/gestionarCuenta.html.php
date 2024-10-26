@@ -98,9 +98,9 @@
                                     <td>
                                         <!-- Con "Editar" mostrará los datos de esa cuenta.
                                             Con "Eliminar" se mostrará un mensaje de confirmación. -->
-                                        <a href="index.php?controller=user&action=view&id=<?php echo $cuenta['id']; ?>"
+                                        <a href="index.php?controller=usuario&action=view&id=<?php echo $cuenta['id']; ?>"
                                            id="bEditar">Editar</a>
-                                        <a href="index.php?controller=user&action=confirmDelete&id=
+                                        <a href="index.php?controller=usuario&action=confirmDelete&id=
                                             <?php echo $cuenta['id']; ?>" id="bEliminar">Eliminar</a>
                                     </td>
                                 </tr>
@@ -129,7 +129,7 @@
 
             <div id="contenedor2" class="mitad contenido2">
 
-                <!-- TODO : <form action="index.php?controller=user&action=registro" method="post"> -->
+                <!-- TODO : <form action="index.php?controller=usuario&action=registro" method="post"> -->
                 <form id="formRegistro" action="#" method="post">
                     <div id="datos">
                         <div>

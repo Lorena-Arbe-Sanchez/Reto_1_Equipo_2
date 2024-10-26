@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- TODO : Variable de "$title" en "<title>" para los títulos de las páginas que van cambiando.
-                También se le pasará una variable llamada "botonBloqueado" para que controle la página actual el en menú del header. -->
+    <!-- TODO : Variable de "$title" en "<title>" para los títulos de las páginas que van cambiando. -->
     <title>Foro</title>
     <link rel="stylesheet" href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/css/style.css">
     <!-- Poner un favicon (icono en la pestaña de una página web). -->
@@ -14,7 +13,11 @@
 </head>
 <body class="pag_foro">
 
-        <?php require_once __DIR__ . "/../layout/header.php"; ?>
+        <?php
+        // Variable "botonBloqueado" para controlar la página actual el en menú del header. El botón correspondiente se bloqueará.
+        $botonBloqueado = "d_botonForo";
+        require_once __DIR__ . "/../layout/header.php";
+        ?>
 
         <div class="contenido">
 

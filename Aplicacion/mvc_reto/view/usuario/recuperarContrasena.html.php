@@ -13,7 +13,7 @@
 
         <h1>Recuperar contraseña</h1>
 
-        <!-- TODO : <form action="index.php?controller=user&action=recuperarContra" method="post"> -->
+        <!-- TODO : <form action="index.php?controller=usuario&action=recuperarContra" method="post"> -->
         <form id="formRecuperarContra" action="login.html" method="post">
             <div>
                 <label for="usuario">Usuario</label>

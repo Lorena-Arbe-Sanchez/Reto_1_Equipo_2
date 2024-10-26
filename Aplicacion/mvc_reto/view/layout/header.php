@@ -7,12 +7,18 @@
 
             <div class="d_botonesHeader">
 
-                <div class="d_botonForo" id="botonBloqueado"><a class="botonForo">Foro</a></div>
+                <div class="d_botonForo" <?php if ($botonBloqueado == "d_botonForo") echo 'id="botonBloqueado"'; ?>>
+                    <a href="index.php?controller=pregunta&action=foro" class="botonForo">Foro</a>
+                </div>
 
                 <!-- TODO : Poner un enlace correcto en los botones. -->
-                <div class="d_botonPreguntas"><a href="#" class="botonPreguntas">Preguntas frecuentes</a></div>
+                <div class="d_botonPreguntas" <?php if ($botonBloqueado == "d_botonPreguntas") echo 'id="botonBloqueado"'; ?>>
+                    <a href="index.php?controller=pregunta&action=frecuentes" class="botonPreguntas">Preguntas frecuentes</a>
+                </div>
 
-                <div class="d_botonCrear"><a href="crearPregunta.html" class="botonCrear">Crear pregunta</a></div>
+                <div class="d_botonCrear" <?php if ($botonBloqueado == "d_botonCrear") echo 'id="botonBloqueado"'; ?>>
+                    <a href="index.php?controller=pregunta&action=crear" class="botonCrear">Crear pregunta</a>
+                </div>
 
             </div>
 
@@ -28,9 +34,14 @@
                 <!-- Menú desplegable -->
                 <div id="menuPerfil" class="menuDesplegable">
                     <ul>
-                        <li><a href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/view/perfil.html">Ver perfil</a></li>
-                        <li id="opcionCrearCuenta"><a href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/view/crearCuenta.html">Gestionar cuentas</a></li> <!-- Solo para administradores. -->
-                        <li><a href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/view/login.html">Cerrar sesión</a></li>
+                        <li class="l_botonPerfil" <?php if ($botonBloqueado == "l_botonPerfil") echo 'id="botonBloqueado"'; ?>>
+                            <a href="index.php?controller=usuario&action=perfil">Ver perfil</a>
+                        </li>
+                        <!-- Solo para administradores la opción de gestionar cuentas. -->
+                        <li id="opcionCrearCuenta" class="l_botonCuentas" <?php if ($botonBloqueado == "l_botonCuentas") echo 'id="botonBloqueado"'; ?>>
+                            <a href="index.php?controller=usuario&action=cuentas">Gestionar cuentas</a>
+                        </li>
+                        <li><a href="index.php?controller=usuario&action=login">Cerrar sesión</a></li>
                     </ul>
                 </div>
             </div>
