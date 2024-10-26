@@ -6,18 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b6abb039-d7f5-4f73-8b47-492ba288a50f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/fondo1_gif.gif" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/fondo1_gif.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/fondo2_gif.gif" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/fondo2_gif.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/fondo3_gif.gif" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/fondo3_gif.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/fondo4_gif.gif" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/fondo4_gif.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/fondo5_gif.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/gestionarCuenta.js" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/gestionarCuenta.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/gestionarCuenta.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/gestionarCuenta.html.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/layout/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/layout/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/login.html.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/login.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/login.html.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,6 +107,8 @@
       <workItem from="1729686267784" duration="1042000" />
       <workItem from="1729786522788" duration="5132000" />
       <workItem from="1729792450321" duration="7120000" />
+      <workItem from="1729876963809" duration="2106000" />
+      <workItem from="1729935361184" duration="1036000" />
     </task>
     <servers />
   </component>
