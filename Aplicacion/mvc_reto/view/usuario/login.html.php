@@ -3,10 +3,12 @@
 <head>
     <!-- TODO : Poner bien los "meta" de todas las páginas (lo mismo + propiedades funcionales). -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- TODO : Variable de "$title" en "<title>" para los títulos de las páginas que van cambiando.
+                También se le pasará una variable llamada "botonBloqueado" para que controle la página actual el en menú del header. -->
     <title>Login</title>
     <link rel="stylesheet" href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <!-- Poner un favicon (icono en la pestaña de una página web). -->
     <link rel="icon" type="image/png" href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/icono_avion.png">
 </head>

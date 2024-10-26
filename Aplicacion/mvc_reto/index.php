@@ -21,14 +21,13 @@ $dataToView["data"] = array();
 if(method_exists($controller, $_GET["action"]))
     $dataToView["data"] = $controller -> {$_GET["action"]}();
 
-// Si el controlador es usuario o si aunque sea usuario no tiene la acción de login o recuperarContraseña.
-if ($_GET["controller"] != "Usuario" || ($_GET["controller"] == "Usuario" && $_GET["action"] != "login" && $_GET["action"] != "recuperar")){
-    require_once "view/layout/header.php";
+// Solo si el controlador es usuario y tiene la acción de login o recuperarContraseña:
+if ($_GET["controller"] == "Usuario" && ($_GET["action"] == "login" || $_GET["action"] == "recuperar")){
     require_once "view/".$_GET["controller"]."/".$controller->view.".html.php";
-    // TODO : require_once "view/layout/footer.php";
 }
 else{
-    // En los casos de que sea UsuarioController y action = login / recuperar.
+    // En los demás casos:
+    //require_once "view/layout/header.php";
     require_once "view/".$_GET["controller"]."/".$controller->view.".html.php";
 }
 

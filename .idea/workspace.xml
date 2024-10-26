@@ -6,14 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="b6abb039-d7f5-4f73-8b47-492ba288a50f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/gestionarCuenta.js" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/gestionarCuenta.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/config/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/UsuarioController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/UsuarioController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/PreguntasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/PreguntaController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/model/Usuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/model/Usuario.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/model/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/model/Db.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/foro.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/foro.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/model/Pregunta.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/model/Pregunta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/crearPregunta.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/pregunta/crearPregunta.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/foro.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/pregunta/foro.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/gestionarCuenta.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/gestionarCuenta.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/layout/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/layout/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/layout/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/layout/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/perfil.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/perfil.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/recuperarContrasena.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/recuperarContrasena.html.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/login.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/login.html.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,7 +37,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="feature/Lorena" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -63,31 +66,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/Lorena&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/laragon/www/Proyecto1/Reto_1_Equipo_2&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "feature/Lorena",
+    "last_opened_file_path": "C:/laragon",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\2gdaw03\Desktop\Reto_1_Equipo_2\Aplicacion\mvc_reto\view\layout" />
       <recent name="C:\Users\2gdaw03\Desktop\Reto_1_Equipo_2\Aplicacion\html" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\Proyecto1\Reto_1_Equipo_2\Aplicacion\mvc_reto\view\pregunta" />
+      <recent name="C:\laragon\www\Proyecto1\Reto_1_Equipo_2\Aplicacion\mvc_reto\view\usuario" />
       <recent name="C:\Users\2gdaw03\Desktop\Reto_1_Equipo_2\Aplicacion\php\mvc_reto\assets\css" />
       <recent name="C:\Users\2gdaw03\Desktop\Reto_1_Equipo_2\Aplicacion\php\mvc_reto\assets" />
       <recent name="C:\Users\2gdaw03\Desktop\Reto_1_Equipo_2\Aplicacion\php\mvc_reto\view" />
-      <recent name="C:\Users\2gdaw03\Desktop\Reto_1_Equipo_2\Aplicacion\php\mvc_reto" />
-      <recent name="C:\Users\2gdaw03\Desktop\Reto_1_Equipo_2\Aplicacion\assets\imagenes" />
     </key>
   </component>
   <component name="SharedIndexes">
