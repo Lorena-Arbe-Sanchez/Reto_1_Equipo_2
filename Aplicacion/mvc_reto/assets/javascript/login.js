@@ -38,21 +38,27 @@ function validar(event){
 
         // Validar la contraseña con su patrón.
 
-        // TODO : ¿Tendrían que estar encriptadas, no?
-        /*
-        password_hash() en PHP para su almacenamiento y password_verify() para su verificación.
-         */
-
         let expreg = new RegExp("^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)[A-Za-z\\d]{8,}$");
 
         if(expreg.test(contrasena)){
 
-            // TODO : Habría que comprobar en la BBDD q existe...
+            formulario.submit();
 
-            alert("¡Bienvenido/a " +usuario+ "!");
+            // Habría que comprobar si existe en la BBDD.
 
-            formulario.submit(); // Enviar el formulario manualmente
+            /*
+            // Redirigir al usuario.
+            usuarioExistente = header("Location: index.php?controller=usuario&action=validar");
 
+            if (usuarioExistente === false || usuarioExistente === null){
+                document.getElementById("mensajeErrorContrasena").innerText =
+                    "No existe un usuario con esos datos.";
+                document.getElementById("usuario").focus();
+            }
+            else{
+                formulario.submit(); // Enviar el formulario manualmente.
+            }
+             */
         }
         else{
             document.getElementById("mensajeErrorContrasena").innerText = "La contraseña debe ser válida.";
