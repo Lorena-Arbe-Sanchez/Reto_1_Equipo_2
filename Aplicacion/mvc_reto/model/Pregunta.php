@@ -3,8 +3,7 @@
 class Pregunta {
 
     private $tabla = "preguntas";
-    private $conection;
-
+    private $connection;
 
     public function __construct() {
         $this->getConexion();
@@ -12,24 +11,9 @@ class Pregunta {
 
     public function getConexion(){
         $dbObj = new Db();
-        $this->conection = $dbObj ->conection;
+        $this->connection = $dbObj ->connection;
     }
 
-
-    public function getBodegaByUsuarioContrasenya($usuario, $contrasenya){
-
-        if(is_null($usuario, $contrasenya)) return false;
-
-        $sql = "SELECT * FROM " . $this->tabla . " WHERE usuario = ?" . "AND contrasña = ?";
-
-        $stmt = $this->conection->prepare($sql);
-        return $stmt->execute([$usuario, $contrasenya]);
-
-     }
-
-
-
+    // todo
 
 }
-
-?>
