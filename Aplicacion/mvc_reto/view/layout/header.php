@@ -1,8 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- TODO : Poner bien los "meta" de todas las páginas (lo mismo + propiedades funcionales). -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Variable "$pageTitle" para los títulos de las páginas que van cambiando. -->
+    <title><?php echo isset($pageTitle) ? $pageTitle : 'Aergibide SL'; ?></title>
+    <link rel="stylesheet" href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/css/style.css">
+    <!-- Poner un favicon (icono en la pestaña de una página web). -->
+    <!-- TODO : PONER EL DEL MONIGOTE CREADO -->
+    <link rel="icon" type="image/png"
+          href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/icono_avion.png">
+</head>
+<body class="<?php echo isset($bodyClass) ? $bodyClass : 'defaultBodyClass'; ?>">
+
+    <?php if ($conMenu): ?>
+
         <header>
 
             <div class="d_logo_empresa">
-                <img class="logo_empresa" src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/logo_empresa.png" alt="Logo Aergibide SL"
-                    width="190" height="90">
+                <img class="logo_empresa"
+                     src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/logo_empresa.png"
+                     alt="Logo Aergibide SL" width="190" height="90">
             </div>
 
             <div class="d_botonesHeader">
@@ -28,7 +48,8 @@
             <div class="d_botonPerfil">
 
                 <a href="#" id="botonPerfil">
-                    <img src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/perfil.png" alt="Perfil" width="50" height="50">
+                    <img src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/perfil.png" alt="Perfil"
+                         width="50" height="50">
                 </a>
 
                 <!-- Menú desplegable -->
@@ -38,7 +59,8 @@
                             <a href="index.php?controller=usuario&action=perfil">Ver perfil</a>
                         </li>
                         <!-- Solo para administradores la opción de gestionar cuentas. -->
-                        <li id="opcionCrearCuenta" class="l_botonCuentas" <?php if ($botonBloqueado == "l_botonCuentas") echo 'id="botonBloqueado"'; ?>>
+                        <li id="opcionCrearCuenta" class="l_botonCuentas"
+                            <?php if ($botonBloqueado == "l_botonCuentas") echo 'id="botonBloqueado"'; ?>>
                             <a href="index.php?controller=usuario&action=cuentas">Gestionar cuentas</a>
                         </li>
                         <li><a href="index.php?controller=usuario&action=login">Cerrar sesión</a></li>
@@ -47,3 +69,5 @@
             </div>
 
         </header>
+
+    <?php endif; ?>

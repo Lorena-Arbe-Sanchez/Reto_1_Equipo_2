@@ -4,24 +4,20 @@ require_once "model/Usuario.php";
 
 class UsuarioController {
 
-    //public $page_title;
     public $view;
     public $model;
 
     public function __construct() {
-        //$this->page_title = "";
         $this->view = "login";
         $this->model = new Usuario();
     }
 
     public function login(){
         $this->view= "login";
-        //$this->page_title = "Inicia sesión";
     }
 
     // Función para comprobar la existencia del usuario en el login.
-    public function validar(){
-        //$this->page_title = "Usuario";
+    public function validarLogin(){
 
         // Pasarle los valores de las casillas necesarias como parámetros.
         $result = $this->model->getUsuarioByUsuarioContrasena($_POST['usuario'], $_POST['contrasena']);
@@ -36,6 +32,28 @@ class UsuarioController {
             header("Location: index.php?controller=usuario&action=login&error=1");
             exit();
         }
+    }
+
+    public function cuentas(){
+        $this->view="gestionarCuenta";
+    }
+
+    // Función para el botón "Buscar" (filtrar) de la ventana de 'gestionarCuenta'.
+    public function buscarFiltro(){
+        $this->view="gestionarCuenta";
+    }
+
+    public function perfil(){
+        $this->view="perfil";
+    }
+
+    public function recuperar(){
+        $this->view="recuperarContrasena";
+    }
+
+    // Función para la ventana de 'recuperarContrasena'.
+    public function validarRecuperar(){
+
     }
 
 }

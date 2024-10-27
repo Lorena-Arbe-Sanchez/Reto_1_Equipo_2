@@ -1,49 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestionar cuentas</title>
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="icon" type="image/png" href="../../assets/imagenes/icono_avion.png">
-</head>
-<body class="pag_gestionarCuenta">
-    <header>
-
-        <div class="d_logo_empresa">
-            <img class="logo_empresa" src="../../assets/imagenes/logo_empresa.png" alt="Logo Aergibide SL"
-                 width="190" height="90">
-        </div>
-
-        <div class="d_botonesHeader">
-
-            <div class="d_botonForo"><a href="foro.html" class="botonForo">Foro</a></div>
-
-            <!-- TODO : Enlace. -->
-            <div class="d_botonPreguntas"><a href="#" class="botonPreguntas">Preguntas frecuentes</a></div>
-
-            <div class="d_botonCrear"><a href="crearPregunta.html" class="botonCrear">Crear pregunta</a></div>
-
-        </div>
-
-        <div class="d_botonPerfil">
-
-            <a href="#" id="botonPerfil">
-                <img src="../../assets/imagenes/perfil.png" alt="Perfil" width="50" height="50">
-            </a>
-
-            <div id="menuPerfil" class="menuDesplegable">
-                <ul>
-                    <li><a href="perfil.html">Ver perfil</a></li>
-                    <li id="botonBloqueado"><a>Gestionar cuentas</a></li>
-                    <li><a href="login.html">Cerrar sesión</a></li>
-                </ul>
-            </div>
-
-        </div>
-
-    </header>
+<?php
+$pageTitle = "Gestionar cuentas";
+$bodyClass = "pag_gestionarCuenta";
+$botonBloqueado = "l_botonCuentas";
+$conMenu = true;
+require_once __DIR__ . "/../layout/header.php";
+?>
 
     <div class="contenido">
 
@@ -59,14 +20,16 @@
 
                 <!-- TODO : Comprobar que sea así como se pone una caja de búsqueda + implementar. -->
                 <div class="busqueda">
-                    <form method="GET" action="index.php">
-                        <input type="text" name="search" placeholder="Buscar por DNI, Nombre, Email..." value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>">
+                    <form method="GET" action="index.php?controller=usuario&action=recuperarContra">
+                        <input type="text" name="search" placeholder="Buscar por DNI, Nombre, Email..."
+                               value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>">
                         <input type="submit" value="Buscar">
                     </form>
                 </div>
 
                 <?php
                 // Si el array '$dataToView' del 'index.php' tiene filas (la función "list()" del "UserController" obtiene resultados), entonces se creará la tabla.
+                // TODO : Poner bien el '$dataToView'.
                 if(count($dataToView["data"])>0){
                 ?>
                     <table>
@@ -198,9 +161,9 @@
 
     </div>
 
-    <?php require_once "../layout/footer.php"; ?>
+    <?php require_once __DIR__ . "/../layout/footer.php"; ?>
 
-<script src="../../assets/javascript/gestionarCuenta.js"></script>
+    <script src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/javascript/gestionarCuenta.js"></script>
 
 </body>
 </html>
