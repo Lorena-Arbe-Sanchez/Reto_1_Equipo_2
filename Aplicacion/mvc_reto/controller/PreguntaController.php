@@ -20,6 +20,37 @@ class PreguntaController {
         $this->view = "crearPregunta";
     }
 
+
+
+    public function guardar(){
+
+        $this->view ='crearPregunta';
+
+        $param = $_POST;
+        $id = $this-> model -> save($param);
+        $result = $this -> model -> getPreguntaById($id);
+
+        $_GET["response"] = true;
+
+        return $result;
+
+    }
+
+    // Eliminar pregunta.
+    public function borrar(){
+
+        $this->view ="borrarPregunta";
+        return $this -> model -> deleteUsuario($_POST["id"]);
+
+    }
+
+    public function confirmarBorrar(){
+
+        $this -> view ='confirmar';
+        return $this -> model -> getPreguntaById($_POST["id"]);
+
+    }
+
 }
 
 ?>

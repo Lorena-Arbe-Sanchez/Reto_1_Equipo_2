@@ -22,9 +22,10 @@ require_once __DIR__ . "/../layout/header.php";
             <label for="contrasena2">Repita la contraseña</label>
             <input type="password" id="contrasena2" name="contrasena2" required>
         </div>
-
-        <input type="submit" id="bCambiar" class="bCambiar" value="Cambiar contraseña">
-        <a href="index.php?controller=usuario&action=login" class="bVolver">Volver</a>
+        <div class="d_botones">
+            <input type="submit" id="bCambiar" class="bCambiar" value="Cambiar contraseña">
+            <a href="index.php?controller=usuario&action=login" class="bVolver">Volver</a>
+        </div>
     </form>
 
 </div>

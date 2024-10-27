@@ -11,11 +11,11 @@ require_once __DIR__ . "/../layout/header.php";
     <div id="titulo">
         <h2>Creación de pregunta</h2>
     </div>
-    <form id="formCrearPregunta" action="index.php?controller=pregunta&action=crear" method="post">
+    <form id="formCrearPregunta" action="index.php?controller=pregunta&action=save" method="post">
 
         <div>
             <label for="enunciado">Enunciado</label>
-            <input type="text" id="enunciado" name="enunciado" required>
+            <textarea id="enunciado" name="enunciado" maxlength="100" required></textarea>
         </div>
         <div>
             <label for="tema">Tema</label>
@@ -35,11 +35,12 @@ require_once __DIR__ . "/../layout/header.php";
         </div>
         <div>
             <label for="descripcion">Descripción</label>
-            <input type="text" id="descripcion" name="descripcion" required>
+            <textarea id="descripcion" name="descripcion" maxlength="100" required></textarea>
         </div>
-
-        <input type="submit" id="bCrearPregunta" class="bCrearPregunta" value="Crear pregunta">
-        <a href="foro.html" class="bVolver">Cancelar</a>
+        <div class="d_botones">
+            <input type="submit" id="bCrearPregunta" class="bCrearPregunta" value="Crear pregunta">
+            <a href="index.php?controller=pregunta&action=foro" class="bVolver">Cancelar</a>
+        </div>
 
     </form>
 
