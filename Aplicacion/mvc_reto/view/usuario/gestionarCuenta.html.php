@@ -21,13 +21,16 @@ require_once __DIR__ . "/../layout/header.php";
             <!-- TODO : Comprobar que sea así como se pone una caja de búsqueda + implementar. -->
             <div class="busqueda">
                 <form method="GET" action="index.php?controller=usuario&action=recuperarContra">
-                    <input type="text" name="search" placeholder="Buscar por DNI, Nombre, Email..."
+                    <input type="text" name="search" placeholder="Buscar por DNI."
                            value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>">
                     <input type="submit" value="Buscar">
                 </form>
             </div>
 
             <?php
+
+            /* TODO : Comentar la parte de php para que se vea la vista.
+
             // Si el array '$dataToView' del 'index.php' tiene filas (la función "list()" del "UserController" obtiene resultados), entonces se creará la tabla.
             // TODO : Poner bien el '$dataToView'.
             if(count($dataToView["data"])>0){
@@ -86,6 +89,9 @@ require_once __DIR__ . "/../layout/header.php";
 
                 <?php
             }
+
+            */
+
             ?>
 
         </div>

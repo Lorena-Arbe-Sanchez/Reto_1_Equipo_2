@@ -20,11 +20,14 @@ class UsuarioController {
     public function validarLogin(){
 
         // Pasarle los valores de las casillas necesarias como parámetros.
-        $result = $this->model->getUsuarioByUsuarioContrasena($_POST['usuario'], $_POST['contrasena']);
+        $usuarioDB = $this->model->getUsuarioByUsuarioContrasena($_POST['usuario'], $_POST['contrasena']);
 
-        if ($result){
+        if ($usuarioDB){
 
             // TODO : Hacer lo de verificar si es administrador y guardar la variable (mirar en "feature/Aritz").
+
+            // Pasar '$usuarioDB' al perfil para poder mostrar los datos.
+            require __DIR__ . '/../view/usuario/perfil.html.php';
 
             // Usuario y contraseña correctos. Inicio sesión exitoso y redirigir al foro.
             header("Location: index.php?controller=pregunta&action=foro");
