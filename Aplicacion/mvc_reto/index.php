@@ -21,15 +21,23 @@ $dataToView["data"] = array();
 if(method_exists($controller, $_GET["action"]))
     $dataToView["data"] = $controller -> {$_GET["action"]}();
 
-// Si el controlador es usuario o si aunque sea usuario no tiene la acción de login o recuperarContraseña.
-if ($_GET["controller"] != "Usuario" || ($_GET["controller"] == "Usuario" && $_GET["action"] != "login" && $_GET["action"] != "recuperar")){
-    require_once "view/layout/header.php";
+/* Siempre va a haber que llamar solo a la vista, ya que hay múltiples variables que pasar como parámetro al header,
+    y además después del footer hay que llamar a diferentes archivos de JavaScript dependiendo de la ventana.
+    (No es factible implementarlo).
+    Por lo tanto, en cada página se decidirá si llamará al header y al footer o no, y qué variables pasarles. */
+require_once "view/".$_GET["controller"]."/".$controller->view.".html.php";
+
+/*
+// Solo si el controlador es usuario y tiene la acción de login o recuperarContraseña:
+if ($_GET["controller"] == "Usuario" && ($_GET["action"] == "login" || $_GET["action"] == "recuperar")){
     require_once "view/".$_GET["controller"]."/".$controller->view.".html.php";
-    // TODO : require_once "view/layout/footer.php";
 }
 else{
-    // En los casos de que sea UsuarioController y action = login / recuperar.
+    // En los demás casos:
+    require_once "view/layout/header.php";
     require_once "view/".$_GET["controller"]."/".$controller->view.".html.php";
+    require_once "view/layout/footer.php";
 }
+*/
 
 ?>
