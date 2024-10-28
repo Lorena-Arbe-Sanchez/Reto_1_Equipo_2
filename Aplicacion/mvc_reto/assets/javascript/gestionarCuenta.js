@@ -12,7 +12,7 @@
 let contador;
 
 let botonCrear = document.getElementById("bCrear");
-let botonEditar = document.getElementById("bEditar");
+//let botonEditar = document.getElementById("bEditar");
 let formulario = document.getElementById("formRegistro");
 
 // Si se selecciona el botón de crear o de editar --> se tendrá que mostrar el contenedor nº2.
@@ -20,14 +20,8 @@ botonCrear.addEventListener("click", mostrarContenedor2);
 //botonEditar.addEventListener("click", mostrarContenedor2);
 
 function mostrarContenedor2(e){
-    let botonAccion = document.getElementById("bAccion");
+    let botonAccion = document.getElementById("bCrear");
 
-    if (e.target.id === "bCrear")
-        botonAccion.value = "Registrar";
-    else{
-        botonAccion.value = "Modificar";
-        // TODO : Rellenar las casillas con los datos existentes.
-    }
 
     botonAccion.addEventListener("click", (event) => validarDatos(event, e.target.id));
 
@@ -43,8 +37,8 @@ function validarDatos(event, idBoton){
 
     let dniCasilla = document.getElementById("dni");
     let dni = dniCasilla.value;
-    let administradorCasilla = document.querySelectorAll('input[name="admin"]');
-    let adminSeleccionado = [...administradorCasilla].find(radio => radio.checked).value;
+    //let administradorCasilla = document.querySelectorAll('input[name="admin"]');
+    //let adminSeleccionado = [...administradorCasilla].find(radio => radio.checked).value;
     let nombreCasilla = document.getElementById("nombre");
     let nombre = nombreCasilla.value;
     let primerApellidoCasilla = document.getElementById("primerApellido");
@@ -105,6 +99,11 @@ function validarDatos(event, idBoton){
             telefonoCasilla.focus();
             contador+=1;
         }
+        else if (!expregEmail.test(email)){
+            alert("El email debe terminar por '@gmail.com'.");
+            emailCasilla.focus();
+            contador+=1;
+        }
         else if (!expregContra.test(contrasena)){
             alert("La contraseña debe contener mínimamente 8 caracteres, entre ellos una mayúscula, una minúscula y un número.");
             contrasenaCasilla.focus();
@@ -119,25 +118,7 @@ function validarDatos(event, idBoton){
         // Si no hay errores (casillas vacías y/o patrones incorrectos), se creará o actualizará la cuenta.
         if(contador === 0){
 
-            if (idBoton === "bCrear"){
-
-                // TODO : Habría que hacer un 'insert' en la BBDD...
-
-                crearUsuario();
-
-                alert("Registro realizado correctamente.");
-                //formulario.submit();
-
-            }
-            else{
-
-                // TODO : Habría que hacer un 'update' en la BBDD...
-
-                editarUsuario();
-
-                alert("Modificación realizada correctamente.");
-
-            }
+            formulario.submit();
 
         }
 
