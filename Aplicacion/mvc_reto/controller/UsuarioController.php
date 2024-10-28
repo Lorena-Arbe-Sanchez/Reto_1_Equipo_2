@@ -26,7 +26,7 @@ class UsuarioController {
 
             // TODO : Hacer lo de verificar si es administrador y guardar la variable (mirar en "feature/Aritz").
 
-            // Pasar '$usuarioDB' al perfil para poder mostrar los datos.
+            // TODO : Pasar '$usuarioDB' al perfil para poder mostrar los datos.
             require __DIR__ . '/../view/usuario/perfil.html.php';
 
             // Usuario y contraseña correctos. Inicio sesión exitoso y redirigir al foro.
