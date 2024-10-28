@@ -26,27 +26,27 @@ require_once __DIR__ . "/../layout/header.php";
         </div>
         <div class="nombreDiv">
             <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" value="<?php echo $usuarioDB['nombre']; ?>" readonly>
+            <input type="text" id="nombre" name="nombre" value="<?php echo htmlspecialchars($usuarioDB['nombre']); ?>" readonly>
         </div>
         <div class="primerApeDiv">
             <label for="primerApellido">Primer apellido</label>
-            <input type="text" id="primerApellido" name="primerApellido" value="<?php echo $usuarioDB['apellido1']; ?>" readonly>
+            <input type="text" id="primerApellido" name="primerApellido" value="<?php echo htmlspecialchars($usuarioDB['apellido1']); ?>" readonly>
         </div>
         <div class="segundoApeDiv">
             <label for="segundoApellido">Segundo apellido</label>
-            <input type="text" id="segundoApellido" name="segundoApellido" value="<?php echo $usuarioDB['apellido2']; ?>" readonly>
+            <input type="text" id="segundoApellido" name="segundoApellido" value="<?php echo htmlspecialchars($usuarioDB['apellido2']); ?>" readonly>
         </div>
         <div class="dniDiv">
             <label for="DNI">DNI</label>
-            <input type="text" id="DNI" name="DNI" value="<?php echo $usuarioDB['dni']; ?>" readonly>
+            <input type="text" id="DNI" name="DNI" value="<?php echo htmlspecialchars($usuarioDB['dni']); ?>" readonly>
         </div>
         <div class="telefonoDiv">
             <label for="telefono">Teléfono</label>
-            <input type="tel" id="telefono" name="telefono" value="<?php echo $usuarioDB['telefono']; ?>" readonly>
+            <input type="tel" id="telefono" name="telefono" value="<?php echo isset($usuarioDB['telefono']) ? htmlspecialchars($usuarioDB['telefono']) : ''; ?>" readonly>
         </div>
         <div class="emailDiv">
             <label for="email">Correo electrónico</label>
-            <input type="email" id="email" name="email" value="<?php echo $usuarioDB['email']; ?>" readonly>
+            <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($usuarioDB['email']); ?>" readonly>
         </div>
 
     </div>

@@ -131,7 +131,7 @@ function validarDatos(event, idBoton){
                 crearUsuario();
 
                 alert("Registro realizado correctamente.");
-                //formulario.submit();
+                formulario.submit();
 
             }
             else{
