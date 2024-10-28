@@ -37,6 +37,8 @@ class UsuarioController {
         }
     }
 
+
+    //Funcion para crear la vista
     public function cuentas(){
         $this->view="gestionarCuenta";
     }
@@ -56,6 +58,23 @@ class UsuarioController {
 
     // Función para la ventana de 'recuperarContrasena'.
     public function validarRecuperar(){
+
+    }
+
+
+    //Funcion para crear un usuario nuevo
+    public function save(){
+
+
+        $param = $_POST;
+
+        $id = $this->model->insertUsuario($param);
+       // $result = $this->model->getUsuarioByUsuarioContrasena($usuario, $contrasena);
+
+        //$_GET["response"] = true;
+       // return $result;
+        return true;
+
 
     }
 
