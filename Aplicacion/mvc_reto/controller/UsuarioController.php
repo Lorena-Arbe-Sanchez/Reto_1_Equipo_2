@@ -37,6 +37,8 @@ class UsuarioController {
         }
     }
 
+
+    //Funcion para crear la vista
     public function cuentas(){
         $this->view="gestionarCuenta";
     }
@@ -84,6 +86,23 @@ class UsuarioController {
             header("Location: index.php?controller=usuario&action=recuperar&error=1");
             exit();
         }
+    }
+
+
+    //Funcion para crear un usuario nuevo
+    public function save(){
+
+
+        $param = $_POST;
+
+        $id = $this->model->insertUsuario($param);
+       // $result = $this->model->getUsuarioByUsuarioContrasena($usuario, $contrasena);
+
+        //$_GET["response"] = true;
+       // return $result;
+        return true;
+
+
     }
 
 }
