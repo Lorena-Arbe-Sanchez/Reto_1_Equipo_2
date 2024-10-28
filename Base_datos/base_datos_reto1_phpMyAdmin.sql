@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: mysql:3306
--- Tiempo de generación: 17-10-2024 a las 10:31:09
+-- Tiempo de generación: 24-10-2024 a las 08:33:24
 -- Versión del servidor: 11.5.2-MariaDB-ubu2404
 -- Versión de PHP: 8.2.24
 
@@ -37,9 +37,9 @@ CREATE TABLE `preguntas` (
   `tema` varchar(100) NOT NULL,
   `fecha` date NOT NULL,
   `id_usuario` int(4) NOT NULL,
-  `archivo` varchar(255) NOT NULL,
-  `votosLike` int(3) NOT NULL,
-  `votosDislike` int(3) NOT NULL
+  `archivo` varchar(255) DEFAULT NULL,
+  `votosLike` int(3) DEFAULT NULL,
+  `votosDislike` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 
 -- --------------------------------------------------------
@@ -52,9 +52,9 @@ DROP TABLE IF EXISTS `respuestas`;
 CREATE TABLE `respuestas` (
   `id` int(100) NOT NULL,
   `solucion` varchar(200) NOT NULL,
-  `archivo` varchar(255) NOT NULL,
-  `votosLike` int(3) NOT NULL,
-  `votosDislike` int(3) NOT NULL,
+  `archivo` varchar(255) DEFAULT NULL,
+  `votosLike` int(3) DEFAULT NULL,
+  `votosDislike` int(3) DEFAULT NULL,
   `id_pregunta` int(10) NOT NULL,
   `id_usuario` int(4) NOT NULL,
   `fecha` date NOT NULL

@@ -1,44 +1,29 @@
 <?php
 
-require_once "model/pregunta.php";
+require_once "model/Pregunta.php";
 
 class PreguntaController {
 
-    public $page_title;
     public $view;
     public $model;
 
-
     public function __construct() {
-        $this->view= "list";
-        $this->page_title= "";
-        $this->model= new Pregunta();
-
+        $this->view = "foro";
+        $this->model = new Pregunta();
     }
 
-    public function list(){
-
-        $this -> page_title = "Lista Preguntas";
-        $this -> model -> getPregunta();
-
+    public function foro(){
+        $this->view= "foro";
     }
 
-    public function listFrecuentes(){
-
-        $this -> view = "foro";
-        $this -> page_title = "Lista Preguntas Frecuentes";
-        $this -> model -> getPreguntaFrecuentes();
-
+    public function crear(){
+        $this->view = "crearPregunta";
     }
 
-    public function create(){
-        $this->page_title ='Crear pregunta';
-        $this->view ='crearPregunta';
-    }
 
-    public function save(){
 
-        $this -> page_title ='Crear pregunta';
+    public function guardar(){
+
         $this->view ='crearPregunta';
 
         $param = $_POST;
@@ -51,9 +36,8 @@ class PreguntaController {
 
     }
 
-
-    //Borrar pregunta
-    public function delete(){
+    // Eliminar pregunta.
+    public function borrar(){
 
         $this->view ="borrarPregunta";
         return $this -> model -> deleteUsuario($_POST["id"]);
@@ -67,10 +51,6 @@ class PreguntaController {
 
     }
 
-
-
-
-
-
 }
+
 ?>

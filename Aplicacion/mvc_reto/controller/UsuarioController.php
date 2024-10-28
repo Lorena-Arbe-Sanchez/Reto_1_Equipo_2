@@ -1,129 +1,64 @@
 <?php
 
-require_once "model/usuario.php";
-
+require_once "model/Usuario.php";
 
 class UsuarioController {
 
-    public $page_title;
     public $view;
     public $model;
 
-
-
     public function __construct() {
-
-        $this->page_title = "";
-        $this->view = "usuario";
+        $this->view = "login";
         $this->model = new Usuario();
-
     }
 
+    public function login(){
+        $this->view= "login";
+    }
 
+    // Función para comprobar la existencia del usuario en el login.
+    public function validarLogin(){
 
-    //Funcion para al hacer login mirar si existe el usuario
-    public function login() {
+        // Pasarle los valores de las casillas necesarias como parámetros.
+        $result = $this->model->getUsuarioByUsuarioContrasena($_POST['usuario'], $_POST['contrasena']);
 
-        $this->page_title = "login";
-        $this->view = "login";
+        if ($result){
 
-        // Llama al modelo para validar usuario y contraseña
-       // $result = $this->model->getValidateByUsuarioContrasenya($usuario, $contrasenya);
+            // TODO : Hacer lo de verificar si es administrador y guardar la variable (mirar en "feature/Aritz").
 
-       /*
-        *  // Si la autenticación es correcta
-        if ($result) {
-
-            // Verifica si es administrador
-            $admin = $this->isAdmin();
-
-            if ($admin) {
-                // Si es administrador, redirige a la vista de administrador
-                $_GET["responde"] = true;
-                header("Location: foroAdmin.php");
-            } else {
-                // Si no es administrador, redirige a la vista de usuario estándar
-                $_GET["responde"] = true;
-                header("Location: foro.php");
-            }
-
-        } else {
-            // Si la autenticación falla, retorna false y muestra un mensaje de error
-            $_GET["responde"] = false;
-            echo "Usuario o contraseña incorrectos";
+            // Usuario y contraseña correctos. Inicio sesión exitoso y redirigir al foro.
+            header("Location: index.php?controller=pregunta&action=foro");
+            exit(); // Asegurar que no se ejecute más código después de la redirección.
         }
-
-        return $result;
-        *
-        * */
+        else{
+            // Usuario no encontrado. Redirigir al login con un mensaje de error.
+            header("Location: index.php?controller=usuario&action=login&error=1");
+            exit();
+        }
     }
 
-
-    // Comprueba si es admin o no para sacar una ventana o otra
-    public function isAdmin(){
-
-        $this->page_title = "usuario";
-        $this->view = "login";
-        return $this->model-> getAdminByUsuario($_GET["usuario"]);
-
+    public function cuentas(){
+        $this->view="gestionarCuenta";
     }
 
-    //Crear usuario Nuevo
-    public function create(){
-
-        $this->page_title = "Create usuario";
-        $this->view = "crearUsuario";
-        $param = $_POST;
-        //Mandar los datos atraves del param
+    // Función para el botón "Buscar" (filtrar) de la ventana de 'gestionarCuenta'.
+    public function buscarFiltro(){
+        $this->view="gestionarCuenta";
     }
 
-
-    public function save(){
-
-        $this->page_title = "Create usuario";
-        $this->view = "crearUsuario";
-
-        $param = $_POST;
-        $id = $this-> model -> saveUsuario($param);
-        $result = $this->model->getUsuarioById($id);
-
-        $_GET["responde"] =  true;
-        return $result;
-
+    public function perfil(){
+        $this->view="perfil";
     }
 
-    //Eliminar usuario
-    public function delete(){
-
-        $this->page_title = "Borrar usuario";
-        $this->view = "borrarUsuario";
-        return $this->model->deleteUsuarioById($_GET["id"]);
-
+    public function recuperar(){
+        $this->view="recuperarContrasena";
     }
 
-    public function confirmarBorrarUsuario(){
-
-        $this -> view = "borrarUsuario";
-        return $this->model->getUsuarioById($_GET["id"]);
+    // Función para la ventana de 'recuperarContrasena'.
+    public function validarRecuperar(){
 
     }
-
-
-
-    //Modificar usuario
-    public function update(){
-
-        $this->page_title = "Editar usuario";
-        $this->view = "modificarUsuario";
-        $id = $this->model->updateUsuario($_GET["id"]);
-        $result = $this->model->getUsuarioById($id);
-        $_GET["responde"] =  true;
-        return $result;
-
-    }
-
 
 }
-
 
 ?>

@@ -8,6 +8,9 @@ function validar(event){
     // Evitar la recarga de la página y conservar el contenido de los campos si ocurre algún error.
     event.preventDefault();
 
+    document.getElementById("mensajeErrorUsuario").innerText = "";
+    document.getElementById("mensajeErrorContrasena").innerText = "";
+
     let usuario = document.getElementById("usuario").value;
     let contrasena = document.getElementById("contrasena").value;
 
@@ -15,17 +18,18 @@ function validar(event){
     if (!usuario || !contrasena){
 
         if (!usuario && !contrasena){
-            // TODO : Se puede poner un estilo a los "alert".
-            alert("Las casillas del usuario y la contraseña deben ser rellenadas.");
+            document.getElementById("mensajeErrorContrasena").innerText =
+                "Las casillas del usuario y la contraseña deben ser rellenadas.";
             document.getElementById("usuario").focus();
         }
         else{
             if(!usuario){
-                alert("El usuario debe ser rellenado.");
+                document.getElementById("mensajeErrorUsuario").innerText = "El usuario debe ser rellenado.";
                 document.getElementById("usuario").focus();
             }
-            else{
-                alert("La contraseña debe ser rellenada.");
+            if(!contrasena){
+                document.getElementById("mensajeErrorContrasena").innerText =
+                    "La contraseña debe ser rellenada.";
                 document.getElementById("contrasena").focus();
             }
         }
@@ -34,21 +38,31 @@ function validar(event){
 
         // Validar la contraseña con su patrón.
 
-        // TODO : ¿Tendrían que estar encriptadas, no?
-
         let expreg = new RegExp("^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)[A-Za-z\\d]{8,}$");
 
         if(expreg.test(contrasena)){
 
-            // TODO : Habría que comprobar en la BBDD q existe...
+            formulario.submit();
 
-            alert("¡Bienvenido/a " +usuario+ "!");
+            // Habría que comprobar si existe en la BBDD.
 
-            formulario.submit(); // Enviar el formulario manualmente
+            /*
+            // Redirigir al usuario.
+            usuarioExistente = header("Location: index.php?controller=usuario&action=validar");
 
+            if (usuarioExistente === false || usuarioExistente === null){
+                document.getElementById("mensajeErrorContrasena").innerText =
+                    "No existe un usuario con esos datos.";
+                document.getElementById("usuario").focus();
+            }
+            else{
+                formulario.submit(); // Enviar el formulario manualmente.
+            }
+             */
         }
         else{
-            alert("La contraseña debe ser válida.");
+            document.getElementById("mensajeErrorContrasena").innerText = "La contraseña debe ser válida.";
+            document.getElementById("contrasena").focus();
         }
 
     }

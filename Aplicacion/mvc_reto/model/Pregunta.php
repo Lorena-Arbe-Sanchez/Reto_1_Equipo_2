@@ -1,19 +1,19 @@
 <?php
 
-class Pregunta{
-
+class Pregunta {
 
     private $tabla = "preguntas";
     private $connection;
 
-    public function __construct(){
-        $this->getConnection();
+    public function __construct() {
+        $this->getConexion();
     }
 
-    public function getConnection(){
+    public function getConexion(){
         $dbObj = new Db();
         $this->connection = $dbObj ->connection;
     }
+
 
     public function getPregunta(){
 
@@ -92,6 +92,5 @@ class Pregunta{
         return $stmt -> fetch();
 
     }
-
 
 }

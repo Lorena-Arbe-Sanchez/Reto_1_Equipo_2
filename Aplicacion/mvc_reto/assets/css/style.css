@@ -12,16 +12,12 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url("../imagenes/fondo5_gif.gif");
-    background-size: cover; /* Cubrir toda la pantalla */
+    background-image: url( "../imagenes/fondo1_gif.gif");
+    background-size: cover; /* Cubrir toda la pantalla. */
     background-position: center; /* Centrar el GIF. */
     background-attachment: fixed; /* Fijar el fondo para que no se desplace con el scroll. */
     background-repeat: no-repeat;
-}
-
-main{
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
 }
 
 
@@ -31,6 +27,7 @@ main{
 /* TODO : Poner que se cambien de sitio los elementos dependiendo del dispositivo (ponerlo en las páginas que lo necesiten). */
 
 header{
+    top: 0;
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -104,6 +101,7 @@ header a{
 
 .menuDesplegable ul li{
     border-bottom: 1px solid darkgrey;
+    text-align: center;
 }
 
 .menuDesplegable ul li:hover{
@@ -128,13 +126,13 @@ footer{
 
 /* MISMOS ESTILOS EN ELEMENTOS DE PÁGINAS DIFERENTES (Y PROPIEDADES RELACIONADAS CON LOS CONTENIDOS) */
 
-.pag_foro, .pag_crearPregunta, .pag_crearCuenta, .pag_perfil{
+.pag_foro, .pag_crearPregunta, .pag_gestionarCuenta, .pag_perfil{
     background: linear-gradient(to bottom, #BCCAD6, white);
     min-height: 100vh; /* Al menos el 100% de la ventana. */
     background-attachment: fixed; /* Mantiener el degradado fijo mientras se hace scroll. */
 }
 
-.container, .pag_crearCuenta .contenido, .pag_perfil .contenido, .pag_crearPregunta .contenido{
+.container, .pag_perfil .contenido, .pag_crearPregunta .contenido{
     position: relative;
     flex-direction: column;
     text-align: center;
@@ -143,25 +141,26 @@ footer{
     border-radius: 10px;
     border: 1px solid #667292;
     z-index: 1;
-    margin-top: 5em;
+    margin-top: 1em;
 }
 
-.pag_crearCuenta .contenido, .pag_perfil .contenido, .pag_crearPregunta .contenido{
+.pag_perfil .contenido, .pag_crearPregunta .contenido{
     background-color: #8d9db67e;
 }
 
-.pag_crearCuenta .contenido {
+.pag_gestionarCuenta .contenido{
     height: 70vh;
 }
 
 .contenido{
-    height: auto;
-    width: 70%;
-    margin: 0 auto;
+    width: 50%;
 }
 
 .pag_perfil .contenido{
-    margin-top: 300px;
+    width: auto;
+}
+
+.pag_perfil .contenido{
     display: grid;
     grid-template-columns: repeat(2, 20fr);
 }
@@ -170,9 +169,9 @@ footer{
     margin: 1em;
     padding: .7em;
     text-decoration: none;
-    background-color: rgba(141, 157, 182, 0.62);
+    background-color: rgba(141, 157, 182, 0.52);
     border: .1em solid #8D9DB6;
-    border-radius: 1.5em;
+    /*border-radius: 1.5em;*/
 }
 
 
@@ -185,15 +184,10 @@ form{
     align-items: center;
 }
 
-form #crear{
-    padding: 0;
-
-}
-
 div{
     display: flex;
     align-items: center;
-    padding: 1em;
+    padding: .8em;
     justify-content: center;
 }
 
@@ -206,16 +200,21 @@ label{
     font-weight: bold;
 }
 
-button, input[type="submit"]{
-    margin-top: 2em;
+input, select, textarea{
+    padding: .5em;
+}
+
+button, input[type="submit"], .botonGuardar{
+    margin-top: 1em;
     padding: .7em;
     font-size: 1em;
     background-color: #8D9DB6;
     border-color: #BCCAD6;
     font-style: oblique;
+    text-decoration: none;
 }
 
-#bRegistrar, #bModificar {
+#bRegistrar, #bModificar{
     margin-top: 0;
 }
 
@@ -278,7 +277,6 @@ select{
     display: flex;
     flex-direction: column;
     margin-top: 2em;
-
 }
 
 .foto img{
@@ -286,32 +284,97 @@ select{
     height: 290px;
     border-radius: 100%;
     box-shadow: 0 0 2em 0.5em #667292;
-
 }
 
-.pag_foro .contenido{
-    position: relative;
-    top: 15em;
-    justify-content: center;
-}
-
-.pag_crearPregunta .contenido{
-    position: relative;
-    top: 6em;
-    justify-content: center;
-}
-
-.pag_crearCuenta .contenido{
-    position: relative;
-    top: 5em;
-    justify-content: center;
-}
-
-.pag_perfil .contenido{
-    position: relative;
-    justify-content: center;
-}
-
-#anadirImg {
+#anadirImg{
     margin-top: 0;
+}
+
+/* De la página de la gestión de cuentas (mitad con datos cuentas {lista}, y mitad con datos de 1 cuenta {casillas}). */
+
+.pag_gestionarCuenta .contenido{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.pag_gestionarCuenta .mitades{
+    display: flex;
+    width: 100%;
+    gap: 2em;
+}
+
+.pag_gestionarCuenta .mitad{
+    flex: 1;
+    background-color: #8d9db67e;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #667292;
+}
+
+.pag_gestionarCuenta .contenido1{
+    max-width: 50%;
+    min-width: 40%;
+}
+
+.pag_gestionarCuenta .contenido2{
+    flex-grow: 1;
+}
+
+.pag_gestionarCuenta #bCrear{
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    margin-top: 2em;
+    font-size: 1em;
+    background-color: #F1E3DD;
+    color: black;
+    border: 1px solid black;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#contenedor2{
+    visibility: hidden; /* Ocultar el elemento, pero sigue ocupando espacio en el diseño. */
+}
+
+/* Para la ventana de "crearPregunta". */
+
+#formCrearPregunta, #formRecuperarContra{
+    display: block;
+    padding: 3em 2em 0 2em;
+}
+
+#formCrearPregunta textarea{
+    width: 100%;
+}
+
+#formCrearPregunta select{
+    font-size: 14px;
+}
+
+.d_botones{
+    margin-top: 1em;
+}
+
+.d_botones input[type="submit"]{
+    margin-top: 0;
+}
+
+/* Para la ventana del login. */
+
+.pag_login .container{
+    min-width: 20%;
+}
+
+#formLogin div{
+    flex-direction: column;
+}
+
+#formLogin .fila_datos{
+    flex-direction: row;
+}
+
+#formLogin .mensajeError{
+    color: red;
+    font-size: 0.8em;
+    display: block;
 }
