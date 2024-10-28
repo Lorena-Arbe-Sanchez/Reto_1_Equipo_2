@@ -20,11 +20,14 @@ class UsuarioController {
     public function validarLogin(){
 
         // Pasarle los valores de las casillas necesarias como parámetros.
-        $result = $this->model->getUsuarioByUsuarioContrasena($_POST['usuario'], $_POST['contrasena']);
+        $usuarioDB = $this->model->getUsuarioByUsuarioContrasena($_POST['usuario'], $_POST['contrasena']);
 
-        if ($result){
+        if ($usuarioDB){
 
-            // TODO : Hacer lo de verificar si es administrador y guardar la variable (mirar en "feature/Aritz").
+            // TODO : Hacer lo de verificar si es administrador y guardar la variable (mirar en "feature/Aritz"...).
+
+            // Guardar '$usuarioDB' en una variable de sesión.
+            $_SESSION['usuarioDB'] = $usuarioDB;
 
             // Usuario y contraseña correctos. Inicio sesión exitoso y redirigir al foro.
             header("Location: index.php?controller=pregunta&action=foro");
@@ -47,7 +50,14 @@ class UsuarioController {
     }
 
     public function perfil(){
-        $this->view="perfil";
+
+        // Si la sesión contiene los datos de $usuarioDB, hay que pasarlos a la vista.
+        if (isset($_SESSION['usuarioDB'])) {
+            $usuarioDB = $_SESSION['usuarioDB'];
+            require_once __DIR__ . '/../view/usuario/perfil.html.php';
+        }
+        else
+            error_log("Ha ocurrido un problema con los datos del usuario logeado.");
     }
 
     public function recuperar(){

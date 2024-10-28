@@ -12,12 +12,12 @@
 let contador;
 
 let botonCrear = document.getElementById("bCrear");
-let botonEditar = document.getElementById("bEditar");
+//let botonEditar = document.getElementById("bEditar");
 let formulario = document.getElementById("formRegistro");
 
 // Si se selecciona el botón de crear o de editar --> se tendrá que mostrar el contenedor nº2.
 botonCrear.addEventListener("click", mostrarContenedor2);
-botonEditar.addEventListener("click", mostrarContenedor2);
+//botonEditar.addEventListener("click", mostrarContenedor2);
 
 function mostrarContenedor2(e){
     let botonAccion = document.getElementById("bAccion");
@@ -43,8 +43,8 @@ function validarDatos(event, idBoton){
 
     let dniCasilla = document.getElementById("dni");
     let dni = dniCasilla.value;
-    let administradorCasilla = document.querySelectorAll('input[name="admin"]');
-    let adminSeleccionado = [...administradorCasilla].find(radio => radio.checked).value;
+    //let administradorCasilla = document.querySelectorAll('input[name="admin"]');
+    //let adminSeleccionado = [...administradorCasilla].find(radio => radio.checked).value;
     let nombreCasilla = document.getElementById("nombre");
     let nombre = nombreCasilla.value;
     let primerApellidoCasilla = document.getElementById("primerApellido");
@@ -80,7 +80,7 @@ function validarDatos(event, idBoton){
     }
     else{
 
-        if (!expregTexto.test(dni)){
+        if (!expregDni.test(dni)){
             alert("El DNI debe estar formado por 8 números y una letra en mayúsculas.");
             dniCasilla.focus();
             contador+=1;
@@ -105,6 +105,11 @@ function validarDatos(event, idBoton){
             telefonoCasilla.focus();
             contador+=1;
         }
+        else if (!expregEmail.test(email)){
+            alert("El email debe terminar por '@gmail.com'.");
+            emailCasilla.focus();
+            contador+=1;
+        }
         else if (!expregContra.test(contrasena)){
             alert("La contraseña debe contener mínimamente 8 caracteres, entre ellos una mayúscula, una minúscula y un número.");
             contrasenaCasilla.focus();
@@ -126,7 +131,7 @@ function validarDatos(event, idBoton){
                 crearUsuario();
 
                 alert("Registro realizado correctamente.");
-                //formulario.submit();
+                formulario.submit();
 
             }
             else{

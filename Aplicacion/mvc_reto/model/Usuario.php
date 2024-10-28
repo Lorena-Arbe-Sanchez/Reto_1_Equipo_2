@@ -31,9 +31,9 @@ class Usuario {
         // Si se encuentra el usuario, hay que verificar la contraseña.
         //TODO : if (!empty($usuarioDB) && password_verify($contrasena, $usuarioDB['contrasena'])){
         if ($usuarioDB){
-            return true;
+            return $usuarioDB;
         }
-        return false; // Si no se encontró el usuario.
+        return null; // Si no se encontró el usuario.
     }
 
 }
