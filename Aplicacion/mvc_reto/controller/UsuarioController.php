@@ -57,6 +57,33 @@ class UsuarioController {
     // Función para la ventana de 'recuperarContrasena'.
     public function validarRecuperar(){
 
+        $usuario = $_POST['usuario'];
+        $contrasenaNueva = $_POST['contrasena1'];
+
+        // Pasarle los valores de las casillas necesarias como parámetros.
+        $result = $this->model->getUsuarioByUsuario($_POST['usuario']);
+
+        if ($result){
+
+            // TODO : Hacer lo de verificar si es administrador y guardar la variable (mirar en "feature/Aritz").
+
+            // Usuario y contraseña correctos. Cambio de contraseña exitoso y redirigir al foro.
+            $cambioExitoso = $this->model->actualizarContrasena($usuario, $contrasenaNueva);
+
+            if ($cambioExitoso){
+                header("Location: index.php?controller=usuario&action=login");
+                exit(); // Asegurar que no se ejecute más código después de la redirección.
+            }
+            else{
+                echo("Error a la hora de recuperar contraseña");
+            }
+        }
+        else{
+            // Usuario no encontrado. Enviar un mensaje de error.
+            echo("Usuario no encontrado");
+            header("Location: index.php?controller=usuario&action=recuperar&error=1");
+            exit();
+        }
     }
 
 }

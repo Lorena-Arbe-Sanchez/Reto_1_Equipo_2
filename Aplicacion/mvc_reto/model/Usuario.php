@@ -36,4 +36,25 @@ class Usuario {
         return false; // Si no se encontró el usuario.
     }
 
+    public function getUsuarioByUsuario($usuario){
+        $sql = "SELECT * FROM ". $this->tabla ." WHERE usuario = ?";
+        $stmt = $this->connection->prepare($sql);
+        $stmt -> execute([$usuario]);
+
+        $usuarioDB = $stmt->fetch();
+
+        if ($usuarioDB){
+            return true;
+        }
+        return false;
+    }
+
+    public function actualizarContrasena($usuario, $contrasenaNueva){
+        $sql = "UPDATE ". $this->tabla ." SET contrasena = ? WHERE usuario = ?";
+        $stmt = $this->connection->prepare($sql);
+        $res = $stmt -> execute([$contrasenaNueva, $usuario]);
+
+        return $res;
+    }
+
 }
