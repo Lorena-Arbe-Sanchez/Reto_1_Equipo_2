@@ -46,7 +46,8 @@ class Pregunta {
         // Initialize variables with default values
         $titulo = $descripcion = $tema = $archivo = "";
         $fecha = date('Y-m-d');
-        $id_usuario = $votosLike = $votosDislike = 0;
+        $id_usuario = $_SESSION["id"];
+        $votosLike = $votosDislike = 0;
 
         if (isset($param["titulo"])) $titulo = $param["titulo"];
         if (isset($param["descripcion"])) $descripcion = $param["descripcion"];
@@ -55,7 +56,7 @@ class Pregunta {
             $fecha = $param["fecha"];  // Use the provided date if it's not empty
         }
         if (isset($param["id_usuario"]) && !empty($param["id_usuario"])) {
-            $id_usuario = $param["id_usuario"];
+            $id_usuario = $_SESSION['usuario'];
         }
         if (isset($param["archivo"])) $archivo = $param["archivo"];
         if (isset($param["votosLike"])) $votosLike = $param["votosLike"];
@@ -76,11 +77,10 @@ class Pregunta {
 
     public function getPreguntaById($id){
 
-        $sql = "SELECT * FROM $this->tabla WHERE id=$id";
-        $stml = $this -> connection -> prepare($sql);
+        $sql = "SELECT * FROM ". $this->tabla ." WHERE id = ?";
+        $stml = $this->connection->prepare($sql);
         $stml -> execute([$id]);
-        return $stml -> fetch();
-
+        return $stml->fetch();
     }
 
 
