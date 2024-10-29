@@ -61,15 +61,23 @@ class UsuarioController {
         $this->view="gestionarCuenta";
     }
 
+    // Función para obtener el listado de cuentas existentes y para ponerlo en la ventana de la gestión de cuentas.
+    public function list(){
+        return $this->model->getUsuarios();
+    }
+
     // Función para pasarle a la vista los datos del usuario logeado y mostrar la ventana.
     public function perfil(){
         // Si la sesión contiene los datos de $usuarioDB, hay que pasarlos a la vista.
         if (isset($_SESSION['usuarioDB'])){
-            $usuarioDB = $_SESSION['usuarioDB'];
+            $usuarioSesion = $_SESSION['usuarioDB'];
             require_once __DIR__ . '/../view/usuario/perfil.html.php';
+            exit();
         }
-        else
+        else{
             error_log("Ha ocurrido un problema con los datos del usuario logeado.");
+            exit();
+        }
     }
 
     public function recuperar(){

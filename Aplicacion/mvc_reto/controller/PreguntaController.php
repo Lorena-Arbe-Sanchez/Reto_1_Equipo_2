@@ -13,7 +13,7 @@ class PreguntaController {
         $this->model = new Pregunta();
     }
 
-    // Obtenemos los datos de todas las preguntas y las mostramos en el foro
+    // Obtener los datos de todas las preguntas y mostrarlas en el foro.
     public function foro(){
         $this->view= "foro";
         $preguntas = $this->model->getPreguntas();
@@ -36,7 +36,6 @@ class PreguntaController {
     }
 
     public function save(){
-
         $this->view ='crearPregunta';
 
         $param = $_POST;
@@ -46,26 +45,20 @@ class PreguntaController {
         $_GET["response"] = true;
 
         return $result;
-
     }
 
     // Eliminar pregunta.
     public function borrar(){
-
         $this->view ="borrarPregunta";
         return $this -> model -> deleteUsuario($_POST["id"]);
-
     }
 
     public function confirmarBorrar(){
-
         $this -> view ='confirmar';
         return $this -> model -> getPreguntaById($_POST["id"]);
-
     }
 
     public function getPreguntas(){
-
         $this->view="foro";
         return $this->model->getPreguntas();
     }

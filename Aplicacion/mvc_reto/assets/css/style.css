@@ -75,9 +75,7 @@ header a{
 
 /* Estilos del botón de perfil y el menú desplegable. */
 
-.d_botonPerfil a{
-    background: none;
-}
+.d_botonPerfil a{ background: none; }
 
 .d_botonPerfil{
     position: relative; /* Para posicionar el menú desplegable. */
@@ -120,10 +118,9 @@ footer{
     justify-content: space-around;
     height: 90px;
     background-color: #8D9DB6;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     border-top: 1px solid black;
-    z-index: 1;
 }
 
 
@@ -314,11 +311,6 @@ select{
     box-shadow: 0 0 10px #667292;
 }
 
-.pag_gestionarCuenta .contenido1{
-    max-width: 50%;
-    min-width: 40%;
-}
-
 .pag_gestionarCuenta .contenido2{
     flex-grow: 1;
 }
@@ -335,7 +327,12 @@ select{
     border-radius: 5px;
 }
 
-/*Estilos relacionados con la página del foro*/
+#contenedor2{
+    visibility: hidden; /* Ocultar el elemento, pero sigue ocupando espacio en el diseño. */
+}
+
+/* Estilos relacionados con la página del foro. */
+
 .pag_foro .contenido{
     padding: 0;
     margin-top: 10em;
@@ -357,7 +354,7 @@ select{
 }
 
 .bResponder a{
-    font-style: none;
+    text-decoration: none;
 }
 
 .tituloPregunta, .temaPregunta, .descPregunta, .divBResponder{
@@ -372,13 +369,6 @@ select{
 
 .botonesGusta{
     gap: 4em;
-}
-
-
-
-
-#contenedor2{
-    visibility: hidden; /* Ocultar el elemento, pero sigue ocupando espacio en el diseño. */
 }
 
 /* Para la ventana de "crearPregunta". */
@@ -423,3 +413,6 @@ select{
     font-size: 0.8em;
     display: block;
 }
+
+
+/* TODO : Poner estilos de la página del perfil (ahora están en el header). */

@@ -1,3 +1,10 @@
+<!--
+Cargar de la base de datos los datos de las preguntas, respuestas y usuarios.
+Título de la pregunta, tema, nombre de usuario, fecha (se guardara la del mismo día de la creación de la pregunta),
+descripción de la pregunta, botón de añadir respuesta, respuestas existentes con nombre de usuario, fecha,
+botón de 'like' y botón de 'dislike'.
+-->
+
 <?php
 $pageTitle = "Foro";
 $bodyClass = "pag_foro";
@@ -8,33 +15,52 @@ require_once __DIR__ . "/../layout/header.php";
 ?>
 
 <div class="contenido">
+
     <?php
     if(!empty($dataToView["data"]) && count($dataToView["data"])>0){
+
         foreach($dataToView["data"] as $pregunta){
             ?>
             <div class="pregunta">
                 <div class="tituloPregunta">
-                    <h2><?php echo $pregunta["titulo"];?></h2>
+                    <h2><?php echo $pregunta["titulo"]; ?></h2>
                 </div>
 
                 <div class="temaPregunta">
-                    <?php echo $pregunta["tema"] ?>
+                    <!-- Obtener el tema de la BBDD y mostrarlo correctamente. -->
+                    <?php
+                    $temas = [
+                        "diseno_aeronaves" => "Diseño y Desarrollo de Aeronaves",
+                        "fabricacion_produccion" => "Fabricación y Producción",
+                        "mantenimiento_operaciones" => "Mantenimiento y Operaciones",
+                        "innovacion_sostenibilidad" => "Innovación y Sostenibilidad",
+                        "certificaciones_reglamentacion" => "Certificaciones y Reglamentación",
+                        "problemas_tecnicos" => "Problemas Técnicos y Soluciones",
+                        "colaboracion_interdepartamental" => "Colaboración Interdepartamental",
+                        "software_herramientas" => "Software y Herramientas de Ingeniería",
+                        "gestion_conocimiento" => "Gestión del Conocimiento",
+                        "otro" => "Otro tema"
+                    ];
+
+                    // Verifica si el tema existe en el array; si no, muestra "Tema no especificado"
+                    echo $temas[$pregunta["tema"]] ?? "Tema no especificado";
+                    ?>
                 </div>
-                
+
                 <div class="descPregunta">
-                    <?php echo $pregunta["descripcion"] ?>
+                    <?php echo $pregunta["descripcion"]; ?>
                 </div>
 
                 <div class="divBResponder">
                     <div class="bResponder">
-                        <a href="index.php?controller=respuesta&action=crear&id=<?php echo $_SESSION["id"]?>"
+                        <a href="index.php?controller=respuesta&action=crear&id=<?php echo $_SESSION["id"]; ?>"
                         >Responder</a>
                     </div>
                 </div>
-                
+
                 <div class="respuestas">
                     <h3>Respuestas:</h3>
-                    </br>
+                    <br>
                     <?php
                     if(isset($pregunta['respuestas']) && !empty($pregunta['respuestas'])){
                         foreach($pregunta['respuestas'] as $respuesta){
@@ -52,9 +78,10 @@ require_once __DIR__ . "/../layout/header.php";
                                 </div>
                             </div>
                             <?php
-                            
+
                         }
-                    } else {
+                    }
+                    else{
                         ?>
                         <p>No hay ninguna respuesta.</p>
                         <?php
@@ -63,27 +90,21 @@ require_once __DIR__ . "/../layout/header.php";
                 </div>
 
             </div>
-            </br>
+            <br>
             <?php
         }
-    }else{
+
+    }
+    else{
         ?>
-        <div class="alert alert-info">
+        <div>
             No existen preguntas.
         </div>
         <?php
     }
     ?>
+
 </div>
-
-
-    <!-- TODO : Cargar de la base de datos los datos de las preguntas, respuestas y usuarios. -->
-    <!-- Título de la pregunta, tema, nombre de usuario, fecha (se guardara la del mismo día de la creación de la pregunta),
-            descripción de la pregunta, botón de añadir respuesta, respuestas existentes con nombre de usuario, fecha,
-            botón de 'like' y botón de 'dislike'. -->
-
-    <!-- TODO : Luego borrar; es para probar. -->
-
 
 <?php require_once __DIR__ . "/../layout/footer.php"; ?>
 

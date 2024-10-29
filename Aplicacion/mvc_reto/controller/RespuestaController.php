@@ -16,9 +16,6 @@ class RespuestaController {
         return $this->model->getRespuestaByPreguntaId($preguntaId);
     }
 
-
 }
-
-
 
 ?>
