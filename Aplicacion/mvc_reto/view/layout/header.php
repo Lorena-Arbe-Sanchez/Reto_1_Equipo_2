@@ -63,7 +63,9 @@
                     <?php if ($botonBloqueado == "l_botonCuentas") echo 'id="botonBloqueado"'; ?>>
                     <a href="index.php?controller=usuario&action=cuentas">Gestionar cuentas</a>
                 </li>
-                <li><a href="index.php?controller=usuario&action=login">Cerrar sesión</a></li>
+                <li>
+                    <a href="index.php?controller=usuario&action=login">Cerrar sesión</a>
+                </li>
             </ul>
         </div>
     </div>
