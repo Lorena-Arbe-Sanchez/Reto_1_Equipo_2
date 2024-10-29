@@ -110,6 +110,7 @@ class UsuarioController {
     //Funcion para crear un usuario nuevo
     public function save(){
 
+        $this->view="gestionarCuenta";
 
         $param = $_POST;
 

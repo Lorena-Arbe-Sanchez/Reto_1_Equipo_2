@@ -73,7 +73,7 @@ class Usuario {
         if(isset($param["contrasena"])) $contrasena = $param["contrasena"];
 
         if (isset($param["administrador"])) {
-            $administrador = ($param["administrador"] === 'adminSi') ? 1 : 0;
+            $administrador = ($param["administrador"] === 'si') ? 1 : 0;
         }
 
         /*
