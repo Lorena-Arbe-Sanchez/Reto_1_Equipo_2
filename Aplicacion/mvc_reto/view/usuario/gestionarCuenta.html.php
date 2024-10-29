@@ -43,13 +43,10 @@ if(isset($dataToView["data"]["administrador"])) $administrador = $dataToView["da
 
             <?php
 
-            /* TODO : Comentar la parte de php para que se vea la vista.
-
-            // Si el array '$dataToView' del 'index.php' tiene filas (la función "list()" del "UserController" obtiene resultados), entonces se creará la tabla.
-            // TODO : Poner bien el '$dataToView'.
-            if(count($dataToView["data"])>0){
+            // Si el array '$datosCuentas' del 'index.php' tiene filas (la función "list()" del "UsuarioController" obtiene resultados), entonces se creará la tabla.
+            if(count($datosCuentas["data"])>0){
                 ?>
-                <table>
+                <table class="tabla_cuentas">
                     <thead>
                     <tr>
                         <th>Administrador</th>
@@ -57,14 +54,13 @@ if(isset($dataToView["data"]["administrador"])) $administrador = $dataToView["da
                         <th>Nombre</th>
                         <th>Email</th>
                         <th>Usuario</th>
-                        <th>Contraseña</th>
                     </tr>
                     </thead>
                     <tbody>
 
 
                     <?php
-                    foreach($dataToView["data"] as $cuenta){
+                    foreach($datosCuentas["data"] as $cuenta){
                         // Comprobar que '$cuenta' es un array antes de acceder a las claves.
                         if (is_array($cuenta)) {
                             ?>
@@ -74,12 +70,11 @@ if(isset($dataToView["data"]["administrador"])) $administrador = $dataToView["da
                                 <td><?php echo $cuenta['nombre']; ?></td>
                                 <td><?php echo $cuenta['email']; ?></td>
                                 <td><?php echo $cuenta['usuario']; ?></td>
-                                <td><?php echo $cuenta['contrasena']; ?></td>
                                 <td>
                                     <!-- Con "Editar" mostrará los datos de esa cuenta.
                                         Con "Eliminar" se mostrará un mensaje de confirmación. -->
                                     <a href="index.php?controller=usuario&action=view&id=<?php echo $cuenta['id']; ?>"
-                                       id="bEditar">Editar</a>
+                                       id="bEditar">Editar</a> <!-- TODO : Poner bien el enlace (para que se vean las casillas con los datos). -->
                                     <a href="index.php?controller=usuario&action=confirmDelete&id=
                                             <?php echo $cuenta['id']; ?>" id="bEliminar">Eliminar</a>
                                 </td>
@@ -103,8 +98,6 @@ if(isset($dataToView["data"]["administrador"])) $administrador = $dataToView["da
 
                 <?php
             }
-
-            */
 
             ?>
 

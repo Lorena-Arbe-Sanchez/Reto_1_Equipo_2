@@ -14,6 +14,14 @@ class Usuario {
         $this->connection = $dbObj ->connection;
     }
 
+    // Obtener todas las cuentas.
+    public function getUsuarios(){
+        $sql = "SELECT * FROM " .$this->tabla;
+        $stmt = $this->connection->prepare($sql);
+        $stmt -> execute();
+        return $stmt -> fetchAll();
+    }
+
     public function getUsuarioByUsuarioContrasena($usuario, $contrasena){
 
         //$sql = "SELECT * FROM " .$this->tabla. " WHERE usuario = ?";
