@@ -11,7 +11,7 @@
     <!-- Poner un favicon (icono en la pestaña de una página web). -->
     <!-- TODO : PONER EL DEL MONIGOTE CREADO -->
     <link rel="icon" type="image/png"
-          href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/icono_avion.png">
+          href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/icono_empresa.png">
 
     <!-- TODO : Poner los estilos bien en el 'style.css' y mirar por qué allí no funciona.  -->
     <style>

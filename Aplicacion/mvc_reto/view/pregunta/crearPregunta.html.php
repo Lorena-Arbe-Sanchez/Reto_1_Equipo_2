@@ -8,7 +8,7 @@ require_once __DIR__ . "/../layout/header.php";
 
 <div class="contenido">
 
-    <div id="titulo">
+    <div id="divTitulo">
         <h2>Creación de pregunta</h2>
     </div>
     <form id="formCrearPregunta" action="index.php?controller=pregunta&action=save" method="post">
@@ -30,13 +30,14 @@ require_once __DIR__ . "/../layout/header.php";
                 <option value="colaboracion_interdepartamental">Colaboración Interdepartamental</option>
                 <option value="software_herramientas">Software y Herramientas de Ingeniería</option>
                 <option value="gestion_conocimiento">Gestión del Conocimiento</option>
-                <option value="otro">Otro</option>
+                <option value="otro">Otro tema</option>
             </select>
         </div>
         <div>
             <label for="descripcion">Descripción</label>
             <textarea id="descripcion" name="descripcion" maxlength="100" required></textarea>
         </div>
+        <!-- TODO : AÑADIR OPCIÓN DE "ARCHIVO" -->
         <div class="d_botones">
             <input type="submit" id="bCrearPregunta" class="bCrearPregunta" value="Crear pregunta">
             <a href="index.php?controller=pregunta&action=foro" class="bVolver">Cancelar</a>

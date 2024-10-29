@@ -10,7 +10,6 @@ function validarCreacion(event) {
     let enunciadoCasilla = document.getElementById("titulo");
     let enunciado = enunciadoCasilla.value;
     let temaCasilla = document.getElementById("tema");
-    let tema = temaCasilla.value;
     let descripcionCasilla = document.getElementById("descripcion");
     let descripcion = descripcionCasilla.value;
 
