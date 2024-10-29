@@ -21,7 +21,7 @@ class Usuario {
         $stmt = $this->connection->prepare($sql);
         $stmt -> execute([$usuario, $contrasena]); // Pasarle el array con los datos.
 
-        $usuarioDB = $stmt->fetch();
+        $usuarioDB = $stmt->fetch(PDO::FETCH_ASSOC);
 
         /* TODO
          * Las contraseñas están encriptadas [password_hash() en PHP para su
@@ -31,7 +31,7 @@ class Usuario {
         // Si se encuentra el usuario, hay que verificar la contraseña.
         //TODO : if (!empty($usuarioDB) && password_verify($contrasena, $usuarioDB['contrasena'])){
         if ($usuarioDB){
-            return true;
+            return $usuarioDB;
         }
         return false; // Si no se encontró el usuario.
     }
@@ -44,7 +44,7 @@ class Usuario {
         $usuarioDB = $stmt->fetch();
 
         if ($usuarioDB){
-            return true;
+            return $usuarioDB;
         }
         return false;
     }
