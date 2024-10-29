@@ -14,8 +14,8 @@ require_once __DIR__ . "/../layout/header.php";
     <form id="formCrearPregunta" action="index.php?controller=pregunta&action=save" method="post">
 
         <div>
-            <label for="enunciado">Enunciado</label>
-            <textarea id="enunciado" name="enunciado" maxlength="100" required></textarea>
+            <label for="titulo">Titulo</label>
+            <textarea id="titulo" name="titulo" maxlength="100" required></textarea>
         </div>
         <div>
             <label for="tema">Tema</label>

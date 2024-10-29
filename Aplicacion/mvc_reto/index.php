@@ -1,4 +1,6 @@
 <?php
+ini_set('session.gc_maxlifetime', 604800); // 1 semana en segundos
+ini_set('session.cookie_lifetime', 604800); // 1 semana en segundos
 
 session_start();
 
@@ -20,6 +22,13 @@ $controller = new $controllerName();
 $dataToView["data"] = array();
 if(method_exists($controller, $_GET["action"]))
     $dataToView["data"] = $controller -> {$_GET["action"]}();
+
+// TODO : MIRAR SI SE PUEDE MEJORAR ESTO O CAMBIAR DE SITIO.
+$datosCuentas["data"] = array();
+// Nombre de la función que obtendrá el listado de todas las cuentas existentes.
+$nombreFuncion = 'list';
+if(method_exists($controller, $nombreFuncion))
+    $datosCuentas["data"] = $controller -> {$nombreFuncion}();
 
 /* Siempre va a haber que llamar solo a la vista, ya que hay múltiples variables que pasar como parámetro al header,
     y además después del footer hay que llamar a diferentes archivos de JavaScript dependiendo de la ventana.

@@ -20,14 +20,7 @@ botonCrear.addEventListener("click", mostrarContenedor2);
 //botonEditar.addEventListener("click", mostrarContenedor2);
 
 function mostrarContenedor2(e){
-    let botonAccion = document.getElementById("bAccion");
-
-    if (e.target.id === "bCrear")
-        botonAccion.value = "Registrar";
-    else{
-        botonAccion.value = "Modificar";
-        // TODO : Rellenar las casillas con los datos existentes.
-    }
+    let botonAccion = document.getElementById("bCrear");
 
     botonAccion.addEventListener("click", (event) => validarDatos(event, e.target.id));
 
@@ -124,41 +117,10 @@ function validarDatos(event, idBoton){
         // Si no hay errores (casillas vacías y/o patrones incorrectos), se creará o actualizará la cuenta.
         if(contador === 0){
 
-            if (idBoton === "bCrear"){
-
-                // TODO : Habría que hacer un 'insert' en la BBDD...
-
-                crearUsuario();
-
-                alert("Registro realizado correctamente.");
-                formulario.submit();
-
-            }
-            else{
-
-                // TODO : Habría que hacer un 'update' en la BBDD...
-
-                editarUsuario();
-
-                alert("Modificación realizada correctamente.");
-
-            }
+            formulario.submit();
 
         }
 
     }
-
-}
-
-/*
-crearUsuario(): Debería enviar una petición al backend para registrar el nuevo usuario en la base de datos.
-editarUsuario(): Debería enviar los cambios al servidor, haciendo una actualización (UPDATE) en la base de datos.
- */
-
-function crearUsuario(){
-
-}
-
-function editarUsuario(){
 
 }

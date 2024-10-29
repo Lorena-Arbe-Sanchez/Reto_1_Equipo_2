@@ -9,7 +9,7 @@ require_once __DIR__ . "/../layout/header.php";
 <div class="contenido">
 
     <div class="foto">
-        <!-- TODO : Cargar la imagen del usuario de la BBDD. -->
+        <!-- TODO : Cargar la imagen del usuario de la BBDD. AÑADIR COLUMNA COMO EN EL EJ_INES -->
         <img src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/perfil.png" alt="Imagen perfil">
 
         <form>

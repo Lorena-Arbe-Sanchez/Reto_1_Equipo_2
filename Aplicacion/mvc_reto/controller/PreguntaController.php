@@ -22,13 +22,13 @@ class PreguntaController {
 
 
 
-    public function guardar(){
+    public function save(){
 
         $this->view ='crearPregunta';
 
         $param = $_POST;
-        $id = $this-> model -> save($param);
-        $result = $this -> model -> getPreguntaById($id);
+        $id = $this->model->save($param);
+        $result = $this->model->getPreguntaById($id);
 
         $_GET["response"] = true;
 

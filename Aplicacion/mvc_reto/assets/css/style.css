@@ -311,11 +311,6 @@ select{
     box-shadow: 0 0 10px #667292;
 }
 
-.pag_gestionarCuenta .contenido1{
-    max-width: 50%;
-    min-width: 40%;
-}
-
 .pag_gestionarCuenta .contenido2{
     flex-grow: 1;
 }

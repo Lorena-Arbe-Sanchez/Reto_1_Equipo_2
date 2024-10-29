@@ -19,17 +19,27 @@ class UsuarioController {
     // Función para comprobar la existencia del usuario en el login.
     public function validarLogin(){
 
+        $usuario = $_POST['usuario'];
+        $contrasena = $_POST['contrasena'];
+
         // Pasarle los valores de las casillas necesarias como parámetros.
-        $usuarioDB = $this->model->getUsuarioByUsuarioContrasena($_POST['usuario'], $_POST['contrasena']);
+        $usuarioDB = $this->model->getUsuarioByUsuarioContrasena($usuario, $contrasena);
+
+        //var_dump($result);
 
         if ($usuarioDB){
 
-            // TODO : Hacer lo de verificar si es administrador y guardar la variable (mirar en "feature/Aritz"...).
+            // Usuario y contraseña correctos. Inicio sesión exitoso y redirigir al foro.
+
+            // TODO : Hacer lo de verificar si es administrador y guardar la variable.
+            $_SESSION["id"] = $usuarioDB["id"];
+            $_SESSION["usuario"] = $usuarioDB["usuario"];
+            $_SESSION["administrador"] = $usuarioDB["administrador"];
+            $_SESSION["dni"] = $usuarioDB["dni"];
 
             // Guardar '$usuarioDB' en una variable de sesión.
             $_SESSION['usuarioDB'] = $usuarioDB;
 
-            // Usuario y contraseña correctos. Inicio sesión exitoso y redirigir al foro.
             header("Location: index.php?controller=pregunta&action=foro");
             exit(); // Asegurar que no se ejecute más código después de la redirección.
         }
@@ -40,6 +50,8 @@ class UsuarioController {
         }
     }
 
+
+    // Función para crear la vista.
     public function cuentas(){
         $this->view="gestionarCuenta";
     }
@@ -49,15 +61,23 @@ class UsuarioController {
         $this->view="gestionarCuenta";
     }
 
-    public function perfil(){
+    // Función para obtener el listado de cuentas existentes y para ponerlo en la ventana de la gestión de cuentas.
+    public function list(){
+        return $this->model->getUsuarios();
+    }
 
+    // Función para pasarle a la vista los datos del usuario logeado y mostrar la ventana.
+    public function perfil(){
         // Si la sesión contiene los datos de $usuarioDB, hay que pasarlos a la vista.
-        if (isset($_SESSION['usuarioDB'])) {
+        if (isset($_SESSION['usuarioDB'])){
             $usuarioDB = $_SESSION['usuarioDB'];
             require_once __DIR__ . '/../view/usuario/perfil.html.php';
+            error_log("Bien."); // TODO : Quitar. MIRAR POR QUÉ SALE TAMBIÉN EL LOGIN.
         }
-        else
+        else{
             error_log("Ha ocurrido un problema con los datos del usuario logeado.");
+            exit();
+        }
     }
 
     public function recuperar(){
@@ -66,6 +86,51 @@ class UsuarioController {
 
     // Función para la ventana de 'recuperarContrasena'.
     public function validarRecuperar(){
+
+        $usuario = $_POST['usuario'];
+        $contrasenaNueva = $_POST['contrasena1'];
+
+        // Pasarle los valores de las casillas necesarias como parámetros.
+        $result = $this->model->getUsuarioByUsuario($_POST['usuario']);
+
+        if ($result){
+
+            // TODO : Hacer lo de verificar si es administrador y guardar la variable (mirar en "feature/Aritz").
+
+            // Usuario y contraseña correctos. Cambio de contraseña exitoso y redirigir al foro.
+            $cambioExitoso = $this->model->actualizarContrasena($usuario, $contrasenaNueva);
+
+            if ($cambioExitoso){
+                header("Location: index.php?controller=usuario&action=login");
+                exit(); // Asegurar que no se ejecute más código después de la redirección.
+            }
+            else{
+                echo("Error a la hora de recuperar contraseña");
+            }
+        }
+        else{
+            // Usuario no encontrado. Enviar un mensaje de error.
+            echo("Usuario no encontrado");
+            header("Location: index.php?controller=usuario&action=recuperar&error=1");
+            exit();
+        }
+    }
+
+
+    // Función para crear un usuario nuevo.
+    public function save(){
+
+        $this->view="gestionarCuenta";
+
+        $param = $_POST;
+
+        $id = $this->model->insertUsuario($param);
+        // $result = $this->model->getUsuarioByUsuarioContrasena($usuario, $contrasena);
+
+        //$_GET["response"] = true;
+        // return $result;
+        return true;
+
 
     }
 
