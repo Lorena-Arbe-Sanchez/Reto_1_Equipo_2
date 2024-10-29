@@ -292,33 +292,6 @@ select{
 
 /* De la página de la gestión de cuentas (mitad con datos cuentas {lista}, y mitad con datos de 1 cuenta {casillas}). */
 
-.tabla_cuentas{
-    width: 100%;
-    overflow-x: auto; /* Añadirá scroll horizontal si el contenido de la tabla se desborda. */
-}
-
-table{
-    width: 100%;
-    border-collapse: collapse;
-    margin: 2em;
-}
-th, td{
-    border: 1px solid black;
-    padding: .8em;
-}
-th{
-    background-color: gainsboro;
-}
-
-.tabla_cuentas table{
-    width: auto; /* La tabla se ajustará automáticamente a su contenido. */
-}
-
-.tabla_cuentas th, .tabla_cuentas td{
-    white-space: nowrap; /* Evita que el contenido se divida en varias líneas. */
-}
-
-
 .pag_gestionarCuenta .contenido{
     display: flex;
     flex-direction: column;
@@ -336,11 +309,6 @@ th{
     background-color: #8d9db67e;
     border-radius: 10px;
     box-shadow: 0 0 10px #667292;
-}
-
-.pag_gestionarCuenta .contenido1{
-    max-width: 50%;
-    min-width: 40%;
 }
 
 .pag_gestionarCuenta .contenido2{

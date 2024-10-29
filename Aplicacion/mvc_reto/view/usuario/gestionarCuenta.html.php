@@ -49,11 +49,10 @@ if(isset($dataToView["data"]["administrador"])) $administrador = $dataToView["da
                 <table class="tabla_cuentas">
                     <thead>
                     <tr>
-                        <th>Administrador</th>
                         <th>DNI</th>
                         <th>Nombre</th>
                         <th>Email</th>
-                        <th>Usuario</th>
+                        <th>Administrador</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -65,11 +64,10 @@ if(isset($dataToView["data"]["administrador"])) $administrador = $dataToView["da
                         if (is_array($cuenta)) {
                             ?>
                             <tr>
-                                <td><?php echo $cuenta['administrador']; ?></td>
                                 <td><?php echo $cuenta['dni']; ?></td>
                                 <td><?php echo $cuenta['nombre']; ?></td>
                                 <td><?php echo $cuenta['email']; ?></td>
-                                <td><?php echo $cuenta['usuario']; ?></td>
+                                <td><?php echo $cuenta['administrador']; ?></td> <!-- TODO : Poner que salga un tick o no. -->
                                 <td>
                                     <!-- Con "Editar" mostrará los datos de esa cuenta.
                                         Con "Eliminar" se mostrará un mensaje de confirmación. -->
