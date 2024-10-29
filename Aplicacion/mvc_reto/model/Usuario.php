@@ -100,6 +100,73 @@ class Usuario {
     }
 
 
+    public function getUsuarioByDNI($dniBuscar){
+
+        if(is_null($dniBuscar)) return false;
+        $sql = "SELECT * FROM ". $this->tabla ." WHERE dni = ?";
+        $stmt = $this->connection->prepare($sql);
+        $stmt -> execute([$dniBuscar]);
+        error_log("getUsuariByDNI:" . $dniBuscar);
+        return $stmt->fetch();
+
+    }
+
+    public function getUsuarioById($id){
+
+        $sql = "SELECT * FROM ". $this->tabla ." WHERE id = ?";
+        $stmt = $this->connection->prepare($sql);
+        $stmt -> execute([$id]);
+        return $stmt->fetch();
+
+    }
+
+    public function modificarUsuario($param)
+    {
+
+         $id = $dni = $nombre = $apellido1 = $apellido2 = $email = $telefono = $usuario = $contrasena = $administrador = "";
+
+        $exist = false;
+
+        if (isset($param["dni"]) && $param["dni"] != '') {
+
+            $actualUsuario = $this->getUsuarioByDNI($param["dni"]);
+
+            if (isset($actualUsuario["dni"])) {
+                $exist = true;
+                $id = $actualUsuario["id"];
+                $dni = $param["dni"];
+                $nombre = $actualUsuario["nombre"];
+                $apellido1 = $actualUsuario["apellido1"];
+                $apellido2 = $actualUsuario["apellido2"];
+                $email = $actualUsuario["email"];
+                $telefono = $actualUsuario["telefono"];
+                $usuario = $actualUsuario["usuario"];
+                $contrasena = $actualUsuario["contrasena"];
+                $administrador = $actualUsuario["administrador"];
+
+            }
 
 
+            if (isset($param["nombre"])) $nombre = $param["nombre"];
+            if (isset($param["dni"])) $dni = $param["dni"];
+            if (isset($param["apellido1"])) $apellido1 = $param["apellido1"];
+            if (isset($param["apellido2"])) $apellido2 = $param["apellido2"];
+            if (isset($param["email"])) $email = $param["email"];
+            if (isset($param["telefono"])) $telefono = $param["telefono"];
+            if (isset($param["usuario"])) $usuario = $param["usuario"];
+            if (isset($param["contrasena"])) $contrasena = $param["contrasena"];
+            if (isset($param["administrador"])) {
+                $administrador = ($param["administrador"] === 'si') ? 1 : 0;
+            }
+
+            if ($exist) {
+                $sql = "UPDATE " . $this->tabla . " SET dni=?, nombre=?, apellido1=?, apellido2=?, email=?, telefono=?, usuario=?, contrasena=?, administrador=? WHERE id=?";
+                $stmt = $this->connection->prepare($sql);
+                $res = $stmt->execute([$dni, $nombre, $apellido1, $apellido2, $email, $telefono, $usuario, $contrasena, $administrador, $id]);
+            }
+            return $id;
+
+        }
+
+    }
 }

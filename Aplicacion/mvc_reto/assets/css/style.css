@@ -332,7 +332,7 @@ select{
     border-radius: 5px;
 }
 
-#contenedor2{
+#contenedor2, #contenedor3{
     visibility: hidden; /* Ocultar el elemento, pero sigue ocupando espacio en el diseño. */
 }
 
