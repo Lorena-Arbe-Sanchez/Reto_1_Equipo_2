@@ -17,7 +17,7 @@ let formulario = document.getElementById("formRegistro");
 
 // Si se selecciona el botón de crear o de editar --> se tendrá que mostrar el contenedor nº2.
 botonCrear.addEventListener("click", mostrarContenedor2);
-botonEditar.addEventListener("click", mostrarContenedor2);
+//botonEditar.addEventListener("click", mostrarContenedor2);
 
 function mostrarContenedor2(e){
     let botonAccion = document.getElementById("bAccion");
@@ -80,7 +80,7 @@ function validarDatos(event, idBoton){
     }
     else{
 
-        if (!expregTexto.test(dni)){
+        if (!expregDni.test(dni)){
             alert("El DNI debe estar formado por 8 números y una letra en mayúsculas.");
             dniCasilla.focus();
             contador+=1;

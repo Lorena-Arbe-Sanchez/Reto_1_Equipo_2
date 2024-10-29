@@ -19,14 +19,32 @@ class UsuarioController {
     // Función para comprobar la existencia del usuario en el login.
     public function validarLogin(){
 
+        $usuario = $_POST['usuario'];
+        $contrasena = $_POST['contrasena'];
+
         // Pasarle los valores de las casillas necesarias como parámetros.
-        $result = $this->model->getUsuarioByUsuarioContrasena($_POST['usuario'], $_POST['contrasena']);
+        $result = $this->model->getUsuarioByUsuarioContrasena($usuario, $contrasena);
+
+        var_dump($result);
 
         if ($result){
 
             // TODO : Hacer lo de verificar si es administrador y guardar la variable (mirar en "feature/Aritz").
 
             // Usuario y contraseña correctos. Inicio sesión exitoso y redirigir al foro.
+
+            $_SESSION["id"] = $result["id"];
+            $_SESSION["usuario"] = $result["usuario"];
+            $_SESSION["administrador"] = $result["administrador"];
+            $_SESSION["usuario"] = $result["usuario"];
+            $_SESSION["nombre"] = $result["nombre"];
+            $_SESSION["apellido1"] = $result["apellido1"];
+            $_SESSION["apellido2"] = $result["apellido2"];
+            $_SESSION["dni"] = $result["dni"];
+            $_SESSION["telefono"] = $result["telefono"];
+            $_SESSION["email"] = $result["email"];
+            $_SESSION["contrasena"] = $result["contrasena"];
+
             header("Location: index.php?controller=pregunta&action=foro");
             exit(); // Asegurar que no se ejecute más código después de la redirección.
         }
@@ -37,6 +55,8 @@ class UsuarioController {
         }
     }
 
+
+    //Funcion para crear la vista
     public function cuentas(){
         $this->view="gestionarCuenta";
     }
@@ -84,6 +104,23 @@ class UsuarioController {
             header("Location: index.php?controller=usuario&action=recuperar&error=1");
             exit();
         }
+    }
+
+
+    //Funcion para crear un usuario nuevo
+    public function save(){
+
+
+        $param = $_POST;
+
+        $id = $this->model->insertUsuario($param);
+       // $result = $this->model->getUsuarioByUsuarioContrasena($usuario, $contrasena);
+
+        //$_GET["response"] = true;
+       // return $result;
+        return true;
+
+
     }
 
 }
