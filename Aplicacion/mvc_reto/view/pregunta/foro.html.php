@@ -23,20 +23,37 @@ require_once __DIR__ . "/../layout/header.php";
             ?>
             <div class="pregunta">
                 <div class="tituloPregunta">
-                    <h2><?php echo $pregunta["titulo"];?></h2>
+                    <h2><?php echo $pregunta["titulo"]; ?></h2>
                 </div>
 
                 <div class="temaPregunta">
-                    <?php echo $pregunta["tema"] ?>
+                    <!-- Obtener el tema de la BBDD y mostrarlo correctamente. -->
+                    <?php
+                    $temas = [
+                        "diseno_aeronaves" => "Diseño y Desarrollo de Aeronaves",
+                        "fabricacion_produccion" => "Fabricación y Producción",
+                        "mantenimiento_operaciones" => "Mantenimiento y Operaciones",
+                        "innovacion_sostenibilidad" => "Innovación y Sostenibilidad",
+                        "certificaciones_reglamentacion" => "Certificaciones y Reglamentación",
+                        "problemas_tecnicos" => "Problemas Técnicos y Soluciones",
+                        "colaboracion_interdepartamental" => "Colaboración Interdepartamental",
+                        "software_herramientas" => "Software y Herramientas de Ingeniería",
+                        "gestion_conocimiento" => "Gestión del Conocimiento",
+                        "otro" => "Otro tema"
+                    ];
+
+                    // Verifica si el tema existe en el array; si no, muestra "Tema no especificado"
+                    echo $temas[$pregunta["tema"]] ?? "Tema no especificado";
+                    ?>
                 </div>
 
                 <div class="descPregunta">
-                    <?php echo $pregunta["descripcion"] ?>
+                    <?php echo $pregunta["descripcion"]; ?>
                 </div>
 
                 <div class="divBResponder">
                     <div class="bResponder">
-                        <a href="index.php?controller=respuesta&action=crear&id=<?php echo $_SESSION["id"]?>"
+                        <a href="index.php?controller=respuesta&action=crear&id=<?php echo $_SESSION["id"]; ?>"
                         >Responder</a>
                     </div>
                 </div>

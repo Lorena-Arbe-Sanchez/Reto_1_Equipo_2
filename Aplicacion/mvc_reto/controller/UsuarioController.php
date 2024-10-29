@@ -70,9 +70,9 @@ class UsuarioController {
     public function perfil(){
         // Si la sesión contiene los datos de $usuarioDB, hay que pasarlos a la vista.
         if (isset($_SESSION['usuarioDB'])){
-            $usuarioDB = $_SESSION['usuarioDB'];
+            $usuarioSesion = $_SESSION['usuarioDB'];
             require_once __DIR__ . '/../view/usuario/perfil.html.php';
-            error_log("Bien."); // TODO : Quitar. MIRAR POR QUÉ SALE TAMBIÉN EL LOGIN.
+            exit();
         }
         else{
             error_log("Ha ocurrido un problema con los datos del usuario logeado.");

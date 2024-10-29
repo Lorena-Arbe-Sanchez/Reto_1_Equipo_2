@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- TODO : Poner bien los "meta" de todas las páginas (lo mismo + propiedades funcionales). -->
+    <!-- TODO : Poner bien los "meta" de todas las páginas (propiedades funcionales). -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Variable "$pageTitle" para los títulos de las páginas que van cambiando. -->
     <title><?php echo isset($pageTitle) ? $pageTitle : 'Aergibide SL'; ?></title>
     <link rel="stylesheet" href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/css/style.css">
@@ -13,8 +12,10 @@
     <link rel="icon" type="image/png"
           href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/icono_empresa.png">
 
-    <!-- TODO : Poner los estilos bien en el 'style.css' y mirar por qué allí no funciona.  -->
+    <!-- TODO : Mirar por qué en el 'style.css' no funciona y moverlo.  -->
     <style>
+        /* Estilos de la página del perfil. */
+
         .tabla_cuentas{
             width: 100%;
             overflow-x: auto; /* Añadirá scroll horizontal si el contenido de la tabla se desborda. */
@@ -50,12 +51,12 @@
             margin: .2em 0;
             border-radius: 10px;
         }
-        #bEditar::before { /* TODO : PONER QUE SE VEA. */
+        #bEditar::before {
             content: '';
             display: inline-block;
             width: 16px;
             height: 16px;
-            background-image: url(../../assets/imagenes/editar.png);
+            background-image: url(/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/editar.png);
             background-size: contain;
             background-repeat: no-repeat;
             margin-right: .5em;
@@ -75,7 +76,7 @@
             display: inline-block;
             width: 16px;
             height: 16px;
-            background-image: url(../../assets/imagenes/eliminar.png);
+            background-image: url(/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/eliminar.png);
             background-size: contain;
             background-repeat: no-repeat;
             margin-right: .5em;
@@ -90,6 +91,7 @@
             margin-left: .5em;
         }
     </style>
+
 </head>
 <body class="<?php echo isset($bodyClass) ? $bodyClass : 'defaultBodyClass'; ?>">
 

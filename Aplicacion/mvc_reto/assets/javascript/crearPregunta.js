@@ -39,10 +39,8 @@ function validarCreacion(event) {
 
     }
     else{
-        // TODO : Habría que hacer un insert en la BBDD...
-
-        alert("Acción realizada correctamente.");
         formulario.submit();
+        alert("Pregunta creada correctamente.");
     }
 
 }
