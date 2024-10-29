@@ -8,7 +8,7 @@ require_once __DIR__ . "/../layout/header.php";
 
 <div class="contenido">
 
-    <div id="titulo">
+    <div id="divTitulo">
         <h2>Creación de pregunta</h2>
     </div>
     <form id="formCrearPregunta" action="index.php?controller=pregunta&action=save" method="post">

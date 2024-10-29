@@ -86,11 +86,18 @@ class Pregunta {
 
     public function deleteUsuario($id){
 
-        $sql = "Detele from " . $this -> tabla . "WHERE id=$id";
+        $sql = "Detele from " . $this -> tabla . " WHERE id=$id";
         $stmt = $this -> connection -> prepare($sql);
         $stmt -> execute([$id]);
         return $stmt -> fetch();
 
+    }
+
+    public function getPreguntas(){
+        $sql = "SELECT * FROM ". $this->tabla;
+        $stmt = $this->connection->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
     }
 
 }

@@ -8,6 +8,74 @@ require_once __DIR__ . "/../layout/header.php";
 ?>
 
 <div class="contenido">
+    <?php
+    if(!empty($dataToView["data"]) && count($dataToView["data"])>0){
+        foreach($dataToView["data"] as $pregunta){
+            ?>
+            <div class="pregunta">
+                <div class="tituloPregunta">
+                    <h2><?php echo $pregunta["titulo"];?></h2>
+                </div>
+
+                <div class="temaPregunta">
+                    <?php echo $pregunta["tema"] ?>
+                </div>
+                
+                <div class="descPregunta">
+                    <?php echo $pregunta["descripcion"] ?>
+                </div>
+
+                <div class="divBResponder">
+                    <div class="bResponder">
+                        <a href="index.php?controller=respuesta&action=crear&id=<?php echo $_SESSION["id"]?>"
+                        >Responder</a>
+                    </div>
+                </div>
+                
+                <div class="respuestas">
+                    <h3>Respuestas:</h3>
+                    </br>
+                    <?php
+                    if(isset($pregunta['respuestas']) && !empty($pregunta['respuestas'])){
+                        foreach($pregunta['respuestas'] as $respuesta){
+                            ?>
+                            <div class="respuesta">
+                                <p><?php echo $respuesta['solucion']; ?></p>
+                            </div>
+                            <div class="botonesGusta">
+                                <div class="bMeGusta">
+                                    <a href="#">Me gusta</a>
+                                </div>
+
+                                <div class="bNoMeGusta">
+                                    <a href="#">No me gusta</a>
+                                </div>
+                            </div>
+                            <?php
+                            
+                        }
+                    } else {
+                        ?>
+                        <p>No hay ninguna respuesta.</p>
+                        <?php
+                    }
+                    ?>
+                </div>
+
+            </div>
+            </br>
+            <?php
+        }
+    }else{
+        ?>
+        <div class="alert alert-info">
+            No existen preguntas.
+        </div>
+        <?php
+    }
+    ?>
+</div>
+
 
     <!-- TODO : Cargar de la base de datos los datos de las preguntas, respuestas y usuarios. -->
     <!-- Título de la pregunta, tema, nombre de usuario, fecha (se guardara la del mismo día de la creación de la pregunta),
@@ -15,20 +83,7 @@ require_once __DIR__ . "/../layout/header.php";
             botón de 'like' y botón de 'dislike'. -->
 
     <!-- TODO : Luego borrar; es para probar. -->
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
-        Eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
-        Nisi ut aliquip ex ea commodo consequat duis aute.
-        Irure dolor in reprehenderit in voluptate velit esse cillum.
-        Dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat.
-        Non proident sunt in culpa qui officia deserunt mollit.
-        Anim id est laborum curabitur gravida arcu ac tortor.
-        Aenean et tortor at risus viverra adipiscing at in.
-        Non tellus orci ac auctor augue mauris augue neque.
-    </p>
 
-</div>
 
 <?php require_once __DIR__ . "/../layout/footer.php"; ?>
 
