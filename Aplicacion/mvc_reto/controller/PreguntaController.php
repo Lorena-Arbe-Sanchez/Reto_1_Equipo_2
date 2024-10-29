@@ -1,6 +1,7 @@
 <?php
 
 require_once "model/Pregunta.php";
+require_once "RespuestaController.php";
 
 class PreguntaController {
 
@@ -12,15 +13,27 @@ class PreguntaController {
         $this->model = new Pregunta();
     }
 
+    // Obtenemos los datos de todas las preguntas y las mostramos en el foro
     public function foro(){
         $this->view= "foro";
+        $preguntas = $this->model->getPreguntas();
+
+        $respuestaController = new RespuestaController();
+
+        $preguntasConRespuestas = [];
+
+        foreach($preguntas as $pregunta){
+            $pregunta['respuestas'] = $respuestaController->view($pregunta['id']);
+
+            $preguntasConRespuestas[] = $pregunta;
+        }
+
+        return $preguntasConRespuestas ?: [];
     }
 
     public function crear(){
         $this->view = "crearPregunta";
     }
-
-
 
     public function save(){
 
@@ -49,6 +62,12 @@ class PreguntaController {
         $this -> view ='confirmar';
         return $this -> model -> getPreguntaById($_POST["id"]);
 
+    }
+
+    public function getPreguntas(){
+
+        $this->view="foro";
+        return $this->model->getPreguntas();
     }
 
 }

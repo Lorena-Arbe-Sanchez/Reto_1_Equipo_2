@@ -12,6 +12,9 @@ class RespuestaController {
         $this->model = new Respuesta();
     }
 
+    public function view($preguntaId){
+        return $this->model->getRespuestaByPreguntaId($preguntaId);
+    }
 
 
 }
