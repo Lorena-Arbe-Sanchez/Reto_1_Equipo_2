@@ -58,7 +58,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "develop",
+    "git-widget-placeholder": "feature/Lorena",
     "last_opened_file_path": "C:/laragon/www/a/mvc_reto",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -85,6 +85,7 @@
       <option name="presentableId" value="Default" />
       <updated>1730197926067</updated>
       <workItem from="1730197927121" duration="6233000" />
+      <workItem from="1730272595457" duration="563000" />
     </task>
     <servers />
   </component>
