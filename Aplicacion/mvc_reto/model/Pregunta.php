@@ -64,6 +64,15 @@ class Pregunta {
         return $id;
     }
 
+    public function sacarPreguntasPorUsuario(){
+        $id_usuario = $_SESSION["id"];
+        $sql = "SELECT * FROM " . $this->tabla . " WHERE id_usuario = ?";
+        $stm = $this->connection->prepare($sql);
+        $stm->execute([$id_usuario]);
+        return $stm->fetchAll();
+    }
+
+
     public function getPreguntaById($id){
         $sql = "SELECT * FROM ". $this->tabla ." WHERE id = ?";
         $stml = $this->connection->prepare($sql);
@@ -73,23 +82,18 @@ class Pregunta {
 
 
 
-    public function deletePregunta($id)
-    {
+    public function deletePregunta($id){
 
-        $sql = "Detele from " . $this->tabla . "WHERE id=$id";
-
-
-    }
-
-
-    public function deleteUsuario($id)
-    {
-        $sql = "Detele from " . $this->tabla . " WHERE id=$id";
+        $sql = "DELETE FROM " . $this->tabla . " WHERE id = ?";
 
         $stmt = $this->connection->prepare($sql);
         $stmt->execute([$id]);
         return $stmt->fetch();
+
+
     }
+
+
 
     public function getPreguntas(){
         $sql = "SELECT * FROM " . $this->tabla;

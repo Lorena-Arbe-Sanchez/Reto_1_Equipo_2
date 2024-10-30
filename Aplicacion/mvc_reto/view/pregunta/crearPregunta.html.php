@@ -37,10 +37,12 @@ require_once __DIR__ . "/../layout/header.php";
             <label for="descripcion">Descripción</label>
             <textarea id="descripcion" name="descripcion" maxlength="100" required></textarea>
         </div>
+
+        <input type="submit" id="bCrearPregunta" class="bCrearPregunta" value="Crear pregunta">
+
         <!-- TODO : AÑADIR OPCIÓN DE "ARCHIVO" -->
         <div class="d_botones">
-            <input type="submit" id="bCrearPregunta" class="bCrearPregunta" value="Crear pregunta">
-            <a href="index.php?controller=pregunta&action=foro" class="bVolver">Cancelar</a>
+            <a href="index.php?controller=pregunta&action=misPregunta" >Cancelar</a>
         </div>
 
     </form>

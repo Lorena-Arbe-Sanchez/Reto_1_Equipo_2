@@ -13,7 +13,8 @@ class UsuarioController {
     }
 
     public function login(){
-        $this->view= "login";
+
+
     }
 
     // Función para comprobar la existencia del usuario en el login.
@@ -54,6 +55,8 @@ class UsuarioController {
     // Función para crear la vista.
     public function cuentas(){
         $this->view="gestionarCuenta";
+        return $this->model->getUsuarios();
+
     }
 
     // Función para el botón "Buscar" (filtrar) de la ventana de 'gestionarCuenta'.
@@ -61,10 +64,6 @@ class UsuarioController {
         $this->view="gestionarCuenta";
     }
 
-    // Función para obtener el listado de cuentas existentes y para ponerlo en la ventana de la gestión de cuentas.
-    public function list(){
-        return $this->model->getUsuarios();
-    }
 
     // Función para pasarle a la vista los datos del usuario logeado y mostrar la ventana.
     public function perfil(){

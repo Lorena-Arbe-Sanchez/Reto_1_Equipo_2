@@ -112,11 +112,11 @@
         </div>
 
         <!-- TODO : Poner un enlace correcto en los botones. -->
-        <div class="d_botonPreguntas" <?php if ($botonBloqueado == "d_botonPreguntas") echo 'id="botonBloqueado"'; ?>>
+        <div class="d_botonPreguntasFrecuentes" <?php if ($botonBloqueado == "d_botonPreguntasFrecuentes") echo 'id="botonBloqueado"'; ?>>
             <a href="index.php?controller=pregunta&action=frecuentes" class="botonPreguntas">Preguntas frecuentes</a>
         </div>
 
-        <div class="d_botonCrear" <?php if ($botonBloqueado == "d_botonMisPreguntas") echo 'id="botonBloqueado"'; ?>>
+        <div class="d_misPreguntas" <?php if ($botonBloqueado == "d_botonMisPreguntas") echo 'id="botonBloqueado"'; ?>>
             <a href="index.php?controller=pregunta&action=misPregunta" class="botonCrear">Mis preguntas</a>
         </div>
 
