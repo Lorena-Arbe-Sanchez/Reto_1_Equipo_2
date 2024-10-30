@@ -126,7 +126,7 @@ footer{
 
 /* MISMOS ESTILOS EN ELEMENTOS DE PÁGINAS DIFERENTES (Y PROPIEDADES RELACIONADAS CON LOS CONTENIDOS) */
 
-.pag_foro, .pag_crearPregunta, .pag_gestionarCuenta, .pag_perfil{
+.pag_foro, .pag_crearPregunta, .pag_gestionarCuenta, .pag_perfil, .pag_misPreguntas{
     background: linear-gradient(to bottom, #BCCAD6, white);
     min-height: 100vh; /* Al menos el 100% de la ventana. */
     background-attachment: fixed; /* Mantiener el degradado fijo mientras se hace scroll. */
@@ -332,7 +332,7 @@ select{
     border-radius: 5px;
 }
 
-#contenedor2{
+#contenedor2, #contenedor3{
     visibility: hidden; /* Ocultar el elemento, pero sigue ocupando espacio en el diseño. */
 }
 

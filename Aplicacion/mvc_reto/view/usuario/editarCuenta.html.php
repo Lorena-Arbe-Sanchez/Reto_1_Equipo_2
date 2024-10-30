@@ -19,9 +19,6 @@ if(isset($dataToView["data"]["usuario"])) $usuario = $dataToView["data"]["usuari
 if(isset($dataToView["data"]["contrasena"])) $contrasena = $dataToView["data"]["contrasena"];
 if(isset($dataToView["data"]["administrador"])) $administrador = $dataToView["data"]["administrador"];
 
-$dniBuscar="";
-
-if(isset($dataToView["data"]["dniBuscar"])) $dniBuscar = $dataToView["data"]["dni"];
 
 
 ?>
@@ -31,91 +28,22 @@ if(isset($dataToView["data"]["dniBuscar"])) $dniBuscar = $dataToView["data"]["dn
         <h2>Gestión de cuentas de usuarios</h2>
     </div>
 
-    <div class="d_bCrear"><button id="bCrear">+ Crear cuenta</button></div> <!-- TODO : Poner imagen suma... -->
 
     <div class="mitades">
 
-        <div class="mitad contenido1">
-            <div class="busqueda">
-                <form method="get" action="index.php">
-                    <input type="hidden" name="controller" value="usuario">
-                    <input type="hidden" name="action" value="buscar">
-                    <input type="text" name="dniBuscar" placeholder="Buscar por DNI." value="<?php echo $dniBuscar; ?>">
-                    <input type="submit" id="bBuscar" value="Buscar">
-                </form>
-            </div>
+        <div  class="mitad contenido3">
 
-
-            <?php
-            /* TODO : Comentar la parte de php para que se vea la vista.
-            if(count($dataToView["data"])>0){
-                ?>
-                <table>
-                    <thead>
-                    <tr>
-                        <th>Administrador</th>
-                        <th>DNI</th>
-                        <th>Nombre</th>
-                        <th>Email</th>
-                        <th>Usuario</th>
-                        <th>Contraseña</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-
-                    <?php
-                    foreach($dataToView["data"] as $cuenta){
-                        if (is_array($cuenta)) {
-                            ?>
-                            <tr>
-                                <td><?php echo $cuenta['administrador']; ?></td>
-                                <td><?php echo $cuenta['dni']; ?></td>
-                                <td><?php echo $cuenta['nombre']; ?></td>
-                                <td><?php echo $cuenta['email']; ?></td>
-                                <td><?php echo $cuenta['usuario']; ?></td>
-                                <td><?php echo $cuenta['contrasena']; ?></td>
-                                <td>
-                                    <a href="index.php?controller=usuario&action=view&id=<?php echo $cuenta['id']; ?>"
-                                       id="bEditar">Editar</a>
-                                    <a href="index.php?controller=usuario&action=confirmDelete&id=<?php echo $cuenta['id']; ?>"
-                                       id="bEliminar">Eliminar</a>
-                                </td>
-                            </tr>
-
-                            <?php
-                        }
-                    }
-                    ?>
-                    </tbody>
-                </table>
-
-                <?php
-            } else {
-                ?>
-                <div class="mensajeInexistir">
-                    Actualmente no hay cuentas registradas.
-                </div>
-
-                <?php
-            }
-            */
-            ?>
-
-        </div>
-
-        <div id="contenedor2" class="mitad contenido2">
-
-            <form id="formRegistro" action="index.php?controller=usuario&action=save" method="post">
+            <form id="formRegistro" action="index.php?controller=usuario&action=editar" method="post">
                 <div id="datos">
                     <div>
                         <label for="dni">DNI</label>
-                        <input type="text" id="dni" name="dni" value="<?php echo $dni; ?>" required>
+                        <input type="text" id="dni" name="dni" value="<?php echo $dni; ?>" readonly>
                     </div>
 
                     <div>
                         <label>Administrador</label>
-                        <input type="radio" id="si" name="administrador" value="si">Sí
-                        <input type="radio" id="no" name="administrador" value="no" checked>No
+                        <input type="radio" id="si" name="administrador" value="1" <?php echo ($administrador == 1) ? 'checked' : '';?>>Sí
+                        <input type="radio" id="no" name="administrador" value="0"  <?php echo ($administrador == 0) ? 'checked' : '';?>>No
                     </div>
 
                     <div>
@@ -155,14 +83,17 @@ if(isset($dataToView["data"]["dniBuscar"])) $dniBuscar = $dataToView["data"]["dn
 
                     <div>
                         <label for="repetirContrasena">Repita la contraseña</label>
-                        <input type="password" id="repetirContrasena" name="repetirContrasena" required>
+                        <input type="password" id="repetirContrasena" name="repetirContrasena" value="<?php echo $contrasena; ?>" required>
                     </div>
 
                 </div>
 
                 <div id="botones">
-                    <input type="submit" id="bCrear" class="bCrear" value="Crear">
+                    <input type="submit" id="bModificar" class="bModificar" value="Modificar">
                 </div>
+
+                <a href="index.php?controller=usuario&action=cuentas" >Volver</a>
+
             </form>
 
         </div>

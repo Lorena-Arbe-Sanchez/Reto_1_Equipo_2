@@ -84,7 +84,7 @@ class Pregunta {
     }
 
 
-    public function deleteUsuario($id){
+    public function deletePregunta($id){
 
         $sql = "Detele from " . $this -> tabla . "WHERE id=$id";
         $stmt = $this -> connection -> prepare($sql);
