@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6abb039-d7f5-4f73-8b47-492ba288a50f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Reto_1_Equipo_2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aplicacion/html/foro.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/gestionarCuenta.js" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/gestionarCuenta.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/UsuarioController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/UsuarioController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/gestionarCuenta.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/gestionarCuenta.html.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +18,13 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -27,13 +33,25 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+        &quot;lastFilter&quot;: {
+        &quot;state&quot;: &quot;OPEN&quot;,
+        &quot;assignee&quot;: &quot;Lorena-Arbe-Sanchez&quot;
+        }
+        }</component>
+  <component name="GithubPullRequestsUISettings">{
+        &quot;selectedUrlAndAccountId&quot;: {
+        &quot;url&quot;: &quot;https://github.com/Lorena-Arbe-Sanchez/Reto_1_Equipo_2.git&quot;,
+        &quot;accountId&quot;: &quot;abafda44-7f4c-42d4-af2e-6ade4637b65c&quot;
+        }
+        }</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\laragon\bin\php\php-8.1.10-Win32-vs16-x64\php.exe" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 4
-}</component>
+        &quot;associatedIndex&quot;: 4
+        }</component>
   <component name="ProjectId" id="2nbgCFc5O03yhoh48UrwwFViEF1" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -43,8 +61,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Merging develop",
-    "last_opened_file_path": "C:/Users/2gdaw03/Desktop/Reto_1_Equipo_2",
+    "git-widget-placeholder": "feature/Aritz",
+    "last_opened_file_path": "C:/laragon/www/a/mvc_reto",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -56,7 +74,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.14015.96" />
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-PS-242.21829.154" />
+        <option value="bundled-php-predefined-a98d8de5180a-4d9f4c849d09-com.jetbrains.php.sharedIndexes-PS-242.21829.154" />
       </set>
     </attachedChunks>
   </component>
@@ -64,20 +83,18 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="b6abb039-d7f5-4f73-8b47-492ba288a50f" name="Changes" comment="" />
-      <created>1729247059467</created>
+      <created>1730197926067</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1729247059467</updated>
-      <workItem from="1729247060569" duration="413000" />
-      <workItem from="1729491311770" duration="305000" />
-      <workItem from="1729492188759" duration="9359000" />
-      <workItem from="1729506981155" duration="63000" />
-      <workItem from="1729507045282" duration="188000" />
-      <workItem from="1729507234761" duration="374000" />
+      <updated>1730197926067</updated>
+      <workItem from="1730197927121" duration="6126000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>
