@@ -160,9 +160,10 @@ class UsuarioController {
     public function eliminar(){
 
         $this->view="gestionarCuenta";
-        return $this->model->borrarUsuario($_POST["id"]);
+        return $this->model->borrarUsuario($_GET["dniEliminar"]);
 
     }
+
 
 }
 

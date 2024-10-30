@@ -21,9 +21,8 @@ if(isset($dataToView["data"]["administrador"])) $administrador = $dataToView["da
 $dniBuscar="";
 
 if(isset($dataToView["data"]["dniBuscar"])) $dniBuscar = $dataToView["data"]["dni"];
-
-
 ?>
+
 <div class="contenido">
 
     <div id="titulo">
@@ -33,10 +32,9 @@ if(isset($dataToView["data"]["dniBuscar"])) $dniBuscar = $dataToView["data"]["dn
     <div class="d_bCrear"><button id="bCrear">+ Crear cuenta</button></div> <!-- TODO : Poner imagen suma... -->
 
     <div class="mitades">
-
         <div class="mitad contenido1">
             <div class="busqueda">
-                <form method="get" action="index.php">
+                <form method="get" action="index.php?controller=usuario&action=buscar&dniBuscar=<?php echo $dniBuscar; ?>">
                     <input type="hidden" name="controller" value="usuario">
                     <input type="hidden" name="action" value="buscar">
                     <input type="text" name="dniBuscar" placeholder="Buscar por DNI." value="<?php echo $dniBuscar; ?>">
@@ -45,15 +43,11 @@ if(isset($dataToView["data"]["dniBuscar"])) $dniBuscar = $dataToView["data"]["dn
             </div>
 
 
+
             <?php
-
-            /* TODO : Comentar la parte de php para que se vea la vista.
-            if(count($dataToView["data"])>0){
-
 
             // Si el array '$datosCuentas' del 'index.php' tiene filas (la función "list()" del "UsuarioController" obtiene resultados), entonces se creará la tabla.
             if(count($datosCuentas["data"])>0){
-
                 ?>
                 <table class="tabla_cuentas">
                     <thead>
@@ -67,28 +61,23 @@ if(isset($dataToView["data"]["dniBuscar"])) $dniBuscar = $dataToView["data"]["dn
                     <tbody>
 
                     <?php
-
-                    foreach($dataToView["data"] as $cuenta){
-
                     foreach($datosCuentas["data"] as $cuenta){
                         // Comprobar que '$cuenta' es un array antes de acceder a las claves.
                         if (is_array($cuenta)) {
+
                             ?>
                             <tr>
                                 <td><?php echo $cuenta['dni']; ?></td>
                                 <td><?php echo $cuenta['nombre']; ?></td>
                                 <td><?php echo $cuenta['email']; ?></td>
-                                <td><?php echo $cuenta['administrador']; ?></td> <!-- TODO : Poner que salga un tick o no. -->
+                                <td><?php echo ($cuenta['administrador'] == 1) ? 'SI' : 'NO'; ?></td> <!-- TODO : Poner que salga un tick o no. -->
                                 <td>
-                                    <a href="index.php?controller=usuario&action=view&id=<?php echo $cuenta['id']; ?>"
-
+                                    <!-- Con "Editar" mostrará los datos de esa cuenta.
+                                        Con "Eliminar" se mostrará un mensaje de confirmación. -->
+                                    <a href="index.php?controller=usuario&action=buscar&dniBuscar=<?php echo $cuenta['dni']; ?>"
                                        id="bEditar">Editar</a>
-                                    <a href="index.php?controller=usuario&action=confirmDelete&id=<?php echo $cuenta['id']; ?>"
+                                    <a href="index.php?controller=usuario&action=eliminar&dniEliminar=<?php echo $cuenta['dni']; ?>"
                                        id="bEliminar">Eliminar</a>
-
-                                       id="bEditar">Editar</a> <!-- TODO : Poner bien el enlace (para que se vean las casillas con los datos). -->
-                                    <a href="index.php?controller=usuario&action=confirmDelete&id=
-                                            <?php echo $cuenta['id']; ?>" id="bEliminar">Eliminar</a>
                                 </td>
                             </tr>
 
@@ -100,7 +89,9 @@ if(isset($dataToView["data"]["dniBuscar"])) $dniBuscar = $dataToView["data"]["dn
                 </table>
 
                 <?php
-            } else {
+            }
+            // Si no tiene filas, significa que no hay datos de cuentas registradas.
+            else{
                 ?>
                 <div class="mensajeInexistir">
                     Actualmente no hay cuentas registradas.
@@ -108,8 +99,6 @@ if(isset($dataToView["data"]["dniBuscar"])) $dniBuscar = $dataToView["data"]["dn
 
                 <?php
             }
-            */
-
 
             ?>
 
@@ -121,12 +110,12 @@ if(isset($dataToView["data"]["dniBuscar"])) $dniBuscar = $dataToView["data"]["dn
                 <div id="datos">
                     <div>
                         <label for="dni">DNI</label>
-                        <input type="text" id="dni" name="dni" value="<?php echo $dni; ?>" required>
+                        <input type="text" id="dni" name="dni" value="<?php echo $dni; ?>"  required>
                     </div>
 
                     <div>
                         <label>Administrador</label>
-                        <input type="radio" id="si" name="administrador" value="si">Sí
+                        <input type="radio" id="si" name="administrador" value="si" >Sí
                         <input type="radio" id="no" name="administrador" value="no" checked>No
                     </div>
 
@@ -142,27 +131,27 @@ if(isset($dataToView["data"]["dniBuscar"])) $dniBuscar = $dataToView["data"]["dn
 
                     <div>
                         <label for="apellido2">Segundo apellido</label>
-                        <input type="text" id="apellido2" name="apellido2" value="<?php echo $apellido2; ?>" required>
+                        <input type="text" id="apellido2" name="apellido2" value="<?php echo $apellido2; ?>"  required>
                     </div>
 
                     <div>
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" value="<?php echo $email; ?>" required>
+                        <input type="email" id="email" name="email"  value="<?php echo $email; ?>" required>
                     </div>
 
                     <div>
                         <label for="telefono">Teléfono</label>
-                        <input type="tel" id="telefono" name="telefono" value="<?php echo $telefono; ?>" required>
+                        <input type="tel" id="telefono" name="telefono" value="<?php echo $telefono; ?>"  required>
                     </div>
 
                     <div>
                         <label for="usuario">Usuario</label>
-                        <input type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>" required>
+                        <input type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  required>
                     </div>
 
                     <div>
                         <label for="contrasena">Contraseña</label>
-                        <input type="password" id="contrasena" name="contrasena" value="<?php echo $contrasena; ?>" required>
+                        <input type="password" id="contrasena" name="contrasena" value="<?php echo $contrasena; ?>"  required>
                     </div>
 
                     <div>
@@ -172,17 +161,23 @@ if(isset($dataToView["data"]["dniBuscar"])) $dniBuscar = $dataToView["data"]["dn
 
                 </div>
 
+
                 <div id="botones">
+
+                    <!-- A este botón se le irá cambiando el "value" dependiendo de la acción seleccionada ("Registrar" / "Modificar"). -->
                     <input type="submit" id="bCrear" class="bCrear" value="Crear">
+
                 </div>
+
+                <a class="" href="">Cerrar</a>
             </form>
 
         </div>
 
     </div>
 
-</div>
 
+</div>
 
 <?php require_once __DIR__ . "/../layout/footer.php"; ?>
 

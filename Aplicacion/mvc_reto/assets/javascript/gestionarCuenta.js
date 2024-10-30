@@ -12,46 +12,21 @@
 let contador;
 
 let botonCrear = document.getElementById("bCrear");
-
-let botonBuscar = document.getElementById("bBuscar");
-
 //let botonEditar = document.getElementById("bEditar");
 let formulario = document.getElementById("formRegistro");
 
 // Si se selecciona el botón de crear o de editar --> se tendrá que mostrar el contenedor nº2.
 botonCrear.addEventListener("click", mostrarContenedor2);
-botonBuscar.addEventListener("click", mostrarContenedor3);
-
 //botonEditar.addEventListener("click", mostrarContenedor2);
 
-
-//Funcion para que se vea el formulario de creacion
 function mostrarContenedor2(e){
+    let botonAccion = document.getElementById("bCrear");
 
-<<<<<<< HEAD
-    let botonAccionCrear = document.getElementById("bCrear");
-    botonAccionCrear.addEventListener("click", (event) => validarDatos(event, e.target.id));
-=======
     botonAccion.addEventListener("click", (event) => validarDatos(event, e.target.id));
->>>>>>> 8ec4ea3231d4aeeede167837cc216be75cae86bd
 
     // Volver visible el contenedor.
     document.getElementById("contenedor2").style.visibility = "visible";
-
-
 }
-
-function mostrarContenedor3(e){
-
-    let botonAccionModificar = document.getElementById("bBuscar");
-    botonAccionModificar.addEventListener("click", (event) => validarDatos(event, e.target.id));
-
-    document.getElementById("contenedor3").style.visibility = "visible";
-
-
-}
-
-
 
 function validarDatos(event, idBoton){
 
