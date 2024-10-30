@@ -1,6 +1,7 @@
 <?php
 
 require_once "model/Pregunta.php";
+require_once "RespuestaController.php";
 
 class PreguntaController {
 
@@ -12,8 +13,22 @@ class PreguntaController {
         $this->model = new Pregunta();
     }
 
+    // Obtener los datos de todas las preguntas y mostrarlas en el foro.
     public function foro(){
         $this->view= "foro";
+        $preguntas = $this->model->getPreguntas();
+
+        $respuestaController = new RespuestaController();
+
+        $preguntasConRespuestas = [];
+
+        foreach($preguntas as $pregunta){
+            $pregunta['respuestas'] = $respuestaController->view($pregunta['id']);
+
+            $preguntasConRespuestas[] = $pregunta;
+        }
+
+        return $preguntasConRespuestas ?: [];
     }
 
     public function misPregunta(){
@@ -24,10 +39,7 @@ class PreguntaController {
         $this->view = "crearPregunta";
     }
 
-
-
     public function save(){
-
         $this->view ='crearPregunta';
 
         $param = $_POST;
@@ -37,22 +49,26 @@ class PreguntaController {
         $_GET["response"] = true;
 
         return $result;
-
     }
 
     // Eliminar pregunta.
     public function borrar(){
-
         $this->view ="borrarPregunta";
+
         return $this -> model -> deletePregunta($_POST["id"]);
 
+
+        return $this -> model -> deleteUsuario($_POST["id"]);
     }
 
     public function confirmarBorrar(){
-
         $this -> view ='confirmar';
         return $this -> model -> getPreguntaById($_POST["id"]);
+    }
 
+    public function getPreguntas(){
+        $this->view="foro";
+        return $this->model->getPreguntas();
     }
 
 }

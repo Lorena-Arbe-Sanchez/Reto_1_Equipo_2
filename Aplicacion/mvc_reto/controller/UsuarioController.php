@@ -23,27 +23,22 @@ class UsuarioController {
         $contrasena = $_POST['contrasena'];
 
         // Pasarle los valores de las casillas necesarias como parámetros.
-        $result = $this->model->getUsuarioByUsuarioContrasena($usuario, $contrasena);
+        $usuarioDB = $this->model->getUsuarioByUsuarioContrasena($usuario, $contrasena);
 
-        var_dump($result);
+        //var_dump($result);
 
-        if ($result){
-
-            // TODO : Hacer lo de verificar si es administrador y guardar la variable (mirar en "feature/Aritz").
+        if ($usuarioDB){
 
             // Usuario y contraseña correctos. Inicio sesión exitoso y redirigir al foro.
 
-            $_SESSION["id"] = $result["id"];
-            $_SESSION["usuario"] = $result["usuario"];
-            $_SESSION["administrador"] = $result["administrador"];
-            $_SESSION["usuario"] = $result["usuario"];
-            $_SESSION["nombre"] = $result["nombre"];
-            $_SESSION["apellido1"] = $result["apellido1"];
-            $_SESSION["apellido2"] = $result["apellido2"];
-            $_SESSION["dni"] = $result["dni"];
-            $_SESSION["telefono"] = $result["telefono"];
-            $_SESSION["email"] = $result["email"];
-            $_SESSION["contrasena"] = $result["contrasena"];
+            // TODO : Hacer lo de verificar si es administrador y guardar la variable.
+            $_SESSION["id"] = $usuarioDB["id"];
+            $_SESSION["usuario"] = $usuarioDB["usuario"];
+            $_SESSION["administrador"] = $usuarioDB["administrador"];
+            $_SESSION["dni"] = $usuarioDB["dni"];
+
+            // Guardar '$usuarioDB' en una variable de sesión.
+            $_SESSION['usuarioDB'] = $usuarioDB;
 
             header("Location: index.php?controller=pregunta&action=foro");
             exit(); // Asegurar que no se ejecute más código después de la redirección.
@@ -56,7 +51,7 @@ class UsuarioController {
     }
 
 
-    //Funcion para crear la vista
+    // Función para crear la vista.
     public function cuentas(){
         $this->view="gestionarCuenta";
     }
@@ -66,8 +61,23 @@ class UsuarioController {
         $this->view="gestionarCuenta";
     }
 
+    // Función para obtener el listado de cuentas existentes y para ponerlo en la ventana de la gestión de cuentas.
+    public function list(){
+        return $this->model->getUsuarios();
+    }
+
+    // Función para pasarle a la vista los datos del usuario logeado y mostrar la ventana.
     public function perfil(){
-        $this->view="perfil";
+        // Si la sesión contiene los datos de $usuarioDB, hay que pasarlos a la vista.
+        if (isset($_SESSION['usuarioDB'])){
+            $usuarioSesion = $_SESSION['usuarioDB'];
+            require_once __DIR__ . '/../view/usuario/perfil.html.php';
+            exit();
+        }
+        else{
+            error_log("Ha ocurrido un problema con los datos del usuario logeado.");
+            exit();
+        }
     }
 
     public function recuperar(){
@@ -107,7 +117,7 @@ class UsuarioController {
     }
 
 
-    //Funcion para crear un usuario nuevo
+    // Función para crear un usuario nuevo.
     public function save(){
 
         $this->view="gestionarCuenta";
@@ -115,10 +125,10 @@ class UsuarioController {
         $param = $_POST;
 
         $id = $this->model->insertUsuario($param);
-       // $result = $this->model->getUsuarioByUsuarioContrasena($usuario, $contrasena);
+        // $result = $this->model->getUsuarioByUsuarioContrasena($usuario, $contrasena);
 
         //$_GET["response"] = true;
-       // return $result;
+        // return $result;
         return true;
 
 

@@ -25,7 +25,7 @@ require_once __DIR__ . "/../layout/header.php";
         <div>
             <div class="fila_datos">
                 <label for="contrasena">Contraseña</label>
-                <input type="password" id="contrasena" name="contrasena" required>
+                <input type="password" id="contrasena" name="contrasena" autocomplete="current-password" required> <!-- TODO : 'autocomplete' se puede poner en las demás. -->
             </div>
 
             <!-- Lo relacionado con 'header("Location: index.php?controller=usuario&action=login&error=1");' del 'UsuarioController.php'. -->

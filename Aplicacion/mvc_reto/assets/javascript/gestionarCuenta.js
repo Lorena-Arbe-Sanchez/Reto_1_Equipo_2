@@ -28,8 +28,12 @@ botonBuscar.addEventListener("click", mostrarContenedor3);
 //Funcion para que se vea el formulario de creacion
 function mostrarContenedor2(e){
 
+<<<<<<< HEAD
     let botonAccionCrear = document.getElementById("bCrear");
     botonAccionCrear.addEventListener("click", (event) => validarDatos(event, e.target.id));
+=======
+    botonAccion.addEventListener("click", (event) => validarDatos(event, e.target.id));
+>>>>>>> 8ec4ea3231d4aeeede167837cc216be75cae86bd
 
     // Volver visible el contenedor.
     document.getElementById("contenedor2").style.visibility = "visible";
@@ -143,18 +147,5 @@ function validarDatos(event, idBoton){
         }
 
     }
-
-}
-
-/*
-crearUsuario(): Debería enviar una petición al backend para registrar el nuevo usuario en la base de datos.
-editarUsuario(): Debería enviar los cambios al servidor, haciendo una actualización (UPDATE) en la base de datos.
- */
-
-function crearUsuario(){
-
-}
-
-function editarUsuario(){
 
 }

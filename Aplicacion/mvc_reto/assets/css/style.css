@@ -132,7 +132,7 @@ footer{
     background-attachment: fixed; /* Mantiener el degradado fijo mientras se hace scroll. */
 }
 
-.container, .pag_perfil .contenido, .pag_crearPregunta .contenido{
+.container, .pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_foro .contenido{
     position: relative;
     flex-direction: column;
     text-align: center;
@@ -144,7 +144,7 @@ footer{
     margin-top: 1em;
 }
 
-.pag_perfil .contenido, .pag_crearPregunta .contenido{
+.pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_foro .contenido{
     background-color: #8d9db67e;
 }
 
@@ -234,7 +234,7 @@ select{
     border-radius: 15px;
 }
 
-#titulo h2{
+#divTitulo h2{
     margin-bottom: -40px;
 }
 
@@ -311,16 +311,11 @@ select{
     box-shadow: 0 0 10px #667292;
 }
 
-.pag_gestionarCuenta .contenido1{
-    max-width: 50%;
-    min-width: 40%;
-}
-
 .pag_gestionarCuenta .contenido2{
     flex-grow: 1;
 }
 
-.pag_gestionarCuenta #bCrear{
+.pag_gestionarCuenta #bCrear, .bResponder, .bMeGusta, .bNoMeGusta{
     display: inline-block;
     padding: 0.75em 1.5em;
     margin-top: 2em;
@@ -334,6 +329,46 @@ select{
 
 #contenedor2, #contenedor3{
     visibility: hidden; /* Ocultar el elemento, pero sigue ocupando espacio en el diseño. */
+}
+
+/* Estilos relacionados con la página del foro. */
+
+.pag_foro .contenido{
+    padding: 0;
+    margin-top: 10em;
+}
+
+.pag_foro .pregunta{
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+}
+
+.pag_foro .pregunta div{
+    width: 100%;
+}
+
+.pag_foro .pregunta .bResponder, .bMeGusta, .bNoMeGusta{
+    width: auto;
+    margin: 0;
+}
+
+.bResponder a{
+    text-decoration: none;
+}
+
+.tituloPregunta, .temaPregunta, .descPregunta, .divBResponder{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.respuestas{
+    display: flex;
+    flex-direction: column;
+}
+
+.botonesGusta{
+    gap: 4em;
 }
 
 /* Para la ventana de "crearPregunta". */
@@ -378,3 +413,6 @@ select{
     font-size: 0.8em;
     display: block;
 }
+
+
+/* TODO : Poner estilos de la página del perfil (ahora están en el header). */

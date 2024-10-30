@@ -1,17 +1,97 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- TODO : Poner bien los "meta" de todas las páginas (lo mismo + propiedades funcionales). -->
+    <!-- TODO : Poner bien los "meta" de todas las páginas (propiedades funcionales). -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Variable "$pageTitle" para los títulos de las páginas que van cambiando. -->
     <title><?php echo isset($pageTitle) ? $pageTitle : 'Aergibide SL'; ?></title>
     <link rel="stylesheet" href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/css/style.css">
     <!-- Poner un favicon (icono en la pestaña de una página web). -->
     <!-- TODO : PONER EL DEL MONIGOTE CREADO -->
     <link rel="icon" type="image/png"
-          href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/icono_avion.png">
+          href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/icono_empresa.png">
+
+    <!-- TODO : Mirar por qué en el 'style.css' no funciona y moverlo.  -->
+    <style>
+        /* Estilos de la página del perfil. */
+
+        .tabla_cuentas{
+            width: 100%;
+            overflow-x: auto; /* Añadirá scroll horizontal si el contenido de la tabla se desborda. */
+            border-collapse: collapse;
+            margin: 2em;
+        }
+
+        .tabla_cuentas th, .tabla_cuentas td{
+            border: 1px solid black;
+            padding: .8em;
+            white-space: nowrap; /* Evita que el contenido se divida en varias líneas. */
+        }
+
+        .tabla_cuentas th{
+            background-color: gainsboro;
+        }
+
+        .tabla_cuentas td{
+            background-color: white;
+        }
+
+        /*
+        .pag_gestionarCuenta .mitad{
+            width: auto;
+        }
+        */
+
+        #bEditar{
+            color: deepskyblue;
+            background-color: white;
+            border: 1px solid deepskyblue;
+            padding: .5em;
+            margin: .2em 0;
+            border-radius: 10px;
+        }
+        #bEditar::before {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background-image: url(/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/editar.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-right: .5em;
+            vertical-align: middle;
+        }
+
+        #bEliminar{
+            color: lightcoral;
+            background-color: white;
+            border: 1px solid lightcoral;
+            padding: .5em;
+            margin: .2em  0;
+            border-radius: 10px;
+        }
+        #bEliminar::before {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background-image: url(/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/eliminar.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-right: .5em;
+            vertical-align: middle;
+        }
+
+        .tabla_cuentas a{
+            text-decoration: none;
+        }
+
+        .tabla_cuentas #bEliminar{
+            margin-left: .5em;
+        }
+    </style>
+
 </head>
 <body class="<?php echo isset($bodyClass) ? $bodyClass : 'defaultBodyClass'; ?>">
 
