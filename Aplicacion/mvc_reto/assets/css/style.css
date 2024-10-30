@@ -34,7 +34,7 @@ header{
     border-bottom: 1px solid black;
     position: fixed;
     background-color: #c8d4e1;
-    z-index: 2;
+    z-index: 1000;
 }
 
 header a{
@@ -359,10 +359,9 @@ select{
 }
 
 .pag_foro .contenido{
-    flex: 1;
     padding: 2em;
-    margin-top: 20em;
-    margin-bottom: 12px;
+    margin-top: 700px;
+    margin-bottom: 1em;
     border-radius: 10px;
 }
 
@@ -388,6 +387,10 @@ select{
 .tituloPregunta, .temaPregunta, .descPregunta, .divBResponder{
     display: flex;
     justify-content: flex-start;
+}
+
+.descPregunta{
+    text-align: left;
 }
 
 .respuestas{
