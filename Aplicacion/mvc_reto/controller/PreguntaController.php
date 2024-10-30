@@ -31,6 +31,13 @@ class PreguntaController {
         return $preguntasConRespuestas ?: [];
     }
 
+    public function list_paginated(){
+        $this->view = 'foro';
+        $page=isset($_GET['page']) ? $_GET['page']:1;
+        
+        return $this->model->getPreguntasPaginated($page);
+    }
+
     public function crear(){
         $this->view = "crearPregunta";
     }
