@@ -16,6 +16,10 @@ class PreguntaController {
         $this->view= "foro";
     }
 
+    public function misPregunta(){
+        $this->view= "misPreguntas";
+    }
+
     public function crear(){
         $this->view = "crearPregunta";
     }
@@ -40,7 +44,7 @@ class PreguntaController {
     public function borrar(){
 
         $this->view ="borrarPregunta";
-        return $this -> model -> deleteUsuario($_POST["id"]);
+        return $this -> model -> deletePregunta($_POST["id"]);
 
     }
 

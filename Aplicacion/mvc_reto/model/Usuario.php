@@ -111,17 +111,8 @@ class Usuario {
 
     }
 
-    public function getUsuarioById($id){
 
-        $sql = "SELECT * FROM ". $this->tabla ." WHERE id = ?";
-        $stmt = $this->connection->prepare($sql);
-        $stmt -> execute([$id]);
-        return $stmt->fetch();
-
-    }
-
-    public function modificarUsuario($param)
-    {
+    public function modificarUsuario($param){
 
          $id = $dni = $nombre = $apellido1 = $apellido2 = $email = $telefono = $usuario = $contrasena = $administrador = "";
 
@@ -167,6 +158,14 @@ class Usuario {
             return $id;
 
         }
+
+    }
+
+    public function borrarUsuario($dni){
+
+        $sql = "DELETE FROM " . $this->tabla . " WHERE dni=?";
+        $stmt = $this->connection->prepare($sql);
+        return $stmt->execute([$dni]);
 
     }
 }

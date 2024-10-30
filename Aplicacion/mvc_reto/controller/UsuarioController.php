@@ -128,6 +128,14 @@ class UsuarioController {
         return $result ;
     }
 
+    //Funcion para eliminar usuario  CREAR VENTANITA PARA CONFIRMACION
+    public function eliminar(){
+
+        $this->view="gestionarCuenta";
+        return $this->model->borrarUsuario($_POST["id"]);
+
+    }
+
 }
 
 ?>
