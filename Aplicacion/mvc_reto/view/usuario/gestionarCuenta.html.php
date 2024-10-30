@@ -57,7 +57,6 @@ if(isset($dataToView["data"]["administrador"])) $administrador = $dataToView["da
                     </thead>
                     <tbody>
 
-
                     <?php
                     foreach($datosCuentas["data"] as $cuenta){
                         // Comprobar que '$cuenta' es un array antes de acceder a las claves.
