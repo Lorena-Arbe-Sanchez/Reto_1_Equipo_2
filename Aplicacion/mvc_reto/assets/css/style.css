@@ -115,12 +115,14 @@ header a{
 footer{
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     height: 90px;
     background-color: #8D9DB6;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     border-top: 1px solid black;
+    z-index: 3;
+    margin-top: auto;
 }
 
 
@@ -148,8 +150,18 @@ footer{
     background-color: #8d9db67e;
 }
 
-.pag_gestionarCuenta .contenido{
-    height: 70vh;
+.pag_crearPregunta, .pag_perfil, .pag_gestionarCuenta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.pag_crearPregunta .contenido, .pag_perfil .contenido, .pag_gestionarCuenta .contenido{
+    padding: 2em;
+    margin-top: 17em;
+    margin-bottom: 1em;
+    border-radius: 10px;
 }
 
 .contenido{
@@ -293,15 +305,20 @@ select{
 /* De la página de la gestión de cuentas (mitad con datos cuentas {lista}, y mitad con datos de 1 cuenta {casillas}). */
 
 .pag_gestionarCuenta .contenido{
-    display: flex;
+    flex-grow: 1;
+    margin-top: 25em;
+    padding: 2em;
+    border-radius: 10px;
     flex-direction: column;
     gap: 2em;
+    height: 70vh;
 }
 
 .pag_gestionarCuenta .mitades{
     display: flex;
     width: 100%;
     gap: 2em;
+    margin-top: 0;
 }
 
 .pag_gestionarCuenta .mitad{
@@ -329,6 +346,7 @@ select{
 
 #contenedor2{
     visibility: hidden; /* Ocultar el elemento, pero sigue ocupando espacio en el diseño. */
+    margin-bottom: 90px;
 }
 
 .tabla_cuentas{
@@ -406,15 +424,25 @@ select{
 
 /* Para la ventana del foro. */
 
+.pag_foro{
+    flex-direction: column;
+}
+
+.pag_foro footer{
+    position: relative;
+}
+
 .pag_foro .contenido{
-    padding: 0;
-    margin-top: 10em;
+    padding: 2em;
+    margin-top: 700px;
+    margin-bottom: 1em;
+    border-radius: 10px;
 }
 
 .pag_foro .pregunta{
     display: flex;
     flex-direction: column;
-    width: 700px;
+    width: 70%;
 }
 
 .pag_foro .pregunta div{
@@ -426,13 +454,17 @@ select{
     margin: 0;
 }
 
-.bResponder a{
+.bResponder a, .bMeGusta a, .bNoMeGusta a{
     text-decoration: none;
 }
 
 .tituloPregunta, .temaPregunta, .descPregunta, .divBResponder{
     display: flex;
     justify-content: flex-start;
+}
+
+.descPregunta{
+    text-align: left;
 }
 
 .respuestas{

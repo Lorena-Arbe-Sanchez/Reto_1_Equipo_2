@@ -26,7 +26,7 @@
     <div class="d_botonesHeader">
 
         <div class="d_botonForo" <?php if ($botonBloqueado == "d_botonForo") echo 'id="botonBloqueado"'; ?>>
-            <a href="index.php?controller=pregunta&action=foro" class="botonForo">Foro</a>
+            <a href="index.php?controller=pregunta&action=list_paginated" class="botonForo">Foro</a>
         </div>
 
         <!-- TODO : Poner un enlace correcto en los botones. -->
