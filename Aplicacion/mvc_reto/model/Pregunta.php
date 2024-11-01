@@ -79,7 +79,8 @@ class Pregunta {
     }
 
     public function getPreguntas(){
-        $sql = "SELECT * FROM ". $this->tabla;
+        // TODO : De momento ordenar por fecha.
+        $sql = "SELECT * FROM ". $this->tabla ." ORDER BY fecha DESC";
         $stmt = $this->connection->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll();
@@ -93,16 +94,16 @@ class Pregunta {
         $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
         $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
         $stmt->execute();
-  
-        $totalPages =$this->getNumberPages(); //ceil($this->getNumberPages()/$limit);
+
+        $totalPages = $this->getNumberPages(); //ceil($this->getNumberPages()/$limit);
         return [$stmt->fetchAll(), $page, $totalPages];
     }
 
     public function getNumberPages(){
-        $limit=PAGINATION;
-        $total=$this->connection->query("SELECT COUNT(*) FROM ". $this->tabla)->fetchColumn();
-        $total=ceil($total/$limit);
-       
+        $limit = PAGINATION;
+        $total = $this->connection->query("SELECT COUNT(*) FROM ". $this->tabla)->fetchColumn();
+        $total = ceil($total/$limit);
+
         return $total;
     }
 

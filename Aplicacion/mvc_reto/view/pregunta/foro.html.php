@@ -17,7 +17,9 @@ require_once __DIR__ . "/../layout/header.php";
 <div class="contenido">
 
     <?php
+    // TODO : EN LA SIGUIENTE LÍNEA DA ERROR.
     print_r($dataToView["data"][2]);
+
     if(!empty($dataToView["data"][0]) && count($dataToView["data"])>0){
 
         foreach($dataToView["data"][0] as $pregunta){
@@ -96,23 +98,20 @@ require_once __DIR__ . "/../layout/header.php";
         }
         ?>
 
-        <nav aria-label="Paginación de preguntas" >
-            <ul >
-            
-            
+        <nav aria-label="Paginación de preguntas">
+            <ul>
                 <!-- Números de página -->
                 <?php for ($i = 1; $i <= $dataToView["data"][2]; $i++): ?>
                     <li class="page-item <?= ($i == $dataToView["data"][1]) ? 'active' : ''; ?>">
                         <a class="page-link" href="index.php?controller=pregunta&action=list_paginated&page=<?= $i; ?>"><?= $i; ?></a>
                     </li>
                 <?php endfor; ?>
-
-                
             </ul>
         </nav>
 
         <?php
-    }else{
+    }
+    else{
         ?>
         <div>
             No existen preguntas.
@@ -124,3 +123,6 @@ require_once __DIR__ . "/../layout/header.php";
 </div>
 
 <?php require_once __DIR__ . "/../layout/footer.php"; ?>
+
+</body>
+</html>

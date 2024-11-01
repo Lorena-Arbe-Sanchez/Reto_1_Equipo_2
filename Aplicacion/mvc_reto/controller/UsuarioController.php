@@ -40,7 +40,7 @@ class UsuarioController {
             // Guardar '$usuarioDB' en una variable de sesión.
             $_SESSION['usuarioDB'] = $usuarioDB;
 
-            header("Location: index.php?controller=pregunta&action=foro");
+            header("Location: index.php?controller=pregunta&action=list_paginated");
             exit(); // Asegurar que no se ejecute más código después de la redirección.
         }
         else{

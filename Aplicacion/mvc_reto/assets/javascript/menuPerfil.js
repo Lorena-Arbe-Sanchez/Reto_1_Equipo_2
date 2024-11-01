@@ -6,27 +6,16 @@ del usuario. Este está situado en el header de las páginas principales.
 // DOMContentLoaded --> Se dispara cuando el HTML del documento ha sido completamente cargado y analizado por el navegador (sin esperar a los estilos, imágenes, etc.).
 document.addEventListener("DOMContentLoaded", function(){
 
-    // Se buscará en la BBDD el valor de la columna "administrador" del usuario, para saber si es admin (1) o no (0).
-    let esAdmin;
-
-    // TODO : Descomentar cuando esté implementado.
-    /*
-    if (UserController -> usuarioEsAdmin() = 1)
-        esAdmin = true;
-    else
-        esAdmin = false;
-     */
-
-    // TODO : De momento se pondrá como true.
-    esAdmin = true;
-
     const botonPerfil = document.getElementById("botonPerfil");
     const menuPerfil = document.getElementById("menuPerfil");
-    const opcionCrearCuenta = document.getElementById("opcionCrearCuenta");
+    const opcionGestionarCuenta = document.getElementById("opcionGestionarCuenta");
 
-    // Ocultar la opción de "Crear cuenta" si no es administrador.
-    if (!esAdmin) {
-        opcionCrearCuenta.style.display = "none";
+    // Ocultar la opción de "Gestionar cuentas" si no es administrador (será posible gracias a la variable que se le inyecta desde el 'footer.php').
+    if (esAdmin === 0){
+        opcionGestionarCuenta.style.display = "none";
+    }
+    else{
+        opcionGestionarCuenta.style.display = "block";
     }
 
     // Mostrar / Ocultar el menú al hacer clic en el botón del perfil.
