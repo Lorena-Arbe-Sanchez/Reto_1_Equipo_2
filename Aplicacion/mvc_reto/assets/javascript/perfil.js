@@ -7,7 +7,7 @@ bAnadirImg.addEventListener('click', function(){
 
 inputArchivo.addEventListener('change', function(event){
 
-    // TODO : Mirar como estaba en el ej de clase, y si eso cambiar/quitar...
+    // TODO : Mirar como estaba en el ej de clase, y si eso cambiar/quitar... (¿obtener el enlace del archivo seleccionado, hacer un update en la BD y recargar la pág?)
 
     const file = event.target.files[0];
     if (file) {

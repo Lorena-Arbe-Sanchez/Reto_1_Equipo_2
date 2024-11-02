@@ -12,7 +12,7 @@ define("DEFAULT_CONTROLLER", "Usuario");
 // Acción de inicio.
 define("DEFAULT_ACTION", "login");
 
-// La cantidad de páginas que habrá de primeras.
+// Número por defecto de elementos que van a ir por página.
 define("PAGINATION", 3);
 
 ?>
