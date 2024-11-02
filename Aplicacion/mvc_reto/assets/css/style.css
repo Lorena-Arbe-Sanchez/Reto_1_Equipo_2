@@ -12,7 +12,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url( "../imagenes/fondo1_gif.gif");
+    background-image: url( "/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/fondo1_gif.gif");
     background-size: cover; /* Cubrir toda la pantalla. */
     background-position: center; /* Centrar el GIF. */
     background-attachment: fixed; /* Fijar el fondo para que no se desplace con el scroll. */
@@ -294,12 +294,16 @@ select{
 .foto img{
     width: 290px;
     height: 290px;
-    border-radius: 100%;
+    border-radius: 100%; /* Para que independientemente de la forma de la imagen de perfil de un usuario, siempre salga redonda. */
     box-shadow: 0 0 2em 0.5em #667292;
 }
 
 #anadirImg{
     margin-top: 0;
+}
+
+#inputFile{
+    display: none;
 }
 
 /* De la página de la gestión de cuentas (mitad con datos cuentas {lista}, y mitad con datos de 1 cuenta {casillas}). */
@@ -517,4 +521,22 @@ select{
     color: red;
     font-size: 0.8em;
     display: block;
+}
+
+/* Para los botones con la imagen de la suma por delante. */
+
+#anadirImg {
+    display: inline-flex; /* Usar flex para centrar contenido */
+    align-items: center; /* Centra verticalmente la imagen y el texto */
+}
+
+#anadirImg::before{
+    content: '';
+    display: inline-block; /* Asegura que el contenido aparezca antes del texto. */
+    width: 1.5em;
+    height: 1.5em;
+    background-image: url(/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/suma.png);
+    background-size: contain; /* Ajusta el tamaño para que no se repita ni se deforme. */
+    background-repeat: no-repeat;
+    margin-right: 1em;
 }

@@ -26,7 +26,7 @@ if(isset($dataToView["data"]["administrador"])) $administrador = $dataToView["da
         <h2>Gestión de cuentas de usuarios</h2>
     </div>
 
-    <div class="d_bCrear"><button id="bCrear">+ Crear cuenta</button></div> <!-- TODO : Poner imagen suma... -->
+    <div class="d_bCrear"><button id="bCrear">+ Crear cuenta</button></div>
 
     <div class="mitades">
 
