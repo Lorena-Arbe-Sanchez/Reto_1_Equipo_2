@@ -17,8 +17,7 @@ require_once __DIR__ . "/../layout/header.php";
 <div class="contenido">
 
     <?php
-    // TODO : EN LA SIGUIENTE LÍNEA DA ERROR.
-    print_r($dataToView["data"][2]);
+    //print_r($dataToView["data"][2]);
 
     if(!empty($dataToView["data"][0]) && count($dataToView["data"])>0){
 

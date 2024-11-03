@@ -306,6 +306,51 @@ select{
     display: none;
 }
 
+/* Estilos generales de la paginación. */
+
+nav[aria-label="Paginación de preguntas"] ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 2em;
+}
+
+.page-item{
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* TODO : Cambiar colores en la paginación (paleta nuestra...). */
+
+.page-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #007bff; /* Color de los números de página. */
+    background-color: #f8f9fa; /* Fondo de los números. */
+    border: 1px solid #dee2e6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.page-link:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.page-item.active .page-link {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    cursor: default;
+}
+
 /* De la página de la gestión de cuentas (mitad con datos cuentas {lista}, y mitad con datos de 1 cuenta {casillas}). */
 
 .pag_gestionarCuenta .contenido{
