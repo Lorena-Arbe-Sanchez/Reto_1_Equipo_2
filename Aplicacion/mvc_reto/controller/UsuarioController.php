@@ -54,8 +54,6 @@ class UsuarioController {
     // Función para crear la vista.
     public function cuentas(){
         $this->view="gestionarCuenta";
-        return $this->model->getUsuarios();
-
     }
 
     // Función para el botón "Buscar" (filtrar) de la ventana de 'gestionarCuenta'.

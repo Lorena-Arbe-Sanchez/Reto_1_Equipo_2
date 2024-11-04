@@ -33,7 +33,6 @@ class PreguntaController {
 
     public function misPregunta(){
         $this->view= "misPreguntas";
-        $this->model->sacarPreguntasPorUsuario();
     }
 
     public function crear(){
