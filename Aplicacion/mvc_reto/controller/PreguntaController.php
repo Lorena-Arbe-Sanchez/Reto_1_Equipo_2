@@ -32,7 +32,20 @@ class PreguntaController {
     }
 
     public function misPregunta(){
-        $this->view= "misPreguntas";
+        $this->view = "misPreguntas";
+    }
+
+    // TODO
+    // Obtener los datos de las preguntas frecuentes y mostrarlas en su ventana.
+    public function frecuentes(){
+
+    }
+
+    public function list_paginated(){
+        $this->view = 'foro';
+        $page = isset($_GET['page']) ? $_GET['page'] : 1;
+
+        return $this->model->getPreguntasPaginated($page);
     }
 
     public function crear(){

@@ -17,9 +17,11 @@ require_once __DIR__ . "/../layout/header.php";
 <div class="contenido">
 
     <?php
-    if(!empty($dataToView["data"]) && count($dataToView["data"])>0){
+    //print_r($dataToView["data"][2]);
 
-        foreach($dataToView["data"] as $pregunta){
+    if(!empty($dataToView["data"][0]) && count($dataToView["data"])>0){
+
+        foreach($dataToView["data"][0] as $pregunta){
             ?>
             <div class="pregunta">
                 <div class="tituloPregunta">
@@ -93,7 +95,20 @@ require_once __DIR__ . "/../layout/header.php";
             <br>
             <?php
         }
+        ?>
 
+        <nav aria-label="Paginación de preguntas">
+            <ul>
+                <!-- Números de página -->
+                <?php for ($i = 1; $i <= $dataToView["data"][2]; $i++): ?>
+                    <li class="page-item <?= ($i == $dataToView["data"][1]) ? 'active' : ''; ?>">
+                        <a class="page-link" href="index.php?controller=pregunta&action=list_paginated&page=<?= $i; ?>"><?= $i; ?></a>
+                    </li>
+                <?php endfor; ?>
+            </ul>
+        </nav>
+
+        <?php
     }
     else{
         ?>
