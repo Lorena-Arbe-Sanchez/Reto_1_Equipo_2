@@ -47,7 +47,7 @@ if(isset($dataToView["data"]["dniBuscar"])) $dniBuscar = $dataToView["data"]["dn
             <?php
 
             // Si el array '$datosCuentas' del 'index.php' tiene filas (la función "list()" del "UsuarioController" obtiene resultados), entonces se creará la tabla.
-            if(count($datosCuentas["data"])>0){
+            if(count($dataToView["data"])>0){
                 ?>
                 <table class="tabla_cuentas">
                     <thead>
@@ -61,7 +61,7 @@ if(isset($dataToView["data"]["dniBuscar"])) $dniBuscar = $dataToView["data"]["dn
                     <tbody>
 
                     <?php
-                    foreach($datosCuentas["data"] as $cuenta){
+                    foreach($dataToView["data"] as $cuenta){
                         // Comprobar que '$cuenta' es un array antes de acceder a las claves.
                         if (is_array($cuenta)) {
 

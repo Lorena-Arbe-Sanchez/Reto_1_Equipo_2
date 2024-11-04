@@ -32,21 +32,12 @@ class PreguntaController {
     }
 
     public function misPregunta(){
+
         $this->view = "misPreguntas";
-    }
-
-    // TODO
-    // Obtener los datos de las preguntas frecuentes y mostrarlas en su ventana.
-    public function frecuentes(){
+        return $this->model->sacarPreguntasPorUsuario();
 
     }
 
-    public function list_paginated(){
-        $this->view = 'foro';
-        $page = isset($_GET['page']) ? $_GET['page'] : 1;
-
-        return $this->model->getPreguntasPaginated($page);
-    }
 
     public function crear(){
         $this->view = "crearPregunta";
@@ -66,12 +57,10 @@ class PreguntaController {
 
     // Eliminar pregunta.
     public function borrar(){
-        $this->view ="borrarPregunta";
+        $this->view ="misPreguntas";
 
-        return $this -> model -> deletePregunta($_POST["id"]);
+        return $this -> model -> deletePregunta($_GET["id"]);
 
-
-        return $this -> model -> deleteUsuario($_POST["id"]);
     }
 
     public function confirmarBorrar(){
