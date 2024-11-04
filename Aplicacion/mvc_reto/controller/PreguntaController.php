@@ -41,8 +41,30 @@ class PreguntaController {
         $this->view = 'foro';
         $page = isset($_GET['page']) ? $_GET['page'] : 1;
 
+        // Obtener preguntas paginadas
+        list($preguntas, $currentPage, $totalPages) = $this->model->getPreguntasPaginated($page);
+
+        $respuestaController = new RespuestaController();
+        $preguntasConRespuestas = [];
+
+        // Obtener respuestas para cada pregunta
+        foreach ($preguntas as $pregunta) {
+            $pregunta['respuestas'] = $respuestaController->view($pregunta['id']);
+            $preguntasConRespuestas[] = $pregunta;
+        }
+
+        // Devolver las preguntas con sus respuestas y la información de paginación
+        return [$preguntasConRespuestas, $currentPage, $totalPages];
+    }
+
+    /*
+    public function list_paginated(){
+        $this->view = 'foro';
+        $page = isset($_GET['page']) ? $_GET['page'] : 1;
+
         return $this->model->getPreguntasPaginated($page);
     }
+    */
 
     public function crear(){
         $this->view = "crearPregunta";

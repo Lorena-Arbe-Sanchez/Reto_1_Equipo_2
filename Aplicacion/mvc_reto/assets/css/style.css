@@ -134,7 +134,7 @@ footer{
     background-attachment: fixed; /* Mantiener el degradado fijo mientras se hace scroll. */
 }
 
-.container, .pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_foro .contenido{
+.container, .pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_crearRespuesta .contenido, .pag_foro .contenido{
     position: relative;
     flex-direction: column;
     text-align: center;
@@ -146,7 +146,7 @@ footer{
     margin-top: 1em;
 }
 
-.pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_foro .contenido{
+.pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_foro .contenido, .pag_crearRespuesta .contenido{
     background-color: #8d9db67e;
 }
 
@@ -169,12 +169,17 @@ footer{
 }
 
 .pag_perfil .contenido{
+    margin-top: 0;
     width: auto;
 }
 
 .pag_perfil .contenido{
     display: grid;
     grid-template-columns: repeat(2, 20fr);
+}
+
+.pag_crearRespuesta{
+    background: linear-gradient(to bottom, #BCCAD6, white);
 }
 
 .bVolver{
@@ -483,7 +488,7 @@ nav[aria-label="Paginación de preguntas"] ul{
 
 .pag_foro .contenido{
     padding: 2em;
-    margin-top: 700px;
+    margin-top: 1300px;
     margin-bottom: 1em;
     border-radius: 10px;
 }
@@ -519,6 +524,18 @@ nav[aria-label="Paginación de preguntas"] ul{
 .respuestas{
     display: flex;
     flex-direction: column;
+    max-height: 280px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+.respuesta{
+    padding: 1em;
+    margin-top: 1em;
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
 }
 
 .botonesGusta{

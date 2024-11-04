@@ -55,14 +55,14 @@ require_once __DIR__ . "/../layout/header.php";
 
                 <div class="divBResponder">
                     <div class="bResponder">
-                        <a href="index.php?controller=respuesta&action=crear&id=<?php echo $_SESSION["id"]; ?>"
+                        <a href="index.php?controller=respuesta&action=crear&id_usuario=<?php echo $_SESSION["id"]; ?>&id_pregunta=<?php echo $pregunta["id"]; ?>"
                         >Responder</a>
                     </div>
                 </div>
 
+                <h3>Respuestas:</h3>
+                <br>
                 <div class="respuestas">
-                    <h3>Respuestas:</h3>
-                    <br>
                     <?php
                     if(isset($pregunta['respuestas']) && !empty($pregunta['respuestas'])){
                         foreach($pregunta['respuestas'] as $respuesta){

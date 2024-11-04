@@ -99,6 +99,21 @@ class Pregunta {
         return [$stmt->fetchAll(), $page, $totalPages];
     }
 
+    /*
+    public function getPreguntasPaginated($page=1){
+        $limit = PAGINATION;
+        $offset = ($page - 1) * $limit;
+        $sql = "SELECT * FROM ". $this->tabla ." LIMIT :limit OFFSET :offset";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
+        $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $totalPages = $this->getNumberPages(); //ceil($this->getNumberPages()/$limit);
+        return [$stmt->fetchAll(), $page, $totalPages];
+    }
+    */
+
     public function getNumberPages(){
         $limit = PAGINATION;
         $total = $this->connection->query("SELECT COUNT(*) FROM ". $this->tabla)->fetchColumn();
