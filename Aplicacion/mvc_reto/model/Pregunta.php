@@ -71,16 +71,32 @@ class Pregunta {
         return $stml->fetch();
     }
 
-    public function deleteUsuario($id){
-        $sql = "Detele from " . $this -> tabla . " WHERE id=$id";
-        $stmt = $this -> connection -> prepare($sql);
-        $stmt -> execute([$id]);
-        return $stmt -> fetch();
+
+
+    public function deletePregunta($id)
+    {
+
+        $sql = "Detele from " . $this->tabla . "WHERE id=$id";
+
+
+    }
+
+
+    public function deleteUsuario($id)
+    {
+        $sql = "Detele from " . $this->tabla . " WHERE id=$id";
+
+        $stmt = $this->connection->prepare($sql);
+        $stmt->execute([$id]);
+        return $stmt->fetch();
     }
 
     public function getPreguntas(){
+        $sql = "SELECT * FROM " . $this->tabla;
+
         // TODO : De momento ordenar por fecha.
         $sql = "SELECT * FROM ". $this->tabla ." ORDER BY fecha DESC";
+
         $stmt = $this->connection->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll();

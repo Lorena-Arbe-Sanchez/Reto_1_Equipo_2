@@ -18,6 +18,9 @@ if(isset($dataToView["data"]["usuario"])) $usuario = $dataToView["data"]["usuari
 if(isset($dataToView["data"]["contrasena"])) $contrasena = $dataToView["data"]["contrasena"];
 if(isset($dataToView["data"]["administrador"])) $administrador = $dataToView["data"]["administrador"];
 
+$dniBuscar="";
+
+if(isset($dataToView["data"]["dniBuscar"])) $dniBuscar = $dataToView["data"]["dni"];
 ?>
 
 <div class="contenido">
@@ -29,17 +32,17 @@ if(isset($dataToView["data"]["administrador"])) $administrador = $dataToView["da
     <div class="d_bCrear"><button id="bCrear">+ Crear cuenta</button></div>
 
     <div class="mitades">
-
         <div class="mitad contenido1">
-
-            <!-- TODO : Comprobar que sea así como se pone una caja de búsqueda + implementar. -->
             <div class="busqueda">
-                <form method="GET" action="index.php?controller=usuario&action=recuperarContra">
-                    <input type="text" name="search" placeholder="Buscar por DNI."
-                           value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>">
-                    <input type="submit" value="Buscar">
+                <form method="get" action="index.php?controller=usuario&action=buscar&dniBuscar=<?php echo $dniBuscar; ?>">
+                    <input type="hidden" name="controller" value="usuario">
+                    <input type="hidden" name="action" value="buscar">
+                    <input type="text" name="dniBuscar" placeholder="Buscar por DNI." value="<?php echo $dniBuscar; ?>">
+                    <input type="submit" id="bBuscar" value="Buscar">
                 </form>
             </div>
+
+
 
             <?php
 
@@ -61,19 +64,20 @@ if(isset($dataToView["data"]["administrador"])) $administrador = $dataToView["da
                     foreach($datosCuentas["data"] as $cuenta){
                         // Comprobar que '$cuenta' es un array antes de acceder a las claves.
                         if (is_array($cuenta)) {
+
                             ?>
                             <tr>
                                 <td><?php echo $cuenta['dni']; ?></td>
                                 <td><?php echo $cuenta['nombre']; ?></td>
                                 <td><?php echo $cuenta['email']; ?></td>
-                                <td><?php echo $cuenta['administrador']; ?></td> <!-- TODO : Poner que salga un tick o no. -->
+                                <td><?php echo ($cuenta['administrador'] == 1) ? 'SI' : 'NO'; ?></td> <!-- TODO : Poner que salga un tick o no. -->
                                 <td>
                                     <!-- Con "Editar" mostrará los datos de esa cuenta.
                                         Con "Eliminar" se mostrará un mensaje de confirmación. -->
-                                    <a href="index.php?controller=usuario&action=view&id=<?php echo $cuenta['id']; ?>"
-                                       id="bEditar">Editar</a> <!-- TODO : Poner bien el enlace (para que se vean las casillas con los datos). -->
-                                    <a href="index.php?controller=usuario&action=confirmDelete&id=
-                                            <?php echo $cuenta['id']; ?>" id="bEliminar">Eliminar</a>
+                                    <a href="index.php?controller=usuario&action=buscar&dniBuscar=<?php echo $cuenta['dni']; ?>"
+                                       id="bEditar">Editar</a>
+                                    <a href="index.php?controller=usuario&action=eliminar&dniEliminar=<?php echo $cuenta['dni']; ?>"
+                                       id="bEliminar">Eliminar</a>
                                 </td>
                             </tr>
 
@@ -159,11 +163,13 @@ if(isset($dataToView["data"]["administrador"])) $administrador = $dataToView["da
 
 
                 <div id="botones">
+
                     <!-- A este botón se le irá cambiando el "value" dependiendo de la acción seleccionada ("Registrar" / "Modificar"). -->
                     <input type="submit" id="bCrear" class="bCrear" value="Crear">
-                    <a class="" href="">Modificar</a>
 
                 </div>
+
+                <a class="" href="">Cerrar</a>
             </form>
 
         </div>
