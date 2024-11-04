@@ -31,9 +31,10 @@ class PreguntaController {
         return $preguntasConRespuestas ?: [];
     }
 
-    // TODO
-    // Obtener los datos de las preguntas frecuentes y mostrarlas en su ventana.
-    public function frecuentes(){
+    public function misPregunta(){
+
+        $this->view = "misPreguntas";
+        return $this->model->sacarPreguntasPorUsuario();
 
     }
 
@@ -84,8 +85,10 @@ class PreguntaController {
 
     // Eliminar pregunta.
     public function borrar(){
-        $this->view ="borrarPregunta";
-        return $this -> model -> deleteUsuario($_POST["id"]);
+        $this->view ="misPreguntas";
+
+        return $this -> model -> deletePregunta($_GET["id"]);
+
     }
 
     public function confirmarBorrar(){

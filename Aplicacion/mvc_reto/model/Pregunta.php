@@ -24,7 +24,7 @@ class Pregunta {
 
     // Para obtener las preguntas frecuentes (filtradas por más likes).
     public function getPreguntaFrecuentes(){
-        $sql = "SELECT * FROM " . $this->tabla . " ORDER BY votosLike DESC";
+        $sql = "SELECT * FROM " . $this->tabla . "ORDER BY votosLike DESC";
         $stml = $this -> connection -> prepare($sql);
         $stml -> execute();
         return $stml -> fetchAll();
@@ -38,7 +38,7 @@ class Pregunta {
     public function save($param) {
         $titulo = $descripcion = $tema = $archivo = "";
         $fecha = date('Y-m-d');
-        $id_usuario = $_SESSION['id'];
+        $id_usuario = $_SESSION["id"];
         $votosLike = $votosDislike = 0;
 
         if (isset($param["titulo"])) $titulo = $param["titulo"];
@@ -71,16 +71,34 @@ class Pregunta {
         return $stml->fetch();
     }
 
-    public function deleteUsuario($id){
-        $sql = "Detele from " . $this -> tabla . " WHERE id=$id";
-        $stmt = $this -> connection -> prepare($sql);
-        $stmt -> execute([$id]);
-        return $stmt -> fetch();
+
+
+    public function deletePregunta($id)
+    {
+        // Corrección de la consulta SQL
+        $sql = "DELETE FROM " . $this->tabla . " WHERE id = ?";
+        $stml = $this->connection->prepare($sql);
+        // Ejecutar la consulta
+        $stml->execute([$id]);
+        // Retornar el número de filas afectadas (puedes cambiar esto según tus necesidades)
+        return $stml->rowCount();
+    }
+
+
+
+
+
+
+    public function sacarPreguntasPorUsuario(){
+        $id_usuario = $_SESSION["id"];
+        $sql = "SELECT * FROM " . $this->tabla . " WHERE id_usuario = ?";
+        $stm = $this->connection->prepare($sql);
+        $stm->execute([$id_usuario]);
+        return $stm->fetchAll();
     }
 
     public function getPreguntas(){
-        // TODO : De momento ordenar por fecha.
-        $sql = "SELECT * FROM ". $this->tabla ." ORDER BY fecha DESC";
+        $sql = "SELECT * FROM " . $this->tabla;
         $stmt = $this->connection->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll();

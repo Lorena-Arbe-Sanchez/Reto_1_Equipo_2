@@ -7,8 +7,9 @@
     <list default="true" id="b6abb039-d7f5-4f73-8b47-492ba288a50f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/config/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/pregunta/foro.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/pregunta/foro.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/perfil.js" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/perfil.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/UsuarioController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/UsuarioController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/perfil.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/perfil.html.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,20 +58,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/laragon/www/proyectobodegas-Lorena-Arbe-Sanchez&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Merging develop",
+    "last_opened_file_path": "C:/laragon/www/workspace-dwes-Lorena-Arbe-Sanchez",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -91,7 +92,7 @@
       <workItem from="1730272595457" duration="563000" />
       <workItem from="1730449362073" duration="6630000" />
       <workItem from="1730540345477" duration="17668000" />
-      <workItem from="1730659294714" duration="2245000" />
+      <workItem from="1730659294714" duration="2336000" />
     </task>
     <servers />
   </component>
