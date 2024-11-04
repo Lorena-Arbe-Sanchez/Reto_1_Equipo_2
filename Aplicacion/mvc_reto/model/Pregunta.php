@@ -64,6 +64,15 @@ class Pregunta {
         return $id;
     }
 
+    public function sacarPreguntasPorUsuario(){
+        $id_usuario = $_SESSION["id"];
+        $sql = "SELECT * FROM " . $this->tabla . " WHERE id_usuario = ?";
+        $stm = $this->connection->prepare($sql);
+        $stm->execute([$id_usuario]);
+        return $stm->fetchAll();
+    }
+
+
     public function getPreguntaById($id){
         $sql = "SELECT * FROM ". $this->tabla ." WHERE id = ?";
         $stml = $this->connection->prepare($sql);

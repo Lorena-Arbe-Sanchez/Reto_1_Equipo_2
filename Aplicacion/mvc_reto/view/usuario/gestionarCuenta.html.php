@@ -29,7 +29,7 @@ if(isset($dataToView["data"]["dniBuscar"])) $dniBuscar = $dataToView["data"]["dn
         <h2>Gestión de cuentas de usuarios</h2>
     </div>
 
-    <div class="d_bCrear"><button id="bCrear">+ Crear cuenta</button></div> <!-- TODO : Poner imagen suma... -->
+    <div class="d_bCrear"><button id="bCrear">+ Crear cuenta</button></div>
 
     <div class="mitades">
         <div class="mitad contenido1">
@@ -45,9 +45,7 @@ if(isset($dataToView["data"]["dniBuscar"])) $dniBuscar = $dataToView["data"]["dn
 
 
             <?php
-
-            // Si el array '$datosCuentas' del 'index.php' tiene filas (la función "list()" del "UsuarioController" obtiene resultados), entonces se creará la tabla.
-            if(count($datosCuentas["data"])>0){
+            if (isset($dataToView["data"]) && is_array($dataToView["data"]) && count($dataToView["data"]) > 0) {
                 ?>
                 <table class="tabla_cuentas">
                     <thead>
@@ -59,48 +57,34 @@ if(isset($dataToView["data"]["dniBuscar"])) $dniBuscar = $dataToView["data"]["dn
                     </tr>
                     </thead>
                     <tbody>
-
                     <?php
-                    foreach($datosCuentas["data"] as $cuenta){
-                        // Comprobar que '$cuenta' es un array antes de acceder a las claves.
-                        if (is_array($cuenta)) {
-
-                            ?>
-                            <tr>
-                                <td><?php echo $cuenta['dni']; ?></td>
-                                <td><?php echo $cuenta['nombre']; ?></td>
-                                <td><?php echo $cuenta['email']; ?></td>
-                                <td><?php echo ($cuenta['administrador'] == 1) ? 'SI' : 'NO'; ?></td> <!-- TODO : Poner que salga un tick o no. -->
-                                <td>
-                                    <!-- Con "Editar" mostrará los datos de esa cuenta.
-                                        Con "Eliminar" se mostrará un mensaje de confirmación. -->
-                                    <a href="index.php?controller=usuario&action=buscar&dniBuscar=<?php echo $cuenta['dni']; ?>"
-                                       id="bEditar">Editar</a>
-                                    <a href="index.php?controller=usuario&action=eliminar&dniEliminar=<?php echo $cuenta['dni']; ?>"
-                                       id="bEliminar">Eliminar</a>
-                                </td>
-                            </tr>
-
-                            <?php
-                        }
+                    foreach ($dataToView["data"] as $cuenta) {
+                        ?>
+                        <tr>
+                            <td><?php echo $cuenta['dni']; ?></td>
+                            <td><?php echo $cuenta['nombre']; ?></td>
+                            <td><?php echo $cuenta['email']; ?></td>
+                            <td><?php echo ($cuenta['administrador'] == 1) ? 'SI' : 'NO'; ?></td>
+                            <td>
+                                <a href="index.php?controller=usuario&action=buscar&dniBuscar=<?php echo $cuenta['dni']; ?>" id="bEditar">Editar</a>
+                                <a href="index.php?controller=usuario&action=eliminar&dniEliminar=<?php echo $cuenta['dni']; ?>" id="bEliminar">Eliminar</a>
+                            </td>
+                        </tr>
+                        <?php
                     }
                     ?>
                     </tbody>
                 </table>
-
                 <?php
-            }
-            // Si no tiene filas, significa que no hay datos de cuentas registradas.
-            else{
+            } else {
                 ?>
                 <div class="mensajeInexistir">
                     Actualmente no hay cuentas registradas.
                 </div>
-
                 <?php
             }
-
             ?>
+
 
         </div>
 
