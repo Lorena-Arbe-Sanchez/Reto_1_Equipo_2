@@ -24,7 +24,7 @@ class Pregunta {
 
     // Para obtener las preguntas frecuentes (filtradas por más likes).
     public function getPreguntaFrecuentes(){
-        $sql = "SELECT * FROM " . $this->tabla . "ORDER BY votosLike DESC";
+        $sql = "SELECT * FROM " . $this->tabla . " ORDER BY votosLike DESC";
         $stml = $this -> connection -> prepare($sql);
         $stml -> execute();
         return $stml -> fetchAll();
@@ -38,7 +38,7 @@ class Pregunta {
     public function save($param) {
         $titulo = $descripcion = $tema = $archivo = "";
         $fecha = date('Y-m-d');
-        $id_usuario = $_SESSION["id"];
+        $id_usuario = $_SESSION['id'];
         $votosLike = $votosDislike = 0;
 
         if (isset($param["titulo"])) $titulo = $param["titulo"];
@@ -98,7 +98,8 @@ class Pregunta {
     }
 
     public function getPreguntas(){
-        $sql = "SELECT * FROM " . $this->tabla;
+        // De momento ordenar por fecha.
+        $sql = "SELECT * FROM ". $this->tabla ." ORDER BY fecha DESC";
         $stmt = $this->connection->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll();

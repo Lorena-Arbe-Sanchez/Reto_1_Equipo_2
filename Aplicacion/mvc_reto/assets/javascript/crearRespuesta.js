@@ -3,7 +3,7 @@ let formulario = document.getElementById("formCrearRespuesta");
 
 crearRespuesta.addEventListener("click", (event) => validarCreacion(event));
 
-function validarCreacion(event) {
+function validarCreacion(event){
 
     event.preventDefault();
 
@@ -15,7 +15,6 @@ function validarCreacion(event) {
         alert('La solución debe estar escrita.');
         enunciadoCasilla.focus();
     }
-
     else{
         formulario.submit();
         alert("Respuesta creada correctamente.");

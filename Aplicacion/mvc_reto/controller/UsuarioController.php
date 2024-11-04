@@ -31,16 +31,13 @@ class UsuarioController {
 
             // Usuario y contraseña correctos. Inicio sesión exitoso y redirigir al foro.
 
-            // TODO : Hacer lo de verificar si es administrador y guardar la variable.
             $_SESSION["id"] = $usuarioDB["id"];
-            $_SESSION["usuario"] = $usuarioDB["usuario"];
             $_SESSION["administrador"] = $usuarioDB["administrador"];
-            $_SESSION["dni"] = $usuarioDB["dni"];
 
             // Guardar '$usuarioDB' en una variable de sesión.
             $_SESSION['usuarioDB'] = $usuarioDB;
 
-            header("Location: index.php?controller=pregunta&action=foro");
+            header("Location: index.php?controller=pregunta&action=list_paginated");
             exit(); // Asegurar que no se ejecute más código después de la redirección.
         }
         else{
@@ -55,7 +52,6 @@ class UsuarioController {
     public function cuentas(){
         $this->view="gestionarCuenta";
         return $this->model->getUsuarios();
-
     }
 
     // Función para el botón "Buscar" (filtrar) de la ventana de 'gestionarCuenta'.
@@ -144,8 +140,6 @@ class UsuarioController {
         $result = $this->model->getUsuarioByUsuario($_POST['usuario']);
 
         if ($result){
-
-            // TODO : Hacer lo de verificar si es administrador y guardar la variable (mirar en "feature/Aritz").
 
             // Usuario y contraseña correctos. Cambio de contraseña exitoso y redirigir al foro.
             $cambioExitoso = $this->model->actualizarContrasena($usuario, $contrasenaNueva);

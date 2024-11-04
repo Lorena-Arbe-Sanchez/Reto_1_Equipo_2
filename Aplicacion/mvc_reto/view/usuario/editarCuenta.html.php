@@ -7,7 +7,6 @@ require_once __DIR__ . "/../layout/header.php";
 
 $id =$dni = $nombre = $apellido1 = $apellido2 = $email = $telefono = $usuario = $contrasena = $administrador ="";
 
-
 if(isset($dataToView["data"]["id"])) $id = $dataToView["data"]["id"];
 if(isset($dataToView["data"]["dni"])) $dni = $dataToView["data"]["dni"];
 if(isset($dataToView["data"]["nombre"])) $nombre = $dataToView["data"]["nombre"];
@@ -18,8 +17,6 @@ if(isset($dataToView["data"]["telefono"])) $telefono = $dataToView["data"]["tele
 if(isset($dataToView["data"]["usuario"])) $usuario = $dataToView["data"]["usuario"];
 if(isset($dataToView["data"]["contrasena"])) $contrasena = $dataToView["data"]["contrasena"];
 if(isset($dataToView["data"]["administrador"])) $administrador = $dataToView["data"]["administrador"];
-
-
 
 ?>
 <div class="contenido">
@@ -101,7 +98,6 @@ if(isset($dataToView["data"]["administrador"])) $administrador = $dataToView["da
     </div>
 
 </div>
-
 
 <?php require_once __DIR__ . "/../layout/footer.php"; ?>
 
