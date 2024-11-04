@@ -69,7 +69,7 @@ header a{
 }
 
 /* Estilo de los enlaces del header cuando se pase el cursor por encima. */
-.d_botonForo:hover a, .d_botonPreguntas:hover a, .d_botonCrear:hover a{
+.d_botonForo:hover a, .d_botonPreguntas:hover a, .d_botonMisPreguntas:hover a{
     background-color: #8D9DB6;
 }
 
@@ -115,26 +115,25 @@ header a{
 footer{
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     height: 90px;
     background-color: #8D9DB6;
-    position: fixed;
+    position: fixed; /* TODO : Poner que aparezca al final de la página de manera "natural". */
     bottom: 0;
     border-top: 1px solid black;
-    z-index: 3;
-    margin-top: auto;
+    z-index: 3; /* Para que esté en una capa superior y no sea semi-opaco. */
 }
 
 
 /* MISMOS ESTILOS EN ELEMENTOS DE PÁGINAS DIFERENTES (Y PROPIEDADES RELACIONADAS CON LOS CONTENIDOS) */
 
-.pag_foro, .pag_crearPregunta, .pag_gestionarCuenta, .pag_perfil{
+.pag_foro, .pag_crearPregunta, .pag_gestionarCuenta, .pag_perfil, .pag_misPreguntas, .pag_crearRespuesta{
     background: linear-gradient(to bottom, #BCCAD6, white);
     min-height: 100vh; /* Al menos el 100% de la ventana. */
     background-attachment: fixed; /* Mantiener el degradado fijo mientras se hace scroll. */
 }
 
-.container, .pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_foro .contenido{
+.container, .pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_crearRespuesta .contenido, .pag_foro .contenido{
     position: relative;
     flex-direction: column;
     text-align: center;
@@ -146,7 +145,7 @@ footer{
     margin-top: 1em;
 }
 
-.pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_foro .contenido{
+.pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_foro .contenido, .pag_crearRespuesta .contenido{
     background-color: #8d9db67e;
 }
 
@@ -160,7 +159,6 @@ footer{
 .pag_crearPregunta .contenido, .pag_perfil .contenido, .pag_gestionarCuenta .contenido{
     padding: 2em;
     margin-top: 17em;
-    margin-bottom: 1em;
     border-radius: 10px;
 }
 
@@ -169,12 +167,9 @@ footer{
 }
 
 .pag_perfil .contenido{
-    width: auto;
-}
-
-.pag_perfil .contenido{
     display: grid;
     grid-template-columns: repeat(2, 20fr);
+    width: auto;
 }
 
 .bVolver{
@@ -353,20 +348,15 @@ nav[aria-label="Paginación de preguntas"] ul{
 /* De la página de la gestión de cuentas (mitad con datos cuentas {lista}, y mitad con datos de 1 cuenta {casillas}). */
 
 .pag_gestionarCuenta .contenido{
-    flex-grow: 1;
-    margin-top: 25em;
-    padding: 2em;
-    border-radius: 10px;
+    display: flex;
     flex-direction: column;
     gap: 2em;
-    height: 70vh;
 }
 
 .pag_gestionarCuenta .mitades{
     display: flex;
     width: 100%;
     gap: 2em;
-    margin-top: 0;
 }
 
 .pag_gestionarCuenta .mitad{
@@ -392,9 +382,8 @@ nav[aria-label="Paginación de preguntas"] ul{
     border-radius: 5px;
 }
 
-#contenedor2{
+#contenedor2, #contenedor3{
     visibility: hidden; /* Ocultar el elemento, pero sigue ocupando espacio en el diseño. */
-    margin-bottom: 90px;
 }
 
 .tabla_cuentas{
@@ -426,7 +415,8 @@ nav[aria-label="Paginación de preguntas"] ul{
     margin: .2em 0;
     border-radius: 10px;
 }
-#bEditar::before {
+
+#bEditar::before{
     content: '';
     display: inline-block;
     width: 16px;
@@ -443,10 +433,11 @@ nav[aria-label="Paginación de preguntas"] ul{
     background-color: white;
     border: 1px solid lightcoral;
     padding: .5em;
-    margin: .2em  0;
+    margin: .2em 0;
     border-radius: 10px;
 }
-#bEliminar::before {
+
+#bEliminar::before{
     content: '';
     display: inline-block;
     width: 16px;
@@ -472,17 +463,8 @@ nav[aria-label="Paginación de preguntas"] ul{
 
 /* Para la ventana del foro. */
 
-.pag_foro{
-    flex-direction: column;
-}
-
-.pag_foro footer{
-    position: relative;
-}
-
 .pag_foro .contenido{
     padding: 2em;
-    margin-top: 700px;
     margin-bottom: 1em;
     border-radius: 10px;
 }
@@ -518,6 +500,18 @@ nav[aria-label="Paginación de preguntas"] ul{
 .respuestas{
     display: flex;
     flex-direction: column;
+    max-height: 280px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+.respuesta{
+    padding: 1em;
+    margin-top: 1em;
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
 }
 
 .botonesGusta{
@@ -570,8 +564,8 @@ nav[aria-label="Paginación de preguntas"] ul{
 /* Para los botones con la imagen de la suma por delante. */
 
 #anadirImg {
-    display: inline-flex; /* Usar flex para centrar contenido */
-    align-items: center; /* Centra verticalmente la imagen y el texto */
+    display: inline-flex; /* Usar flex para centrar contenido. */
+    align-items: center; /* Centra verticalmente la imagen y el texto. */
 }
 
 #anadirImg::before{

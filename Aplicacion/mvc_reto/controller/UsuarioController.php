@@ -51,6 +51,7 @@ class UsuarioController {
     // Función para crear la vista.
     public function cuentas(){
         $this->view="gestionarCuenta";
+        return $this->model->getUsuarios();
     }
 
     // Función para el botón "Buscar" (filtrar) de la ventana de 'gestionarCuenta'.
@@ -176,6 +177,37 @@ class UsuarioController {
 
 
     }
+
+
+    //Funcion para buscar si existe el usuario atraves del dni
+    public function buscar(){
+
+        $this->view="editarCuenta";
+
+        $dni = "";
+        if(isset($_GET["dniBuscar"])) $dni = $_GET["dniBuscar"];
+        error_log("buscar:" . $dni);
+
+        return $this->model->getUsuarioByDNI($dni);
+    }
+
+
+    public function editar(){
+        $this->view="gestionarCuenta";
+        $dni = $this->model->modificarUsuario($_POST);
+        $result = $this->model->getUsuarioByDNI($dni);
+        $_GET["response"] = true;
+        return $result ;
+    }
+
+    //Funcion para eliminar usuario  CREAR VENTANITA PARA CONFIRMACION
+    public function eliminar(){
+
+        $this->view="gestionarCuenta";
+        return $this->model->borrarUsuario($_GET["dniEliminar"]);
+
+    }
+
 
 }
 

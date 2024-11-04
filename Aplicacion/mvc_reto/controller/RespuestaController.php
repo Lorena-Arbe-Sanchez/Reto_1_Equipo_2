@@ -8,7 +8,7 @@ class RespuestaController {
     public $model;
 
     public function __construct() {
-        $this->view = "foro";
+        $this->view = "crearRespuesta";
         $this->model = new Respuesta();
     }
 
@@ -18,7 +18,19 @@ class RespuestaController {
 
     // TODO
     public function crear(){
+        $this->view = "crearRespuesta";
+    }
 
+    public function save(){
+        $this->view ='crearRespuesta';
+
+        $param = $_POST;
+        $id = $this->model->save($param);
+        $result = $this->model->getRespuestaById($id); //TODO
+
+        $_GET["response"] = true;
+
+        return $result;
     }
 
 }

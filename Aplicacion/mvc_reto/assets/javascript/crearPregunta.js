@@ -3,7 +3,7 @@ let formulario = document.getElementById("formCrearPregunta");
 
 crearPregunta.addEventListener("click", (event) => validarCreacion(event));
 
-function validarCreacion(event) {
+function validarCreacion(event){
 
     event.preventDefault();
 
