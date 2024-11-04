@@ -13,8 +13,10 @@ require_once __DIR__ . "/../layout/header.php";
         <img src="<?php echo isset($usuarioSesion['imagen']) ? htmlspecialchars($usuarioSesion['imagen']) :
             '/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/perfil.png'; ?>" alt="Imagen perfil">
 
-        <form>
+        <!-- enctype="multipart/form-data"  =>  Permitir la subida de ficheros. -->
+        <form id="formCambiarImg" action="index.php?controller=usuario&action=subirImgPerfil" method="post" enctype="multipart/form-data">
             <button type="button" id="anadirImg">Añadir imagen</button>
+            <!-- accept="image/*"  =>  Solo se pueden seleccionar imágenes. -->
             <input type="file" id="inputFile" accept="image/*">
         </form>
     </div>

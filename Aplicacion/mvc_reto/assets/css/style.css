@@ -335,7 +335,6 @@ nav[aria-label="Paginación de preguntas"] ul{
     font-weight: bold;
     color: #007bff; /* Color de los números de página. */
     background-color: #f8f9fa; /* Fondo de los números. */
-    border: 1px solid #dee2e6;
     transition: background-color 0.3s, color 0.3s;
 }
 
