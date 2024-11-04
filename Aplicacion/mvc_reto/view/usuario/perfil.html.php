@@ -14,6 +14,11 @@ require_once __DIR__ . "/../layout/header.php";
 
         <form>
             <button id="anadirImg">+ Añadir imagen</button> <!-- TODO : Poner imagen suma... -->
+        <!-- enctype="multipart/form-data"  =>  Permitir la subida de ficheros. -->
+        <form id="formCambiarImg" action="index.php?controller=usuario&action=subirImgPerfil" method="post" enctype="multipart/form-data">
+            <button type="button" id="anadirImg">Añadir imagen</button>
+            <!-- accept="image/*"  =>  Solo se pueden seleccionar imágenes. -->
+            <input type="file" id="inputFile" accept="image/*">
         </form>
     </div>
 

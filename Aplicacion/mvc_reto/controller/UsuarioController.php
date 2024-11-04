@@ -82,6 +82,54 @@ class UsuarioController {
         }
     }
 
+    public function subirImgPerfil(){
+
+        // Primero, verificar si se ha subido el archivo.
+
+        // TODO : Poner bien.
+
+        $filePath = null;
+
+        if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
+            // Si el archivo es válido, procesarlo
+            $fileTmpPath = $_FILES['file']['tmp_name']; // Ruta a carpeta temporal donde se guarda.
+            $fileName = $_FILES['file']['name'];
+            $fileName = uniqid() ."_". $fileName;
+            $uploadFileDir = './uploads/'; // De la raiz se crea una carpeta "uploads".
+            $destPath = $uploadFileDir . $fileName;
+
+            // Verificar que el directorio de subida exista, sino crear uno
+            if (!is_dir($uploadFileDir)) {
+                mkdir($uploadFileDir, 0777, true);
+            }
+
+            // Mover el archivo desde su ubicación temporal al directorio final
+            if (move_uploaded_file($fileTmpPath, $destPath)) {
+                // Si el archivo se movió correctamente, guardar la ruta del archivo
+                $filePath = $destPath;
+            }
+            else {
+                // Si hubo un error al mover el archivo
+                $_GET["response"] = false;
+                return;
+            }
+        }
+
+
+        // Ahora pasamos todos los datos (incluido el archivo, si existe) al modelo
+        $param = $_POST;
+        $param['file_path'] = $filePath; // Agregamos la ruta del archivo al array de parámetros
+
+        // Llamamos al modelo para guardar los datos
+        $id = $this -> model -> save($param);
+        $result = $this -> model -> getNoteById($id);
+
+        // Respuesta exitosa
+        $_GET["response"] = true;
+        return $result;
+
+    }
+
     public function recuperar(){
         $this->view="recuperarContrasena";
     }
