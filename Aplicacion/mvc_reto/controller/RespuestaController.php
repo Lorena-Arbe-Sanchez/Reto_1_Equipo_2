@@ -16,11 +16,6 @@ class RespuestaController {
         return $this->model->getRespuestaByPreguntaId($preguntaId);
     }
 
-    // TODO
-    public function crear(){
-
-    }
-
 }
 
 ?>
