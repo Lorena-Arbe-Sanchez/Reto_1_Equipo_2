@@ -32,8 +32,12 @@ class PreguntaController {
     }
 
     public function misPregunta(){
-        $this->view= "misPreguntas";
+
+        $this->view = "misPreguntas";
+        return $this->model->sacarPreguntasPorUsuario();
+
     }
+
 
     public function crear(){
         $this->view = "crearPregunta";
@@ -53,12 +57,10 @@ class PreguntaController {
 
     // Eliminar pregunta.
     public function borrar(){
-        $this->view ="borrarPregunta";
+        $this->view ="misPreguntas";
 
-        return $this -> model -> deletePregunta($_POST["id"]);
+        return $this -> model -> deletePregunta($_GET["id"]);
 
-
-        return $this -> model -> deleteUsuario($_POST["id"]);
     }
 
     public function confirmarBorrar(){
