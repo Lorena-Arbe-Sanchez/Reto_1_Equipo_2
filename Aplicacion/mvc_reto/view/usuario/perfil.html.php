@@ -9,11 +9,13 @@ require_once __DIR__ . "/../layout/header.php";
 <div class="contenido">
 
     <div class="foto">
-        <!-- TODO : Cargar la imagen del usuario de la BBDD. AÑADIR COLUMNA COMO EN EL EJ_INES -->
-        <img src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/perfil.png" alt="Imagen perfil">
+        <!-- Cargar la imagen del usuario de la BBDD, y si no tiene, cargar la de default. -->
+        <img src="<?php echo isset($usuarioSesion['imagen']) ? htmlspecialchars($usuarioSesion['imagen']) :
+            '/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/perfil.png'; ?>" alt="Imagen perfil">
 
         <form>
-            <button id="anadirImg">+ Añadir imagen</button> <!-- TODO : Poner imagen suma... -->
+            <button type="button" id="anadirImg">Añadir imagen</button>
+            <input type="file" id="inputFile" accept="image/*">
         </form>
     </div>
 
@@ -54,6 +56,8 @@ require_once __DIR__ . "/../layout/header.php";
 </div>
 
 <?php require_once __DIR__ . "/../layout/footer.php"; ?>
+
+<script src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/javascript/perfil.js"></script>
 
 </body>
 </html>

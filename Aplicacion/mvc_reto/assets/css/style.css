@@ -12,7 +12,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url( "../imagenes/fondo1_gif.gif");
+    background-image: url( "/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/fondo1_gif.gif");
     background-size: cover; /* Cubrir toda la pantalla. */
     background-position: center; /* Centrar el GIF. */
     background-attachment: fixed; /* Fijar el fondo para que no se desplace con el scroll. */
@@ -34,7 +34,7 @@ header{
     border-bottom: 1px solid black;
     position: fixed;
     background-color: #c8d4e1;
-    z-index: 1000;
+    z-index: 2;
 }
 
 header a{
@@ -121,7 +121,7 @@ footer{
     position: fixed;
     bottom: 0;
     border-top: 1px solid black;
-    z-index: 1;
+    z-index: 3;
     margin-top: auto;
 }
 
@@ -294,12 +294,61 @@ select{
 .foto img{
     width: 290px;
     height: 290px;
-    border-radius: 100%;
+    border-radius: 100%; /* Para que independientemente de la forma de la imagen de perfil de un usuario, siempre salga redonda. */
     box-shadow: 0 0 2em 0.5em #667292;
 }
 
 #anadirImg{
     margin-top: 0;
+}
+
+#inputFile{
+    display: none;
+}
+
+/* Estilos generales de la paginación. */
+
+nav[aria-label="Paginación de preguntas"] ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 2em;
+}
+
+.page-item{
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* TODO : Cambiar colores en la paginación (paleta nuestra...). */
+
+.page-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #007bff; /* Color de los números de página. */
+    background-color: #f8f9fa; /* Fondo de los números. */
+    border: 1px solid #dee2e6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.page-link:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.page-item.active .page-link {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    cursor: default;
 }
 
 /* De la página de la gestión de cuentas (mitad con datos cuentas {lista}, y mitad con datos de 1 cuenta {casillas}). */
@@ -349,7 +398,81 @@ select{
     margin-bottom: 90px;
 }
 
-/* Estilos relacionados con la página del foro. */
+.tabla_cuentas{
+    width: 100%;
+    overflow-x: auto; /* Añadirá scroll horizontal si el contenido de la tabla se desborda. */
+    border-collapse: collapse;
+    margin: 2em;
+}
+
+.tabla_cuentas th, .tabla_cuentas td{
+    border: 1px solid black;
+    padding: .8em;
+    white-space: nowrap; /* Evita que el contenido se divida en varias líneas. */
+}
+
+.tabla_cuentas th{
+    background-color: gainsboro;
+}
+
+.tabla_cuentas td{
+    background-color: white;
+}
+
+#bEditar{
+    color: deepskyblue;
+    background-color: white;
+    border: 1px solid deepskyblue;
+    padding: .5em;
+    margin: .2em 0;
+    border-radius: 10px;
+}
+#bEditar::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/editar.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: .5em;
+    vertical-align: middle;
+}
+
+#bEliminar{
+    color: lightcoral;
+    background-color: white;
+    border: 1px solid lightcoral;
+    padding: .5em;
+    margin: .2em  0;
+    border-radius: 10px;
+}
+#bEliminar::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/eliminar.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: .5em;
+    vertical-align: middle;
+}
+
+.tabla_cuentas a{
+    text-decoration: none;
+}
+
+.tabla_cuentas #bEliminar{
+    margin-left: .5em;
+}
+
+.l_botonCuentas{
+    display: none; /* El botón de "Gestionar cuentas" está oculto por defecto. */
+}
+
+/* Para la ventana del foro. */
+
 .pag_foro{
     flex-direction: column;
 }
@@ -445,5 +568,20 @@ select{
     display: block;
 }
 
+/* Para los botones con la imagen de la suma por delante. */
 
-/* TODO : Poner estilos de la página del perfil (ahora están en el header). */
+#anadirImg {
+    display: inline-flex; /* Usar flex para centrar contenido */
+    align-items: center; /* Centra verticalmente la imagen y el texto */
+}
+
+#anadirImg::before{
+    content: '';
+    display: inline-block; /* Asegura que el contenido aparezca antes del texto. */
+    width: 1.5em;
+    height: 1.5em;
+    background-image: url(/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/suma.png);
+    background-size: contain; /* Ajusta el tamaño para que no se repita ni se deforme. */
+    background-repeat: no-repeat;
+    margin-right: 1em;
+}
