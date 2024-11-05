@@ -1,0 +1,580 @@
+/* ESTILOS GENERALES (PARA TODAS LAS VENTANAS) */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url( "/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/fondo1_gif.gif");
+    background-size: cover; /* Cubrir toda la pantalla. */
+    background-position: center; /* Centrar el GIF. */
+    background-attachment: fixed; /* Fijar el fondo para que no se desplace con el scroll. */
+    background-repeat: no-repeat;
+    max-width: 100%;
+}
+
+
+/* HEADER, FOOTER E HIJOS */
+
+/* TODO : Poner que se empequeñezca el contenido con cambio del tamaño de la página. */
+/* TODO : Poner que se cambien de sitio los elementos dependiendo del dispositivo (ponerlo en las páginas que lo necesiten). */
+
+header{
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid black;
+    position: fixed;
+    background-color: #c8d4e1;
+    z-index: 2;
+}
+
+header a{
+    text-decoration: none;
+    background-color: white;
+    width: 120px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.d_botonPreguntas{
+    text-align: center;
+}
+
+.d_botonesRS{
+    gap: .5em;
+}
+
+.d_botonesHeader a{
+    border-radius: 10px;
+}
+
+/* Estilo del enlace del header que debe estar deshabilitado (porque será el actual). */
+#botonBloqueado a{
+    background-color: #96A2AB;
+    color: white;
+    /* TODO : Mirar si los 2 siguientes son compatibles con otros navegadores. */
+    pointer-events: none; /* Desactivar el clic. */
+    cursor: not-allowed; /* Cambiar el cursor a "no permitido". */
+}
+
+/* Estilo de los enlaces del header cuando se pase el cursor por encima. */
+.d_botonForo:hover a, .d_botonPreguntas:hover a, .d_botonMisPreguntas:hover a{
+    background-color: #8D9DB6;
+}
+
+/* Estilos del botón de perfil y el menú desplegable. */
+
+.d_botonPerfil a{ background: none; }
+
+.d_botonPerfil{
+    position: relative; /* Para posicionar el menú desplegable. */
+}
+
+.menuDesplegable{
+    display: none; /* El menú está oculto por defecto. */
+    position: absolute;
+    top: 95px; /* Debajo del botón de perfil. */
+    right: 0;
+    background-color: #fff;
+    border: .2em solid gainsboro;
+    box-shadow: 0 7px 30px #667292;
+    border-radius: .8em;
+    z-index: 3;
+}
+
+.menuDesplegable ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menuDesplegable ul li{
+    border-bottom: 1px solid darkgrey;
+    text-align: center;
+}
+
+.menuDesplegable ul li:hover{
+    background-color: #f0f0f0;
+}
+
+.menuDesplegable ul li:last-child{
+    border-bottom: none;
+}
+
+footer{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    height: 90px;
+    background-color: #8D9DB6;
+    position: fixed; /* TODO : Poner que aparezca al final de la página de manera "natural". */
+    bottom: 0;
+    border-top: 1px solid black;
+    z-index: 3; /* Para que esté en una capa superior y no sea semi-opaco. */
+}
+
+
+/* MISMOS ESTILOS EN ELEMENTOS DE PÁGINAS DIFERENTES (Y PROPIEDADES RELACIONADAS CON LOS CONTENIDOS) */
+
+.pag_foro, .pag_crearPregunta, .pag_gestionarCuenta, .pag_perfil, .pag_misPreguntas, .pag_crearRespuesta{
+    background: linear-gradient(to bottom, #BCCAD6, white);
+    min-height: 100vh; /* Al menos el 100% de la ventana. */
+    background-attachment: fixed; /* Mantiener el degradado fijo mientras se hace scroll. */
+}
+
+.container, .pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_crearRespuesta .contenido, .pag_foro .contenido{
+    position: relative;
+    flex-direction: column;
+    text-align: center;
+    background-color: #BCCAD6;
+    padding: 2em;
+    border-radius: 10px;
+    border: 1px solid #667292;
+    z-index: 1;
+    margin-top: 1em;
+}
+
+.pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_foro .contenido, .pag_crearRespuesta .contenido{
+    background-color: #8d9db67e;
+}
+
+.pag_crearPregunta, .pag_perfil, .pag_gestionarCuenta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.pag_crearPregunta .contenido, .pag_perfil .contenido, .pag_gestionarCuenta .contenido{
+    padding: 2em;
+    margin-top: 17em;
+    border-radius: 10px;
+}
+
+.contenido{
+    width: 50%;
+}
+
+.pag_perfil .contenido{
+    display: grid;
+    grid-template-columns: repeat(2, 20fr);
+    width: auto;
+}
+
+.bVolver{
+    margin: 1em;
+    padding: .7em;
+    text-decoration: none;
+    background-color: rgba(141, 157, 182, 0.52);
+    border: .1em solid #8D9DB6;
+    /*border-radius: 1.5em;*/
+}
+
+
+/* ETIQUETAS O ELEMENTOS CONCRETOS */
+
+form{
+    padding: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div{
+    display: flex;
+    align-items: center;
+    padding: .8em;
+    justify-content: center;
+}
+
+div input[type="radio"]{
+    margin-left: 25px;
+}
+
+label{
+    width: 150px;
+    font-weight: bold;
+}
+
+input, select, textarea{
+    padding: .5em;
+}
+
+button, input[type="submit"], .botonGuardar{
+    margin-top: 1em;
+    padding: .7em;
+    font-size: 1em;
+    background-color: #8D9DB6;
+    border-color: #BCCAD6;
+    font-style: oblique;
+    text-decoration: none;
+}
+
+#bRegistrar, #bModificar{
+    margin-top: 0;
+}
+
+a{ color: black; }
+
+select{
+    font-size: 1em;
+}
+
+.superpuesta{
+    position: absolute;
+    top: -4em;
+    justify-content: center;
+    height: 100px;
+    width: 220px;
+    z-index: 2;
+    border-radius: 15px;
+}
+
+#divTitulo h2{
+    margin-bottom: -40px;
+}
+
+#datos{
+    display: flex;
+    flex-direction: column;
+}
+
+.info{
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    border: 1px solid #667292;
+    gap: 2em;
+    height: 448.66px;
+    width: 800px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.info div{
+    display: flex;
+    flex-direction: column;
+}
+
+.emailDiv{
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+}
+
+.info div input, .info div label{
+    width: 100%;
+    height: 2em;
+    text-align: left;
+}
+
+.foto{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+}
+
+.foto img{
+    width: 290px;
+    height: 290px;
+    border-radius: 100%; /* Para que independientemente de la forma de la imagen de perfil de un usuario, siempre salga redonda. */
+    box-shadow: 0 0 2em 0.5em #667292;
+}
+
+#anadirImg{
+    margin-top: 0;
+}
+
+#inputFile{
+    display: none;
+}
+
+/* Estilos generales de la paginación. */
+
+nav[aria-label="Paginación de preguntas"] ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 2em;
+}
+
+.page-item{
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* TODO : Cambiar colores en la paginación (paleta nuestra...). */
+
+.page-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #007bff; /* Color de los números de página. */
+    background-color: #f8f9fa; /* Fondo de los números. */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.page-link:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.page-item.active .page-link {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    cursor: default;
+}
+
+/* De la página de la gestión de cuentas (mitad con datos cuentas {lista}, y mitad con datos de 1 cuenta {casillas}). */
+
+.pag_gestionarCuenta .contenido{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.pag_gestionarCuenta .mitades{
+    display: flex;
+    width: 100%;
+    gap: 2em;
+}
+
+.pag_gestionarCuenta .mitad{
+    flex: 1;
+    background-color: #8d9db67e;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #667292;
+}
+
+.pag_gestionarCuenta .contenido2{
+    flex-grow: 1;
+}
+
+.pag_gestionarCuenta #bCrear, .bResponder, .bMeGusta, .bNoMeGusta{
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    margin-top: 2em;
+    font-size: 1em;
+    background-color: #F1E3DD;
+    color: black;
+    border: 1px solid black;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#contenedor2, #contenedor3{
+    visibility: hidden; /* Ocultar el elemento, pero sigue ocupando espacio en el diseño. */
+}
+
+.tabla_cuentas{
+    width: 100%;
+    overflow-x: auto; /* Añadirá scroll horizontal si el contenido de la tabla se desborda. */
+    border-collapse: collapse;
+    margin: 2em;
+}
+
+.tabla_cuentas th, .tabla_cuentas td{
+    border: 1px solid black;
+    padding: .8em;
+    white-space: nowrap; /* Evita que el contenido se divida en varias líneas. */
+}
+
+.tabla_cuentas th{
+    background-color: gainsboro;
+}
+
+.tabla_cuentas td{
+    background-color: white;
+}
+
+#bEditar{
+    color: deepskyblue;
+    background-color: white;
+    border: 1px solid deepskyblue;
+    padding: .5em;
+    margin: .2em 0;
+    border-radius: 10px;
+}
+
+#bEditar::before{
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/editar.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: .5em;
+    vertical-align: middle;
+}
+
+#bEliminar{
+    color: lightcoral;
+    background-color: white;
+    border: 1px solid lightcoral;
+    padding: .5em;
+    margin: .2em 0;
+    border-radius: 10px;
+}
+
+#bEliminar::before{
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/eliminar.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: .5em;
+    vertical-align: middle;
+}
+
+.tabla_cuentas a{
+    text-decoration: none;
+}
+
+.tabla_cuentas #bEliminar{
+    margin-left: .5em;
+}
+
+.l_botonCuentas{
+    display: none; /* El botón de "Gestionar cuentas" está oculto por defecto. */
+}
+
+/* Para la ventana del foro. */
+
+.pag_foro .contenido{
+    padding: 2em;
+    margin-bottom: 1em;
+    border-radius: 10px;
+}
+
+.pag_foro .pregunta{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.pag_foro .pregunta div{
+    width: 100%;
+}
+
+.pag_foro .pregunta .bResponder, .bMeGusta, .bNoMeGusta{
+    width: auto;
+    margin: 0;
+}
+
+.bResponder a, .bMeGusta a, .bNoMeGusta a{
+    text-decoration: none;
+}
+
+.tituloPregunta, .temaPregunta, .descPregunta, .divBResponder{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.descPregunta{
+    text-align: left;
+}
+
+.respuestas{
+    display: flex;
+    flex-direction: column;
+    max-height: 280px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+.respuesta{
+    padding: 1em;
+    margin-top: 1em;
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.botonesGusta{
+    gap: 4em;
+}
+
+/* Para la ventana de "crearPregunta". */
+
+#formCrearPregunta, #formRecuperarContra{
+    display: block;
+    padding: 3em 2em 0 2em;
+}
+
+#formCrearPregunta textarea{
+    width: 100%;
+}
+
+#formCrearPregunta select{
+    font-size: 14px;
+}
+
+.d_botones{
+    margin-top: 1em;
+}
+
+.d_botones input[type="submit"]{
+    margin-top: 0;
+}
+
+/* Para la ventana del login. */
+
+.pag_login .container{
+    min-width: 20%;
+}
+
+#formLogin div{
+    flex-direction: column;
+}
+
+#formLogin .fila_datos{
+    flex-direction: row;
+}
+
+#formLogin .mensajeError{
+    color: red;
+    font-size: 0.8em;
+    display: block;
+}
+
+/* Para los botones con la imagen de la suma por delante. */
+
+#anadirImg {
+    display: inline-flex; /* Usar flex para centrar contenido. */
+    align-items: center; /* Centra verticalmente la imagen y el texto. */
+}
+
+#anadirImg::before{
+    content: '';
+    display: inline-block; /* Asegura que el contenido aparezca antes del texto. */
+    width: 1.5em;
+    height: 1.5em;
+    background-image: url(/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/suma.png);
+    background-size: contain; /* Ajusta el tamaño para que no se repita ni se deforme. */
+    background-repeat: no-repeat;
+    margin-right: 1em;
+}
