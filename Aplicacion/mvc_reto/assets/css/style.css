@@ -34,9 +34,9 @@ header{
     display: flex;
     justify-content: space-around;
     border-bottom: 1px solid black;
-    position: sticky;
+    position: fixed;
     background-color: #c8d4e1;
-    z-index: 1000;
+    z-index: 10;
 }
 
 header a{
@@ -136,7 +136,7 @@ footer{
     background-attachment: fixed; /* Mantiener el degradado fijo mientras se hace scroll. */
 }
 
-.container, .pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_crearRespuesta .contenido, .pag_foro .contenido{
+.container, .pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_crearRespuesta .contenido, .pag_foro .contenido, .pag_misPreguntas .contenido{
     position: relative;
     flex-direction: column;
     text-align: center;
@@ -173,7 +173,15 @@ footer{
     display: grid;
     grid-template-columns: repeat(2, 20fr);
     width: auto;
-    margin-top: 0;
+}
+
+.pag_misPreguntas{
+    flex-direction: column;
+}
+
+.pag_misPreguntas .contenido{
+    margin-top: 400px;
+    width: 1200px;
 }
 
 .bVolver{
@@ -469,24 +477,13 @@ nav[aria-label="Paginación de preguntas"] ul{
 
 .pag_foro{
     flex-direction: column;
+    padding-top: 116.59px;
+    margin-top: 0;
     min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    padding-top: 1100px;
 }
 
 .pag_foro footer{
     position: relative;
-}
-
-.pag_foro .contenido{
-    margin-top: 116.59px;
-    padding: 2em;
-    margin-bottom: 1em;
-    border-radius: 10px;
-    flex-grow: 1;
-    position: relative;
-    z-index: 1;
 }
 
 .pag_foro .pregunta{
@@ -502,6 +499,20 @@ nav[aria-label="Paginación de preguntas"] ul{
 .pag_foro .pregunta .bResponder, .bMeGusta, .bNoMeGusta{
     width: auto;
     margin: 0;
+}
+
+/*Cambiar de tamaño teniendo en cuenta la cantidad de preguntas*/
+:root {
+    --question-count: 1; /* Valor inicial, se actualizará con JavaScript */
+    --base-margin: 400px; /* Margen base por pregunta */
+  }
+
+.pag_foro .contenido{
+    margin-top: calc((var(--question-count) * var(--base-margin)));
+    transition: margin-top 0.3s ease; /* Suaviza la transición del margen */
+    margin-bottom: 1em;
+    border-radius: 10px;
+    z-index: 1;
 }
 
 .bResponder a, .bMeGusta a, .bNoMeGusta a{
