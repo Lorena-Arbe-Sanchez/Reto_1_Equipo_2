@@ -505,7 +505,7 @@ nav[aria-label="Paginación de preguntas"] ul{
 :root {
     --question-count: 1; /* Valor inicial, se actualizará con JavaScript */
     --base-margin: 400px; /* Margen base por pregunta */
-  }
+}
 
 .pag_foro .contenido{
     margin-top: calc((var(--question-count) * var(--base-margin)));

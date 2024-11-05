@@ -35,12 +35,12 @@
         </div>
 
         <div class="d_botonMisPreguntas" <?php if ($botonBloqueado == "d_botonMisPreguntas") echo 'id="botonBloqueado"'; ?>>
-            <a href="index.php?controller=pregunta&action=misPregunta" class="botonCrear">Mis preguntas</a>
+            <a href="index.php?controller=pregunta&action=misPreguntas" class="botonCrear">Mis preguntas</a>
         </div>
 
     </div>
 
-    <!-- Botón del perfil con menú desplegable ~~> Posibles opciones ("Ver perfil", "Crear cuenta" {solo si el
+    <!-- Botón del perfil con menú desplegable ~~> Posibles opciones ("Ver perfil", "Gestionar cuentas" {solo si el
             usuario actual es "administrador"; 'TINYINT' con valor 1 para verdadero y 0 para falso}, y "Cerrar sesión"). -->
 
     <div class="d_botonPerfil">

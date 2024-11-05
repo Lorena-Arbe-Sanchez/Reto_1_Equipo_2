@@ -31,7 +31,7 @@ class PreguntaController {
         return $preguntasConRespuestas ?: [];
     }
 
-    public function misPregunta(){
+    public function misPreguntas(){
         $this->view = "misPreguntas";
         return $this->model->sacarPreguntasPorUsuario();
     }
