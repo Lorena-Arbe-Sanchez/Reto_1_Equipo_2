@@ -41,46 +41,39 @@ require_once __DIR__ . "/../layout/header.php";
                     </td>
                 </tr>
                 <?php
-            }
-            ?>
-            </tbody>
-        </table>
-        <?php
-    } else {
-        ?>
-        <div class="mensajeInexistir">
-            Actualmente no hay preguntas registradas.
-        </div>
-        <?php
-    }
-    ?>
 
-    <?php
-    // MIS RESPUESTAS
-    // Verificamos si $dataToView["data"] está definido y es un array
-    if (isset($dataToView["data"][0]['respuestas']) && is_array($dataToView["data"][0]['respuestas'])
-        && count($dataToView["data"][0]['respuestas']) > 0) {
-        ?>
-        <table class="tabla_cuentas">
-            <thead>
-            <tr>
-                <th>Solución</th>
-                <th>Archivo</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php
-            foreach ($dataToView["data"] as $pregunta) {
-                ?>
-                <tr>
-                    <td><?php echo htmlspecialchars($pregunta['titulo']); ?></td>
-                    <td><?php echo htmlspecialchars($pregunta['descripcion']); ?></td>
-                    <td><?php echo htmlspecialchars($pregunta['tema']); ?></td>
-                    <td>
-                        <a href="index.php?controller=pregunta&action=borrar&id=<?php echo urlencode($pregunta['id']); ?>" id="bEliminar">Eliminar</a>
-                    </td>
-                </tr>
-                <?php
+                if (isset($pregunta['respuestas']) && count($pregunta['respuestas']) > 0){
+                    ?>
+                    <tr>
+                        <td colspan="4"> <!-- Ocupa las 4 columnas de la tabla de preguntas -->
+                            <table class="tabla_respuestas">
+                                <thead>
+                                <tr>
+                                    <th>Solución</th>
+                                    <th>Archivo</th>
+                                    <th>Pregunta</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                foreach ($pregunta['respuestas'] as $respuesta){
+                                    ?>
+                                    <tr>
+                                        <td><?php echo htmlspecialchars($respuesta['solucion']); ?></td>
+                                        <td><?php echo htmlspecialchars($respuesta['archivo']); ?></td>
+                                        <td>
+                                            <a href="index.php?controller=pregunta&action=borrar&id=<?php echo urlencode($respuesta['id_pregunta']['id']); ?>" id="bEliminar">Eliminar</a>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                }
+                                ?>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <?php
+                }
             }
             ?>
             </tbody>
