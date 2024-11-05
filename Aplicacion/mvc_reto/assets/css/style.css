@@ -175,11 +175,11 @@ footer{
     width: auto;
 }
 
-.pag_misPreguntas{
+.pag_misPreguntas, .pag_crearRespuesta{
     flex-direction: column;
 }
 
-.pag_misPreguntas .contenido{
+.pag_misPreguntas .contenido, .pag_crearRespuesta .contenido{
     margin-top: 400px;
     width: 1200px;
 }
