@@ -130,13 +130,13 @@ footer{
 
 /* MISMOS ESTILOS EN ELEMENTOS DE PÁGINAS DIFERENTES (Y PROPIEDADES RELACIONADAS CON LOS CONTENIDOS) */
 
-.pag_foro, .pag_crearPregunta, .pag_gestionarCuenta, .pag_perfil, .pag_misPreguntas, .pag_crearRespuesta{
+.pag_foro, .pag_frecuentes, .pag_crearPregunta, .pag_gestionarCuenta, .pag_perfil, .pag_misPreguntas, .pag_crearRespuesta{
     background: linear-gradient(to bottom, #BCCAD6, white);
     min-height: 100vh; /* Al menos el 100% de la ventana. */
     background-attachment: fixed; /* Mantiener el degradado fijo mientras se hace scroll. */
 }
 
-.container, .pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_crearRespuesta .contenido, .pag_foro .contenido, .pag_misPreguntas .contenido{
+.container, .pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_crearRespuesta .contenido, .pag_foro .contenido, .pag_frecuentes .contenido, .pag_misPreguntas .contenido{
     position: relative;
     flex-direction: column;
     text-align: center;
@@ -148,7 +148,7 @@ footer{
     margin-top: 1em;
 }
 
-.pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_foro .contenido, .pag_crearRespuesta .contenido{
+.pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_foro .contenido, .pag_frecuentes .contenido, .pag_crearRespuesta .contenido{
     background-color: #8d9db67e;
 }
 
@@ -475,28 +475,28 @@ nav[aria-label="Paginación de preguntas"] ul{
 
 /* Para la ventana del foro. */
 
-.pag_foro{
+.pag_foro, .pag_frecuentes{
     flex-direction: column;
     padding-top: 116.59px;
     margin-top: 0;
     min-height: 100vh;
 }
 
-.pag_foro footer{
+.pag_foro footer, .pag_frecuentes footer{
     position: relative;
 }
 
-.pag_foro .pregunta{
+.pag_foro .pregunta, .pag_frecuentes .pregunta{
     display: flex;
     flex-direction: column;
     width: 70%;
 }
 
-.pag_foro .pregunta div{
+.pag_foro .pregunta div, .pag_frecuentes .pregunta div{
     width: 100%;
 }
 
-.pag_foro .pregunta .bResponder, .bMeGusta, .bNoMeGusta{
+.pag_foro .pregunta .bResponder, .pag_frecuentes .pregunta .bResponder, .bMeGusta, .bNoMeGusta{
     width: auto;
     margin: 0;
 }
@@ -507,7 +507,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     --base-margin: 400px; /* Margen base por pregunta */
 }
 
-.pag_foro .contenido{
+.pag_foro .contenido, .pag_frecuentes .contenido{
     margin-top: calc((var(--question-count) * var(--base-margin)));
     transition: margin-top 0.3s ease; /* Suaviza la transición del margen */
     margin-bottom: 1em;
