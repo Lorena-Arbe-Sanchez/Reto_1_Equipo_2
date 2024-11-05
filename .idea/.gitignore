@@ -1,8 +1,12 @@
-# Default ignored files
+# Ignorar la carpeta `shelf` completa
 /shelf/
-/workspace.xml
-# Editor-based HTTP Client requests
+
+# Ignorar `workspace.xml`
+workspace.xml
+
+# Ignorar solicitudes HTTP basadas en el cliente del editor
 /httpRequests/
-# Datasource local storage ignored files
+
+# Ignorar archivos locales de almacenamiento de fuentes de datos
 /dataSources/
 /dataSources.local.xml
