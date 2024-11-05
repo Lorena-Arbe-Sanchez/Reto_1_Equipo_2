@@ -182,6 +182,7 @@ footer{
 .pag_misPreguntas .contenido, .pag_crearRespuesta .contenido{
     margin-top: 400px;
     width: 1200px;
+    margin-bottom: 1em;
 }
 
 .bVolver{
@@ -403,6 +404,12 @@ nav[aria-label="Paginación de preguntas"] ul{
     overflow-x: auto; /* Añadirá scroll horizontal si el contenido de la tabla se desborda. */
     border-collapse: collapse;
     margin: 2em;
+}
+
+.tabla_respuestas{
+    width: 90%;
+    border-collapse: collapse;
+    margin: 1em;
 }
 
 .tabla_cuentas th, .tabla_cuentas td{

@@ -33,6 +33,12 @@ class RespuestaController {
         return $result;
     }
 
+    public function misPreguntas(){
+        $this->view = "misPreguntas";
+        return $this->model->sacarRespuestasPorUsuario();
+    }
+
+
     public function borrar(){
         $this->view ='foro';
         return $this -> model -> deleteRespuesta($_GET["id"]);

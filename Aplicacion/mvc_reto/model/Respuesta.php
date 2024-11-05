@@ -65,6 +65,14 @@ class Respuesta {
         return $id;
     }
 
+    public function sacarRespuestasPorUsuario(){
+        $id_usuario = $_SESSION["id"];
+        $sql = "SELECT * FROM " . $this->tabla . " WHERE id_usuario = ?";
+        $stm = $this->connection->prepare($sql);
+        $stm->execute([$id_usuario]);
+        return $stm->fetchAll();
+    }
+
     public function modificarRespuesta($param){
 
         $id = $solucion = $archivo = "";
