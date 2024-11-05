@@ -31,16 +31,13 @@ class UsuarioController {
 
             // Usuario y contraseña correctos. Inicio sesión exitoso y redirigir al foro.
 
-            // TODO : Hacer lo de verificar si es administrador y guardar la variable.
             $_SESSION["id"] = $usuarioDB["id"];
-            $_SESSION["usuario"] = $usuarioDB["usuario"];
             $_SESSION["administrador"] = $usuarioDB["administrador"];
-            $_SESSION["dni"] = $usuarioDB["dni"];
 
             // Guardar '$usuarioDB' en una variable de sesión.
             $_SESSION['usuarioDB'] = $usuarioDB;
 
-            header("Location: index.php?controller=pregunta&action=foro");
+            header("Location: index.php?controller=pregunta&action=list_paginated");
             exit(); // Asegurar que no se ejecute más código después de la redirección.
         }
         else{
@@ -55,7 +52,6 @@ class UsuarioController {
     public function cuentas(){
         $this->view="gestionarCuenta";
         return $this->model->getUsuarios();
-
     }
 
     // Función para el botón "Buscar" (filtrar) de la ventana de 'gestionarCuenta'.
@@ -82,6 +78,54 @@ class UsuarioController {
         }
     }
 
+    public function subirImgPerfil(){
+
+        // Primero, verificar si se ha subido el archivo.
+
+        // TODO : Poner bien.
+
+        $filePath = null;
+
+        if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
+            // Si el archivo es válido, procesarlo
+            $fileTmpPath = $_FILES['file']['tmp_name']; // Ruta a carpeta temporal donde se guarda.
+            $fileName = $_FILES['file']['name'];
+            $fileName = uniqid() ."_". $fileName;
+            $uploadFileDir = './uploads/'; // De la raiz se crea una carpeta "uploads".
+            $destPath = $uploadFileDir . $fileName;
+
+            // Verificar que el directorio de subida exista, sino crear uno
+            if (!is_dir($uploadFileDir)) {
+                mkdir($uploadFileDir, 0777, true);
+            }
+
+            // Mover el archivo desde su ubicación temporal al directorio final
+            if (move_uploaded_file($fileTmpPath, $destPath)) {
+                // Si el archivo se movió correctamente, guardar la ruta del archivo
+                $filePath = $destPath;
+            }
+            else {
+                // Si hubo un error al mover el archivo
+                $_GET["response"] = false;
+                return;
+            }
+        }
+
+
+        // Ahora pasamos todos los datos (incluido el archivo, si existe) al modelo
+        $param = $_POST;
+        $param['file_path'] = $filePath; // Agregamos la ruta del archivo al array de parámetros
+
+        // Llamamos al modelo para guardar los datos
+        $id = $this -> model -> save($param);
+        $result = $this -> model -> getNoteById($id);
+
+        // Respuesta exitosa
+        $_GET["response"] = true;
+        return $result;
+
+    }
+
     public function recuperar(){
         $this->view="recuperarContrasena";
     }
@@ -96,8 +140,6 @@ class UsuarioController {
         $result = $this->model->getUsuarioByUsuario($_POST['usuario']);
 
         if ($result){
-
-            // TODO : Hacer lo de verificar si es administrador y guardar la variable (mirar en "feature/Aritz").
 
             // Usuario y contraseña correctos. Cambio de contraseña exitoso y redirigir al foro.
             $cambioExitoso = $this->model->actualizarContrasena($usuario, $contrasenaNueva);

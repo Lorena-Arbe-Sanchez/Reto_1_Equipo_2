@@ -31,6 +31,7 @@ if(isset($dataToView["data"]["dniBuscar"])) $dniBuscar = $dataToView["data"]["dn
 
     <div class="d_bCrear"><button id="bCrear">+ Crear cuenta</button></div>
 
+    <!-- TODO : Repasar esto. -->
     <div class="mitades">
         <div class="mitad contenido1">
             <div class="busqueda">
@@ -46,7 +47,7 @@ if(isset($dataToView["data"]["dniBuscar"])) $dniBuscar = $dataToView["data"]["dn
 
             <?php
 
-            // Si el array '$datosCuentas' del 'index.php' tiene filas (la función "list()" del "UsuarioController" obtiene resultados), entonces se creará la tabla.
+            // Si el array '$dataToView' del 'index.php' tiene filas (la función "cuentas()" del "UsuarioController" obtiene resultados), entonces se creará la tabla.
             if(count($dataToView["data"])>0){
                 ?>
                 <table class="tabla_cuentas">

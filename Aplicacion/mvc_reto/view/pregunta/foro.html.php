@@ -17,9 +17,9 @@ require_once __DIR__ . "/../layout/header.php";
 <div class="contenido">
 
     <?php
-    if(!empty($dataToView["data"]) && count($dataToView["data"])>0){
+    if(!empty($dataToView["data"][0]) && count($dataToView["data"])>0){
 
-        foreach($dataToView["data"] as $pregunta){
+        foreach($dataToView["data"][0] as $pregunta){
             ?>
             <div class="pregunta">
                 <div class="tituloPregunta">
@@ -44,6 +44,9 @@ require_once __DIR__ . "/../layout/header.php";
 
                     // Verifica si el tema existe en el array; si no, muestra "Tema no especificado"
                     echo $temas[$pregunta["tema"]] ?? "Tema no especificado";
+
+                    // TODO : Añadir más columnas de la tabla (usuario, fecha...)
+
                     ?>
                 </div>
 
@@ -53,14 +56,14 @@ require_once __DIR__ . "/../layout/header.php";
 
                 <div class="divBResponder">
                     <div class="bResponder">
-                        <a href="index.php?controller=respuesta&action=crear&id=<?php echo $_SESSION["id"]; ?>"
+                        <a href="index.php?controller=respuesta&action=crear&id_usuario=<?php echo $_SESSION["id"]; ?>&id_pregunta=<?php echo $pregunta["id"]; ?>"
                         >Responder</a>
                     </div>
                 </div>
 
+                <h3>Respuestas:</h3>
+                <br>
                 <div class="respuestas">
-                    <h3>Respuestas:</h3>
-                    <br>
                     <?php
                     if(isset($pregunta['respuestas']) && !empty($pregunta['respuestas'])){
                         foreach($pregunta['respuestas'] as $respuesta){
@@ -93,7 +96,20 @@ require_once __DIR__ . "/../layout/header.php";
             <br>
             <?php
         }
+        ?>
 
+        <nav aria-label="Paginación de preguntas">
+            <ul>
+                <!-- Números de página -->
+                <?php for ($i = 1; $i <= $dataToView["data"][2]; $i++): ?>
+                    <li class="page-item <?= ($i == $dataToView["data"][1]) ? 'active' : ''; ?>">
+                        <a class="page-link" href="index.php?controller=pregunta&action=list_paginated&page=<?= $i; ?>"><?= $i; ?></a>
+                    </li>
+                <?php endfor; ?>
+            </ul>
+        </nav>
+
+        <?php
     }
     else{
         ?>

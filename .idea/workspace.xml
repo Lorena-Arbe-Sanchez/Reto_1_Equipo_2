@@ -5,14 +5,73 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6abb039-d7f5-4f73-8b47-492ba288a50f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/.idea/mvc_reto.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/editar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/eliminar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/fondo1_gif.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/fondo2_gif.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/fondo3_gif.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/fondo4_gif.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/fondo_azul.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/icono_avion.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/icono_empresa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/logo_empresa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/logo_empresa_conFondo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/logo_equipo2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/logo_facebook.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/logo_instagram.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/logo_linkedin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/logo_x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/logo_youtube.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/suma.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/crearPregunta.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/crearRespuesta.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/gestionarCuenta.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/menuPerfil.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/perfil.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/recuperarContrasena.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/config/config.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/PreguntaController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/RespuestaController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/UsuarioController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/model/Db.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/model/Pregunta.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/model/Respuesta.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/model/Usuario.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/layout/footer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/layout/header.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/pregunta/crearPregunta.html.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/pregunta/foro.html.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/pregunta/misPreguntas.html.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/respuesta/crearRespuesta.html.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/respuesta/modificarRespuesta.html.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/editarCuenta.html.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/gestionarCuenta.html.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/login.html.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/perfil.html.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/recuperarContrasena.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/PreguntaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/PreguntaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/UsuarioController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/UsuarioController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/model/Pregunta.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/model/Pregunta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/pregunta/crearPregunta.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/pregunta/crearPregunta.html.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/pregunta/misPreguntas.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/pregunta/misPreguntas.html.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/gestionarCuenta.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/gestionarCuenta.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/assets/imagenes/cielo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/cielo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/assets/imagenes/perfil.png" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/perfil.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/assets/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/html/crearCuenta.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/html/foro.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/html/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/html/recuperarContrasena.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/javascript/crearCuenta.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/javascript/login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/javascript/recuperarContrasena.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/php/ejemplo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/respuesta/borrarRespuesta.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base_datos/base_datos_reto1_laragon.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Base_datos/base_datos_reto1_laragon.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base_datos/base_datos_reto1_phpMyAdmin.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Base_datos/base_datos_reto1_phpMyAdmin.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,25 +120,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/Aritz&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Usuario/Desktop/mvc_reto3&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Merging main",
+    "last_opened_file_path": "C:/laragon/www/workspace-dwes-Lorena-Arbe-Sanchez",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-PS-242.21829.154" />
-        <option value="bundled-php-predefined-a98d8de5180a-4d9f4c849d09-com.jetbrains.php.sharedIndexes-PS-242.21829.154" />
+        <option value="bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.14015.96" />
       </set>
     </attachedChunks>
   </component>
@@ -95,10 +153,8 @@
       <workItem from="1730272595457" duration="563000" />
       <workItem from="1730449362073" duration="6630000" />
       <workItem from="1730540345477" duration="17668000" />
-      <workItem from="1730659294714" duration="2245000" />
-      <workItem from="1730706951894" duration="27000" />
-      <workItem from="1730706980756" duration="7051000" />
-      <workItem from="1730716360845" duration="783000" />
+      <workItem from="1730659294714" duration="2336000" />
+      <workItem from="1730791195805" duration="315000" />
     </task>
     <servers />
   </component>

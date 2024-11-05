@@ -23,8 +23,6 @@ $dataToView["data"] = array();
 if(method_exists($controller, $_GET["action"]))
     $dataToView["data"] = $controller -> {$_GET["action"]}();
 
-
-
 /* Siempre va a haber que llamar solo a la vista, ya que hay múltiples variables que pasar como parámetro al header,
     y además después del footer hay que llamar a diferentes archivos de JavaScript dependiendo de la ventana.
     (No es factible implementarlo).
