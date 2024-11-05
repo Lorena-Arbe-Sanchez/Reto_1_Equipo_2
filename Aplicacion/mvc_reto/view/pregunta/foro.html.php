@@ -56,8 +56,8 @@ require_once __DIR__ . "/../layout/header.php";
 
                 <div class="divBResponder">
                     <div class="bResponder">
-                        <a href="index.php?controller=respuesta&action=crear&id_usuario=<?php echo $_SESSION["id"]; ?>&id_pregunta=<?php echo $pregunta["id"]; ?>"
-                        >Responder</a>
+                        <a href="index.php?controller=respuesta&action=crear&id_pregunta=<?php echo $pregunta["id"]; ?>">
+                            Responder</a>
                     </div>
                 </div>
 
@@ -123,6 +123,8 @@ require_once __DIR__ . "/../layout/header.php";
 </div>
 
 <?php require_once __DIR__ . "/../layout/footer.php"; ?>
+
+<script src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/javascript/foroTamano.js"></script>
 
 </body>
 </html>

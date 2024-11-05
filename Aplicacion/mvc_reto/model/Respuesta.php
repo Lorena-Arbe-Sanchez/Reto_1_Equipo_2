@@ -65,4 +65,59 @@ class Respuesta {
         return $id;
     }
 
+    public function modificarRespuesta($param){
+
+        $id = $solucion = $archivo = "";
+        $exist = false;
+    
+        if(isset($param["id"]) && $param["id"] != ''){
+    
+            $actualRespuesta = $this->getRespuestaById($param["id"]);
+    
+            if(isset($actualRespuesta)){
+                $exist = true;
+                $solucion = $actualRespuesta["solucion"];
+                $archivo = $actualRespuesta["archivo"];
+    
+            }
+    
+            if (isset($param["solucion"])) $solucion = $param["solucion"];
+            if (isset($param["archivo"])) $archivo = $param["archivo"];
+    
+            if ($exist){
+    
+                $sql = "Update " . $this->tabla . " SET  solucion = ? , archivo = ?";
+                $stm = $this->connection->prepare($sql);
+                $stm->execute([$solucion, $archivo]);
+    
+            }
+        }
+    
+        return $id;
+    }
+
+    public function deleteRespuesta($id){
+
+        $sql = "DELETE FROM " . $this->tabla . " WHERE id = ?";
+        $stml = $this->connection->prepare($sql);
+        return $stml ->execute([$id]);
+    
+    }
+    
+    public function modificarLikes($id){
+    
+        $sql = "UPDATE " . $this->tabla . " SET votosLike = votosLike + 1 WHERE id = ?";
+        $stm = $this->connection->prepare($sql);
+        $stm->execute([$id]);
+    
+    }
+
+    public function modificarDislikes($id){
+
+        $sql = "UPDATE " . $this->tabla . " SET votosDislike = votosDislike + 1 WHERE id = ?";
+        $stm = $this->connection->prepare($sql);
+        $stm->execute([$id]);
+    
+    }
+
 }

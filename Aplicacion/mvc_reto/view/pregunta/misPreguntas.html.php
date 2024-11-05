@@ -6,8 +6,6 @@ $conMenu = true;
 require_once __DIR__ . "/../layout/header.php";
 ?>
 
-<!-- TODO : Poner con el fondo, en columna y demás. -->
-
 <div class="contenido">
 
     <div id="titulo">
@@ -17,10 +15,10 @@ require_once __DIR__ . "/../layout/header.php";
     <div class="d_bCrear"><a href="index.php?controller=pregunta&action=crear" class="bCrear">+ Crear Pregunta</a></div>
 
     <?php
+    //MIS PREGUNTAS
     // Verificamos si $dataToView["data"] está definido y es un array
     if (isset($dataToView["data"]) && is_array($dataToView["data"]) && count($dataToView["data"]) > 0) {
         ?>
-            <!-- TODO : Cambiar nombre tabla y poner bien en style. -->
         <table class="tabla_cuentas">
             <thead>
             <tr>
@@ -28,6 +26,46 @@ require_once __DIR__ . "/../layout/header.php";
                 <th>Descripción</th>
                 <th>Tema</th>
                 <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+            foreach ($dataToView["data"] as $pregunta) {
+                ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($pregunta['titulo']); ?></td>
+                    <td><?php echo htmlspecialchars($pregunta['descripcion']); ?></td>
+                    <td><?php echo htmlspecialchars($pregunta['tema']); ?></td>
+                    <td>
+                        <a href="index.php?controller=pregunta&action=borrar&id=<?php echo urlencode($pregunta['id']); ?>" id="bEliminar">Eliminar</a>
+                    </td>
+                </tr>
+                <?php
+            }
+            ?>
+            </tbody>
+        </table>
+        <?php
+    } else {
+        ?>
+        <div class="mensajeInexistir">
+            Actualmente no hay preguntas registradas.
+        </div>
+        <?php
+    }
+    ?>
+
+    <?php
+    // MIS RESPUESTAS
+    // Verificamos si $dataToView["data"] está definido y es un array
+    if (isset($dataToView["data"][0]['respuestas']) && is_array($dataToView["data"][0]['respuestas'])
+        && count($dataToView["data"][0]['respuestas']) > 0) {
+        ?>
+        <table class="tabla_cuentas">
+            <thead>
+            <tr>
+                <th>Solución</th>
+                <th>Archivo</th>
             </tr>
             </thead>
             <tbody>
