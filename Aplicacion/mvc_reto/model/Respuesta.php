@@ -113,8 +113,8 @@ class Respuesta {
     }
     
     public function modificarLikes($id){
-    
-        $sql = "UPDATE " . $this->tabla . " SET votosLike = votosLike + 1 WHERE id = ?";
+
+        $sql = "UPDATE " . $this->tabla . " SET votosLike = votosLike + 1 WHERE id_pregunta = ?";
         $stm = $this->connection->prepare($sql);
         $stm->execute([$id]);
     
@@ -122,7 +122,7 @@ class Respuesta {
 
     public function modificarDislikes($id){
 
-        $sql = "UPDATE " . $this->tabla . " SET votosDislike = votosDislike + 1 WHERE id = ?";
+        $sql = "UPDATE " . $this->tabla . " SET votosDislike = votosDislike + 1 WHERE id_pregunta = ?";
         $stm = $this->connection->prepare($sql);
         $stm->execute([$id]);
     
