@@ -10,14 +10,14 @@ require_once __DIR__ . "/../layout/header.php";
 
     <div class="foto">
         <!-- Cargar la imagen del usuario de la BBDD, y si no tiene, cargar la de default. -->
-        <img src="<?php echo isset($usuarioSesion['imagen']) ? htmlspecialchars($usuarioSesion['imagen']) :
+        <img src="<?php echo (($usuarioSesion['imagen'] != null)) ? htmlspecialchars($usuarioSesion['imagen']) :
             '/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/perfil.png'; ?>" alt="Imagen perfil">
 
         <!-- enctype="multipart/form-data"  =>  Permitir la subida de ficheros. -->
         <form id="formCambiarImg" action="index.php?controller=usuario&action=subirImgPerfil" method="post" enctype="multipart/form-data">
-            <button type="button" id="anadirImg">Añadir imagen</button>
+            <button type="button" id="anadirImg">Cambiar imagen</button>
             <!-- accept="image/*"  =>  Solo se pueden seleccionar imágenes. -->
-            <input type="file" id="inputFile" accept="image/*">
+            <input type="file" id="inputFile" name="inputFile" accept="image/*">
         </form>
     </div>
 
