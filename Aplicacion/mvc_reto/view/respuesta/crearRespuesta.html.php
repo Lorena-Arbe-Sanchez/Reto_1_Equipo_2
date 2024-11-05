@@ -11,14 +11,14 @@ require_once __DIR__ . "/../layout/header.php";
     <div id="divTitulo">
         <h2>Creación de respuesta</h2>
     </div>
-    <form id="formCrearRespuesta" action="index.php?controller=respuesta&action=save" method="post">
+    <form id="formCrearRespuesta" action="index.php?controller=respuesta&action=save&id_pregunta=<?php echo $_GET['id_pregunta']?>" method="post">
 
         <div>
             <label for="solucion">Solucion</label>
             <textarea id="solucion" name="solucion" maxlength="100" required></textarea>
         </div>
         <div>
-            <input type="submit" id="bAnadirArchivo" class="bAnadirArchivo" value="+ Añadir archivo">
+            <input type="button" id="bAnadirArchivo" class="bAnadirArchivo" value="+ Añadir archivo">
         </div>
 
         <div class="d_botones">
