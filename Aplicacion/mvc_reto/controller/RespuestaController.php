@@ -33,6 +33,12 @@ class RespuestaController {
         return $result;
     }
 
+    public function misPreguntas(){
+        $this->view = "misPreguntas";
+        return $this->model->sacarRespuestasPorUsuario();
+    }
+
+
     public function borrar(){
         $this->view ='foro';
         return $this -> model -> deleteRespuesta($_GET["id"]);
@@ -53,16 +59,15 @@ class RespuestaController {
     
     //Funcion cuando des al boton like
     public function modificarLikes(){
-    
-        $this->view ='foro';
-        $this -> model -> modificarLikes($_GET["id"]);
-    
+
+        $this -> model -> modificarLikes($_GET["id_pregunta"]);
+        
+        
     }
 
     public function modificarDislikes(){
 
-        $this->view ='foro';
-        $this -> model -> modificarDislikes($_GET["id"]);
+        $this -> model -> modificarDislikes($_GET["id_pregunta"]);
     
     }
 

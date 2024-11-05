@@ -34,7 +34,22 @@ class PreguntaController {
 
     public function misPreguntas(){
         $this->view = "misPreguntas";
-        return $this->model->sacarPreguntasPorUsuario();
+    
+        // Obtener preguntas del usuario
+        $preguntas = $this->model->sacarPreguntasPorUsuario();
+        
+        // Instanciar el RespuestaController
+        $respuestaController = new RespuestaController();
+        
+        $preguntasConRespuestas = [];
+        
+        // Obtener respuestas para cada pregunta
+        foreach ($preguntas as $pregunta) {
+            $pregunta['respuestas'] = $respuestaController->view($pregunta['id']);
+            $preguntasConRespuestas[] = $pregunta;
+        }
+
+        return $preguntasConRespuestas ?: [];
     }
 
     public function list_paginated(){
