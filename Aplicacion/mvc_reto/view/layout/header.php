@@ -40,7 +40,7 @@
 
     </div>
 
-    <!-- Botón del perfil con menú desplegable ~~> Posibles opciones ("Ver perfil", "Crear cuenta" {solo si el
+    <!-- Botón del perfil con menú desplegable ~~> Posibles opciones ("Ver perfil", "Gestionar cuentas" {solo si el
             usuario actual es "administrador"; 'TINYINT' con valor 1 para verdadero y 0 para falso}, y "Cerrar sesión"). -->
 
     <div class="d_botonPerfil">
