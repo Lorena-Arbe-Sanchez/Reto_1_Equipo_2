@@ -5,7 +5,7 @@ $conMenu = false;
 require_once __DIR__ . "/../layout/header.php";
 ?>
 
-<div class="container">
+<div class="contenedor">
 
     <h1>Recuperar contraseña</h1>
 

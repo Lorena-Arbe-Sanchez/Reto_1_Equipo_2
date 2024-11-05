@@ -70,4 +70,13 @@
 
 </header>
 
+<?php else: ?>
+
+<header>
+    <div class="container header-content">
+        <div></div>
+        <button class="theme-toggle" aria-label="Cambiar tema">☀️</button>
+    </div>
+</header>
+
 <?php endif; ?>

@@ -9,23 +9,23 @@ $conMenu = false;
 require_once __DIR__ . "/../layout/header.php";
 ?>
 
-<div class="container">
+<div class="contenedor">
 
     <img src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/logo_empresa_conFondo.png" class="superpuesta" alt="Logo Aergibide SL">
 
     <form id="formLogin" action="index.php?controller=usuario&action=validarLogin" method="post">
-        <div>
+        <div class="form-group">
             <div class="fila_datos">
                 <label for="usuario">Usuario</label>
-                <input type="text" id="usuario" name="usuario" required>
+                <input type="text" id="usuario" name="usuario" required autocomplete="username" aria-required="true">
             </div>
             <!-- Etiqueta en la que se escribirá el error si ocurre. -->
             <div id="mensajeErrorUsuario" class="mensajeError"></div>
         </div>
-        <div>
+        <div class="form-group">
             <div class="fila_datos">
                 <label for="contrasena">Contraseña</label>
-                <input type="password" id="contrasena" name="contrasena" autocomplete="current-password" required> <!-- TODO : 'autocomplete' se puede poner en las demás. -->
+                <input type="password" id="contrasena" name="contrasena" required autocomplete="current-password" aria-required="true"> <!-- TODO : 'autocomplete' se puede poner en las demás. -->
             </div>
 
             <!-- Lo relacionado con 'header("Location: index.php?controller=usuario&action=login&error=1");' del 'UsuarioController.php'. -->
@@ -39,7 +39,7 @@ require_once __DIR__ . "/../layout/header.php";
         <input type="submit" id="bIniciar" class="bIniciar" value="Iniciar sesión">
     </form>
 
-    <a href="index.php?controller=usuario&action=recuperar">¿Se te ha olvidado tu contraseña?</a>
+    <a href="index.php?controller=usuario&action=recuperar" class="bOlvidar">¿Se te ha olvidado tu contraseña?</a>
 
 </div>
 
