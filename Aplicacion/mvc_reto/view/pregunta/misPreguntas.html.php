@@ -6,8 +6,6 @@ $conMenu = true;
 require_once __DIR__ . "/../layout/header.php";
 ?>
 
-<!-- TODO : Poner con el fondo, en columna y demás. -->
-
 <div class="contenido">
 
     <div id="titulo">
@@ -20,7 +18,6 @@ require_once __DIR__ . "/../layout/header.php";
     // Verificamos si $dataToView["data"] está definido y es un array
     if (isset($dataToView["data"]) && is_array($dataToView["data"]) && count($dataToView["data"]) > 0) {
         ?>
-            <!-- TODO : Cambiar nombre tabla y poner bien en style. -->
         <table class="tabla_cuentas">
             <thead>
             <tr>
