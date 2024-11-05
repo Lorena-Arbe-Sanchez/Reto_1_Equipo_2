@@ -34,8 +34,8 @@
             <a href="index.php?controller=pregunta&action=frecuentes" class="botonPreguntas">Preguntas frecuentes</a>
         </div>
 
-        <div class="d_botonCrear" <?php if ($botonBloqueado == "d_botonCrear") echo 'id="botonBloqueado"'; ?>>
-            <a href="index.php?controller=pregunta&action=crear" class="botonCrear">Crear pregunta</a>
+        <div class="d_botonMisPreguntas" <?php if ($botonBloqueado == "d_botonMisPreguntas") echo 'id="botonBloqueado"'; ?>>
+            <a href="index.php?controller=pregunta&action=misPregunta" class="botonCrear">Mis preguntas</a>
         </div>
 
     </div>

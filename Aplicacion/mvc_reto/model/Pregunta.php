@@ -71,15 +71,34 @@ class Pregunta {
         return $stml->fetch();
     }
 
-    public function deleteUsuario($id){
-        $sql = "Detele from " . $this -> tabla . " WHERE id=$id";
-        $stmt = $this -> connection -> prepare($sql);
-        $stmt -> execute([$id]);
-        return $stmt -> fetch();
+
+
+    public function deletePregunta($id)
+    {
+        // Corrección de la consulta SQL
+        $sql = "DELETE FROM " . $this->tabla . " WHERE id = ?";
+        $stml = $this->connection->prepare($sql);
+        // Ejecutar la consulta
+        $stml->execute([$id]);
+        // Retornar el número de filas afectadas (puedes cambiar esto según tus necesidades)
+        return $stml->rowCount();
+    }
+
+
+
+
+
+
+    public function sacarPreguntasPorUsuario(){
+        $id_usuario = $_SESSION["id"];
+        $sql = "SELECT * FROM " . $this->tabla . " WHERE id_usuario = ?";
+        $stm = $this->connection->prepare($sql);
+        $stm->execute([$id_usuario]);
+        return $stm->fetchAll();
     }
 
     public function getPreguntas(){
-        // TODO : De momento ordenar por fecha.
+        // De momento ordenar por fecha.
         $sql = "SELECT * FROM ". $this->tabla ." ORDER BY fecha DESC";
         $stmt = $this->connection->prepare($sql);
         $stmt->execute();

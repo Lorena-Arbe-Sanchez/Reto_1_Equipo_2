@@ -7,7 +7,6 @@ require_once __DIR__ . "/../layout/header.php";
 
 $id =$dni = $nombre = $apellido1 = $apellido2 = $email = $telefono = $usuario = $contrasena = $administrador ="";
 
-
 if(isset($dataToView["data"]["id"])) $id = $dataToView["data"]["id"];
 if(isset($dataToView["data"]["dni"])) $dni = $dataToView["data"]["dni"];
 if(isset($dataToView["data"]["nombre"])) $nombre = $dataToView["data"]["nombre"];
@@ -102,10 +101,17 @@ if(isset($dataToView["data"]["administrador"])) $administrador = $dataToView["da
 
 </div>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> d04ec568f139f3be941c440997fd0514f6873b1c
 <?php require_once __DIR__ . "/../layout/footer.php"; ?>
 
 <script src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/javascript/gestionarCuenta.js"></script>
 
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> d04ec568f139f3be941c440997fd0514f6873b1c

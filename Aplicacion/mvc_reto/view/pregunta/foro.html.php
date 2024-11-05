@@ -17,8 +17,6 @@ require_once __DIR__ . "/../layout/header.php";
 <div class="contenido">
 
     <?php
-    //print_r($dataToView["data"][2]);
-
     if(!empty($dataToView["data"][0]) && count($dataToView["data"])>0){
 
         foreach($dataToView["data"][0] as $pregunta){
@@ -46,6 +44,9 @@ require_once __DIR__ . "/../layout/header.php";
 
                     // Verifica si el tema existe en el array; si no, muestra "Tema no especificado"
                     echo $temas[$pregunta["tema"]] ?? "Tema no especificado";
+
+                    // TODO : Añadir más columnas de la tabla (usuario, fecha...)
+
                     ?>
                 </div>
 
