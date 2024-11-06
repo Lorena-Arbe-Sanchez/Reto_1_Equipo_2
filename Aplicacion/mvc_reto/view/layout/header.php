@@ -73,7 +73,7 @@
 <?php else: ?>
 
 <header>
-    <div class="container header-content">
+    <div class="container">
         <div></div>
         <button class="theme-toggle" aria-label="Cambiar tema">☀️</button>
     </div>

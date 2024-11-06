@@ -121,6 +121,7 @@ class Pregunta {
         return [$stmt->fetchAll(), $page, $totalPages];
     }
 
+    // Función para obtener todas las preguntas pero filtradas por la cantidad de "Me gusta" en orden descendente (de mayor a menor).
     public function getPreguntasFrecuentesPaginated($page=1){
         $limit = PAGINATION;
         $offset = ($page - 1) * $limit;

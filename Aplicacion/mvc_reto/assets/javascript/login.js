@@ -52,6 +52,7 @@ function validar(event){
 }
 
 // TODO : Lo siguiente hay que reutilizarlo en todas las ventanas.
+// TODO : Poner que se guarde en una COOKIE o algo así (para que no se cambie).
 
 // Para el cambio de modo claro-oscuro.
 document.addEventListener('DOMContentLoaded', function() {
