@@ -36,8 +36,8 @@ require_once __DIR__ . "/../layout/header.php";
             <?php endif; ?>
         </div>
 
-        <input type="submit" id="bIniciar" class="bIniciar" value="Iniciar sesión">
-        <a href="index.php?controller=usuario&action=recuperar" class="bOlvidar">¿Se te ha olvidado tu contraseña?</a>
+        <input type="submit" id="bIniciar" class="bPrincipal" value="Iniciar sesión">
+        <a href="index.php?controller=usuario&action=recuperar" class="bSecundario">¿Se te ha olvidado tu contraseña?</a>
     </form>
 
 </div>

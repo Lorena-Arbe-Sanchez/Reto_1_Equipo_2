@@ -596,7 +596,6 @@ nav[aria-label="Paginación de preguntas"] ul{
 :root{
     --primary-color: #6366f1;
     --primary-dark: #4f46e5;
-    --secondary-color: #f3f4f6;
     --text-color: #374151;
     --error-color: #ff0047;
     --border-color: #d1d5db;
@@ -610,7 +609,6 @@ nav[aria-label="Paginación de preguntas"] ul{
 .dark{
     --primary-color: #818cf8;
     --primary-dark: #6366f1;
-    --secondary-color: #1f2937;
     --text-color: #e5e7eb;
     --error-color: #ff96b2;
     --border-color: #374151;
@@ -673,8 +671,19 @@ nav[aria-label="Paginación de preguntas"] ul{
     max-width: 450px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 4em 1em 3em 1em;
+    padding: 4em 1em 2em 1em;
     margin-top: 8em; /* TODO : Mirar a ver si se puede centrar respecto al body sin tener en cuenta el header. */
+}
+
+.pag_recuperar .contenedor{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em 1em 1em 1em;
+    margin-top: 5em;
+}
+
+.pag_recuperar .contenedor h2{
+    margin-bottom: 1em;
 }
 
 .pag_login .contenedor:hover, .pag_recuperar .contenedor:hover{
@@ -690,8 +699,15 @@ nav[aria-label="Paginación de preguntas"] ul{
     border-radius: 15px;
 }
 
-#formLogin{
+#formLogin, #formRecuperarContra{
     all: unset;
+}
+
+#formRecuperarContra{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .form-group{
@@ -699,6 +715,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     text-align: left;
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .fila_datos{
@@ -707,8 +724,6 @@ nav[aria-label="Paginación de preguntas"] ul{
     width: 100%;
     align-items: flex-start;
 }
-
-/* TODO : Intentar poner que los input y label sean más largos (90% respecto al padre...). */
 
 .pag_login label, .pag_recuperar label{
     all: unset;
@@ -736,9 +751,10 @@ nav[aria-label="Paginación de preguntas"] ul{
     box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
 }
 
-#bIniciar{
+.pag_login .bPrincipal, .pag_recuperar .bPrincipal{
     width: 100%;
     padding: 0.75rem;
+    margin-top: 1.5em;
     background-color: var(--primary-color);
     color: white;
     border: none;
@@ -749,24 +765,24 @@ nav[aria-label="Paginación de preguntas"] ul{
     transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
-#bIniciar:hover{
+.bPrincipal:hover{
     background-color: var(--primary-dark);
 }
 
-#bIniciar:active{
+.bPrincipal:active{
     transform: scale(0.98);
 }
 
-.bOlvidar{
-    display: block;
-    margin-top: 1rem;
+.bSecundario{
+    display: inline-block;
+    padding: 1em;
     color: var(--primary-color);
     text-decoration: none;
     font-size: 0.875rem;
     transition: color 0.3s ease;
 }
 
-.bOlvidar:hover{
+.bSecundario:hover{
     color: var(--primary-dark);
     text-decoration: underline;
 }
