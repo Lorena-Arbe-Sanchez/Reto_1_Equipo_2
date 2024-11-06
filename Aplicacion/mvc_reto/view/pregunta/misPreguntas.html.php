@@ -109,7 +109,7 @@ require_once __DIR__ . "/../layout/header.php";
                                     <?php
                                 }
                                 else{
-                                    echo htmlspecialchars($respuesta['archivo']);
+                                    print_r($respuesta['archivo']);
                                 }
                                 ?>
                                     
