@@ -589,7 +589,7 @@ nav[aria-label="Paginación de preguntas"] ul{
 
 
 /* PÁGINA DE LOGIN Y DE RECUPERAR LA CONTRASEÑA */
-/* TODO : ACABAR */
+/* TODO : ACABAR DE ORDENAR / POSICIONAR */
 /* TODO : Aplicar a más elementos de 'vRecuperarContra'. */
 
 :root{
@@ -659,7 +659,8 @@ nav[aria-label="Paginación de preguntas"] ul{
 }
 
 .pag_login .contenedor, .pag_recuperar .contenedor{
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: var(--background-color);
+    color: var(--text-color);
     backdrop-filter: blur(10px);
     border-radius: 16px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -670,9 +671,12 @@ nav[aria-label="Paginación de preguntas"] ul{
     padding: 3rem 2.5rem 2rem;
 }
 
+/* TODO : PONER BIEN EL MODO DARK DEL CONTENEDOR */
+/*
 .dark .pag_login .contenedor, .dark .pag_recuperar .contenedor{
     background-color: rgba(17, 24, 39, 0.9);
 }
+ */
 
 .pag_login .contenedor:hover, .pag_recuperar .contenedor:hover{
     transform: translateY(-5px);

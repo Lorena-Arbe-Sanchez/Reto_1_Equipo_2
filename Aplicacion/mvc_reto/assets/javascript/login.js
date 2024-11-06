@@ -52,19 +52,31 @@ function validar(event){
 }
 
 // TODO : Lo siguiente hay que reutilizarlo en todas las ventanas.
-// TODO : Poner que se guarde en una COOKIE o algo así (para que no se cambie).
+// TODO : Poner que se guarde en 'localStorage' o algo así (para que no se cambie).
 
 // Para el cambio de modo claro-oscuro.
 document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.querySelector('.theme-toggle');
+    const htmlElement = document.documentElement;
     let isDark = false;
 
     themeToggle.addEventListener('click', function() {
-        document.body.classList.toggle('dark');
+        htmlElement.classList.toggle('dark');
         isDark = !isDark;
         themeToggle.innerHTML = isDark ? '🌙' : '☀️';
         themeToggle.setAttribute('aria-label',
             isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'
         );
+
+        // Guardar la preferencia del usuario
+        localStorage.setItem('darkMode', isDark);
     });
+
+    // Verificar y aplicar la preferencia guardada del usuario
+    if (localStorage.getItem('darkMode') === 'true') {
+        htmlElement.classList.add('dark');
+        themeToggle.innerHTML = '🌙';
+        themeToggle.setAttribute('aria-label', 'Cambiar a modo claro');
+        isDark = true;
+    }
 });
