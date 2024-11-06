@@ -584,15 +584,15 @@ nav[aria-label="Paginación de preguntas"] ul{
     min-width: 20%;
 }
 
-#formLogin div{
+#formLogin div, #formRecuperarContra div{
     flex-direction: column;
 }
 
-#formLogin .fila_datos{
+#formLogin .fila_datos, #formRecuperarContra .fila_datos{
     flex-direction: row;
 }
 
-#formLogin .mensajeError{
+#formLogin .mensajeError, #formRecuperarContra .mensajeError{
     color: red;
     font-size: 0.8em;
     display: block;

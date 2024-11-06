@@ -136,7 +136,7 @@ class UsuarioController {
         $contrasenaNueva = $_POST['contrasena1'];
 
         // Pasarle los valores de las casillas necesarias como parámetros.
-        $result = $this->model->getUsuarioByUsuario($_POST['usuario']);
+        $result = $this->model->getUsuarioByUsuario($usuario);
 
         if ($result){
 
@@ -153,7 +153,6 @@ class UsuarioController {
         }
         else{
             // Usuario no encontrado. Enviar un mensaje de error.
-            echo("Usuario no encontrado");
             header("Location: index.php?controller=usuario&action=recuperar&error=1");
             exit();
         }
