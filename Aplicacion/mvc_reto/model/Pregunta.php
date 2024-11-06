@@ -14,6 +14,7 @@ class Pregunta {
         $this->connection = $dbObj ->connection;
     }
 
+    // TODO : Borrar si no se utiliza.
     public function getPregunta(){
         $sql = "SELECT * FROM " . $this->tabla;
 
@@ -22,6 +23,7 @@ class Pregunta {
         return $stml -> fetchAll();
     }
 
+    // TODO : Borrar si no se utiliza.
     // Para obtener las preguntas frecuentes (filtradas por más likes).
     public function getPreguntaFrecuentes(){
         $sql = "SELECT * FROM " . $this->tabla . " ORDER BY votosLike DESC";
@@ -84,6 +86,7 @@ class Pregunta {
         return $stml->rowCount();
     }
 
+    // TODO : Borrar si no se utiliza.
     public function getPreguntas(){
         // De momento ordenar por fecha.
         $sql = "SELECT * FROM ". $this->tabla ." ORDER BY fecha DESC";
@@ -95,7 +98,7 @@ class Pregunta {
     public function getPreguntasPaginated($page=1){
         $limit = PAGINATION;
         $offset = ($page - 1) * $limit;
-        $sql = "SELECT * FROM ". $this->tabla ." LIMIT :limit OFFSET :offset";
+        $sql = "SELECT * FROM ". $this->tabla ." ORDER BY fecha LIMIT :limit OFFSET :offset";
         $stmt = $this->connection->prepare($sql);
         $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
         $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
@@ -105,20 +108,19 @@ class Pregunta {
         return [$stmt->fetchAll(), $page, $totalPages];
     }
 
-    /*
-    public function getPreguntasPaginated($page=1){
+    // Función para obtener todas las preguntas pero filtradas por la cantidad de "Me gusta" en orden descendente (de mayor a menor).
+    public function getPreguntasFrecuentesPaginated($page=1){
         $limit = PAGINATION;
         $offset = ($page - 1) * $limit;
-        $sql = "SELECT * FROM ". $this->tabla ." LIMIT :limit OFFSET :offset";
+        $sql = "SELECT * FROM ". $this->tabla ." ORDER BY votosLike DESC LIMIT :limit OFFSET :offset";
         $stmt = $this->connection->prepare($sql);
         $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
         $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
         $stmt->execute();
 
-        $totalPages = $this->getNumberPages(); //ceil($this->getNumberPages()/$limit);
+        $totalPages = $this->getNumberPages();
         return [$stmt->fetchAll(), $page, $totalPages];
     }
-    */
 
     public function getNumberPages(){
         $limit = PAGINATION;

@@ -13,6 +13,7 @@ class PreguntaController {
         $this->model = new Pregunta();
     }
 
+    // TODO : Borrar si no se utiliza.
     // Obtener los datos de todas las preguntas y mostrarlas en el foro.
     public function foro(){
         $this->view= "foro";
@@ -80,11 +81,23 @@ class PreguntaController {
     }
     */
 
-    // TODO
-    // Obtener los datos de las preguntas frecuentes y mostrarlas en su ventana.
-    public function frecuentes(){
-        //
-    }
+    // Obtener los datos de las preguntas frecuentes (con más likes; más recurridas) y mostrarlas en su ventana.
+   public function frecuentes(){
+       $this->view = 'frecuentes';
+       $page = isset($_GET['page']) ? $_GET['page'] : 1;
+
+       list($preguntas, $currentPage, $totalPages) = $this->model->getPreguntasFrecuentesPaginated($page);
+
+       $respuestaController = new RespuestaController();
+       $preguntasConRespuestas = [];
+
+       foreach ($preguntas as $pregunta) {
+           $pregunta['respuestas'] = $respuestaController->view($pregunta['id']);
+           $preguntasConRespuestas[] = $pregunta;
+       }
+
+       return [$preguntasConRespuestas, $currentPage, $totalPages];
+   }
 
     public function crear(){
         $this->view = "crearPregunta";

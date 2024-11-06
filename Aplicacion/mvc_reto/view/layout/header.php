@@ -20,7 +20,7 @@
     <div class="d_logo_empresa">
         <img class="logo_empresa"
              src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/logo_empresa.png"
-             alt="Logo Aergibide SL" width="190" height="90">
+             alt="Logo Aergibide SL" width="260" height="116">
     </div>
 
     <div class="d_botonesHeader">
@@ -68,6 +68,15 @@
         </div>
     </div>
 
+</header>
+
+<?php else: ?>
+
+<header>
+    <div class="container">
+        <div></div>
+        <button class="theme-toggle" aria-label="Cambiar tema">☀️</button>
+    </div>
 </header>
 
 <?php endif; ?>

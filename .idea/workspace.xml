@@ -4,7 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6abb039-d7f5-4f73-8b47-492ba288a50f" name="Changes" comment="" />
+    <list default="true" id="b6abb039-d7f5-4f73-8b47-492ba288a50f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/logo_empresa_conFondo_oscuro.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/modoClaroOscuro.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/uploads/672a555e0cda4_672a05a0ce76d_avatar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/uploads/672a5569138d0_6729f9b76c00b_pngtree-user-vector-avatar-png-image_1541962.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/pregunta/frecuentes.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/cielo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/fondo2_gif.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/fondo3_gif.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/fondo4_gif.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/fondo_azul.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/icono_avion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/logo_empresa.png" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/logo_empresa.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/logo_empresa_conFondo.png" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/logo_empresa_conFondo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/PreguntaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/PreguntaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/model/Pregunta.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/model/Pregunta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/uploads/6729f909ab3cf_avatar_man_people_person_profile_user_icon_123375.webp" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/uploads/672a06b406fad_avatar_man_people_person_profile_user_icon_123375.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/layout/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/layout/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/editarCuenta.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/editarCuenta.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/login.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/login.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/recuperarContrasena.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/recuperarContrasena.html.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,7 +81,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "develop",
+    "git-widget-placeholder": "Merging develop",
     "last_opened_file_path": "C:/laragon/www/workspace-dwes-Lorena-Arbe-Sanchez",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -70,8 +95,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-PS-242.21829.154" />
-        <option value="bundled-php-predefined-a98d8de5180a-4d9f4c849d09-com.jetbrains.php.sharedIndexes-PS-242.21829.154" />
+        <option value="bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.14015.96" />
       </set>
     </attachedChunks>
   </component>
@@ -89,6 +113,7 @@
       <workItem from="1730540345477" duration="17668000" />
       <workItem from="1730659294714" duration="2336000" />
       <workItem from="1730791195805" duration="315000" />
+      <workItem from="1730877703640" duration="12189000" />
     </task>
     <servers />
   </component>
