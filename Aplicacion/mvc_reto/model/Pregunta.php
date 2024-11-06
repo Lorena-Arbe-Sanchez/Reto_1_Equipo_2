@@ -84,19 +84,6 @@ class Pregunta {
         return $stml->rowCount();
     }
 
-
-
-
-
-
-    public function sacarPreguntasPorUsuario(){
-        $id_usuario = $_SESSION["id"];
-        $sql = "SELECT * FROM " . $this->tabla . " WHERE id_usuario = ?";
-        $stm = $this->connection->prepare($sql);
-        $stm->execute([$id_usuario]);
-        return $stm->fetchAll();
-    }
-
     public function getPreguntas(){
         // De momento ordenar por fecha.
         $sql = "SELECT * FROM ". $this->tabla ." ORDER BY fecha DESC";

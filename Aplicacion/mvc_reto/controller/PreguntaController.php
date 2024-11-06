@@ -35,7 +35,7 @@ class PreguntaController {
         $this->view = "misPreguntas";
     
         // Obtener preguntas del usuario
-        $preguntas = $this->model->sacarPreguntasPorUsuario();
+        $preguntas = $this->model->getPregunta();
         
         // Instanciar el RespuestaController
         $respuestaController = new RespuestaController();

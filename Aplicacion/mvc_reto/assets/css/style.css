@@ -185,6 +185,10 @@ footer{
     margin-bottom: 1em;
 }
 
+.pag_misPreguntas .contenido{
+    margin-top: 180px;
+}
+
 .bVolver{
     margin: 1em;
     padding: .7em;
@@ -399,30 +403,24 @@ nav[aria-label="Paginación de preguntas"] ul{
     visibility: hidden; /* Ocultar el elemento, pero sigue ocupando espacio en el diseño. */
 }
 
-.tabla_cuentas{
+.tabla_cuentas, .tabla_respuestas{
     width: 100%;
     overflow-x: auto; /* Añadirá scroll horizontal si el contenido de la tabla se desborda. */
     border-collapse: collapse;
     margin: 2em;
 }
 
-.tabla_respuestas{
-    width: 90%;
-    border-collapse: collapse;
-    margin: 1em;
-}
-
-.tabla_cuentas th, .tabla_cuentas td{
+.tabla_cuentas th, .tabla_cuentas td, .tabla_respuestas th, .tabla_respuestas td{
     border: 1px solid black;
     padding: .8em;
     white-space: nowrap; /* Evita que el contenido se divida en varias líneas. */
 }
 
-.tabla_cuentas th{
+.tabla_cuentas th, .tabla_respuestas th{
     background-color: gainsboro;
 }
 
-.tabla_cuentas td{
+.tabla_cuentas td, .tabla_respuestas td{
     background-color: white;
 }
 
@@ -468,11 +466,11 @@ nav[aria-label="Paginación de preguntas"] ul{
     vertical-align: middle;
 }
 
-.tabla_cuentas a{
+.tabla_cuentas a, .tabla_respuestas a{
     text-decoration: none;
 }
 
-.tabla_cuentas #bEliminar{
+.tabla_cuentas #bEliminar, .tabla_respuestas #bEliminar{
     margin-left: .5em;
 }
 

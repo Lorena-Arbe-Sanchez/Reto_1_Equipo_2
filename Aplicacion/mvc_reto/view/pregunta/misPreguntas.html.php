@@ -31,19 +31,20 @@ require_once __DIR__ . "/../layout/header.php";
             <tbody>
             <?php
             foreach ($dataToView["data"] as $pregunta) {
-                ?>
-                <tr>
-                    <td><?php echo htmlspecialchars($pregunta['titulo']); ?></td>
-                    <td><?php echo htmlspecialchars($pregunta['descripcion']); ?></td>
-                    <td><?php echo htmlspecialchars($pregunta['tema']); ?></td>
-                    <td>
-                        <a href="index.php?controller=pregunta&action=borrar&id=<?php echo urlencode($pregunta['id']); ?>" id="bEliminar">Eliminar</a>
-                    </td>
-                </tr>
-                <?php
+                if ($pregunta['id_usuario'] == $_SESSION["id"]) {
+                    ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($pregunta['titulo']); ?></td>
+                        <td><?php echo htmlspecialchars($pregunta['descripcion']); ?></td>
+                        <td><?php echo htmlspecialchars($pregunta['tema']); ?></td>
+                        <td>
+                            <a href="index.php?controller=pregunta&action=borrar&id=<?php echo urlencode($pregunta['id']); ?>" id="bEliminar">Eliminar</a>
+                        </td>
+                    </tr>
+                    <?php
+                }
             }
             ?>
-
             </tbody>
         </table>
         <?php
@@ -62,7 +63,7 @@ require_once __DIR__ . "/../layout/header.php";
 
     <?php
     //MIS RESPUESTAS
-    if (isset($pregunta['respuestas']) && is_array($pregunta['respuestas']) && count($pregunta['respuestas']) > 0){
+    if (isset($dataToView["data"]) && is_array($dataToView["data"])){
         ?>
         <table class="tabla_respuestas">
             <thead>
@@ -75,33 +76,42 @@ require_once __DIR__ . "/../layout/header.php";
             </thead>
             <tbody>
             <?php
-            foreach ($pregunta['respuestas'] as $respuesta){
-                ?>
-                <tr>
-                    <td><?php echo htmlspecialchars($respuesta['solucion']); ?></td>
-                    <td>
-                        <?php if($respuesta['archivo'] == "" || $respuesta['archivo'] == NULL){
-                            ?>
-                            <p>No hay ningún archivo adjunto</p>
-                            <?php
-                        }
-                        else{
-                            echo htmlspecialchars($respuesta['archivo']);
-                        }
+            foreach ($dataToView["data"] as $pregunta){
+
+                foreach ($pregunta["respuestas"] as $respuesta){
+
+                    if ($respuesta["id_usuario"] == $_SESSION["id"]){
                         ?>
-                            
-                    </td>
-                    <td><?php echo htmlspecialchars($respuesta['id_pregunta']); ?></td>
-                    <td>
-                        <a href="index.php?controller=pregunta&action=borrar&id=<?php echo urlencode($respuesta['id_pregunta']['id']); ?>" id="bEliminar">Eliminar</a>
-                    </td>
-                </tr>
-                <?php
+                        <tr>
+                            <td><?php echo htmlspecialchars($respuesta['solucion']); ?></td>
+                            <td>
+                                <?php
+                                if($respuesta['archivo'] == "" || $respuesta['archivo'] == NULL){
+                                ?>
+                                    <p>No hay ningún archivo adjunto</p>
+                                    <?php
+                                }
+                                else{
+                                    echo htmlspecialchars($respuesta['archivo']);
+                                }
+                                ?>
+                                    
+                            </td>
+                            <td><?php echo htmlspecialchars($pregunta['titulo']); ?></td>
+                            <td>
+                                <a href="index.php?controller=pregunta&action=borrar&id=<?php echo urlencode($respuesta['id_pregunta']['id']); ?>" id="bEliminar">Eliminar</a>
+                            </td>
+                        </tr>
+                        <?php
+                    }
+                }
             }
             ?>
             </tbody>
         </table>
-    <?php
+        <?php
+    } else {
+        echo "<p>No tienes respuestas registradas.</p>";
     }
     ?>
 </div>
