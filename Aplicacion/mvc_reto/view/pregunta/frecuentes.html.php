@@ -6,10 +6,10 @@ botón de 'like' y botón de 'dislike'.
 -->
 
 <?php
-$pageTitle = "Foro";
-$bodyClass = "pag_foro";
+$pageTitle = "Preguntas frecuentes";
+$bodyClass = "pag_frecuentes";
 // Variable "botonBloqueado" para controlar la página actual el en menú del header. El botón correspondiente se bloqueará.
-$botonBloqueado = "d_botonForo";
+$botonBloqueado = "d_botonPreguntas";
 $conMenu = true;
 require_once __DIR__ . "/../layout/header.php";
 ?>
@@ -73,11 +73,11 @@ require_once __DIR__ . "/../layout/header.php";
                             </div>
                             <div class="botonesGusta">
                                 <div class="bMeGusta">
-                                    <a href="index.php?controller=respuesta&action=modificarLikes&id_pregunta=<?php echo $pregunta["id"]; ?>">Me gusta</a>
+                                    <a href="#">Me gusta</a>
                                 </div>
 
                                 <div class="bNoMeGusta">
-                                    <a href="index.php?controller=respuesta&action=modificarDislikes&id_pregunta=<?php echo $pregunta["id"]; ?>">No me gusta</a>
+                                    <a href="#">No me gusta</a>
                                 </div>
                             </div>
                             <?php

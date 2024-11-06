@@ -35,7 +35,7 @@ header{
     justify-content: space-around;
     border-bottom: 1px solid black;
     position: fixed;
-    background-color: #c8d4e1;
+    background-color: #BCCAD6;
     z-index: 10;
 }
 
@@ -130,13 +130,13 @@ footer{
 
 /* MISMOS ESTILOS EN ELEMENTOS DE PÁGINAS DIFERENTES (Y PROPIEDADES RELACIONADAS CON LOS CONTENIDOS) */
 
-.pag_foro, .pag_crearPregunta, .pag_gestionarCuenta, .pag_perfil, .pag_misPreguntas, .pag_crearRespuesta{
+.pag_foro, .pag_frecuentes, .pag_crearPregunta, .pag_gestionarCuenta, .pag_perfil, .pag_misPreguntas, .pag_crearRespuesta{
     background: linear-gradient(to bottom, #BCCAD6, white);
     min-height: 100vh; /* Al menos el 100% de la ventana. */
     background-attachment: fixed; /* Mantiener el degradado fijo mientras se hace scroll. */
 }
 
-.container, .pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_crearRespuesta .contenido, .pag_foro .contenido, .pag_misPreguntas .contenido{
+.pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_crearRespuesta .contenido, .pag_foro .contenido, .pag_frecuentes .contenido, .pag_misPreguntas .contenido{
     position: relative;
     flex-direction: column;
     text-align: center;
@@ -148,7 +148,7 @@ footer{
     margin-top: 1em;
 }
 
-.pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_foro .contenido, .pag_crearRespuesta .contenido{
+.pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_foro .contenido, .pag_frecuentes .contenido, .pag_crearRespuesta .contenido{
     background-color: #8d9db67e;
 }
 
@@ -182,6 +182,12 @@ footer{
 .pag_misPreguntas .contenido, .pag_crearRespuesta .contenido{
     margin-top: 400px;
     width: 1200px;
+    margin-bottom: 1em;
+}
+
+.pag_misPreguntas .contenido{
+    width: 1300px;
+    margin-top: 180px;
 }
 
 .bVolver{
@@ -241,16 +247,6 @@ a{ color: black; }
 
 select{
     font-size: 1em;
-}
-
-.superpuesta{
-    position: absolute;
-    top: -4em;
-    justify-content: center;
-    height: 100px;
-    width: 220px;
-    z-index: 2;
-    border-radius: 15px;
 }
 
 #divTitulo h2{
@@ -398,24 +394,24 @@ nav[aria-label="Paginación de preguntas"] ul{
     visibility: hidden; /* Ocultar el elemento, pero sigue ocupando espacio en el diseño. */
 }
 
-.tabla_cuentas{
+.tabla_cuentas, .tabla_respuestas{
     width: 100%;
     overflow-x: auto; /* Añadirá scroll horizontal si el contenido de la tabla se desborda. */
     border-collapse: collapse;
     margin: 2em;
 }
 
-.tabla_cuentas th, .tabla_cuentas td{
+.tabla_cuentas th, .tabla_cuentas td, .tabla_respuestas th, .tabla_respuestas td{
     border: 1px solid black;
     padding: .8em;
     white-space: nowrap; /* Evita que el contenido se divida en varias líneas. */
 }
 
-.tabla_cuentas th{
+.tabla_cuentas th, .tabla_respuestas th{
     background-color: gainsboro;
 }
 
-.tabla_cuentas td{
+.tabla_cuentas td, .tabla_respuestas td{
     background-color: white;
 }
 
@@ -461,11 +457,11 @@ nav[aria-label="Paginación de preguntas"] ul{
     vertical-align: middle;
 }
 
-.tabla_cuentas a{
+.tabla_cuentas a, .tabla_respuestas a{
     text-decoration: none;
 }
 
-.tabla_cuentas #bEliminar{
+.tabla_cuentas #bEliminar, .tabla_respuestas #bEliminar{
     margin-left: .5em;
 }
 
@@ -475,28 +471,28 @@ nav[aria-label="Paginación de preguntas"] ul{
 
 /* Para la ventana del foro. */
 
-.pag_foro{
+.pag_foro, .pag_frecuentes{
     flex-direction: column;
     padding-top: 116.59px;
     margin-top: 0;
     min-height: 100vh;
 }
 
-.pag_foro footer{
+.pag_foro footer, .pag_frecuentes footer{
     position: relative;
 }
 
-.pag_foro .pregunta{
+.pag_foro .pregunta, .pag_frecuentes .pregunta{
     display: flex;
     flex-direction: column;
     width: 70%;
 }
 
-.pag_foro .pregunta div{
+.pag_foro .pregunta div, .pag_frecuentes .pregunta div{
     width: 100%;
 }
 
-.pag_foro .pregunta .bResponder, .bMeGusta, .bNoMeGusta{
+.pag_foro .pregunta .bResponder, .pag_frecuentes .pregunta .bResponder, .bMeGusta, .bNoMeGusta{
     width: auto;
     margin: 0;
 }
@@ -507,7 +503,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     --base-margin: 400px; /* Margen base por pregunta */
 }
 
-.pag_foro .contenido{
+.pag_foro .contenido, .pag_frecuentes .contenido{
     margin-top: calc((var(--question-count) * var(--base-margin)));
     transition: margin-top 0.3s ease; /* Suaviza la transición del margen */
     margin-bottom: 1em;
@@ -572,26 +568,6 @@ nav[aria-label="Paginación de preguntas"] ul{
     margin-top: 0;
 }
 
-/* Para la ventana del login. */
-
-.pag_login .container{
-    min-width: 20%;
-}
-
-#formLogin div{
-    flex-direction: column;
-}
-
-#formLogin .fila_datos{
-    flex-direction: row;
-}
-
-#formLogin .mensajeError{
-    color: red;
-    font-size: 0.8em;
-    display: block;
-}
-
 /* Para los botones con la imagen de la suma por delante. */
 
 #anadirImg {
@@ -608,4 +584,234 @@ nav[aria-label="Paginación de preguntas"] ul{
     background-size: contain; /* Ajusta el tamaño para que no se repita ni se deforme. */
     background-repeat: no-repeat;
     margin-right: 1em;
+}
+
+
+/* PÁGINA DE LOGIN Y DE RECUPERAR LA CONTRASEÑA */
+
+/* TODO : Poner comentarios en lo más complejo. */
+/* TODO : Intentar poner que al empequeñecerse la página todo su contenido también se empequeñezca (texto y todo). */
+
+:root{
+    --primary-color: #6366f1;
+    --primary-dark: #4f46e5;
+    --text-color: #374151;
+    --error-color: #ff0047;
+    --border-color: #d1d5db;
+    --background-color: #f6feff;
+    --input-color: #ffffff;
+    --gradient-start: #c7d2fe;
+    --gradient-middle: #a5f3fc;
+    --gradient-end: #fbcfe8;
+}
+
+.dark{
+    --primary-color: #818cf8;
+    --primary-dark: #6366f1;
+    --text-color: #e5e7eb;
+    --error-color: #ff96b2;
+    --border-color: #374151;
+    --background-color: #111827;
+    --input-color: #262c42;
+    --gradient-start: #312e81;
+    --gradient-middle: #164e63;
+    --gradient-end: #831843;
+}
+
+.pag_login, .pag_recuperar{
+    line-height: 1.6;
+    min-height: 100vh;
+    background: linear-gradient(
+            135deg,
+            var(--gradient-start) 0%,
+            var(--gradient-middle) 50%,
+            var(--gradient-end) 100%
+    );
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease;
+}
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.pag_login header, .pag_recuperar header{
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-bottom: none;
+    height: 5em;
+}
+
+.theme-toggle{
+    all: unset; /* Anular todos los estilos heredados y volver al valor "por defecto". */
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+    right: 0;
+    position: fixed;
+    margin-right: 3em;
+}
+
+.theme-toggle:hover{
+    transform: rotate(25deg);
+}
+
+.pag_login .contenedor, .pag_recuperar .contenedor{
+    background-color: var(--background-color);
+    color: var(--text-color);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 4em 1em 2em 1em;
+    margin-top: 8em; /* TODO : Mirar a ver si se puede centrar respecto al body sin tener en cuenta el header. */
+}
+
+.pag_recuperar .contenedor{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em 1em 1em 1em;
+    margin-top: 5em;
+}
+
+.pag_recuperar .contenedor h2{
+    margin-bottom: 1em;
+}
+
+.pag_login .contenedor:hover, .pag_recuperar .contenedor:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.superpuesta{
+    position: absolute;
+    top: -3em;
+    width: 180px;
+    height: auto;
+    border-radius: 15px;
+}
+
+#formLogin, #formRecuperarContra{
+    all: unset;
+}
+
+#formRecuperarContra{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.form-group{
+    padding: 0;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.fila_datos{
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.pag_login label, .pag_recuperar label{
+    all: unset;
+    display: block;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-bottom: 0; /* Remove bottom margin since we're using gap */
+}
+
+.pag_login input, .pag_recuperar input{
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: var(--input-color);
+    color: var(--text-color);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    margin: 0; /* Remove any default margins */
+}
+
+.pag_login input:focus, .pag_recuperar input:focus{
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+.pag_login .bPrincipal, .pag_recuperar .bPrincipal{
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1.5em;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.bPrincipal:hover{
+    background-color: var(--primary-dark);
+}
+
+.bPrincipal:active{
+    transform: scale(0.98);
+}
+
+.bSecundario{
+    display: inline-block;
+    padding: 1em;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.3s ease;
+}
+
+.bSecundario:hover{
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/*
+@media (max-width: 768px){
+    .pag_login .contenedor, .pag_recuperar .contenedor{
+        margin: 0 1rem;
+        padding: 2rem;
+    }
+}
+ */
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pag_login .contenedor, .pag_recuperar .contenedor{
+    animation: fadeIn 0.5s ease-out;
+}
+
+#formLogin .mensajeError{
+    color: var(--error-color);
+    font-size: 0.8em;
+    display: block;
 }

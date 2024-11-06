@@ -41,24 +41,7 @@ function validar(event){
         let expreg = new RegExp("^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)[A-Za-z\\d]{8,}$");
 
         if(expreg.test(contrasena)){
-
             formulario.submit();
-
-            // Habría que comprobar si existe en la BBDD.
-
-            /*
-            // Redirigir al usuario.
-            usuarioExistente = header("Location: index.php?controller=usuario&action=validar");
-
-            if (usuarioExistente === false || usuarioExistente === null){
-                document.getElementById("mensajeErrorContrasena").innerText =
-                    "No existe un usuario con esos datos.";
-                document.getElementById("usuario").focus();
-            }
-            else{
-                formulario.submit(); // Enviar el formulario manualmente.
-            }
-             */
         }
         else{
             document.getElementById("mensajeErrorContrasena").innerText = "La contraseña debe ser válida.";

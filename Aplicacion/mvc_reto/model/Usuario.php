@@ -54,7 +54,9 @@ class Usuario {
         if ($usuarioDB){
             return $usuarioDB;
         }
-        return false;
+        else{
+            return false;
+        }
     }
 
     public function actualizarContrasena($usuario, $contrasenaNueva){

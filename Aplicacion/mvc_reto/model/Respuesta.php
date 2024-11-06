@@ -65,6 +65,14 @@ class Respuesta {
         return $id;
     }
 
+    public function sacarRespuestasPorUsuario(){
+        $id_usuario = $_SESSION["id"];
+        $sql = "SELECT * FROM " . $this->tabla . " WHERE id_usuario = ?";
+        $stm = $this->connection->prepare($sql);
+        $stm->execute([$id_usuario]);
+        return $stm->fetchAll();
+    }
+
     public function modificarRespuesta($param){
 
         $id = $solucion = $archivo = "";
@@ -105,8 +113,8 @@ class Respuesta {
     }
     
     public function modificarLikes($id){
-    
-        $sql = "UPDATE " . $this->tabla . " SET votosLike = votosLike + 1 WHERE id = ?";
+
+        $sql = "UPDATE " . $this->tabla . " SET votosLike = votosLike + 1 WHERE id_pregunta = ?";
         $stm = $this->connection->prepare($sql);
         $stm->execute([$id]);
     
@@ -114,7 +122,7 @@ class Respuesta {
 
     public function modificarDislikes($id){
 
-        $sql = "UPDATE " . $this->tabla . " SET votosDislike = votosDislike + 1 WHERE id = ?";
+        $sql = "UPDATE " . $this->tabla . " SET votosDislike = votosDislike + 1 WHERE id_pregunta = ?";
         $stm = $this->connection->prepare($sql);
         $stm->execute([$id]);
     

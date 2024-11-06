@@ -58,8 +58,6 @@ function recuperarContrasena(event){
             else{
                 // TODO : Habría que comprobar en la BBDD q el user existe y luego hacer update...
 
-                alert("Acción realizada correctamente.");
-
                 formulario.submit();
             }
         }
