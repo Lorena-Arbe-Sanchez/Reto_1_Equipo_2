@@ -36,7 +36,24 @@ require_once __DIR__ . "/../layout/header.php";
                     <tr>
                         <td><?php echo htmlspecialchars($pregunta['titulo']); ?></td>
                         <td><?php echo htmlspecialchars($pregunta['descripcion']); ?></td>
-                        <td><?php echo htmlspecialchars($pregunta['tema']); ?></td>
+                        <td>
+                            <?php
+                            $temas = [
+                                "diseno_aeronaves" => "Diseño y Desarrollo de Aeronaves",
+                                "fabricacion_produccion" => "Fabricación y Producción",
+                                "mantenimiento_operaciones" => "Mantenimiento y Operaciones",
+                                "innovacion_sostenibilidad" => "Innovación y Sostenibilidad",
+                                "certificaciones_reglamentacion" => "Certificaciones y Reglamentación",
+                                "problemas_tecnicos" => "Problemas Técnicos y Soluciones",
+                                "colaboracion_interdepartamental" => "Colaboración Interdepartamental",
+                                "software_herramientas" => "Software y Herramientas de Ingeniería",
+                                "gestion_conocimiento" => "Gestión del Conocimiento",
+                                "otro" => "Otro tema"
+                            ];
+        
+                            echo $temas[$pregunta["tema"]] ?? "Tema no especificado";
+
+                            ?></td>
                         <td>
                             <a href="index.php?controller=pregunta&action=borrar&id=<?php echo urlencode($pregunta['id']); ?>" id="bEliminar">Eliminar</a>
                         </td>
