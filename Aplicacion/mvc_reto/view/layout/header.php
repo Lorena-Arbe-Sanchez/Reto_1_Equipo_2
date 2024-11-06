@@ -35,7 +35,7 @@
         </div>
 
         <div class="d_botonMisPreguntas" <?php if ($botonBloqueado == "d_botonMisPreguntas") echo 'id="botonBloqueado"'; ?>>
-            <a href="index.php?controller=pregunta&action=misPreguntas" class="botonCrear">Mis preguntas</a>
+            <a href="index.php?controller=pregunta&action=misPreguntas" class="botonCrear">Mis preguntas<br> y respuestas</a>
         </div>
 
     </div>
