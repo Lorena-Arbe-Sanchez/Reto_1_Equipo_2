@@ -65,18 +65,3 @@ function recuperarContrasena(event){
         }
     }
 }
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const themeToggle = document.querySelector('.theme-toggle');
-    let isDark = false;
-
-    themeToggle.addEventListener('click', function() {
-        document.body.classList.toggle('dark');
-        isDark = !isDark;
-        themeToggle.innerHTML = isDark ? '🌙' : '☀️';
-        themeToggle.setAttribute('aria-label',
-            isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'
-        );
-    });
-});

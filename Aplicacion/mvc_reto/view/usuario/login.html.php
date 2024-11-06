@@ -37,13 +37,13 @@ require_once __DIR__ . "/../layout/header.php";
         </div>
 
         <input type="submit" id="bIniciar" class="bIniciar" value="Iniciar sesión">
+        <a href="index.php?controller=usuario&action=recuperar" class="bOlvidar">¿Se te ha olvidado tu contraseña?</a>
     </form>
-
-    <a href="index.php?controller=usuario&action=recuperar" class="bOlvidar">¿Se te ha olvidado tu contraseña?</a>
 
 </div>
 
 <script src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/javascript/login.js"></script>
+<script src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/javascript/modoClaroOscuro.js"></script>
 
 </body>
 </html>

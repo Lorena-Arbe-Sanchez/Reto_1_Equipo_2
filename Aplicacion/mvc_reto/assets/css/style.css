@@ -589,16 +589,19 @@ nav[aria-label="Paginación de preguntas"] ul{
 
 
 /* PÁGINA DE LOGIN Y DE RECUPERAR LA CONTRASEÑA */
-/* TODO : ACABAR DE ORDENAR / POSICIONAR */
-/* TODO : Aplicar a más elementos de 'vRecuperarContra'. */
+
+/* TODO : Poner comentarios en lo más complejo. */
+/* TODO : Intentar poner que al empequeñecerse la página todo su contenido también se empequeñezca (texto y todo). */
 
 :root{
     --primary-color: #6366f1;
     --primary-dark: #4f46e5;
     --secondary-color: #f3f4f6;
     --text-color: #374151;
+    --error-color: #ff0047;
     --border-color: #d1d5db;
-    --background-color: #ffffff;
+    --background-color: #f6feff;
+    --input-color: #ffffff;
     --gradient-start: #c7d2fe;
     --gradient-middle: #a5f3fc;
     --gradient-end: #fbcfe8;
@@ -609,8 +612,10 @@ nav[aria-label="Paginación de preguntas"] ul{
     --primary-dark: #6366f1;
     --secondary-color: #1f2937;
     --text-color: #e5e7eb;
+    --error-color: #ff96b2;
     --border-color: #374151;
     --background-color: #111827;
+    --input-color: #262c42;
     --gradient-start: #312e81;
     --gradient-middle: #164e63;
     --gradient-end: #831843;
@@ -640,8 +645,8 @@ nav[aria-label="Paginación de preguntas"] ul{
 .pag_login header, .pag_recuperar header{
     background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
-    padding: 1rem 0;
     border-bottom: none;
+    height: 5em;
 }
 
 .theme-toggle{
@@ -665,18 +670,12 @@ nav[aria-label="Paginación de preguntas"] ul{
     border-radius: 16px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 3rem 2.5rem 2rem;
+    padding: 4em 1em 3em 1em;
+    margin-top: 8em; /* TODO : Mirar a ver si se puede centrar respecto al body sin tener en cuenta el header. */
 }
-
-/* TODO : PONER BIEN EL MODO DARK DEL CONTENEDOR */
-/*
-.dark .pag_login .contenedor, .dark .pag_recuperar .contenedor{
-    background-color: rgba(17, 24, 39, 0.9);
-}
- */
 
 .pag_login .contenedor:hover, .pag_recuperar .contenedor:hover{
     transform: translateY(-5px);
@@ -691,41 +690,47 @@ nav[aria-label="Paginación de preguntas"] ul{
     border-radius: 15px;
 }
 
-.form-group {
-    margin-bottom: 1.5rem;
+#formLogin{
+    all: unset;
+}
+
+.form-group{
+    padding: 0;
     text-align: left;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
 }
 
-.fila_datos {
-    display: flex;
+.fila_datos{
     flex-direction: column;
     gap: 0.5rem;
     width: 100%;
+    align-items: flex-start;
 }
 
-.pag_login label, .pag_recuperar label {
+/* TODO : Intentar poner que los input y label sean más largos (90% respecto al padre...). */
+
+.pag_login label, .pag_recuperar label{
+    all: unset;
     display: block;
     color: var(--text-color);
     font-weight: 500;
     margin-bottom: 0; /* Remove bottom margin since we're using gap */
 }
 
-.pag_login input, .pag_recuperar input {
+.pag_login input, .pag_recuperar input{
     width: 100%;
     padding: 0.75rem;
     border: 2px solid var(--border-color);
     border-radius: 8px;
     font-size: 1rem;
-    background-color: var(--background-color);
+    background-color: var(--input-color);
     color: var(--text-color);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     margin: 0; /* Remove any default margins */
 }
 
-.pag_login input:focus, .pag_recuperar input:focus {
+.pag_login input:focus, .pag_recuperar input:focus{
     outline: none;
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
@@ -766,12 +771,14 @@ nav[aria-label="Paginación de preguntas"] ul{
     text-decoration: underline;
 }
 
+/*
 @media (max-width: 768px){
     .pag_login .contenedor, .pag_recuperar .contenedor{
         margin: 0 1rem;
         padding: 2rem;
     }
 }
+ */
 
 @keyframes fadeIn{
     from{
@@ -789,7 +796,7 @@ nav[aria-label="Paginación de preguntas"] ul{
 }
 
 #formLogin .mensajeError{
-    color: red;
+    color: var(--error-color);
     font-size: 0.8em;
     display: block;
 }
