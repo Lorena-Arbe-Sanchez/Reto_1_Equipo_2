@@ -105,6 +105,7 @@ class PreguntaController {
     // Eliminar pregunta.
     public function borrar(){
         $this->view ="misPreguntas";
+        header("Location: index.php?controller=pregunta&action=misPreguntas");
         return $this -> model -> deletePregunta($_GET["id"]);
     }
 

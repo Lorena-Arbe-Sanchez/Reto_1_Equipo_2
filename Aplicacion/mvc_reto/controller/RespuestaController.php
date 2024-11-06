@@ -38,11 +38,11 @@ class RespuestaController {
         return $this->model->sacarRespuestasPorUsuario();
     }
 
-
+    //Eliminar respuesta
     public function borrar(){
-        $this->view ='foro';
+        $this->view ='misPreguntas';
+        header("Location: index.php?controller=pregunta&action=misPreguntas");
         return $this -> model -> deleteRespuesta($_GET["id"]);
-    
     }
     
     public function editar(){
