@@ -186,19 +186,13 @@ footer{
 }
 
 .pag_misPreguntas .contenido{
+    margin-top: var(--altura-contenido, 0px);
     width: 1300px;
-    margin-top: 180px;
-    flex: -1;
 }
 
 .pag_misPreguntas thead{
     position: sticky;
     top: 116.59px;
-}
-
-.pag_misPreguntas{
-    padding-top: 116.59px;
-    padding-bottom: 90px;
 }
 
 .bVolver{

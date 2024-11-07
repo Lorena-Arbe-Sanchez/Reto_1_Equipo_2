@@ -138,6 +138,7 @@ require_once __DIR__ . "/../layout/header.php";
 <?php require_once __DIR__ . "/../layout/footer.php"; ?>
 
 <script src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/javascript/crearPregunta.js"></script>
+<script src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/javascript/mispreguntasTamano.js"></script>
 
 </body>
 </html>
