@@ -20,7 +20,7 @@
     <div class="d_logo_empresa">
         <img class="logo_empresa"
              src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/logo_empresa.png"
-             alt="Logo Aergibide SL" width="190" height="90">
+             alt="Logo Aergibide SL" width="260" height="116">
     </div>
 
     <div class="d_botonesHeader">
@@ -35,12 +35,12 @@
         </div>
 
         <div class="d_botonMisPreguntas" <?php if ($botonBloqueado == "d_botonMisPreguntas") echo 'id="botonBloqueado"'; ?>>
-            <a href="index.php?controller=pregunta&action=misPregunta" class="botonCrear">Mis preguntas</a>
+            <a href="index.php?controller=pregunta&action=misPreguntas" class="botonCrear">Mis preguntas<br> y respuestas</a>
         </div>
 
     </div>
 
-    <!-- Botón del perfil con menú desplegable ~~> Posibles opciones ("Ver perfil", "Crear cuenta" {solo si el
+    <!-- Botón del perfil con menú desplegable ~~> Posibles opciones ("Ver perfil", "Gestionar cuentas" {solo si el
             usuario actual es "administrador"; 'TINYINT' con valor 1 para verdadero y 0 para falso}, y "Cerrar sesión"). -->
 
     <div class="d_botonPerfil">
@@ -68,6 +68,15 @@
         </div>
     </div>
 
+</header>
+
+<?php else: ?>
+
+<header>
+    <div class="container">
+        <div></div>
+        <button class="theme-toggle" aria-label="Cambiar tema">☀️</button>
+    </div>
 </header>
 
 <?php endif; ?>

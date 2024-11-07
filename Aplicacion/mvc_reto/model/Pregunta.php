@@ -71,6 +71,8 @@ class Pregunta {
         return $stml->fetch();
     }
 
+
+
     public function deletePregunta($id)
     {
         // Corrección de la consulta SQL
@@ -82,6 +84,11 @@ class Pregunta {
         return $stml->rowCount();
     }
 
+
+
+
+
+
     public function sacarPreguntasPorUsuario(){
         $id_usuario = $_SESSION["id"];
         $sql = "SELECT * FROM " . $this->tabla . " WHERE id_usuario = ?";
@@ -90,10 +97,18 @@ class Pregunta {
         return $stm->fetchAll();
     }
 
+    public function getPreguntas(){
+        // De momento ordenar por fecha.
+        $sql = "SELECT * FROM ". $this->tabla ." ORDER BY fecha DESC";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
     public function getPreguntasPaginated($page=1){
         $limit = PAGINATION;
         $offset = ($page - 1) * $limit;
-        $sql = "SELECT * FROM ". $this->tabla ." ORDER BY fecha DESC LIMIT :limit OFFSET :offset";
+        $sql = "SELECT * FROM ". $this->tabla ." LIMIT :limit OFFSET :offset";
         $stmt = $this->connection->prepare($sql);
         $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
         $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
@@ -103,26 +118,21 @@ class Pregunta {
         return [$stmt->fetchAll(), $page, $totalPages];
     }
 
-  public function filtrarTema($tema){
+    /*
+    public function getPreguntasPaginated($page=1){
+        $limit = PAGINATION;
+        $offset = ($page - 1) * $limit;
+        $sql = "SELECT * FROM ". $this->tabla ." LIMIT :limit OFFSET :offset";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
+        $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
+        $stmt->execute();
 
-        if ($tema = "Todos los temas"){
+        $totalPages = $this->getNumberPages(); //ceil($this->getNumberPages()/$limit);
+        return [$stmt->fetchAll(), $page, $totalPages];
+    }
+    */
 
-            error_log($tema);
-            $sql = "SELECT * FROM " . $this->tabla . " ORDER BY fecha DESC" ;
-            $stm = $this->connection->prepare($sql);
-            $stm->execute();
-
-        }else{
-            error_log($tema);
-            $sql = "SELECT * FROM " . $this->tabla . " WHERE tema = ?";
-            $stm = $this->connection->prepare($sql);
-            $stm->execute([$tema]);
-            return $stm->fetchAll();
-
-        }
-
-
-   }
     public function getNumberPages(){
         $limit = PAGINATION;
         $total = $this->connection->query("SELECT COUNT(*) FROM ". $this->tabla)->fetchColumn();
@@ -130,8 +140,5 @@ class Pregunta {
 
         return $total;
     }
-
-
-
 
 }

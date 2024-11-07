@@ -54,7 +54,9 @@ class Usuario {
         if ($usuarioDB){
             return $usuarioDB;
         }
-        return false;
+        else{
+            return false;
+        }
     }
 
     public function actualizarContrasena($usuario, $contrasenaNueva){
@@ -171,9 +173,16 @@ class Usuario {
 
     public function borrarUsuario($dni){
 
-        $sql = "DELETE FROM " . $this->tabla . " WHERE dni=?";
+        $sql = "DELETE FROM " . $this->tabla . " WHERE dni = ?";
         $stmt = $this->connection->prepare($sql);
         return $stmt->execute([$dni]);
 
     }
+
+    public function actualizarImgUsuario($filePath){
+        $sql = "UPDATE " .$this->tabla. " SET imagen = ? WHERE id = ?";
+        $stmt = $this->connection->prepare($sql);
+        return $stmt->execute([$filePath, $_SESSION["id"]]);
+    }
+
 }

@@ -18,6 +18,8 @@ if(isset($dataToView["data"]["usuario"])) $usuario = $dataToView["data"]["usuari
 if(isset($dataToView["data"]["contrasena"])) $contrasena = $dataToView["data"]["contrasena"];
 if(isset($dataToView["data"]["administrador"])) $administrador = $dataToView["data"]["administrador"];
 
+
+
 ?>
 <div class="contenido">
 

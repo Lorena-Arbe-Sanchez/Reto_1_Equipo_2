@@ -78,51 +78,50 @@ class UsuarioController {
         }
     }
 
-    public function subirImgPerfil(){
+    // TODO : Verificar que es así como se hace, y optimizar.
+    public function subirImgPerfil() {
 
-        // Primero, verificar si se ha subido el archivo.
+        // Verificar si el archivo ha sido enviado.
 
-        // TODO : Poner bien.
+        if (isset($_FILES['inputFile']) && $_FILES['inputFile']['error'] === UPLOAD_ERR_OK){
 
-        $filePath = null;
+            // Si el archivo es válido, hay que procesarlo.
 
-        if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
-            // Si el archivo es válido, procesarlo
-            $fileTmpPath = $_FILES['file']['tmp_name']; // Ruta a carpeta temporal donde se guarda.
-            $fileName = $_FILES['file']['name'];
+            $fileTmpPath = $_FILES['inputFile']['tmp_name']; // Ruta a la carpeta temporal donde se guarda.
+            $fileName = $_FILES['inputFile']['name'];
             $fileName = uniqid() ."_". $fileName;
-            $uploadFileDir = './uploads/'; // De la raiz se crea una carpeta "uploads".
-            $destPath = $uploadFileDir . $fileName;
+            $uploadFileDir = './uploads/'; // De la raiz crear una carpeta "uploads".
+            $destPath = $uploadFileDir . $fileName; // Ruta completa donde se guardará el archivo.
 
-            // Verificar que el directorio de subida exista, sino crear uno
-            if (!is_dir($uploadFileDir)) {
+            // Verificar que el directorio de subida existe (si no hay que crear uno).
+            if (!is_dir($uploadFileDir)){
                 mkdir($uploadFileDir, 0777, true);
             }
 
-            // Mover el archivo desde su ubicación temporal al directorio final
-            if (move_uploaded_file($fileTmpPath, $destPath)) {
-                // Si el archivo se movió correctamente, guardar la ruta del archivo
+            // Mover el archivo desde su ubicación temporal al directorio final.
+            if (move_uploaded_file($fileTmpPath, $destPath)){
+
+                // Si el archivo se ha movido correctamente, hay que guardar la ruta del archivo.
                 $filePath = $destPath;
+
+                // Actualizar la base de datos con la nueva ruta.
+                $this->model->actualizarImgUsuario($filePath);
+
+                // Actualizar la variable de sesión para mostrar la imagen nueva.
+                $_SESSION['usuarioDB']['imagen'] = $filePath;
+
+                // Redirigir al perfil del usuario para ver la imagen actualizada.
+                header("Location: index.php?controller=usuario&action=perfil");
+                exit();
+
             }
-            else {
-                // Si hubo un error al mover el archivo
-                $_GET["response"] = false;
-                return;
+            else{
+                echo "Error al mover el archivo.";
             }
         }
-
-
-        // Ahora pasamos todos los datos (incluido el archivo, si existe) al modelo
-        $param = $_POST;
-        $param['file_path'] = $filePath; // Agregamos la ruta del archivo al array de parámetros
-
-        // Llamamos al modelo para guardar los datos
-        $id = $this -> model -> save($param);
-        $result = $this -> model -> getNoteById($id);
-
-        // Respuesta exitosa
-        $_GET["response"] = true;
-        return $result;
+        else{
+            echo "No se recibió ningún archivo o hubo un error al subir.";
+        }
 
     }
 
@@ -137,7 +136,7 @@ class UsuarioController {
         $contrasenaNueva = $_POST['contrasena1'];
 
         // Pasarle los valores de las casillas necesarias como parámetros.
-        $result = $this->model->getUsuarioByUsuario($_POST['usuario']);
+        $result = $this->model->getUsuarioByUsuario($usuario);
 
         if ($result){
 
@@ -154,7 +153,6 @@ class UsuarioController {
         }
         else{
             // Usuario no encontrado. Enviar un mensaje de error.
-            echo("Usuario no encontrado");
             header("Location: index.php?controller=usuario&action=recuperar&error=1");
             exit();
         }
