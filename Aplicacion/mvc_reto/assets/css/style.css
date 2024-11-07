@@ -186,8 +186,13 @@ footer{
 }
 
 .pag_misPreguntas .contenido{
+    margin-top: var(--altura-contenido, 0px);
     width: 1300px;
-    margin-top: 180px;
+}
+
+.pag_misPreguntas thead{
+    position: sticky;
+    top: 116.59px;
 }
 
 .bVolver{
@@ -532,8 +537,7 @@ nav[aria-label="Paginación de preguntas"] ul{
 .respuestas{
     display: flex;
     flex-direction: column;
-    max-height: 280px;
-    overflow-y: auto;
+    max-height: var('--altura-respuestas');
     border: 1px solid #ccc;
     padding-top: 10px;
 }
