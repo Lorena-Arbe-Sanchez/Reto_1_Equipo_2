@@ -47,6 +47,22 @@ function validar(event){
             document.getElementById("mensajeErrorContrasena").innerText = "La contraseña debe ser válida.";
             document.getElementById("contrasena").focus();
         }
-
     }
 }
+
+//Funcion para visualizar la contraseña
+
+let contrasenaInput = document.getElementById("contrasena");
+const botonVer = document.getElementById('toggle-password')
+
+botonVer.addEventListener('click', () => {
+    if (contrasenaInput.type === 'password') {
+        contrasenaInput.type = 'text';
+        //passwordIcon.classList.remove('fa-eye');
+       // passwordIcon.classList.add('fa-eye-slash');
+    } else {
+        contrasenaInput.type = 'password';
+        //passwordIcon.classList.remove('fa-eye-slash');
+       //passwordIcon.classList.add('fa-eye');
+    }
+});

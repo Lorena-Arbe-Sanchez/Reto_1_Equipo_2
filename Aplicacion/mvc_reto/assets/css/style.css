@@ -469,6 +469,11 @@ nav[aria-label="Paginación de preguntas"] ul{
     display: none; /* El botón de "Gestionar cuentas" está oculto por defecto. */
 }
 
+.input-group-append .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
 /* Para la ventana del foro. */
 
 .pag_foro, .pag_frecuentes{
@@ -616,6 +621,11 @@ nav[aria-label="Paginación de preguntas"] ul{
     --gradient-start: #312e81;
     --gradient-middle: #164e63;
     --gradient-end: #831843;
+}
+
+.input-group-append .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
 .pag_login, .pag_recuperar{
