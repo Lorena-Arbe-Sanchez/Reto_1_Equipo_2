@@ -11,6 +11,6 @@ document.addEventListener("DOMContentLoaded", function() {
     } else if (questionCount === 2) {
         document.documentElement.style.setProperty('--base-margin', '150px'); // Para 2 preguntas
     } else {
-        document.documentElement.style.setProperty('--base-margin', '400px'); // Para 3 o más preguntas
+        document.documentElement.style.setProperty('--base-margin', '450px'); // Para 3 o más preguntas
     }
 });

@@ -538,7 +538,7 @@ nav[aria-label="Paginación de preguntas"] ul{
 .respuestas{
     display: flex;
     flex-direction: column;
-    max-height: 280px;
+    max-height: 350px;
     overflow-y: auto;
     border: 1px solid #ccc;
     padding-top: 10px;
