@@ -171,7 +171,7 @@ class UsuarioController {
 
         //$_GET["response"] = true;
         // return $result;
-        return true;
+        return $this->model->getUsuarios();
 
 
     }
@@ -195,14 +195,15 @@ class UsuarioController {
         $dni = $this->model->modificarUsuario($_POST);
         $result = $this->model->getUsuarioByDNI($dni);
         $_GET["response"] = true;
-        return $result ;
+        return $this->model->getUsuarios();
     }
 
     //Funcion para eliminar usuario  CREAR VENTANITA PARA CONFIRMACION
     public function eliminar(){
 
         $this->view="gestionarCuenta";
-        return $this->model->borrarUsuario($_GET["dniEliminar"]);
+        $this->model->borrarUsuario($_GET["dniEliminar"]);
+        return $this->model->getUsuarios();
 
     }
 
