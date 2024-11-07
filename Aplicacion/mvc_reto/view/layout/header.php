@@ -18,9 +18,12 @@
 <header>
 
     <div class="d_logo_empresa">
-        <img class="logo_empresa"
-             src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/logo_empresa.png"
-             alt="Logo Aergibide SL" width="260" height="116">
+        <!-- La imagen del logo de la empresa será un enlace que redirigirá al foro. -->
+        <a href="index.php?controller=pregunta&action=list_paginated">
+            <img class="logo_empresa"
+                 src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/logo_empresa.png"
+                 alt="Logo Aergibide SL" width="260" height="116">
+        </a>
     </div>
 
     <div class="d_botonesHeader">

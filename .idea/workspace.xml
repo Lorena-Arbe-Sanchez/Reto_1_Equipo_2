@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6abb039-d7f5-4f73-8b47-492ba288a50f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/uploads/672c7a2cc8383_6729f9de2cca2_OIP.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/gestionarCuenta.js" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/gestionarCuenta.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Base_datos/base_datos_reto1_laragon.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Base_datos/base_datos_reto1_laragon.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Base_datos/base_datos_reto1_phpMyAdmin.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Base_datos/base_datos_reto1_phpMyAdmin.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/layout/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/layout/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/pregunta/foro.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/pregunta/foro.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/pregunta/frecuentes.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/pregunta/frecuentes.html.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +95,7 @@
       <workItem from="1730659294714" duration="2336000" />
       <workItem from="1730791195805" duration="315000" />
       <workItem from="1730877703640" duration="12189000" />
-      <workItem from="1730964114136" duration="10065000" />
+      <workItem from="1730964114136" duration="14363000" />
     </task>
     <servers />
   </component>

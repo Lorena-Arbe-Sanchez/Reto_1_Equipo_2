@@ -103,7 +103,7 @@ require_once __DIR__ . "/../layout/header.php";
                 <!-- Números de página -->
                 <?php for ($i = 1; $i <= $dataToView["data"][2]; $i++): ?>
                     <li class="page-item <?= ($i == $dataToView["data"][1]) ? 'active' : ''; ?>">
-                        <a class="page-link" href="index.php?controller=pregunta&action=list_paginated&page=<?= $i; ?>"><?= $i; ?></a>
+                        <a class="page-link" href="index.php?controller=pregunta&action=frecuentes&page=<?= $i; ?>"><?= $i; ?></a>
                     </li>
                 <?php endfor; ?>
             </ul>
