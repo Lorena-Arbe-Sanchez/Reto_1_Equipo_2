@@ -22,7 +22,7 @@
         <a href="index.php?controller=pregunta&action=list_paginated">
             <img class="logo_empresa"
                  src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/logo_empresa.png"
-                 alt="Logo Aergibide SL" width="260" height="116">
+                 alt="Logo Aergibide SL" width="230" height="92">
         </a>
     </div>
 
@@ -38,15 +38,21 @@
         </div>
 
         <div class="d_botonMisPreguntas" <?php if ($botonBloqueado == "d_botonMisPreguntas") echo 'id="botonBloqueado"'; ?>>
-            <a href="index.php?controller=pregunta&action=misPreguntas" class="botonCrear">Mis preguntas<br> y respuestas</a>
+            <a href="index.php?controller=pregunta&action=misPreguntas" class="botonCrear">Mis publicaciones</a>
         </div>
 
     </div>
 
-    <!-- Botón del perfil con menú desplegable ~~> Posibles opciones ("Ver perfil", "Gestionar cuentas" {solo si el
-            usuario actual es "administrador"; 'TINYINT' con valor 1 para verdadero y 0 para falso}, y "Cerrar sesión"). -->
+    <!-- Opción oculta que se mostrará cuando la pantalla empequeñezca para almacenar los 3 enlaces del header. -->
+    <div><button class="menu-toggle" aria-label="Abrir menú">☰</button></div>
+
+    <!-- Opción de modo claro-oscuro.
+    Botón del perfil con menú desplegable ~~> Posibles opciones ("Ver perfil", "Gestionar cuentas" {solo si el
+    usuario actual es "administrador"; 'TINYINT' con valor 1 para verdadero y 0 para falso}, y "Cerrar sesión"). -->
 
     <div class="d_botonPerfil">
+
+        <button class="theme-toggle" aria-label="Cambiar tema">☀️</button>
 
         <a href="#" id="botonPerfil">
             <img src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/perfil.png" alt="Perfil"
@@ -77,7 +83,6 @@
 
 <header>
     <div class="container">
-        <div></div>
         <button class="theme-toggle" aria-label="Cambiar tema">☀️</button>
     </div>
 </header>
