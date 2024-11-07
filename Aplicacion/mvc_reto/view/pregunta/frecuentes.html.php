@@ -103,7 +103,7 @@ require_once __DIR__ . "/../layout/header.php";
                 <!-- Números de página -->
                 <?php for ($i = 1; $i <= $dataToView["data"][2]; $i++): ?>
                     <li class="page-item <?= ($i == $dataToView["data"][1]) ? 'active' : ''; ?>">
-                        <a class="page-link" href="index.php?controller=pregunta&action=list_paginated&page=<?= $i; ?>"><?= $i; ?></a>
+                        <a class="page-link" href="index.php?controller=pregunta&action=frecuentes&page=<?= $i; ?>"><?= $i; ?></a>
                     </li>
                 <?php endfor; ?>
             </ul>
@@ -124,7 +124,7 @@ require_once __DIR__ . "/../layout/header.php";
 
 <?php require_once __DIR__ . "/../layout/footer.php"; ?>
 
-<script src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/javascript/foroTamano.js"></script>
+<script src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/javascript/frecuentesTamano.js"></script>
 
 </body>
 </html>

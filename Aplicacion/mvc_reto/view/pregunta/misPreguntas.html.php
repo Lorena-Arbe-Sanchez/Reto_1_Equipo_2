@@ -109,7 +109,9 @@ require_once __DIR__ . "/../layout/header.php";
                                     <?php
                                 }
                                 else{
-                                    print_r($respuesta['archivo']);
+                                    ?>
+                                    <img src="./uploads/<?php echo $respuesta['archivo'] ?>" alt="Imagen perfil">
+                                    <?php
                                 }
                                 ?>
                                     
