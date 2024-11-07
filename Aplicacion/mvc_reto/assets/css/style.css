@@ -383,7 +383,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     flex-grow: 1;
 }
 
-.pag_gestionarCuenta #bCrear, .bResponder, .bMeGusta, .bNoMeGusta{
+.pag_gestionarCuenta #bCrear, .bResponder, .bFavorito{
     display: inline-block;
     padding: 0.75em 1.5em;
     margin-top: 2em;
@@ -497,9 +497,34 @@ nav[aria-label="Paginación de preguntas"] ul{
     width: 100%;
 }
 
-.pag_foro .pregunta .bResponder, .pag_frecuentes .pregunta .bResponder, .bMeGusta, .bNoMeGusta{
+/*
+.pag_foro .pregunta .respuestas .botonesGusta{
+    display: flex;
+    justify-content: flex-start;
+}
+*/
+
+.pag_foro .pregunta .respuestas .botonesGusta{
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+    margin-bottom: 1em;
+}
+
+.pag_foro .pregunta .respuestas .botonesGusta .bFavorito{
     width: auto;
     margin: 0;
+}
+
+.pag_foro .pregunta .bResponder, .pag_frecuentes .pregunta .bResponder{
+    width: auto;
+    margin: 0;
+}
+
+.pregunta{
+    background-color: rgb(231, 231, 231);
+    border: 1px solid black;
+    border-radius: 10px;
 }
 
 /*Cambiar de tamaño teniendo en cuenta la cantidad de preguntas*/
@@ -516,7 +541,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     z-index: 1;
 }
 
-.bResponder a, .bMeGusta a, .bNoMeGusta a{
+.bResponder a, .bFavorito a{
     text-decoration: none;
 }
 
@@ -534,6 +559,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     flex-direction: column;
     max-height: var('--altura-respuestas');
     border: 1px solid #ccc;
+    border-radius: 8px;
     padding-top: 10px;
 }
 

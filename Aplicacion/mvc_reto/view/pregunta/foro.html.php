@@ -81,12 +81,8 @@ require_once __DIR__ . "/../layout/header.php";
                                 ?>
                             </div>
                             <div class="botonesGusta">
-                                <div class="bMeGusta">
-                                    <a href="index.php?controller=respuesta&action=modificarLikes&id_pregunta=<?php echo $pregunta["id"]; ?>">Me gusta</a>
-                                </div>
-
-                                <div class="bNoMeGusta">
-                                    <a href="index.php?controller=respuesta&action=modificarDislikes&id_pregunta=<?php echo $pregunta["id"]; ?>">No me gusta</a>
+                                <div class="bFavorito">
+                                    <a href="index.php?controller=respuesta&action=modificarLikes&id_pregunta=<?php echo $pregunta["id"]; ?>">Añadir a favoritos</a>
                                 </div>
                             </div>
                             <?php
