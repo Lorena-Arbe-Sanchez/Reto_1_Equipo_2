@@ -1,9 +1,8 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function(){
     const tablaPreguntas = document.querySelector(".pag_misPreguntas .tabla_cuentas");
     const tablaRespuestas = document.querySelector(".pag_misPreguntas .tabla_respuestas");
 
     if (tablaPreguntas && tablaRespuestas){
-
         let alturaTotalPreguntas = tablaPreguntas.offsetHeight;
         let alturaTotalRespuestas = tablaRespuestas.offsetHeight;
 

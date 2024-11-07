@@ -26,8 +26,9 @@ require_once __DIR__ . "/../layout/header.php";
                     <h2><?php echo $pregunta["titulo"]; ?></h2>
                 </div>
 
-                <div class="temaPregunta">
-                    <!-- Obtener el tema de la BBDD y mostrarlo correctamente. -->
+                <div class="datosPreguntaUsuario">
+
+                    <!-- Array con los posibles temas de la BBDD para que tras obtener el tema lo muestre correctamente. -->
                     <?php
                     $temas = [
                         "diseno_aeronaves" => "Diseño y Desarrollo de Aeronaves",
@@ -41,13 +42,31 @@ require_once __DIR__ . "/../layout/header.php";
                         "gestion_conocimiento" => "Gestión del Conocimiento",
                         "otro" => "Otro tema"
                     ];
-
-                    // Verifica si el tema existe en el array; si no, muestra "Tema no especificado"
-                    echo $temas[$pregunta["tema"]] ?? "Tema no especificado";
-
-                    // TODO : Añadir más columnas de la tabla (usuario, fecha...)
-
                     ?>
+
+                    <!-- TODO : Estilizar la tabla. Ponerla también en las frecuentes. -->
+                    <table>
+                        <tr>
+                            <td>
+                                <?php
+                                // Verifica si el tema existe en el array; si no, muestra "Tema no especificado".
+                                echo $temas[$pregunta["tema"]] ?? "Tema no especificado";
+                                ?>
+                            </td>
+                            <td>
+                                <?php
+                                // TODO : Poner que muestre el nombe del usuario y no el id (select BD).
+                                echo $pregunta["id_usuario"] ?? "Usuario inexistente";
+                                ?>
+                            </td>
+                            <td>
+                                <?php
+                                echo $pregunta["fecha"] ?? "Fecha inespecífica";
+                                ?>
+                            </td>
+                        </tr>
+                    </table>
+
                 </div>
 
                 <div class="descPregunta">

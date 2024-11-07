@@ -53,12 +53,20 @@ header a{
     text-align: center;
 }
 
-.d_botonesRS{
-    gap: .5em;
-}
-
 .d_botonesHeader a{
     border-radius: 10px;
+}
+
+.d_logo_empresa{
+    cursor: pointer;
+}
+
+.d_logo_empresa a{
+    background-color: unset;
+}
+
+.d_botonesRS{
+    gap: .5em;
 }
 
 /* Estilo del enlace del header que debe estar deshabilitado (porque será el actual). */
@@ -120,7 +128,7 @@ footer{
     justify-content: space-around;
     height: 90px;
     background-color: #8D9DB6;
-    position: sticky; /* TODO : Poner que aparezca al final de la página de manera "natural". */
+    position: sticky;
     bottom: 0;
     border-top: 1px solid black;
     z-index: 3; /* Para que esté en una capa superior y no sea semi-opaco. */
@@ -166,7 +174,7 @@ footer{
 }
 
 .contenido{
-    width: 50%;
+    width: 80%;
 }
 
 .pag_perfil .contenido{
@@ -545,7 +553,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     text-decoration: none;
 }
 
-.tituloPregunta, .temaPregunta, .descPregunta, .divBResponder{
+.tituloPregunta, .temaPregunta, .datosPreguntaUsuario, .descPregunta, .divBResponder{
     display: flex;
     justify-content: flex-start;
 }
@@ -630,9 +638,9 @@ nav[aria-label="Paginación de preguntas"] ul{
     --border-color: #d1d5db;
     --background-color: #f6feff;
     --input-color: #ffffff;
-    --gradient-start: #c7d2fe;
-    --gradient-middle: #a5f3fc;
-    --gradient-end: #fbcfe8;
+    --gradient-start: #7e9bff;
+    --gradient-middle: #abe3ea;
+    --gradient-end: #ffb8e3;
 }
 
 .dark{
@@ -644,7 +652,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     --background-color: #111827;
     --input-color: #262c42;
     --gradient-start: #312e81;
-    --gradient-middle: #164e63;
+    --gradient-middle: #408eb1;
     --gradient-end: #831843;
 }
 
