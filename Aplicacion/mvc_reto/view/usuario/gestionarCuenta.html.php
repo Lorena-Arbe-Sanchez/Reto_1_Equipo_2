@@ -31,9 +31,16 @@ if(isset($dataToView["data"]["dniBuscar"])) $dniBuscar = $dataToView["data"]["dn
 
     <div class="d_bCrear"><button id="bCrear">+ Crear cuenta</button></div>
 
+    <?php if (isset($_GET['error']) && $_GET['error'] == 2): ?>
+        <div id="mensajeErrorDNI"  class="mensajeError" >Ese DNI o el usuario ya esta registrado.</div>
+    <?php elseif (isset($_GET['error']) && $_GET['error'] == 3):?>
+        <div id="mensajeErrorEliminar"  class="mensajeError" >No se puede  eliminar el usuario con el que has iniciado sesion</div>
+    <?php endif; ?>
+
     <!-- TODO : Repasar esto. -->
     <div class="mitades">
         <div class="mitad contenido1">
+
             <div class="busqueda">
                 <form method="get" action="index.php?controller=usuario&action=buscar&dniBuscar=<?php echo $dniBuscar; ?>">
                     <input type="hidden" name="controller" value="usuario">
@@ -50,6 +57,7 @@ if(isset($dataToView["data"]["dniBuscar"])) $dniBuscar = $dataToView["data"]["dn
             // Si el array '$dataToView' del 'index.php' tiene filas (la función "cuentas()" del "UsuarioController" obtiene resultados), entonces se creará la tabla.
             if(count($dataToView["data"])>0){
                 ?>
+
                 <table class="tabla_cuentas">
                     <thead>
                     <tr>
@@ -164,6 +172,7 @@ if(isset($dataToView["data"]["dniBuscar"])) $dniBuscar = $dataToView["data"]["dn
 
 
                 <div id="botones">
+
 
                     <!-- A este botón se le irá cambiando el "value" dependiendo de la acción seleccionada ("Registrar" / "Modificar"). -->
                     <input type="submit" id="bCrear" class="bCrear" value="Crear">
