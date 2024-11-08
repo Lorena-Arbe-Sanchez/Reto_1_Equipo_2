@@ -32,9 +32,9 @@ if(isset($dataToView["data"]["dniBuscar"])) $dniBuscar = $dataToView["data"]["dn
     <div class="d_bCrear"><button id="bCrear">+ Crear cuenta</button></div>
 
     <?php if (isset($_GET['error']) && $_GET['error'] == 2): ?>
-        <div id="mensajeErrorDNI"  class="mensajeError" >Ese DNI o el usuario ya esta registrado.</div>
+        <div id="mensajeErrorDNI" class="mensajeError">El usuario con el DNI especificado ya está registrado.</div>
     <?php elseif (isset($_GET['error']) && $_GET['error'] == 3):?>
-        <div id="mensajeErrorEliminar"  class="mensajeError" >No se puede  eliminar el usuario con el que has iniciado sesion</div>
+        <div id="mensajeErrorEliminar" class="mensajeError">No se puede eliminar el usuario con el que se ha iniciado sesión.</div>
     <?php endif; ?>
 
     <!-- TODO : Repasar esto. -->
@@ -49,8 +49,6 @@ if(isset($dataToView["data"]["dniBuscar"])) $dniBuscar = $dataToView["data"]["dn
                     <input type="submit" id="bBuscar" value="Buscar">
                 </form>
             </div>
-
-
 
             <?php
 
@@ -170,9 +168,7 @@ if(isset($dataToView["data"]["dniBuscar"])) $dniBuscar = $dataToView["data"]["dn
 
                 </div>
 
-
                 <div id="botones">
-
 
                     <!-- A este botón se le irá cambiando el "value" dependiendo de la acción seleccionada ("Registrar" / "Modificar"). -->
                     <input type="submit" id="bCrear" class="bCrear" value="Crear">
@@ -185,7 +181,6 @@ if(isset($dataToView["data"]["dniBuscar"])) $dniBuscar = $dataToView["data"]["dn
         </div>
 
     </div>
-
 
 </div>
 

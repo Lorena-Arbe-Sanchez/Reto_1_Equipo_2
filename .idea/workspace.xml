@@ -7,13 +7,11 @@
     <list default="true" id="47421177-2be4-40d6-9b05-3f5db21602a3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/filtrarPorTema.js" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/filtrarPorTema.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/gestionarCuenta.js" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/gestionarCuenta.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/PreguntaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/PreguntaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/logo_empresa_conFondo_oscuro.png" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/logo_empresa_conFondo_oscuro.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/RespuestaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/RespuestaController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/UsuarioController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/UsuarioController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/model/Usuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/model/Usuario.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/pregunta/foro.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/pregunta/foro.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/layout/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/layout/header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/pregunta/misPreguntas.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/pregunta/misPreguntas.html.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/respuesta/modificarRespuesta.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/respuesta/modificarRespuesta.html.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/gestionarCuenta.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/gestionarCuenta.html.php" afterDir="false" />
@@ -26,6 +24,12 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "git-widget-placeholder": "feature/Lorena",
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
   <component name="TaskManager">
     <servers />
   </component>

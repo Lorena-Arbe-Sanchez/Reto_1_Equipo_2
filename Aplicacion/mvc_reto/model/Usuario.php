@@ -113,37 +113,33 @@ class Usuario {
     public function getUsuarioByDNI($dniBuscar){
 
         if(is_null($dniBuscar)) return false;
+
         $sql = "SELECT * FROM ". $this->tabla ." WHERE dni = ?";
         $stmt = $this->connection->prepare($sql);
         $stmt -> execute([$dniBuscar]);
+
         error_log("getUsuariByDNI:" . $dniBuscar);
 
         $resultado = $stmt->fetch();
-
         if ($resultado){
-
             return $resultado;
-
-        }else{
-
+        }
+        else{
             return false;
-
         }
     }
 
-
-
     public function modificarUsuario($param){
 
-         $id = $dni = $nombre = $apellido1 = $apellido2 = $email = $telefono = $usuario = $contrasena = $administrador = "";
+        $id = $dni = $nombre = $apellido1 = $apellido2 = $email = $telefono = $usuario = $contrasena = $administrador = "";
 
         $exist = false;
 
-        if (isset($param["dni"]) && $param["dni"] != '') {
+        if (isset($param["dni"]) && $param["dni"] != ''){
 
             $actualUsuario = $this->getUsuarioByDNI($param["dni"]);
 
-            if (isset($actualUsuario["dni"])) {
+            if (isset($actualUsuario["dni"])){
                 $exist = true;
                 $id = $actualUsuario["id"];
                 $dni = $param["dni"];
@@ -155,9 +151,7 @@ class Usuario {
                 $usuario = $actualUsuario["usuario"];
                 $contrasena = $actualUsuario["contrasena"];
                 $administrador = $actualUsuario["administrador"];
-
             }
-
 
             if (isset($param["nombre"])) $nombre = $param["nombre"];
             if (isset($param["dni"])) $dni = $param["dni"];
@@ -167,28 +161,24 @@ class Usuario {
             if (isset($param["telefono"])) $telefono = $param["telefono"];
             if (isset($param["usuario"])) $usuario = $param["usuario"];
             if (isset($param["contrasena"])) $contrasena = $param["contrasena"];
-            if (isset($param["administrador"] )) {
+            if (isset($param["administrador"])){
                 error_log("Administrador -> " . $administrador);
                 $administrador = ($param["administrador"] === 1) ? 1 : 0;
             }
 
-            if ($exist) {
+            if ($exist){
                 $sql = "UPDATE " . $this->tabla . " SET dni=?, nombre=?, apellido1=?, apellido2=?, email=?, telefono=?, usuario=?, contrasena=?, administrador=? WHERE id=?";
                 $stmt = $this->connection->prepare($sql);
                 $res = $stmt->execute([$dni, $nombre, $apellido1, $apellido2, $email, $telefono, $usuario, $contrasena, $administrador, $id]);
             }
             return $id;
-
         }
-
     }
 
     public function borrarUsuario($dni){
-
         $sql = "DELETE FROM " . $this->tabla . " WHERE dni = ?";
         $stmt = $this->connection->prepare($sql);
         return $stmt->execute([$dni]);
-
     }
 
     public function actualizarImgUsuario($filePath){

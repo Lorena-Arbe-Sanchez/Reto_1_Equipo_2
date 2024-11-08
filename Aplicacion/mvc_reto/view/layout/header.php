@@ -10,9 +10,8 @@
     <!-- Poner un favicon (icono en la pestaña de una página web). -->
     <link rel="icon" type="image/png"
           href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/icono_empresa.png">
-
-
 </head>
+
 <body class="<?php echo isset($bodyClass) ? $bodyClass : 'defaultBodyClass'; ?>">
 
 <?php if ($conMenu): ?>
@@ -24,7 +23,7 @@
         <a href="index.php?controller=pregunta&action=list_paginated">
             <img class="logo_empresa"
                  src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/logo_empresa_conFondo.png"
-                 alt="Logo Aergibide SL" width="210" height="92">
+                 alt="Logo Aergibide SL" width="260" height="114">
         </a>
     </div>
 

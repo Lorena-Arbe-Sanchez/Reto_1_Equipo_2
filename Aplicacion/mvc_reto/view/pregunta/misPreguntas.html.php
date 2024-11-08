@@ -118,10 +118,9 @@ require_once __DIR__ . "/../layout/header.php";
                             </td>
                             <td><?php echo htmlspecialchars($pregunta['titulo']); ?></td>
                             <td>
-                                <a href="index.php?controller=respuesta&action=borrar&id=<?php echo urlencode($respuesta['id']); ?>" id="bEliminar">Eliminar</a>
                                 <a href="index.php?controller=respuesta&action=editar&id=<?php echo urlencode($respuesta['id']); ?>" id="bEditar">Editar</a>
+                                <a href="index.php?controller=respuesta&action=borrar&id=<?php echo urlencode($respuesta['id']); ?>" id="bEliminar">Eliminar</a>
                             </td>
-
                         </tr>
                         <?php
                     }
