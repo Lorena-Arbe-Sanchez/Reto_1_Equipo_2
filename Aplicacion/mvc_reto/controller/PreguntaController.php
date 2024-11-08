@@ -132,6 +132,15 @@ class PreguntaController {
         return $this->model->getPreguntas();
     }
 
+
+    public function filtrarPorTema(){
+
+        $this->view="foro";
+        error_log($_GET['tema']);
+        return $this -> model -> filtrarTema($_GET['tema']);
+
+    }
+
 }
 
 ?>

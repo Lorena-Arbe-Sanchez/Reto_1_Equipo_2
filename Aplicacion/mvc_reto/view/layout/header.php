@@ -10,6 +10,8 @@
     <!-- Poner un favicon (icono en la pestaña de una página web). -->
     <link rel="icon" type="image/png"
           href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/icono_empresa.png">
+
+
 </head>
 <body class="<?php echo isset($bodyClass) ? $bodyClass : 'defaultBodyClass'; ?>">
 
