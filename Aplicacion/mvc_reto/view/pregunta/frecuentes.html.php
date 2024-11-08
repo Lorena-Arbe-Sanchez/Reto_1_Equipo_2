@@ -80,6 +80,7 @@ require_once __DIR__ . "/../layout/header.php";
                                 }
                                 ?>
                             </div>
+                            <!-- TODO : Poner lo de 'Favorito' como el foro. -->
                             <div class="botonesGusta">
                                 <div class="bMeGusta">
                                     <a href="#">Me gusta</a>

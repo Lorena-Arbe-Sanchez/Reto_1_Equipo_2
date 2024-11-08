@@ -2,9 +2,13 @@
 
 // Listener para el cambio de modo claro-oscuro.
 document.addEventListener('DOMContentLoaded', function(){
+
     const themeToggle = document.querySelector('.theme-toggle');
     const htmlElement = document.documentElement;
     const superpuestaImage = document.querySelector('.superpuesta');
+    // TODO : Luego cambiar las 2 siguientes para que se apliquen a todas las págs.
+    const menuToggle = document.querySelector('.pag_foro .menu-toggle');
+    const botonesHeader = document.querySelector('.pag_foro .d_botonesHeader');
     let isDark = false;
 
     themeToggle.addEventListener('click', function(){
@@ -36,4 +40,9 @@ document.addEventListener('DOMContentLoaded', function(){
         themeToggle.setAttribute('aria-label', 'Cambiar a modo claro');
         isDark = true;
     }
+
+    menuToggle.addEventListener('click', function() {
+        botonesHeader.classList.toggle('active');
+    });
+
 });

@@ -39,6 +39,7 @@ require_once __DIR__ . "/../layout/header.php";
 
         <div class="d_botones">
             <input type="submit" id="bCrearRespuesta" class="bCrearRespuesta" value="Crear respuesta">
+            <!-- TODO : Poner que dependiendo si se ha abierto esta ventana desde el foro o frecuentes, hacer que vuelva a una u otra. -->
             <a href="index.php?controller=pregunta&action=list_paginated" class="bVolver">Cancelar</a>
         </div>
 
