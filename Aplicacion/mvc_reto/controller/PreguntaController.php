@@ -82,7 +82,7 @@ class PreguntaController {
     */
 
     // Obtener los datos de las preguntas frecuentes (con más likes; más recurridas) y mostrarlas en su ventana.
-   public function frecuentes(){
+    public function frecuentes(){
        $this->view = 'frecuentes';
        $page = isset($_GET['page']) ? $_GET['page'] : 1;
 
@@ -97,7 +97,7 @@ class PreguntaController {
        }
 
        return [$preguntasConRespuestas, $currentPage, $totalPages];
-   }
+    }
 
     public function crear(){
         $this->view = "crearPregunta";
@@ -130,6 +130,31 @@ class PreguntaController {
     public function getPreguntas(){
         $this->view="foro";
         return $this->model->getPreguntas();
+    }
+
+
+    public function filtrarPorTema() {
+        $this->view = "foro";
+    
+        // Asegurarse de que 'tema' existe y es válido
+        if (isset($_GET['tema']) && !empty($_GET['tema'])) {
+            $tema = $_GET['tema'];
+            $preguntasFiltradas = $this->model->filtrarTema($tema);
+        } else {
+            // Si no hay tema, obtener todas las preguntas
+            $preguntasFiltradas = $this->model->getPreguntas();
+        }
+    
+        // Aquí puedes incluir la lógica para obtener las respuestas si es necesario
+        $respuestaController = new RespuestaController();
+        $preguntasConRespuestas = [];
+    
+        foreach ($preguntasFiltradas as $pregunta) {
+            $pregunta['respuestas'] = $respuestaController->view($pregunta['id']);
+            $preguntasConRespuestas[] = $pregunta;
+        }
+    
+        return $preguntasConRespuestas;
     }
 
 }

@@ -94,29 +94,22 @@ class RespuestaController {
     }
     
     public function editar(){
-    
-        $this->view ='editarRespuesta';
+        $this->view ='modificarRespuesta';
         $param = $_POST;
     
         $id = $this->model->modificarRespuesta($param);
-    
+        $this->model->sacarRespuestasPorUsuario();
+
         $_GET["response"] = true;
-    
-    
     }
     
     //Funcion cuando des al boton like
     public function modificarLikes(){
-
         $this -> model -> modificarLikes($_GET["id_pregunta"]);
-        
-        
     }
 
     public function modificarDislikes(){
-
         $this -> model -> modificarDislikes($_GET["id_pregunta"]);
-    
     }
 
 }

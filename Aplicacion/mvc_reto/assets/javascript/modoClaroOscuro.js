@@ -2,9 +2,19 @@
 
 // Listener para el cambio de modo claro-oscuro.
 document.addEventListener('DOMContentLoaded', function(){
+
     const themeToggle = document.querySelector('.theme-toggle');
     const htmlElement = document.documentElement;
+
+    // Para elementos del login.
     const superpuestaImage = document.querySelector('.superpuesta');
+
+    // Para elementos del foro y demás.
+    const menuToggle = document.querySelector('.menu-toggle');
+    const botonesHeader = document.querySelector('.d_botonesHeader');
+    const empresaImage = document.querySelector('.logo_empresa');
+    const perfilImage = document.querySelector('.icono_perfil');
+
     let isDark = false;
 
     themeToggle.addEventListener('click', function(){
@@ -15,11 +25,25 @@ document.addEventListener('DOMContentLoaded', function(){
             isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'
         );
 
-        // Cambiar la imagen del logo de la empresa según el modo, si existe la imagen.
+        // Cambiar la imagen del logo de la empresa del login según el modo, si existe la imagen.
         if (superpuestaImage){
             superpuestaImage.src = isDark
                 ? "/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/logo_empresa_conFondo_oscuro.png"
                 : "/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/logo_empresa_conFondo.png";
+        }
+
+        // Cambiar la imagen del logo de la empresa del foro según el modo, si existe la imagen.
+        if (empresaImage){
+            empresaImage.src = isDark
+                ? "/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/logo_empresa_conFondo_oscuro.png"
+                : "/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/logo_empresa_conFondo.png";
+        }
+
+        // Cambiar la imagen del perfil del foro según el modo, si existe la imagen.
+        if (perfilImage){
+            perfilImage.src = isDark
+                ? "/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/perfil_oscuro.png"
+                : "/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/perfil.png";
         }
 
         // Guardar la preferencia del usuario en el 'localStorage' para que al actualizar la página no se cambie.
@@ -36,4 +60,11 @@ document.addEventListener('DOMContentLoaded', function(){
         themeToggle.setAttribute('aria-label', 'Cambiar a modo claro');
         isDark = true;
     }
+
+    if (menuToggle && botonesHeader){
+        menuToggle.addEventListener('click', function(){
+            botonesHeader.classList.toggle('active');
+        });
+    }
+
 });

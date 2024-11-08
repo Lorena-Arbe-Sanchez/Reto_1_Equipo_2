@@ -1,9 +1,11 @@
 <footer>
 
-    <div class="d_telefonoEmpresa"><p>+34 945 01 01 10</p></div>
+    <div class="d_telefonoDireccion">
+        <p>+34 945 01 01 10</p>
+        <p>C/ Pozoa s/n (01013)</p>
+    </div>
 
     <!-- TODO : Si da tiempo y apetece se puede poner un mapa interactivo con la dirección de Egibide Arriaga en vez de texto. (O si no otra cosa) -->
-    <div class="d_direccionEmpresa">C/ Pozoa s/n (01013)</div>
 
     <!-- Poner 3 botones con el logo de cada RS, uno detrás de otro en fila. -->
     <div class="d_botonesRS">
@@ -44,5 +46,6 @@
 </script>
 
 <script src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/javascript/menuPerfil.js"></script>
+<script src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/javascript/modoClaroOscuro.js"></script>
 
 <!-- No hay que cerrar el 'body' ni el 'html' ya que después del footer cabe la posibilidad de que haya que llamar a diferentes archivos de JavaScript, dependiendo de la ventana. -->

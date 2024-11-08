@@ -130,4 +130,25 @@ class Pregunta {
         return $total;
     }
 
+    public function filtrarTema($tema)
+    {
+
+        error_log("En pregunta php -> " . $tema);
+
+        if ($tema == "Todos los temas") {
+            error_log($tema);
+            $sql = "SELECT * FROM " . $this->tabla . " ORDER BY fecha DESC";
+            $stm = $this->connection->prepare($sql);
+            $stm->execute();
+            return $stm->fetchAll();
+        } else {
+            error_log($tema);
+            $sql = "SELECT * FROM " . $this->tabla . " WHERE tema = ?";
+            $stm = $this->connection->prepare($sql);
+            $stm->execute([$tema]);
+            var_dump($stm);
+            return $stm->fetchAll();
+        }
+    }
+
 }

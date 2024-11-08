@@ -36,34 +36,51 @@ function validarDatos(event, idBoton){
 
     let dniCasilla = document.getElementById("dni");
     let dni = dniCasilla.value;
+    alert(dni)
     //let administradorCasilla = document.querySelectorAll('input[name="admin"]');
     //let adminSeleccionado = [...administradorCasilla].find(radio => radio.checked).value;
     let nombreCasilla = document.getElementById("nombre");
     let nombre = nombreCasilla.value;
+    alert(nombre)
+
     let primerApellidoCasilla = document.getElementById("primerApellido");
     let primerApellido = primerApellidoCasilla.value;
+    alert(primerApellido)
+
     let segundoApellidoCasilla = document.getElementById("segundoApellido");
     let segundoApellido = segundoApellidoCasilla.value;
+    alert(segundoApellido)
+
     let emailCasilla = document.getElementById("email");
     let email = emailCasilla.value;
+    alert(email)
+
     let telefonoCasilla = document.getElementById("telefono");
     let telefono = telefonoCasilla.value;
+    alert(telefono)
+
     let usuarioCasilla = document.getElementById("usuario");
     let usuario = usuarioCasilla.value;
+    alert(usuario)
+
     let contrasenaCasilla = document.getElementById("contrasena");
     let contrasena = contrasenaCasilla.value;
+    alert(contrasena)
+
     let repetirContrasenaCasilla = document.getElementById("repetirContrasena");
     let repetirContrasena = repetirContrasenaCasilla.value;
+    alert(repetirContrasena)
+
 
     // Patrón para validar el DNI.
     // TODO : Luego habrá que poner que tenga la operación matemática de lo de que sumando los números te calcula la letra...
     let expregDni = new RegExp("^[0-9]{8}[A-Z]$");
-    // Patrón para validar que contenga un texto tal como un nombre.
-    let expregTexto = new RegExp("^[A-Z][a-z]+( [A-Za-z]+)*$");
+    // Patrón para validar que contenga un texto tal como un nombre con posibles tildes.
+    let expregTexto = new RegExp("^[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+( [A-Za-zÁÉÍÓÚÑáéíóúñ]+)*$");
     // Patrón para validar el número de teléfono (9 dígitos empezando por un 6/7/8/9).
     let expregTel = new RegExp("^[6-9][0-9]{8}$");
-    // Patrón para validar el email [se podría poner aún más completo/adaptable].
-    let expregEmail = new RegExp("^[A-Za-z0-9]+(@gmail[.]com)$");
+    // Patrón para validar el email. [Empieza con uno o más caracteres, seguido de un @, luego una secuencia de letras minúsculas, y termina con .com]
+    let expregEmail = new RegExp("^.+([@][a-z]+[.]com)$");
     // Patrón para validar la contraseña (mínimo 8 caracteres, entre ellos una mayúscula, una minúscula y un número).
     let expregContra = new RegExp("^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)[A-Za-z\\d]{8,}$");
 
@@ -99,7 +116,7 @@ function validarDatos(event, idBoton){
             contador+=1;
         }
         else if (!expregEmail.test(email)){
-            alert("El email debe terminar por '@gmail.com'.");
+            alert("El email debe terminar por '@aergibide.com'.");
             emailCasilla.focus();
             contador+=1;
         }

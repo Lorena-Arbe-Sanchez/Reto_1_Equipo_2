@@ -1,3 +1,5 @@
+// Parte para validar los datos del login.
+
 let botonIniciar = document.getElementById("bIniciar");
 let formulario = document.getElementById("formLogin");
 
@@ -47,6 +49,22 @@ function validar(event){
             document.getElementById("mensajeErrorContrasena").innerText = "La contraseña debe ser válida.";
             document.getElementById("contrasena").focus();
         }
-
     }
 }
+
+// Parte para implementar el botón de 'visualizar contraseña'.
+
+let contrasenaInput = document.getElementById("contrasena");
+let botonVer = document.getElementById('toggle-password');
+let iconoOjo = document.getElementById('icono_ojo');
+
+botonVer.addEventListener('click', () => {
+    if (contrasenaInput.type === 'password'){
+        iconoOjo.src = "/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/icono_noVer.png";
+        contrasenaInput.type = 'text';
+    }
+    else{
+        iconoOjo.src = "/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/icono_ver.png";
+        contrasenaInput.type = 'password';
+    }
+});

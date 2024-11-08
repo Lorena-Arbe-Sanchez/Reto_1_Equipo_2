@@ -25,8 +25,16 @@ require_once __DIR__ . "/../layout/header.php";
         <div class="form-group">
             <div class="fila_datos">
                 <label for="contrasena">Contraseña</label>
-                <input type="password" id="contrasena" name="contrasena" required autocomplete="current-password" aria-required="true"> <!-- TODO : 'autocomplete' se puede poner en las demás. -->
-            </div>
+
+                <!-- Poner el input y el icono en el mismo div, para que al estilizar los hijos las distancias sean sobre el contenedor padre. -->
+                <div class="input-wrapper">
+                    <input type="password" id="contrasena" name="contrasena" required autocomplete="current-password" aria-required="true"> <!-- TODO : 'autocomplete' se puede poner en las demás. -->
+
+                    <!-- Dibujo de un ojo para visualizar contraseña. -->
+                    <a id="toggle-password">
+                        <img id="icono_ojo" src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/icono_ver.png" alt="Icono ojo" width="30" height="30">
+                    </a>
+                </div>
 
             <!-- Lo relacionado con 'header("Location: index.php?controller=usuario&action=login&error=1");' del 'UsuarioController.php'. -->
             <?php if (isset($_GET['error']) && $_GET['error'] == 1): ?>
@@ -44,6 +52,7 @@ require_once __DIR__ . "/../layout/header.php";
 
 <script src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/javascript/login.js"></script>
 <script src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/javascript/modoClaroOscuro.js"></script>
+<script src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/javascript/controlLikes.js"></script>
 
 </body>
 </html>
