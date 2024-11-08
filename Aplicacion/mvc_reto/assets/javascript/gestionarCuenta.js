@@ -36,24 +36,41 @@ function validarDatos(event, idBoton){
 
     let dniCasilla = document.getElementById("dni");
     let dni = dniCasilla.value;
+    alert(dni)
     //let administradorCasilla = document.querySelectorAll('input[name="admin"]');
     //let adminSeleccionado = [...administradorCasilla].find(radio => radio.checked).value;
     let nombreCasilla = document.getElementById("nombre");
     let nombre = nombreCasilla.value;
+    alert(nombre)
+
     let primerApellidoCasilla = document.getElementById("primerApellido");
     let primerApellido = primerApellidoCasilla.value;
+    alert(primerApellido)
+
     let segundoApellidoCasilla = document.getElementById("segundoApellido");
     let segundoApellido = segundoApellidoCasilla.value;
+    alert(segundoApellido)
+
     let emailCasilla = document.getElementById("email");
     let email = emailCasilla.value;
+    alert(email)
+
     let telefonoCasilla = document.getElementById("telefono");
     let telefono = telefonoCasilla.value;
+    alert(telefono)
+
     let usuarioCasilla = document.getElementById("usuario");
     let usuario = usuarioCasilla.value;
+    alert(usuario)
+
     let contrasenaCasilla = document.getElementById("contrasena");
     let contrasena = contrasenaCasilla.value;
+    alert(contrasena)
+
     let repetirContrasenaCasilla = document.getElementById("repetirContrasena");
     let repetirContrasena = repetirContrasenaCasilla.value;
+    alert(repetirContrasena)
+
 
     // Patrón para validar el DNI.
     // TODO : Luego habrá que poner que tenga la operación matemática de lo de que sumando los números te calcula la letra...

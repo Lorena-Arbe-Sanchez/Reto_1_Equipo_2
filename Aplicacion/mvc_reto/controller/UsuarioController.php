@@ -161,20 +161,30 @@ class UsuarioController {
 
     // Función para crear un usuario nuevo.
     public function save(){
-
-        $this->view="gestionarCuenta";
-
+        $this->view = "gestionarCuenta";
         $param = $_POST;
+        $dni = $_POST['dni'];
+        $usuario = $_POST['usuario'];
 
-        $id = $this->model->insertUsuario($param);
-        // $result = $this->model->getUsuarioByUsuarioContrasena($usuario, $contrasena);
+        $dniExistente = $this->model->getUsuarioByDNI($dni);
+        $usuarioExistente = $this->model->getUsuarioByUsuario($usuario);
 
-        //$_GET["response"] = true;
-        // return $result;
+        if ($dniExistente || $usuarioExistente) {
+            error_log("El dni o usuario  ya existe en la base de datos");
+            // Pasa el error a la vista en lugar de redireccionar
+            header("Location: index.php?controller=usuario&action=cuentas&error=2");
+            exit();
+
+        } else {
+
+            $this->model->insertUsuario($param);
+
+        }
+
         return $this->model->getUsuarios();
 
-
     }
+
 
 
     //Funcion para buscar si existe el usuario atraves del dni
@@ -189,21 +199,56 @@ class UsuarioController {
         return $this->model->getUsuarioByDNI($dni);
     }
 
+    public function editar() {
+        $this->view = "gestionarCuenta";
+        $param = $_POST;
 
-    public function editar(){
-        $this->view="gestionarCuenta";
-        $dni = $this->model->modificarUsuario($_POST);
-        $result = $this->model->getUsuarioByDNI($dni);
-        $_GET["response"] = true;
-        return $this->model->getUsuarios();
+
+        $usuario = $_POST['usuario'];
+        $idUsuario = $_POST['id'];
+
+        $admin = $_POST['administrador'];
+        error_log("Controller Admin -> " . $admin);
+        // Buscar si existe otro usuario con el mismo nombre
+        $usuarioExistente = $this->model->getUsuarioByUsuario($usuario);
+
+        // Verificar que no existe otro usuario con el mismo nombre
+        if ($usuarioExistente && $usuarioExistente['usuario'] != $usuario) {
+            error_log("COMPARACION -> " . $usuario . $usuarioExistente['usuario']);
+            header("Location: index.php?controller=usuario&action=cuentas&error=2");
+            exit();
+        } else {
+            // Actualizar el usuario si no existe conflicto de nombre
+            $dni = $this->model->modificarUsuario($param);
+
+            // Opcional: redirigir con mensaje de éxito en lugar de usar $_GET directamente
+            header("Location: index.php?controller=usuario&action=cuentas&response=success");
+            exit();
+        }
     }
+
 
     //Funcion para eliminar usuario  CREAR VENTANITA PARA CONFIRMACION
     public function eliminar(){
 
         $this->view="gestionarCuenta";
-        $this->model->borrarUsuario($_GET["dniEliminar"]);
+
+        $dniEliminar = $_GET["dniEliminar"];
+
+
+        $this -> model -> getUsuarioByDNI($dniEliminar);
+
+        $dniActual = $_SESSION['usuarioDB']["dni"];
+
+        if ($dniActual != $dniEliminar){
+            $this->model->borrarUsuario($dniEliminar);
+        }else{
+            header("Location: index.php?controller=usuario&action=cuentas&error=3");
+            exit();
+        }
+
         return $this->model->getUsuarios();
+
 
     }
 

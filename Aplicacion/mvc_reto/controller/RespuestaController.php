@@ -95,11 +95,15 @@ class RespuestaController {
     
     public function editar(){
     
-        $this->view ='editarRespuesta';
+        $this->view ='modificarRespuesta';
         $param = $_POST;
     
         $id = $this->model->modificarRespuesta($param);
-    
+
+        $this->model->sacarRespuestasPorUsuario();
+
+
+
         $_GET["response"] = true;
     
     

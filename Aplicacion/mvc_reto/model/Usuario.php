@@ -117,9 +117,20 @@ class Usuario {
         $stmt = $this->connection->prepare($sql);
         $stmt -> execute([$dniBuscar]);
         error_log("getUsuariByDNI:" . $dniBuscar);
-        return $stmt->fetch();
 
+        $resultado = $stmt->fetch();
+
+        if ($resultado){
+
+            return $resultado;
+
+        }else{
+
+            return false;
+
+        }
     }
+
 
 
     public function modificarUsuario($param){
@@ -156,8 +167,9 @@ class Usuario {
             if (isset($param["telefono"])) $telefono = $param["telefono"];
             if (isset($param["usuario"])) $usuario = $param["usuario"];
             if (isset($param["contrasena"])) $contrasena = $param["contrasena"];
-            if (isset($param["administrador"])) {
-                $administrador = ($param["administrador"] === 'si') ? 1 : 0;
+            if (isset($param["administrador"] )) {
+                error_log("Administrador -> " . $administrador);
+                $administrador = ($param["administrador"] === 1) ? 1 : 0;
             }
 
             if ($exist) {
