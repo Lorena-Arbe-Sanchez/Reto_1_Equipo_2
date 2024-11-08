@@ -615,7 +615,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     --input-color: #ffffff;
     --gradient-start: #7e9bff;
     --gradient-middle: #abe3ea;
-    --gradient-end: #ffb8e3;
+    --gradient-end: #ffd0ec;
 }
 
 .dark{
@@ -627,9 +627,9 @@ nav[aria-label="Paginación de preguntas"] ul{
     --answer-color: #6b6c81;
     --background-color: #111827;
     --input-color: #262c42;
-    --gradient-start: #312e81;
+    --gradient-start: #1a1864;
     --gradient-middle: #408eb1;
-    --gradient-end: #831843;
+    --gradient-end: #82025e;
 }
 
 .input-group-append .btn {
