@@ -872,7 +872,6 @@ nav[aria-label="Paginación de preguntas"] ul{
     all: unset;
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
 }
 
 .pag_foro header{
