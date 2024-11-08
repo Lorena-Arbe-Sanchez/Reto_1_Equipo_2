@@ -44,7 +44,7 @@ require_once __DIR__ . "/../layout/header.php";
                     ];
                     ?>
 
-                    <!-- TODO : Estilizar la tabla. -->
+                    <!-- TODO : Estilizar la tabla. Ponerla también en las frecuentes. -->
                     <table>
                         <tr>
                             <td>
@@ -90,13 +90,18 @@ require_once __DIR__ . "/../layout/header.php";
                             <div class="respuesta">
                                 <p><?php echo $respuesta['solucion']; ?></p>
                             </div>
+                            <div class="imagen">
+                                <?php
+                                if($respuesta['archivo'] != "" || $respuesta['archivo'] != NULL){
+                                    ?>
+                                    <a href="./uploads/<?php echo $respuesta['archivo'] ?>">Ver imagen</a>
+                                    <?php
+                                }
+                                ?>
+                            </div>
                             <div class="botonesGusta">
-                                <div class="bMeGusta">
-                                    <a href="index.php?controller=respuesta&action=modificarLikes&id_pregunta=<?php echo $pregunta["id"]; ?>">Me gusta</a>
-                                </div>
-
-                                <div class="bNoMeGusta">
-                                    <a href="index.php?controller=respuesta&action=modificarDislikes&id_pregunta=<?php echo $pregunta["id"]; ?>">No me gusta</a>
+                                <div class="bFavorito">
+                                    <a href="index.php?controller=respuesta&action=modificarLikes&id_pregunta=<?php echo $pregunta["id"]; ?>">Añadir a favoritos</a>
                                 </div>
                             </div>
                             <?php
@@ -144,6 +149,7 @@ require_once __DIR__ . "/../layout/header.php";
 <?php require_once __DIR__ . "/../layout/footer.php"; ?>
 
 <script src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/javascript/foroTamano.js"></script>
+<script src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/javascript/modoClaroOscuro.js"></script>
 
 </body>
 </html>

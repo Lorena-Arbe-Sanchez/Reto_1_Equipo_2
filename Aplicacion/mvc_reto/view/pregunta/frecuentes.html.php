@@ -71,6 +71,16 @@ require_once __DIR__ . "/../layout/header.php";
                             <div class="respuesta">
                                 <p><?php echo $respuesta['solucion']; ?></p>
                             </div>
+                            <div class="imagen">
+                                <?php
+                                if($respuesta['archivo'] != "" || $respuesta['archivo'] != NULL){
+                                    ?>
+                                    <a href="./uploads/<?php echo $respuesta['archivo'] ?>">Ver imagen</a>
+                                    <?php
+                                }
+                                ?>
+                            </div>
+                            <!-- TODO : Poner lo de 'Favorito' como el foro. -->
                             <div class="botonesGusta">
                                 <div class="bMeGusta">
                                     <a href="#">Me gusta</a>
@@ -124,7 +134,7 @@ require_once __DIR__ . "/../layout/header.php";
 
 <?php require_once __DIR__ . "/../layout/footer.php"; ?>
 
-<script src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/javascript/foroTamano.js"></script>
+<script src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/javascript/frecuentesTamano.js"></script>
 
 </body>
 </html>

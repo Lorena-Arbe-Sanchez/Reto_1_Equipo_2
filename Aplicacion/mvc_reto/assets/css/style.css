@@ -194,8 +194,13 @@ footer{
 }
 
 .pag_misPreguntas .contenido{
+    margin-top: var(--altura-contenido, 0px);
     width: 1300px;
-    margin-top: 180px;
+}
+
+.pag_misPreguntas thead{
+    position: sticky;
+    top: 116.59px;
 }
 
 .bVolver{
@@ -386,7 +391,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     flex-grow: 1;
 }
 
-.pag_gestionarCuenta #bCrear, .bResponder, .bMeGusta, .bNoMeGusta{
+.pag_gestionarCuenta #bCrear, .bResponder, .bFavorito{
     display: inline-block;
     padding: 0.75em 1.5em;
     margin-top: 2em;
@@ -500,9 +505,34 @@ nav[aria-label="Paginación de preguntas"] ul{
     width: 100%;
 }
 
-.pag_foro .pregunta .bResponder, .pag_frecuentes .pregunta .bResponder, .bMeGusta, .bNoMeGusta{
+/*
+.pag_foro .pregunta .respuestas .botonesGusta{
+    display: flex;
+    justify-content: flex-start;
+}
+*/
+
+.pag_foro .pregunta .respuestas .botonesGusta{
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+    margin-bottom: 1em;
+}
+
+.pag_foro .pregunta .respuestas .botonesGusta .bFavorito{
     width: auto;
     margin: 0;
+}
+
+.pag_foro .pregunta .bResponder, .pag_frecuentes .pregunta .bResponder{
+    width: auto;
+    margin: 0;
+}
+
+.pregunta{
+    background-color: rgb(231, 231, 231);
+    border: 1px solid black;
+    border-radius: 10px;
 }
 
 /*Cambiar de tamaño teniendo en cuenta la cantidad de preguntas*/
@@ -519,7 +549,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     z-index: 1;
 }
 
-.bResponder a, .bMeGusta a, .bNoMeGusta a{
+.bResponder a, .bFavorito a{
     text-decoration: none;
 }
 
@@ -535,9 +565,9 @@ nav[aria-label="Paginación de preguntas"] ul{
 .respuestas{
     display: flex;
     flex-direction: column;
-    max-height: 280px;
-    overflow-y: auto;
+    max-height: var('--altura-respuestas');
     border: 1px solid #ccc;
+    border-radius: 8px;
     padding-top: 10px;
 }
 
@@ -608,9 +638,9 @@ nav[aria-label="Paginación de preguntas"] ul{
     --border-color: #d1d5db;
     --background-color: #f6feff;
     --input-color: #ffffff;
-    --gradient-start: #c7d2fe;
-    --gradient-middle: #a5f3fc;
-    --gradient-end: #fbcfe8;
+    --gradient-start: #7e9bff;
+    --gradient-middle: #abe3ea;
+    --gradient-end: #ffb8e3;
 }
 
 .dark{
@@ -622,7 +652,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     --background-color: #111827;
     --input-color: #262c42;
     --gradient-start: #312e81;
-    --gradient-middle: #164e63;
+    --gradient-middle: #408eb1;
     --gradient-end: #831843;
 }
 
@@ -822,4 +852,169 @@ nav[aria-label="Paginación de preguntas"] ul{
     color: var(--error-color);
     font-size: 0.8em;
     display: block;
+}
+
+
+/* HEADER Y FOOTER DEL FORO */
+/* TODO : PONER PARA LAS DEMÁS PÁGS TAMBN Y ESTILIZAR EL CONTENIDO TAMBN */
+
+/*body{*/
+.pag_foro{
+    all: unset;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    transition: background-color 0.3s ease;
+}
+
+/*header, .contenido, footer{*/
+.pag_foro header, .pag_foro .contenido, .pag_foro footer{
+    all: unset;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pag_foro header{
+    all: unset;
+    background-color: var(--background-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.pag_foro header a{
+    width: auto;
+}
+
+.pag_foro .d_logo_empresa{
+    flex-shrink: 0;
+}
+
+.pag_foro .menu-toggle{
+    all: unset;
+    display: none; /* El menú de las ventanas está oculto por defecto. */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.pag_foro .d_botonesHeader{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* TODO : Poner que tengan el mismo ancho. */
+.pag_foro .d_botonesHeader a{
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: .8em 1em;
+}
+
+.pag_foro .d_botonPerfil{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0;
+}
+
+.pag_foro .theme-toggle{
+    all: unset;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pag_foro .theme-toggle:hover{
+    transform: rotate(25deg);
+}
+
+.pag_foro footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #1f2937;
+    color: #fff;
+    padding: 0;
+    margin-top: 4em;
+    max-width: 100%;
+}
+
+.pag_foro .d_telefonoDireccion{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+}
+
+.pag_foro .d_botonesRS a{
+    margin: .2em;
+}
+
+.pag_foro .d_equipo img{
+    margin-left: 0.5em;
+    vertical-align: middle;
+}
+
+/* TODO : ¿cambiar tamaño media? */
+@media (max-width: 1020px){
+    .pag_foro .menu-toggle{
+        display: block;
+    }
+
+    .pag_foro .d_botonesHeader div a{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--background-color);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        display: none;
+        flex-direction: column;
+        padding: 1rem 0;
+    }
+
+    .pag_foro .d_botonesHeader.active{
+        display: flex;
+    }
+
+    .pag_foro .d_botonesHeader div{
+        margin: 0;
+        text-align: center;
+    }
+
+    .pag_foro .d_botonesHeader div a{
+        display: block;
+        padding: 0.5rem 0;
+    }
+
+    .pag_foro footer{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .pag_foro .d_telefonoDireccion{
+        padding-top: 2.5em;
+    }
+
+    .pag_foro .d_botonesRS{
+        padding-top: 2em;
+    }
 }

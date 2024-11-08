@@ -109,7 +109,9 @@ require_once __DIR__ . "/../layout/header.php";
                                     <?php
                                 }
                                 else{
-                                    print_r($respuesta['archivo']);
+                                    ?>
+                                    <img src="./uploads/<?php echo $respuesta['archivo'] ?>" alt="Imagen">
+                                    <?php
                                 }
                                 ?>
                                     
@@ -136,6 +138,7 @@ require_once __DIR__ . "/../layout/header.php";
 <?php require_once __DIR__ . "/../layout/footer.php"; ?>
 
 <script src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/javascript/crearPregunta.js"></script>
+<script src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/javascript/mispreguntasTamano.js"></script>
 
 </body>
 </html>
