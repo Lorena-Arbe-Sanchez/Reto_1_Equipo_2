@@ -133,12 +133,28 @@ class PreguntaController {
     }
 
 
-    public function filtrarPorTema(){
-
-        $this->view="foro";
-        error_log($_GET['tema']);
-        return $this -> model -> filtrarTema($_GET['tema']);
-
+    public function filtrarPorTema() {
+        $this->view = "foro";
+    
+        // Asegurarse de que 'tema' existe y es válido
+        if (isset($_GET['tema']) && !empty($_GET['tema'])) {
+            $tema = $_GET['tema'];
+            $preguntasFiltradas = $this->model->filtrarTema($tema);
+        } else {
+            // Si no hay tema, obtener todas las preguntas
+            $preguntasFiltradas = $this->model->getPreguntas();
+        }
+    
+        // Aquí puedes incluir la lógica para obtener las respuestas si es necesario
+        $respuestaController = new RespuestaController();
+        $preguntasConRespuestas = [];
+    
+        foreach ($preguntasFiltradas as $pregunta) {
+            $pregunta['respuestas'] = $respuestaController->view($pregunta['id']);
+            $preguntasConRespuestas[] = $pregunta;
+        }
+    
+        return $preguntasConRespuestas;
     }
 
 }
