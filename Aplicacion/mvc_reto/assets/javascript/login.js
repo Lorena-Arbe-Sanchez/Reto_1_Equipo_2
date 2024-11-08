@@ -1,3 +1,5 @@
+// Parte para validar los datos del login.
+
 let botonIniciar = document.getElementById("bIniciar");
 let formulario = document.getElementById("formLogin");
 
@@ -50,19 +52,19 @@ function validar(event){
     }
 }
 
-//Funcion para visualizar la contraseña
+// Parte para implementar el botón de 'visualizar contraseña'.
 
 let contrasenaInput = document.getElementById("contrasena");
-const botonVer = document.getElementById('toggle-password')
+let botonVer = document.getElementById('toggle-password');
+let iconoOjo = document.getElementById('icono_ojo');
 
 botonVer.addEventListener('click', () => {
-    if (contrasenaInput.type === 'password') {
+    if (contrasenaInput.type === 'password'){
+        iconoOjo.src = "/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/icono_noVer.png";
         contrasenaInput.type = 'text';
-        //passwordIcon.classList.remove('fa-eye');
-       // passwordIcon.classList.add('fa-eye-slash');
-    } else {
+    }
+    else{
+        iconoOjo.src = "/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/icono_ver.png";
         contrasenaInput.type = 'password';
-        //passwordIcon.classList.remove('fa-eye-slash');
-       //passwordIcon.classList.add('fa-eye');
     }
 });

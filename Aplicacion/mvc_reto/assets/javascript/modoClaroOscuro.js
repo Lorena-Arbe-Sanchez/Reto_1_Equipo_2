@@ -10,9 +10,8 @@ document.addEventListener('DOMContentLoaded', function(){
     const superpuestaImage = document.querySelector('.superpuesta');
 
     // Para elementos del foro y demás.
-    // TODO : Luego cambiar las 2 siguientes para que se apliquen a todas las págs.
-    const menuToggle = document.querySelector('.pag_foro .menu-toggle');
-    const botonesHeader = document.querySelector('.pag_foro .d_botonesHeader');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const botonesHeader = document.querySelector('.d_botonesHeader');
     const empresaImage = document.querySelector('.logo_empresa');
     const perfilImage = document.querySelector('.icono_perfil');
 

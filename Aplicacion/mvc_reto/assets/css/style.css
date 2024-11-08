@@ -451,11 +451,6 @@ nav[aria-label="Paginación de preguntas"] ul{
     display: none; /* El botón de "Gestionar cuentas" está oculto por defecto. */
 }
 
-.input-group-append .btn {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-}
-
 /* Para la ventana del foro. */
 
 .pag_foro, .pag_frecuentes{
@@ -599,7 +594,7 @@ nav[aria-label="Paginación de preguntas"] ul{
 }
 
 
-/* PÁGINA DE LOGIN Y DE RECUPERAR LA CONTRASEÑA */
+/* ESTILOS DE COLORES GENERALES + PÁGINA DE LOGIN Y DE RECUPERAR CONTRASEÑA */
 
 /* TODO : Poner comentarios en lo más complejo. */
 /* TODO : Intentar poner que al empequeñecerse la página todo su contenido también se empequeñezca (texto y todo). */
@@ -630,11 +625,6 @@ nav[aria-label="Paginación de preguntas"] ul{
     --gradient-start: #1a1864;
     --gradient-middle: #408eb1;
     --gradient-end: #82025e;
-}
-
-.input-group-append .btn {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
 }
 
 .pag_login, .pag_recuperar{
@@ -748,7 +738,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     display: block;
     color: var(--text-color);
     font-weight: 500;
-    margin-bottom: 0; /* Remove bottom margin since we're using gap */
+    margin-bottom: 0;
 }
 
 .pag_login input, .pag_recuperar input{
@@ -760,13 +750,29 @@ nav[aria-label="Paginación de preguntas"] ul{
     background-color: var(--input-color);
     color: var(--text-color);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    margin: 0; /* Remove any default margins */
+    margin: 0;
 }
 
 .pag_login input:focus, .pag_recuperar input:focus{
     outline: none;
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+/* Para lo relacionado con el ojo de 'visualizar contraseña'. */
+
+.input-wrapper{
+    all: unset;
+    position: relative; /* Contenedor relativo para posicionar el ícono. */
+    display: flex;
+    align-items: center;
+}
+
+#icono_ojo{
+    position: absolute;
+    right: 10px; /* La distancia desde el borde derecho. */
+    bottom: 8px; /* La distancia desde el borde inferior. */
+    cursor: pointer;
 }
 
 .pag_login .bPrincipal, .pag_recuperar .bPrincipal{
@@ -805,15 +811,6 @@ nav[aria-label="Paginación de preguntas"] ul{
     text-decoration: underline;
 }
 
-/*
-@media (max-width: 768px){
-    .pag_login .contenedor, .pag_recuperar .contenedor{
-        margin: 0 1rem;
-        padding: 2rem;
-    }
-}
- */
-
 @keyframes fadeIn{
     from{
         opacity: 0;
@@ -836,8 +833,8 @@ nav[aria-label="Paginación de preguntas"] ul{
 }
 
 
-/* HEADER Y FOOTER DEL FORO */
-/* TODO : PONER PARA LAS DEMÁS PÁGS TAMBN Y ESTILIZAR EL CONTENIDO TAMBN */
+/* ESTILOS DEL HEADER Y FOOTER DE TODAS LAS PÁGINAS */
+/* TODO : PONER PARA LAS DEMÁS PÁGS TAMBN */
 
 /*body{*/
 .pag_foro{
@@ -961,21 +958,6 @@ nav[aria-label="Paginación de preguntas"] ul{
     color: #374151;
 }
 
-.pag_foro .pregunta{
-    background-color: var(--border-color);
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    margin: 20px auto; /* Centrar el bloque en el contenedor principal. */
-}
-
-.pag_foro .respuesta{
-    background-color: var(--answer-color);
-}
-
 .pag_foro footer{
     display: flex;
     justify-content: space-around;
@@ -1006,6 +988,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     vertical-align: middle;
 }
 
+/* 'Media' para los elementos adaptables del header y footer. */
 /* TODO : Poner medias para los tamaños de móvil, tablet y PC. */
 @media (max-width: 1020px){
     .pag_foro .menu-toggle{
@@ -1055,3 +1038,25 @@ nav[aria-label="Paginación de preguntas"] ul{
         padding-top: 2em;
     }
 }
+
+
+/* ESTILOS DEL FORO */
+
+.pag_foro .pregunta{
+    background-color: var(--border-color);
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 20px auto; /* Centrar el bloque en el contenedor principal. */
+}
+
+.pag_foro .respuesta{
+    background-color: var(--answer-color);
+}
+
+
+/* ESTILOS DEL CONTENIDO DE TODAS LAS PÁGINAS */
+

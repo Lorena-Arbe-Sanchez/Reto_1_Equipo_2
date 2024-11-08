@@ -46,5 +46,6 @@
 </script>
 
 <script src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/javascript/menuPerfil.js"></script>
+<script src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/javascript/modoClaroOscuro.js"></script>
 
 <!-- No hay que cerrar el 'body' ni el 'html' ya que después del footer cabe la posibilidad de que haya que llamar a diferentes archivos de JavaScript, dependiendo de la ventana. -->
