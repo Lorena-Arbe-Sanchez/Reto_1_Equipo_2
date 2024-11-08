@@ -30,7 +30,7 @@ require_once __DIR__ . "/../layout/header.php";
                       <div class="input-group-append">
 
                         <a class="btn btn-outline-secondary" type="button" id="toggle-password">
-                            <img class="logo_empresa"
+                            <img class="icono_ojo"
                                  src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdp
                                  ZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMTYgMTYiPjxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0ib
                                  TE0LjI5My4yOTNsMS40MTQgMS40MTRsLTIuNjU3IDIuNjU3cS4yMzYuMjM2LjQ0My40NjdhMTQgMTQgMCAwIDEgMS44NjMgMi4
@@ -41,7 +41,7 @@ require_once __DIR__ . "/../layout/header.php";
                                  zMgMiAzLjY5OCAzLjUwOCAyLjUwNyA0LjgzMUExNCAxNCAwIDAgMCAuNjQ0IDcuNDc4bC0uMDI2LjA1MWwtLjAwOC4wMTZsLS4wM
                                  DMuMDA1di4wMDFjLS4yMzIuNDYzLS4wOTEuMTgyLS4wNjkuMTM3TC4zODIgOGwuMjI0LjQ0N2wuMDAxLjAwM2wuMDAzLjAwNWwuMD
                                  A4LjAxNmE2IDYgMCAwIDAgLjEyNC4yM2ExNCAxNCAwIDAgMCAxLjA0NyAxLjU5NnoiLz48L3N2Zz4="
-                                 alt="logo ver" width="260" height="116">
+                                 alt="logo ver" width="65" height="29">
                         </a>
 
                       </div>
