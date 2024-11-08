@@ -10,6 +10,8 @@
     <!-- Poner un favicon (icono en la pestaña de una página web). -->
     <link rel="icon" type="image/png"
           href="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/icono_empresa.png">
+
+
 </head>
 <body class="<?php echo isset($bodyClass) ? $bodyClass : 'defaultBodyClass'; ?>">
 
@@ -21,10 +23,13 @@
         <!-- La imagen del logo de la empresa será un enlace que redirigirá al foro. -->
         <a href="index.php?controller=pregunta&action=list_paginated">
             <img class="logo_empresa"
-                 src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/logo_empresa.png"
-                 alt="Logo Aergibide SL" width="230" height="92">
+                 src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/logo_empresa_conFondo.png"
+                 alt="Logo Aergibide SL" width="210" height="92">
         </a>
     </div>
+
+    <!-- Opción oculta que se mostrará cuando la pantalla empequeñezca para almacenar los 3 enlaces del header. -->
+    <div><button class="menu-toggle" aria-label="Abrir menú">☰</button></div>
 
     <div class="d_botonesHeader">
 
@@ -43,9 +48,6 @@
 
     </div>
 
-    <!-- Opción oculta que se mostrará cuando la pantalla empequeñezca para almacenar los 3 enlaces del header. -->
-    <div><button class="menu-toggle" aria-label="Abrir menú">☰</button></div>
-
     <!-- Opción de modo claro-oscuro.
     Botón del perfil con menú desplegable ~~> Posibles opciones ("Ver perfil", "Gestionar cuentas" {solo si el
     usuario actual es "administrador"; 'TINYINT' con valor 1 para verdadero y 0 para falso}, y "Cerrar sesión"). -->
@@ -55,7 +57,8 @@
         <button class="theme-toggle" aria-label="Cambiar tema">☀️</button>
 
         <a href="#" id="botonPerfil">
-            <img src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/perfil.png" alt="Perfil"
+            <img src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/perfil.png"
+                 class="icono_perfil" alt="Perfil"
                  width="50" height="50">
         </a>
 

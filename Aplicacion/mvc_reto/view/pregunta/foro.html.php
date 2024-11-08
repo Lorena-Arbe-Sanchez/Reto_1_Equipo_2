@@ -16,6 +16,25 @@ require_once __DIR__ . "/../layout/header.php";
 
 <div class="contenido">
 
+    <div>
+        <label for="tema">Filtrar por Tema:</label>
+        <select name="tema" id="tema" required>
+            <option value="Todas las opción">Todas las opción</option>
+            <option value="diseno_aeronaves">Diseño y Desarrollo de Aeronaves</option>
+            <option value="fabricacion_produccion">Fabricación y Producción</option>
+            <option value="mantenimiento_operaciones">Mantenimiento y Operaciones</option>
+            <option value="innovacion_sostenibilidad">Innovación y Sostenibilidad</option>
+            <option value="certificaciones_reglamentacion">Certificaciones y Reglamentación</option>
+            <option value="problemas_tecnicos">Problemas Técnicos y Soluciones</option>
+            <option value="colaboracion_interdepartamental">Colaboración Interdepartamental</option>
+            <option value="software_herramientas">Software y Herramientas de Ingeniería</option>
+            <option value="gestion_conocimiento">Gestión del Conocimiento</option>
+            <option value="otro">Otro tema</option>
+        </select>
+        <button id="filtrarLink">Filtrar</button>
+    </div>
+
+
     <?php
     if(!empty($dataToView["data"][0]) && count($dataToView["data"])>0){
 
@@ -149,6 +168,7 @@ require_once __DIR__ . "/../layout/header.php";
 <?php require_once __DIR__ . "/../layout/footer.php"; ?>
 
 <script src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/javascript/foroTamano.js"></script>
+<script src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/javascript/filtrarPorTema.js"></script>
 <script src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/javascript/modoClaroOscuro.js"></script>
 
 </body>

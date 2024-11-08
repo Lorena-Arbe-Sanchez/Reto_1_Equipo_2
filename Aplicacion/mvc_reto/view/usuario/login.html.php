@@ -26,6 +26,25 @@ require_once __DIR__ . "/../layout/header.php";
             <div class="fila_datos">
                 <label for="contrasena">Contraseña</label>
                 <input type="password" id="contrasena" name="contrasena" required autocomplete="current-password" aria-required="true"> <!-- TODO : 'autocomplete' se puede poner en las demás. -->
+                <div class="input-group-append">
+                      <div class="input-group-append">
+
+                        <a class="btn btn-outline-secondary" type="button" id="toggle-password">
+                            <img class="icono_ojo"
+                                 src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdp
+                                 ZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMTYgMTYiPjxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0ib
+                                 TE0LjI5My4yOTNsMS40MTQgMS40MTRsLTIuNjU3IDIuNjU3cS4yMzYuMjM2LjQ0My40NjdhMTQgMTQgMCAwIDEgMS44NjMgMi4
+                                 2NDdsLjAyNy4wNTFsLjAwNy4wMTZsLjAwMy4wMDVsLjAwMS4wMDJsLjIyNC40NDhsLS4yMjQuNDQ5bC0uMDAxLjAwMWwtLjAwMy
+                                 4wMDVsLS4wMDcuMDE2YTYgNiAwIDAgMS0uMTI1LjIzYTE0IDE0IDAgMCAxLTEuNzY1IDIuNDY3QzEyLjMwMyAxMi40OTIgMTAuN
+                                 DI3IDE0IDggMTRjLTEuMzQgMC0yLjUxMS0uNDYtMy40OTItMS4wOTRsLTIuOCAyLjgwMWwtMS40MTUtMS40MTR6bS00LjM2IDcu
+                                 MTlsLTIuNDUxIDIuNDVhMi4wMDMgMi4wMDMgMCAwIDAgMi40NS0yLjQ1Wm0tLjEzMS01LjJBNS45IDUuOSAwIDAgMCA4IDJDNS41N
+                                 zMgMiAzLjY5OCAzLjUwOCAyLjUwNyA0LjgzMUExNCAxNCAwIDAgMCAuNjQ0IDcuNDc4bC0uMDI2LjA1MWwtLjAwOC4wMTZsLS4wM
+                                 DMuMDA1di4wMDFjLS4yMzIuNDYzLS4wOTEuMTgyLS4wNjkuMTM3TC4zODIgOGwuMjI0LjQ0N2wuMDAxLjAwM2wuMDAzLjAwNWwuMD
+                                 A4LjAxNmE2IDYgMCAwIDAgLjEyNC4yM2ExNCAxNCAwIDAgMCAxLjA0NyAxLjU5NnoiLz48L3N2Zz4="
+                                 alt="logo ver" width="65" height="29">
+                        </a>
+
+                      </div>
             </div>
 
             <!-- Lo relacionado con 'header("Location: index.php?controller=usuario&action=login&error=1");' del 'UsuarioController.php'. -->
@@ -44,6 +63,7 @@ require_once __DIR__ . "/../layout/header.php";
 
 <script src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/javascript/login.js"></script>
 <script src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/javascript/modoClaroOscuro.js"></script>
+<script src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/javascript/controlLikes.js"></script>
 
 </body>
 </html>
