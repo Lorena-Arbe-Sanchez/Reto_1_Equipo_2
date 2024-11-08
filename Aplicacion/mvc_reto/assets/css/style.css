@@ -1007,7 +1007,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     vertical-align: middle;
 }
 
-/* TODO : ¿cambiar tamaño media? */
+/* TODO : Poner medias para los tamaños de móvil, tablet y PC. */
 @media (max-width: 1020px){
     .pag_foro .menu-toggle{
         display: block; /* Poner visible el menú. */
