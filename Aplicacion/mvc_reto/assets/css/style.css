@@ -91,37 +91,6 @@ header a{
     position: relative; /* Para posicionar el menú desplegable. */
 }
 
-.menuDesplegable{
-    display: none; /* El menú está oculto por defecto. */
-    position: absolute;
-    top: 95px; /* Debajo del botón de perfil. */
-    right: 0;
-    background-color: #fff;
-    border: .2em solid gainsboro;
-    box-shadow: 0 7px 30px #667292;
-    border-radius: .8em;
-    z-index: 3;
-}
-
-.menuDesplegable ul{
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.menuDesplegable ul li{
-    border-bottom: 1px solid darkgrey;
-    text-align: center;
-}
-
-.menuDesplegable ul li:hover{
-    background-color: #f0f0f0;
-}
-
-.menuDesplegable ul li:last-child{
-    border-bottom: none;
-}
-
 footer{
     width: 100%;
     display: flex;
@@ -641,6 +610,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     --text-color: #374151;
     --error-color: #ff0047;
     --border-color: #d1d5db;
+    --answer-color: #eaeaea;
     --background-color: #f6feff;
     --input-color: #ffffff;
     --gradient-start: #7e9bff;
@@ -654,6 +624,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     --text-color: #e5e7eb;
     --error-color: #ff96b2;
     --border-color: #374151;
+    --answer-color: #6b6c81;
     --background-color: #111827;
     --input-color: #262c42;
     --gradient-start: #312e81;
@@ -886,6 +857,7 @@ nav[aria-label="Paginación de preguntas"] ul{
 
 .pag_foro header{
     all: unset;
+    position: relative;
     background-color: var(--background-color);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     padding: 1em 2em;
@@ -894,6 +866,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     align-items: center;
     max-width: 100%;
     margin: 0 auto;
+    margin-bottom: 4em;
 }
 
 .pag_foro header a{
@@ -917,13 +890,13 @@ nav[aria-label="Paginación de preguntas"] ul{
 .pag_foro .d_botonesHeader{
     display: flex;
     align-items: center;
-    gap: 1em;
     margin: 0 auto;
     padding: 0;
 }
 
-/* TODO : Poner que tengan el mismo ancho. */
+/* TODO : Poner que tengan el mismo ancho cuando están en fila. */
 .pag_foro .d_botonesHeader a{
+    border-radius: 10px;
     color: var(--text-color);
     text-decoration: none;
     font-size: 1rem;
@@ -950,6 +923,57 @@ nav[aria-label="Paginación de preguntas"] ul{
 
 .pag_foro .theme-toggle:hover{
     transform: rotate(25deg);
+}
+
+.menuDesplegable{
+    display: none; /* El menú está oculto por defecto. */
+    position: absolute;
+    top: 95px; /* Debajo del botón de perfil. */
+    right: 0;
+    background-color: #fff;
+    border: .2em solid gainsboro;
+    box-shadow: 0 7px 30px #667292;
+    border-radius: .8em;
+    z-index: 3;
+    /* TODO : Poner que tanga un mínimo de 5em de width y que si se agranda la ventana el menú tambn. */
+}
+
+.menuDesplegable ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menuDesplegable ul li{
+    border-bottom: 1px solid darkgrey;
+    text-align: center;
+}
+
+.menuDesplegable ul li:hover{
+    background-color: #f0f0f0;
+}
+
+.menuDesplegable ul li:last-child{
+    border-bottom: none;
+}
+
+.pag_foro .d_botonesHeader a{
+    color: #374151;
+}
+
+.pag_foro .pregunta{
+    background-color: var(--border-color);
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 20px auto; /* Centrar el bloque en el contenedor principal. */
+}
+
+.pag_foro .respuesta{
+    background-color: var(--answer-color);
 }
 
 .pag_foro footer{
@@ -985,19 +1009,19 @@ nav[aria-label="Paginación de preguntas"] ul{
 /* TODO : ¿cambiar tamaño media? */
 @media (max-width: 1020px){
     .pag_foro .menu-toggle{
-        display: block;
+        display: block; /* Poner visible el menú. */
     }
 
-    .pag_foro .d_botonesHeader div a{
+    .pag_foro .d_botonesHeader{
+        display: none;
         position: absolute;
         top: 100%;
         left: 0;
         right: 0;
         background-color: var(--background-color);
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        display: none;
         flex-direction: column;
-        padding: 1rem 0;
+        padding-bottom: 1em;
     }
 
     .pag_foro .d_botonesHeader.active{
@@ -1007,11 +1031,15 @@ nav[aria-label="Paginación de preguntas"] ul{
     .pag_foro .d_botonesHeader div{
         margin: 0;
         text-align: center;
+        width: 100%;
     }
 
     .pag_foro .d_botonesHeader div a{
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 0.5rem 0;
+        width: 100%;
     }
 
     .pag_foro footer{
