@@ -53,22 +53,33 @@ class PreguntaController {
     }
 
     public function list_paginated(){
+
+        // TODO
+        error_log(print_r($_GET, true));
+
         $this->view = 'foro';
         $page = isset($_GET['page']) ? $_GET['page'] : 1;
+        $tema = null;
 
-        // Obtener preguntas paginadas
-        list($preguntas, $currentPage, $totalPages) = $this->model->getPreguntasPaginated($page);
+        // Comprobar si se ha seleccionado un tema en el filtro.
+        if (isset($_GET['filtroTema']) && !empty($_GET['filtroTema'])){
+            $tema = $_GET['filtroTema'];
+        }
+        // Si no hay filtrado por tema, el tema permanecerá vacío.
+
+        // Obtener todas las preguntas, paginadas.
+        list($preguntas, $currentPage, $totalPages) = $this->model->getPreguntasPaginated($tema, $page);
 
         $respuestaController = new RespuestaController();
         $preguntasConRespuestas = [];
 
-        // Obtener respuestas para cada pregunta
-        foreach ($preguntas as $pregunta) {
-            $pregunta['respuestas'] = $respuestaController->view($pregunta['id']);
+        // Obtener respuestas para cada pregunta.
+        foreach ($preguntas as $pregunta){
+            $pregunta['respuestas'] = $respuestaController -> view($pregunta['id']);
             $preguntasConRespuestas[] = $pregunta;
         }
 
-        // Devolver las preguntas con sus respuestas y la información de paginación
+        // Devolver las preguntas con sus respuestas y la información de paginación.
         return [$preguntasConRespuestas, $currentPage, $totalPages];
     }
 
@@ -133,6 +144,7 @@ class PreguntaController {
     }
 
 
+    // TODO : quitar si no se usa
     public function filtrarPorTema() {
         $this->view = "foro";
     

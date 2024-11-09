@@ -18,7 +18,7 @@ if(isset($dataToView["data"]["usuario"])) $usuario = $dataToView["data"]["usuari
 if(isset($dataToView["data"]["contrasena"])) $contrasena = $dataToView["data"]["contrasena"];
 if(isset($dataToView["data"]["administrador"])) $administrador = $dataToView["data"]["administrador"];
 
-$dniBuscar="";
+$dniBuscar = "";
 
 if(isset($dataToView["data"]["dniBuscar"])) $dniBuscar = $dataToView["data"]["dni"];
 ?>
@@ -42,7 +42,7 @@ if(isset($dataToView["data"]["dniBuscar"])) $dniBuscar = $dataToView["data"]["dn
         <div class="mitad contenido1">
 
             <div class="busqueda">
-                <form method="get" action="index.php?controller=usuario&action=buscar&dniBuscar=<?php echo $dniBuscar; ?>">
+                <form action="index.php?controller=usuario&action=buscar&dniBuscar=<?php echo $dniBuscar; ?>" method="get">
                     <input type="hidden" name="controller" value="usuario">
                     <input type="hidden" name="action" value="buscar">
                     <input type="text" name="dniBuscar" placeholder="Buscar por DNI." value="<?php echo $dniBuscar; ?>">

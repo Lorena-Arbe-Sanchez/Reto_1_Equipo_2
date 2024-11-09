@@ -95,11 +95,21 @@ class Pregunta {
         return $stmt->fetchAll();
     }
 
-    public function getPreguntasPaginated($page=1){
+    public function getPreguntasPaginated($tema, $page=1){
         $limit = PAGINATION;
         $offset = ($page - 1) * $limit;
-        $sql = "SELECT * FROM ". $this->tabla ." ORDER BY fecha LIMIT :limit OFFSET :offset";
-        $stmt = $this->connection->prepare($sql);
+
+        // Si el tema seleccionado es la opción de <<Todas las opciones>>, o no se ha clicado en ningún tema, se mostrará la consulta sin 'WHERE'.
+        if ($tema == 'todas' || $tema == '' || $tema == null){
+            $sql = "SELECT * FROM ". $this->tabla ." ORDER BY fecha DESC LIMIT :limit OFFSET :offset";
+            $stmt = $this->connection->prepare($sql);
+        }
+        else{
+            // En la sentencia sql no se puede poner 'WHERE tema = ?' ya que no hay que combinar parámetros nombrados (:*) con un parámetro posicional (?).
+            $sql = "SELECT * FROM ". $this->tabla ." WHERE tema = :tema ORDER BY fecha DESC LIMIT :limit OFFSET :offset";
+            $stmt = $this->connection->prepare($sql);
+            $stmt->bindParam(':tema', $tema, PDO::PARAM_STR);
+        }
         $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
         $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
         $stmt->execute();
@@ -130,6 +140,7 @@ class Pregunta {
         return $total;
     }
 
+    // TODO : quitar si no se usa
     public function filtrarTema($tema)
     {
 

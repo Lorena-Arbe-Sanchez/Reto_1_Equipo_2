@@ -27,8 +27,9 @@ require_once __DIR__ . "/../layout/header.php";
                 </div>
 
                 <div class="temaPregunta">
-                    <!-- Obtener el tema de la BBDD y mostrarlo correctamente. -->
+                    <!-- Obtener el tema de la BD y mostrarlo correctamente. -->
                     <?php
+                    // TODO : Mover lo de temas como en el foro.
                     $temas = [
                         "diseno_aeronaves" => "Diseño y Desarrollo de Aeronaves",
                         "fabricacion_produccion" => "Fabricación y Producción",

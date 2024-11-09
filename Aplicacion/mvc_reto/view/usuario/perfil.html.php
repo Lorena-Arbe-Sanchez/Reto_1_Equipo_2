@@ -9,7 +9,7 @@ require_once __DIR__ . "/../layout/header.php";
 <div class="contenido">
 
     <div class="foto">
-        <!-- Cargar la imagen del usuario de la BBDD, y si no tiene, cargar la de default. -->
+        <!-- Cargar la imagen del usuario de la BD, y si no tiene, cargar la de default. -->
         <img src="<?php echo (($usuarioSesion['imagen'] != null)) ? htmlspecialchars($usuarioSesion['imagen']) :
             '/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/perfil.png'; ?>" alt="Imagen perfil">
 

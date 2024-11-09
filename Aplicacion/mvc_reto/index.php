@@ -1,4 +1,5 @@
 <?php
+
 ini_set('session.gc_maxlifetime', 604800); // 1 semana en segundos
 ini_set('session.cookie_lifetime', 604800); // 1 semana en segundos
 

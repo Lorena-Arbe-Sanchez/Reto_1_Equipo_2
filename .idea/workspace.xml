@@ -5,43 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6abb039-d7f5-4f73-8b47-492ba288a50f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/heroicons-solid--eye.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/icono_noVer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/icono_ver.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/perfil_oscuro.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/rivet-icons--eye-off-solid.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/controlLikes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/filtrarPorTema.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/frecuentesTamano.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/mispreguntasTamano.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/uploads/672b3862a5f1d_Captura de pantalla 2023-03-07 123304.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/uploads/672c7a2cc8383_6729f9de2cca2_OIP.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/uploads/img_672c84119f4931.51938281.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/logo_empresa.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/logo_empresa_conFondo_oscuro.png" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/imagenes/logo_empresa_conFondo_oscuro.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/filtrarPorTema.js" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/filtrarPorTema.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/foroTamano.js" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/foroTamano.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/gestionarCuenta.js" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/gestionarCuenta.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/modoClaroOscuro.js" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/modoClaroOscuro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/recuperarContrasena.js" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/recuperarContrasena.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/PreguntaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/PreguntaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/RespuestaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/RespuestaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/UsuarioController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/UsuarioController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/model/Pregunta.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/model/Pregunta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/model/Usuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/model/Usuario.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/layout/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/layout/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/layout/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/layout/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/pregunta/crearPregunta.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/pregunta/crearPregunta.html.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/pregunta/foro.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/pregunta/foro.html.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/pregunta/frecuentes.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/pregunta/frecuentes.html.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/pregunta/misPreguntas.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/pregunta/misPreguntas.html.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/respuesta/crearRespuesta.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/respuesta/crearRespuesta.html.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/respuesta/modificarRespuesta.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/respuesta/modificarRespuesta.html.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/gestionarCuenta.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/gestionarCuenta.html.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/login.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/login.html.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Base_datos/base_datos_reto1_laragon.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Base_datos/base_datos_reto1_laragon.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Base_datos/base_datos_reto1_phpMyAdmin.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Base_datos/base_datos_reto1_phpMyAdmin.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/perfil.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/perfil.html.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,30 +28,52 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Merging main",
-    "last_opened_file_path": "C:/laragon/www/workspace-dwes-Lorena-Arbe-Sanchez",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "vue.rearranger.settings.migration": "true"
-  }
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
 }]]></component>
+  <component name="ProjectId" id="2obaiTABT5XptiSXj5M9ojMyNlr" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/Lorena&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/laragon/www/workspace-dwes-Lorena-Arbe-Sanchez&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.14015.96" />
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-PS-242.21829.154" />
+        <option value="bundled-php-predefined-a98d8de5180a-4d9f4c849d09-com.jetbrains.php.sharedIndexes-PS-242.21829.154" />
       </set>
     </attachedChunks>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b6abb039-d7f5-4f73-8b47-492ba288a50f" name="Changes" comment="" />
+      <created>1731140868654</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1731140868654</updated>
+      <workItem from="1731140871230" duration="17670000" />
+    </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="LAST_COMMIT_MESSAGE" value="" />

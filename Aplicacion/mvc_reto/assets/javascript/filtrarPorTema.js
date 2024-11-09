@@ -1,3 +1,5 @@
+// TODO : quitar si no se usa
+
 document.addEventListener("DOMContentLoaded", function() {
     let filtrar = document.getElementById("filtrarLink");
 

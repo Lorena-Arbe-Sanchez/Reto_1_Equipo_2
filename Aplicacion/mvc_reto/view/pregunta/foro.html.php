@@ -6,36 +6,60 @@ botón de 'like' y botón de 'dislike'.
 -->
 
 <?php
+
 $pageTitle = "Foro";
 $bodyClass = "pag_foro";
 // Variable "botonBloqueado" para controlar la página actual el en menú del header. El botón correspondiente se bloqueará.
 $botonBloqueado = "d_botonForo";
 $conMenu = true;
 require_once __DIR__ . "/../layout/header.php";
+
+// Array con los posibles temas de la BD para que tras obtener el tema lo muestre correctamente en la pregunta.
+$temas = [
+    "diseno_aeronaves" => "Diseño y Desarrollo de Aeronaves",
+    "fabricacion_produccion" => "Fabricación y Producción",
+    "mantenimiento_operaciones" => "Mantenimiento y Operaciones",
+    "innovacion_sostenibilidad" => "Innovación y Sostenibilidad",
+    "certificaciones_reglamentacion" => "Certificaciones y Reglamentación",
+    "problemas_tecnicos" => "Problemas Técnicos y Soluciones",
+    "colaboracion_interdepartamental" => "Colaboración Interdepartamental",
+    "software_herramientas" => "Software y Herramientas de Ingeniería",
+    "gestion_conocimiento" => "Gestión del Conocimiento",
+    "otro" => "Otro tema"
+];
+
+// Obtener el filtro de tema si está presente en la URL.
+$filtroTema = isset($_GET['filtroTema']) ? $_GET['filtroTema'] : '';
+
 ?>
 
 <div class="contenido">
 
     <div>
-        <label for="tema">Filtrar por Tema:</label>
-        <form method="GET" action="index.php?controller=pregunta&action=filtrarPorTema">
-            <select name="tema" id="tema" required>
-                <option value="Todas las opción">Todas las opción</option>
-                <option value="diseno_aeronaves">Diseño y Desarrollo de Aeronaves</option>
-                <option value="fabricacion_produccion">Fabricación y Producción</option>
-                <option value="mantenimiento_operaciones">Mantenimiento y Operaciones</option>
-                <option value="innovacion_sostenibilidad">Innovación y Sostenibilidad</option>
-                <option value="certificaciones_reglamentacion">Certificaciones y Reglamentación</option>
-                <option value="problemas_tecnicos">Problemas Técnicos y Soluciones</option>
-                <option value="colaboracion_interdepartamental">Colaboración Interdepartamental</option>
-                <option value="software_herramientas">Software y Herramientas de Ingeniería</option>
-                <option value="gestion_conocimiento">Gestión del Conocimiento</option>
-                <option value="otro">Otro tema</option>
+        <label for="filtroTema">Filtrar por tema:</label>
+        <!-- El formulario usa el method GET para pasar el filtro como parámetro en la URL. -->
+        <form action="index.php" method="get">
+
+            <!-- Asegurar que el controlador y acción sean enviados correctamente. -->
+            <input type="hidden" name="controller" value="pregunta">
+            <input type="hidden" name="action" value="list_paginated">
+
+            <select name="filtroTema" id="filtroTema" required>
+                <option value="todas" <?= $filtroTema === 'todas' ? 'selected' : '' ?> style="font-style: oblique">Todas las opciones</option>
+                <?php
+                // Generar las opciones del select dinámicamente.
+                foreach ($temas as $valor => $nombre){
+                    // Si el valor coincide con el filtro seleccionado, marcarlo como seleccionado.
+                    $selected = $filtroTema === $valor ? 'selected' : '';
+                    echo "<option value=\"$valor\" $selected>$nombre</option>";
+                }
+                ?>
             </select>
-            <button id="filtrarLink">Filtrar</button>
+
+            <input type="submit" id="bFiltrar" class="bFiltrar" value="Filtrar">
+
         </form>
     </div>
-
 
     <?php
     if(!empty($dataToView["data"][0]) && count($dataToView["data"])>0){
@@ -43,28 +67,12 @@ require_once __DIR__ . "/../layout/header.php";
         foreach($dataToView["data"][0] as $pregunta){
             ?>
             <div class="pregunta">
+
                 <div class="tituloPregunta">
                     <h2><?php echo $pregunta["titulo"]; ?></h2>
                 </div>
 
                 <div class="datosPreguntaUsuario">
-
-                    <!-- Array con los posibles temas de la BBDD para que tras obtener el tema lo muestre correctamente. -->
-                    <?php
-                    $temas = [
-                        "diseno_aeronaves" => "Diseño y Desarrollo de Aeronaves",
-                        "fabricacion_produccion" => "Fabricación y Producción",
-                        "mantenimiento_operaciones" => "Mantenimiento y Operaciones",
-                        "innovacion_sostenibilidad" => "Innovación y Sostenibilidad",
-                        "certificaciones_reglamentacion" => "Certificaciones y Reglamentación",
-                        "problemas_tecnicos" => "Problemas Técnicos y Soluciones",
-                        "colaboracion_interdepartamental" => "Colaboración Interdepartamental",
-                        "software_herramientas" => "Software y Herramientas de Ingeniería",
-                        "gestion_conocimiento" => "Gestión del Conocimiento",
-                        "otro" => "Otro tema"
-                    ];
-                    ?>
-
                     <!-- TODO : Estilizar la tabla. Ponerla también en las frecuentes. -->
                     <table>
                         <tr>
@@ -87,7 +95,6 @@ require_once __DIR__ . "/../layout/header.php";
                             </td>
                         </tr>
                     </table>
-
                 </div>
 
                 <div class="descPregunta">
@@ -148,7 +155,7 @@ require_once __DIR__ . "/../layout/header.php";
                 <!-- Números de página -->
                 <?php for ($i = 1; $i <= $dataToView["data"][2]; $i++): ?>
                     <li class="page-item <?= ($i == $dataToView["data"][1]) ? 'active' : ''; ?>">
-                        <a class="page-link" href="index.php?controller=pregunta&action=list_paginated&page=<?= $i; ?>"><?= $i; ?></a>
+                        <a class="page-link" href="index.php?controller=pregunta&action=list_paginated&page=<?= $i; ?>&filtroTema=<?= urlencode($filtroTema); ?>"><?= $i; ?></a>
                     </li>
                 <?php endfor; ?>
             </ul>
@@ -159,7 +166,7 @@ require_once __DIR__ . "/../layout/header.php";
     else{
         ?>
         <div>
-            No existen preguntas.
+            No hay preguntas registradas.
         </div>
         <?php
     }

@@ -1,3 +1,5 @@
+// TODO : revisar
+
 document.addEventListener("DOMContentLoaded", function(){
     const preguntas = document.querySelectorAll(".pag_foro .pregunta"); // Selecciona todas las preguntas
     const questionCount = preguntas.length; // Cuenta el número de preguntas
