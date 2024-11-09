@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6abb039-d7f5-4f73-8b47-492ba288a50f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/foroTamano.js" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/foroTamano.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/recuperarContrasena.js" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/assets/javascript/recuperarContrasena.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/PreguntaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/PreguntaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/UsuarioController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/UsuarioController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/pregunta/foro.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/pregunta/foro.html.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/login.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/login.html.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/recuperarContrasena.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/usuario/recuperarContrasena.html.php" afterDir="false" />
-    </list>
+    <list default="true" id="b6abb039-d7f5-4f73-8b47-492ba288a50f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,7 +29,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "develop",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/laragon/www/workspace-dwes-Lorena-Arbe-Sanchez",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
