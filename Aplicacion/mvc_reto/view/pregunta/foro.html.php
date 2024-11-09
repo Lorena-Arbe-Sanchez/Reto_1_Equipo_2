@@ -35,8 +35,13 @@ $filtroTema = isset($_GET['filtroTema']) ? $_GET['filtroTema'] : '';
 
 <div class="contenido">
 
+    <!-- Contenedor que dispone de un filtro de búsqueda por tema y otro por palabras clave. -->
     <div class="apartadoFiltrar">
+
+        <!-- Filtrar por tema. -->
+
         <label for="filtroTema">Filtrar por tema:</label>
+
         <!-- El formulario usa el method GET para pasar el filtro como parámetro en la URL. -->
         <form action="index.php" method="get">
 
@@ -59,6 +64,24 @@ $filtroTema = isset($_GET['filtroTema']) ? $_GET['filtroTema'] : '';
             <input type="submit" id="bFiltrar" class="bFiltrar" value="Filtrar">
 
         </form>
+
+        <!-- Filtrar por palabras clave. -->
+
+        <label for="filtroBusqueda">Buscar texto:</label>
+
+        <form action="index.php" method="get">
+
+            <!-- Asegurar que el controlador y acción sean enviados correctamente. -->
+            <input type="hidden" name="controller" value="pregunta">
+            <input type="hidden" name="action" value="list_paginated">
+
+            <!-- TODO : Implementar -->
+            <input type="text" id="filtroBusqueda" name="filtroBusqueda" value="">
+
+            <input type="submit" id="bFiltrar" class="bFiltrar" value="Buscar">
+
+        </form>
+
     </div>
 
     <?php

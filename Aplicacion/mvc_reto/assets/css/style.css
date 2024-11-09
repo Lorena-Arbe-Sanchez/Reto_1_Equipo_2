@@ -764,9 +764,10 @@ nav[aria-label="Paginación de preguntas"] ul{
     position: relative; /* Contenedor relativo para posicionar el ícono. */
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
-#icono_ojo{
+#icono_ojo, #icono_ojo1, #icono_ojo2{
     position: absolute;
     right: 10px; /* La distancia desde el borde derecho. */
     bottom: 8px; /* La distancia desde el borde inferior. */
@@ -1060,6 +1061,10 @@ nav[aria-label="Paginación de preguntas"] ul{
     display: flex;
     flex-wrap: wrap;
     gap: 1em;
+}
+
+.apartadoFiltrar #filtroBusqueda, .apartadoFiltrar #filtroTema{
+    font-size: 17px;
 }
 
 .apartadoFiltrar .bFiltrar{

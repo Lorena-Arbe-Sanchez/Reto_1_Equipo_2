@@ -107,6 +107,7 @@ class PreguntaController {
     }
 
     // Función para verificar la eliminación de una pregunta.
+    // TODO : Poner un 'confirm()', no una ventana nueva.
     public function confirmarBorrar(){
         $this -> view ='confirmar';
         return $this -> model -> getPreguntaById($_POST["id"]);

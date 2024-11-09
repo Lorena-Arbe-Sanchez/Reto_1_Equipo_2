@@ -16,11 +16,25 @@ require_once __DIR__ . "/../layout/header.php";
         </div>
         <div class="fila_datos">
             <label for="contrasena1">Contraseña nueva</label>
-            <input type="password" id="contrasena1" name="contrasena1" required>
+            <div class="input-wrapper">
+                <input type="password" id="contrasena1" name="contrasena1" required>
+                <a id="toggle-password1">
+                    <img id="icono_ojo1"
+                         src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/icono_ver.png"
+                         alt="Icono ojo" width="30" height="30">
+                </a>
+            </div>
         </div>
         <div class="fila_datos">
             <label for="contrasena2">Repita la contraseña</label>
-            <input type="password" id="contrasena2" name="contrasena2" required>
+            <div class="input-wrapper">
+                <input type="password" id="contrasena2" name="contrasena2" required>
+                <a id="toggle-password2">
+                    <img id="icono_ojo2"
+                         src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/icono_ver.png"
+                         alt="Icono ojo" width="30" height="30">
+                </a>
+            </div>
         </div>
         <div class="d_botones">
             <input type="submit" id="bCambiar" class="bPrincipal" value="Cambiar contraseña">

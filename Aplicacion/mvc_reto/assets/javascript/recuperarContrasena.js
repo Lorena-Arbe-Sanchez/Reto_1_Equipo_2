@@ -63,3 +63,31 @@ function recuperarContrasena(event){
         }
     }
 }
+
+// Parte para implementar los botones de 'visualizar contraseña'.
+
+let contrasenaInput1 = document.getElementById("contrasena1");
+let contrasenaInput2 = document.getElementById("contrasena2");
+let botonVer1 = document.getElementById('toggle-password1');
+let botonVer2 = document.getElementById('toggle-password2');
+let iconoOjo1 = document.getElementById('icono_ojo1');
+let iconoOjo2 = document.getElementById('icono_ojo2');
+
+// Listeners para las casillas de la contraseña.
+botonVer1.addEventListener('click', () => {
+    cambiarElementos(contrasenaInput1,iconoOjo1);
+});
+botonVer2.addEventListener('click', () => {
+    cambiarElementos(contrasenaInput2,iconoOjo2);
+});
+
+function cambiarElementos(contrasenaInput,iconoOjo){
+    if (contrasenaInput.type === 'password'){
+        iconoOjo.src = "/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/icono_noVer.png";
+        contrasenaInput.type = 'text';
+    }
+    else{
+        iconoOjo.src = "/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/icono_ver.png";
+        contrasenaInput.type = 'password';
+    }
+}
