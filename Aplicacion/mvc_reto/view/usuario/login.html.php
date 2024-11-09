@@ -11,7 +11,8 @@ require_once __DIR__ . "/../layout/header.php";
 
 <div class="contenedor">
 
-    <img src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/logo_empresa_conFondo.png" class="superpuesta" alt="Logo Aergibide SL">
+    <img src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/logo_empresa.png"
+         class="superpuesta" alt="Logo Aergibide SL">
 
     <form id="formLogin" action="index.php?controller=usuario&action=validarLogin" method="post">
         <div class="form-group">

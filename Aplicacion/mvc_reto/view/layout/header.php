@@ -22,8 +22,8 @@
         <!-- La imagen del logo de la empresa será un enlace que redirigirá al foro. -->
         <a href="index.php?controller=pregunta&action=list_paginated">
             <img class="logo_empresa"
-                 src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/logo_empresa_conFondo.png"
-                 alt="Logo Aergibide SL" width="260" height="114">
+                 src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/logo_empresa.png"
+                 alt="Logo Aergibide SL" width="260" height=auto>
         </a>
     </div>
 
@@ -36,7 +36,6 @@
             <a href="index.php?controller=pregunta&action=list_paginated" class="botonForo">Foro</a>
         </div>
 
-        <!-- TODO : Poner un enlace correcto en los botones. -->
         <div class="d_botonPreguntas" <?php if ($botonBloqueado == "d_botonPreguntas") echo 'id="botonBloqueado"'; ?>>
             <a href="index.php?controller=pregunta&action=frecuentes" class="botonPreguntas">Preguntas frecuentes</a>
         </div>

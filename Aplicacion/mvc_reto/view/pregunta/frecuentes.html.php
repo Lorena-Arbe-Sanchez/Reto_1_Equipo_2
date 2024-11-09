@@ -1,10 +1,3 @@
-<!--
-Cargar de la base de datos los datos de las preguntas, respuestas y usuarios.
-Título de la pregunta, tema, nombre de usuario, fecha (se guardara la del mismo día de la creación de la pregunta),
-descripción de la pregunta, botón de añadir respuesta, respuestas existentes con nombre de usuario, fecha,
-botón de 'like' y botón de 'dislike'.
--->
-
 <?php
 $pageTitle = "Preguntas frecuentes";
 $bodyClass = "pag_frecuentes";
@@ -12,6 +5,20 @@ $bodyClass = "pag_frecuentes";
 $botonBloqueado = "d_botonPreguntas";
 $conMenu = true;
 require_once __DIR__ . "/../layout/header.php";
+
+$temas = [
+    "diseno_aeronaves" => "Diseño y Desarrollo de Aeronaves",
+    "fabricacion_produccion" => "Fabricación y Producción",
+    "mantenimiento_operaciones" => "Mantenimiento y Operaciones",
+    "innovacion_sostenibilidad" => "Innovación y Sostenibilidad",
+    "certificaciones_reglamentacion" => "Certificaciones y Reglamentación",
+    "problemas_tecnicos" => "Problemas Técnicos y Soluciones",
+    "colaboracion_interdepartamental" => "Colaboración Interdepartamental",
+    "software_herramientas" => "Software y Herramientas de Ingeniería",
+    "gestion_conocimiento" => "Gestión del Conocimiento",
+    "otro" => "Otro tema"
+];
+
 ?>
 
 <div class="contenido">
@@ -22,33 +29,34 @@ require_once __DIR__ . "/../layout/header.php";
         foreach($dataToView["data"][0] as $pregunta){
             ?>
             <div class="pregunta">
+
                 <div class="tituloPregunta">
                     <h2><?php echo $pregunta["titulo"]; ?></h2>
                 </div>
 
-                <div class="temaPregunta">
-                    <!-- Obtener el tema de la BD y mostrarlo correctamente. -->
-                    <?php
-                    // TODO : Mover lo de temas como en el foro.
-                    $temas = [
-                        "diseno_aeronaves" => "Diseño y Desarrollo de Aeronaves",
-                        "fabricacion_produccion" => "Fabricación y Producción",
-                        "mantenimiento_operaciones" => "Mantenimiento y Operaciones",
-                        "innovacion_sostenibilidad" => "Innovación y Sostenibilidad",
-                        "certificaciones_reglamentacion" => "Certificaciones y Reglamentación",
-                        "problemas_tecnicos" => "Problemas Técnicos y Soluciones",
-                        "colaboracion_interdepartamental" => "Colaboración Interdepartamental",
-                        "software_herramientas" => "Software y Herramientas de Ingeniería",
-                        "gestion_conocimiento" => "Gestión del Conocimiento",
-                        "otro" => "Otro tema"
-                    ];
-
-                    // Verifica si el tema existe en el array; si no, muestra "Tema no especificado"
-                    echo $temas[$pregunta["tema"]] ?? "Tema no especificado";
-
-                    // TODO : Añadir más columnas de la tabla (usuario, fecha...)
-
-                    ?>
+                <div class="datosPreguntaUsuario">
+                    <!-- TODO : Estilizar la tabla. Ponerla también en las frecuentes. -->
+                    <table>
+                        <tr>
+                            <td>
+                                <?php
+                                // Verifica si el tema existe en el array; si no, muestra "Tema no especificado".
+                                echo $temas[$pregunta["tema"]] ?? "Tema no especificado";
+                                ?>
+                            </td>
+                            <td>
+                                <?php
+                                // TODO : Poner que muestre el nombe del usuario y no el id (select BD).
+                                echo $pregunta["id_usuario"] ?? "Usuario inexistente";
+                                ?>
+                            </td>
+                            <td>
+                                <?php
+                                echo $pregunta["fecha"] ?? "Fecha inespecífica";
+                                ?>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
 
                 <div class="descPregunta">
@@ -81,14 +89,9 @@ require_once __DIR__ . "/../layout/header.php";
                                 }
                                 ?>
                             </div>
-                            <!-- TODO : Poner lo de 'Favorito' como el foro. -->
                             <div class="botonesGusta">
-                                <div class="bMeGusta">
-                                    <a href="#">Me gusta</a>
-                                </div>
-
-                                <div class="bNoMeGusta">
-                                    <a href="#">No me gusta</a>
+                                <div class="bFavorito">
+                                    <a href="index.php?controller=respuesta&action=modificarLikes&id_pregunta=<?php echo $pregunta["id"]; ?>">Añadir a favoritos</a>
                                 </div>
                             </div>
                             <?php
@@ -125,7 +128,7 @@ require_once __DIR__ . "/../layout/header.php";
     else{
         ?>
         <div>
-            No existen preguntas.
+            No hay preguntas registradas.
         </div>
         <?php
     }

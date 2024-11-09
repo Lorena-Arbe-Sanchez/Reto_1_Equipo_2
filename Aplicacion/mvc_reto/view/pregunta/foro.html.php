@@ -35,7 +35,7 @@ $filtroTema = isset($_GET['filtroTema']) ? $_GET['filtroTema'] : '';
 
 <div class="contenido">
 
-    <div>
+    <div class="apartadoFiltrar">
         <label for="filtroTema">Filtrar por tema:</label>
         <!-- El formulario usa el method GET para pasar el filtro como parámetro en la URL. -->
         <form action="index.php" method="get">
@@ -177,7 +177,6 @@ $filtroTema = isset($_GET['filtroTema']) ? $_GET['filtroTema'] : '';
 <?php require_once __DIR__ . "/../layout/footer.php"; ?>
 
 <script src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/javascript/foroTamano.js"></script>
-<script src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/javascript/filtrarPorTema.js"></script>
 
 </body>
 </html>

@@ -3,7 +3,6 @@ Este fichero JavaScript controlará las acciones relacionadas con el menú despl
 del usuario. Este está situado en el header de las páginas principales.
  */
 
-// DOMContentLoaded --> Se dispara cuando el HTML del documento ha sido completamente cargado y analizado por el navegador (sin esperar a los estilos, imágenes, etc.).
 document.addEventListener("DOMContentLoaded", function(){
 
     const botonPerfil = document.getElementById("botonPerfil");

@@ -14,19 +14,9 @@ class Pregunta {
         $this->connection = $dbObj ->connection;
     }
 
-    // TODO : Borrar si no se utiliza.
     public function getPregunta(){
         $sql = "SELECT * FROM " . $this->tabla;
 
-        $stml = $this -> connection -> prepare($sql);
-        $stml -> execute();
-        return $stml -> fetchAll();
-    }
-
-    // TODO : Borrar si no se utiliza.
-    // Para obtener las preguntas frecuentes (filtradas por más likes).
-    public function getPreguntaFrecuentes(){
-        $sql = "SELECT * FROM " . $this->tabla . " ORDER BY votosLike DESC";
         $stml = $this -> connection -> prepare($sql);
         $stml -> execute();
         return $stml -> fetchAll();
@@ -73,10 +63,7 @@ class Pregunta {
         return $stml->fetch();
     }
 
-
-
-    public function deletePregunta($id)
-    {
+    public function deletePregunta($id){
         // Corrección de la consulta SQL
         $sql = "DELETE FROM " . $this->tabla . " WHERE id = ?";
         $stml = $this->connection->prepare($sql);
@@ -84,15 +71,6 @@ class Pregunta {
         $stml->execute([$id]);
         // Retornar el número de filas afectadas (puedes cambiar esto según tus necesidades)
         return $stml->rowCount();
-    }
-
-    // TODO : Borrar si no se utiliza.
-    public function getPreguntas(){
-        // De momento ordenar por fecha.
-        $sql = "SELECT * FROM ". $this->tabla ." ORDER BY fecha DESC";
-        $stmt = $this->connection->prepare($sql);
-        $stmt->execute();
-        return $stmt->fetchAll();
     }
 
     public function getPreguntasPaginated($tema, $page=1){
@@ -138,28 +116,6 @@ class Pregunta {
         $total = ceil($total/$limit);
 
         return $total;
-    }
-
-    // TODO : quitar si no se usa
-    public function filtrarTema($tema)
-    {
-
-        error_log("En pregunta php -> " . $tema);
-
-        if ($tema == "Todos los temas") {
-            error_log($tema);
-            $sql = "SELECT * FROM " . $this->tabla . " ORDER BY fecha DESC";
-            $stm = $this->connection->prepare($sql);
-            $stm->execute();
-            return $stm->fetchAll();
-        } else {
-            error_log($tema);
-            $sql = "SELECT * FROM " . $this->tabla . " WHERE tema = ?";
-            $stm = $this->connection->prepare($sql);
-            $stm->execute([$tema]);
-            var_dump($stm);
-            return $stm->fetchAll();
-        }
     }
 
 }
