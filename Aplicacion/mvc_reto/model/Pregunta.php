@@ -73,28 +73,85 @@ class Pregunta {
         return $stml->rowCount();
     }
 
-    public function getPreguntasPaginated($tema, $page=1){
+    // Función para obtener todas las preguntas existentes, por fecha en orden descendente y con posibles filtros.
+    /*
+     * Es necesario pasar primero los parámetros sin valor predeterminado, ya que
+     * en PHP "Los parámetros con valores predeterminados deben ir después de
+     * los parámetros obligatorios que no tienen valor predeterminado".
+    */
+    public function getPreguntasPaginated($tema, $palabraClave, $page=1){
+        // Número de elementos por página (ya definido en el "config.php").
         $limit = PAGINATION;
         $offset = ($page - 1) * $limit;
 
-        // Si el tema seleccionado es la opción de <<Todas las opciones>>, o no se ha clicado en ningún tema, se mostrará la consulta sin 'WHERE'.
-        if ($tema == 'todas' || $tema == '' || $tema == null){
-            $sql = "SELECT * FROM ". $this->tabla ." ORDER BY fecha DESC LIMIT :limit OFFSET :offset";
-            $stmt = $this->connection->prepare($sql);
+        // En un primer momento se mostrará la consulta sin condiciones referentes a los filtros.
+        $sql = "SELECT * FROM " . $this->tabla . " WHERE 1=1";
+
+        // Si se ha clicado en algún tema y el tema seleccionado no es la opción de <<Todas las opciones>>, se mostrará la consulta con esa condición.
+        if ($tema && $tema !== 'todas'){
+            /*
+             * En la sentencia sql no se puede poner 'WHERE tema = ?' ya que no hay que
+             * combinar parámetros nombrados (:*) con un parámetro posicional (?).
+             * Al ya tener que poner los parámetros nombrados referentes a la paginación,
+             * solo se pueden poner nombrados; los demás también tendrán que serlo.
+            */
+            $sql .= " AND tema = :tema";
         }
-        else{
-            // En la sentencia sql no se puede poner 'WHERE tema = ?' ya que no hay que combinar parámetros nombrados (:*) con un parámetro posicional (?).
-            $sql = "SELECT * FROM ". $this->tabla ." WHERE tema = :tema ORDER BY fecha DESC LIMIT :limit OFFSET :offset";
-            $stmt = $this->connection->prepare($sql);
-            $stmt->bindParam(':tema', $tema, PDO::PARAM_STR);
+
+        // Filtro por palabras clave. Buscará tanto en los títulos como en las descripciones.
+        if ($palabraClave){
+            $sql .= " AND (titulo LIKE :palabraClave OR descripcion LIKE :palabraClave)";
         }
+
+        $sql .= " ORDER BY fecha DESC LIMIT :limit OFFSET :offset";
+        $stmt = $this->connection->prepare($sql);
+
+        // Enlace de parámetros condicionales.
+        if ($tema && $tema !== 'todas'){
+            $stmt->bindValue(':tema', $tema, PDO::PARAM_STR);
+        }
+        if ($palabraClave){
+            $stmt->bindValue(':palabraClave', '%' . $palabraClave . '%', PDO::PARAM_STR);
+        }
+
+        // Parámetros para la paginación.
         $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
         $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
         $stmt->execute();
 
-        $totalPages = $this->getNumberPages(); //ceil($this->getNumberPages()/$limit);
-        return [$stmt->fetchAll(), $page, $totalPages];
+        $preguntas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // Obtener el total de páginas para la paginación.
+        $totalPages = ceil($this->getTotalPreguntas($tema, $palabraClave) / $limit);
+
+        return [$preguntas, $page, $totalPages];
     }
+
+    // Para calcular el total de registros con los filtros aplicados.
+    public function getTotalPreguntas($tema = null, $palabraClave = null){
+        $sql = "SELECT COUNT(*) FROM " . $this->tabla . " WHERE 1=1";
+
+        if ($tema && $tema !== 'todas'){
+            $sql .= " AND tema = :tema";
+        }
+
+        if ($palabraClave){
+            $sql .= " AND (titulo LIKE :palabraClave OR descripcion LIKE :palabraClave)";
+        }
+
+        $stmt = $this->connection->prepare($sql);
+
+        if ($tema && $tema !== 'todas'){
+            $stmt->bindValue(':tema', $tema, PDO::PARAM_STR);
+        }
+        if ($palabraClave){
+            $stmt->bindValue(':palabraClave', '%' . $palabraClave . '%', PDO::PARAM_STR);
+        }
+
+        $stmt->execute();
+        return $stmt->fetchColumn();
+    }
+
 
     // Función para obtener todas las preguntas pero filtradas por la cantidad de "Me gusta" en orden descendente (de mayor a menor).
     public function getPreguntasFrecuentesPaginated($page=1){

@@ -31,6 +31,9 @@ $temas = [
 // Obtener el filtro de tema si está presente en la URL.
 $filtroTema = isset($_GET['filtroTema']) ? $_GET['filtroTema'] : '';
 
+// Obtener el filtro de búsqueda por palabras clave si está presente en la URL.
+$filtroBusqueda = isset($_GET['filtroBusqueda']) ? $_GET['filtroBusqueda'] : '';
+
 ?>
 
 <div class="contenido">
@@ -38,7 +41,7 @@ $filtroTema = isset($_GET['filtroTema']) ? $_GET['filtroTema'] : '';
     <!-- Contenedor que dispone de un filtro de búsqueda por tema y otro por palabras clave. -->
     <div class="apartadoFiltrar">
 
-        <!-- Filtrar por tema. -->
+        <!-- Filtrar preguntas por tema. -->
 
         <label for="filtroTema">Filtrar por tema:</label>
 
@@ -65,18 +68,21 @@ $filtroTema = isset($_GET['filtroTema']) ? $_GET['filtroTema'] : '';
 
         </form>
 
-        <!-- Filtrar por palabras clave. -->
+        <!-- Filtrar preguntas (buscar en títulos y descripciones) por palabras clave. -->
 
         <label for="filtroBusqueda">Buscar texto:</label>
 
         <form action="index.php" method="get">
 
-            <!-- Asegurar que el controlador y acción sean enviados correctamente. -->
             <input type="hidden" name="controller" value="pregunta">
             <input type="hidden" name="action" value="list_paginated">
 
-            <!-- TODO : Implementar -->
-            <input type="text" id="filtroBusqueda" name="filtroBusqueda" value="">
+            <!--
+            $filtroBusqueda ?? ''
+            Es lo mismo que:
+            isset($filtroBusqueda) ? $filtroBusqueda : ''
+            -->
+            <input type="text" id="filtroBusqueda" name="filtroBusqueda" placeholder="Escriba aquí su texto" value="<?= $filtroBusqueda ?? '' ?>">
 
             <input type="submit" id="bFiltrar" class="bFiltrar" value="Buscar">
 

@@ -158,7 +158,7 @@ class UsuarioController {
             // Obtener el correo electrónico del usuario de la base de datos.
             $emailUsuario = $this->obtenerCorreoUsuario($usuario);
 
-            /* TODO : Corregir esta parte (no se envía el correo; se guarda en "C:\laragon\bin\sendmail\output"). */
+            /* TODO : Corregir esta parte (no se envía el correo; se guarda en "C:\laragon\bin\sendmail\output"). Se puede comprobar en "C:\laragon\tmp\php_errors.log". */
 
             // Enviar el correo.
             $subject = "Código de verificación para cambio de contraseña";

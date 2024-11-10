@@ -13,12 +13,13 @@ class PreguntaController {
         $this->model = new Pregunta();
     }
 
-    // Obtener los datos de todas las preguntas de manera paginada y mostrarlas en el foro + controlar el filtro.
+    // Obtener los datos de todas las preguntas de manera paginada y mostrarlas en el foro + controlar los filtros.
     public function list_paginated(){
 
         $this->view = 'foro';
         $page = isset($_GET['page']) ? $_GET['page'] : 1;
         $tema = null;
+        $palabraClave  = null;
 
         // Comprobar si se ha seleccionado un tema en el filtro.
         if (isset($_GET['filtroTema']) && !empty($_GET['filtroTema'])){
@@ -26,8 +27,14 @@ class PreguntaController {
         }
         // Si no hay filtrado por tema, el tema permanecerá vacío.
 
-        // Obtener todas las preguntas, paginadas.
-        list($preguntas, $currentPage, $totalPages) = $this->model->getPreguntasPaginated($tema, $page);
+        // Comprobar si hay un filtro de búsqueda por palabras clave.
+        if (isset($_GET['filtroBusqueda']) && !empty($_GET['filtroBusqueda'])) {
+            $palabraClave = $_GET['filtroBusqueda'];
+        }
+
+        // Obtener todas las preguntas, paginadas y con filtros.
+        // Se podrán combinar filtro_tema y filtro_busqueda a la vez.
+        list($preguntas, $currentPage, $totalPages) = $this->model->getPreguntasPaginated($tema, $palabraClave, $page);
 
         $respuestaController = new RespuestaController();
         $preguntasConRespuestas = [];
