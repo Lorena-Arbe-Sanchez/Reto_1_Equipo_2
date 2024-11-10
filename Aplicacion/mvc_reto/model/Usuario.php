@@ -59,6 +59,16 @@ class Usuario {
         }
     }
 
+    public function obtenerEmailByUsuario($usuario){
+        $sql = "SELECT email FROM ". $this->tabla ." WHERE usuario = ?";
+        $stmt = $this->connection->prepare($sql);
+        $stmt -> execute([$usuario]);
+
+        $email = $stmt->fetch();
+        // Para devolver un string hay que poner "$email['email']", porque si no devuelve un Array.
+        return $email['email'] ?: false;
+    }
+
     public function actualizarContrasena($usuario, $contrasenaNueva){
         $sql = "UPDATE ". $this->tabla ." SET contrasena = ? WHERE usuario = ?";
         $stmt = $this->connection->prepare($sql);

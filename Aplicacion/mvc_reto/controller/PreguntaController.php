@@ -60,7 +60,7 @@ class PreguntaController {
         return [$preguntasConRespuestas, $currentPage, $totalPages];
     }
 
-    // Obtener los datos de las preguntas y respuestas del usuario logueado y mostrarlos en su ventana.
+    // Obtener los datos de las preguntas y respuestas del usuario logeado y mostrarlos en su ventana.
     public function misPreguntas(){
         $this->view = "misPreguntas";
     

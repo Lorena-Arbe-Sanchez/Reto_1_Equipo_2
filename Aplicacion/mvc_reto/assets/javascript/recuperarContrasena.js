@@ -56,8 +56,6 @@ function recuperarContrasena(event){
                 document.getElementById("contrasena2").focus();
             }
             else{
-                // TODO : Habría que comprobar en la BD q el user existe y luego hacer update... MIRAR JS
-
                 formulario.submit();
             }
         }

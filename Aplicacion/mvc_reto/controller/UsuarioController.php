@@ -125,6 +125,8 @@ class UsuarioController {
 
     }
 
+    /* Acciones relacionadas con la ventana de "Recuperar contraseña". */
+
     public function recuperar(){
         $this->view="recuperarContrasena";
     }
@@ -139,61 +141,113 @@ class UsuarioController {
         // Obtener nombre del usuario pasado por POST en el formulario.
         $usuario = $_POST['usuario'];
 
-        // Generar un código de 4 dígitos aleatorio (para verificación).
-        $codigoVerificacion = rand(1000, 9999);
-
-        error_log($codigoVerificacion); // TODO : Luego quitarlo.
-
-        // Guardar el código en la sesión.
-        $_SESSION['codigo_verificacion'] = $codigoVerificacion;
-
-        // Obtener el correo electrónico del usuario de la base de datos.
-        $emailUsuario = $this->obtenerCorreoUsuario($usuario);
-
-        // Enviar el correo.
-        $subject = "Código de verificación para cambio de contraseña";
-        $message = "Tu código de verificación para poder cambiar la contraseña es: $codigoVerificacion";
-        $headers = "From: no-reply@aergibide.com\r\n";
-
-        if (mail($emailUsuario, $subject, $message, $headers)){
-            // Redirigir a la página para ingresar el código.
-            header("Location: index.php?controller=usuario&action=recuperar");
-        }
-        else{
-            error_log("Hubo un problema al enviar el correo.");
-        }
-
-
-        /*
-        $contrasenaNueva = $_POST['contrasena1'];
-
-        // Pasarle los valores de las casillas necesarias como parámetros.
+        // Comprobar que la cuenta con ese nombre de usuario existe.
         $result = $this->model->getUsuarioByUsuario($usuario);
 
+        // Si el usuario ingresado existe, se procederá.
         if ($result){
 
-            // Usuario y contraseña correctos. Cambio de contraseña exitoso y redirigir al foro.
-            $cambioExitoso = $this->model->actualizarContrasena($usuario, $contrasenaNueva);
+            // Generar un código de 4 dígitos aleatorio (para verificación).
+            $codigoVerificacion = rand(1000, 9999);
 
-            if ($cambioExitoso){
-                header("Location: index.php?controller=usuario&action=login");
-                exit(); // Asegurar que no se ejecute más código después de la redirección.
+            error_log($codigoVerificacion); // TODO : Luego quitarlo.
+
+            // Guardar el código en la sesión.
+            $_SESSION['codigo_verificacion'] = $codigoVerificacion;
+
+            // Obtener el correo electrónico del usuario de la base de datos.
+            $emailUsuario = $this->obtenerCorreoUsuario($usuario);
+
+            /* TODO : Corregir esta parte (no se envía el correo; se guarda en "C:\laragon\bin\sendmail\output"). */
+
+            // Enviar el correo.
+            $subject = "Código de verificación para cambio de contraseña";
+            $message = "Tu código de verificación para poder cambiar la contraseña es: $codigoVerificacion\nSi no has sido tú quien ha solicitado el cambio, ignora este mensaje o ponte en contacto con el equipo de administración de cuentas de la empresa.";
+            $headers = "From: no-reply@aergibide.com\r\n";
+            $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+
+            if (mail($emailUsuario, $subject, $message, $headers)){
+
+                // Mantener los datos de formulario.
+                $_SESSION['usuario_recuperacion'] = $usuario;
+                $_SESSION['contrasena1_recuperacion'] = $_POST['contrasena1'];
+                $_SESSION['contrasena2_recuperacion'] = $_POST['contrasena2'];
+
+                // Redirigir a la página para ingresar el código.
+                header("Location: index.php?controller=usuario&action=recuperar&codigo=1");
             }
             else{
-                echo("Error a la hora de recuperar contraseña");
+                error_log("Hubo un problema al enviar el correo.");
             }
+
         }
         else{
             // Usuario no encontrado. Enviar un mensaje de error.
             header("Location: index.php?controller=usuario&action=recuperar&error=1");
             exit();
         }
-        */
     }
 
-    // TODO : Implementar
+    // Función para obtener el email del usuario especificado y poder enviarle un correo con el código de verificación.
     public function obtenerCorreoUsuario($usuario){
-        return $this->model->obtenerCorreoUsuario($usuario);
+        $email = $this->model->obtenerEmailByUsuario($usuario);
+        if (!$email){
+            echo "No se ha podido obtener el email del usuario especificado.";
+            exit();
+        }
+        else
+            return $email;
+    }
+
+    // Verificar si el código tecleado en la página de 'Recuperar contraseña' coincide con el generado anteriormente.
+    public function verificar(){
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST"){
+
+            $codigoIngresado = $_POST['codigo'];
+
+            // Compara el código ingresado con el código almacenado en la sesión.
+            if (isset($_SESSION['codigo_verificacion']) && $codigoIngresado == $_SESSION['codigo_verificacion']){
+                // Código correcto, permite el cambio de contraseña.
+                error_log("El código es correcto. Proceder con el cambio de contraseña.");
+
+                // Destruir la sesión para evitar que el código sea reutilizado.
+                unset($_SESSION['codigo_verificacion']);
+
+                $this->cambiarContrasena();
+
+            }
+            else{
+                // TODO : Poner como texto en ventana.
+                error_log("El código ingresado es incorrecto. Inténtalo de nuevo.");
+                // Hacer que no se cambie de ventana (y los datos seguirán introducidos gracias al los '$_SESSION').
+                header("Location: index.php?controller=usuario&action=recuperar&codigo=1");
+            }
+        }
+    }
+
+    public function cambiarContrasena(){
+        $usuario = $_SESSION['usuario_recuperacion'];
+        $contrasenaNueva = $_SESSION['contrasena1_recuperacion'];
+
+        $cambioExitoso = $this->model->actualizarContrasena($usuario, $contrasenaNueva);
+
+        // Cambio de contraseña exitoso y redirigir al foro.
+        if ($cambioExitoso){
+
+            error_log("Actualización correcta.");
+
+            // Eliminar la sesión con los datos previamente introducidos.
+            unset($_SESSION['usuario_recuperacion']);
+            unset($_SESSION['contrasena1_recuperacion']);
+            unset($_SESSION['contrasena2_recuperacion']);
+
+            header("Location: index.php?controller=usuario&action=login");
+            exit(); // Asegurar que no se ejecute más código después de la redirección.
+        }
+        else{
+            error_log("Error a la hora de recuperar contraseña");
+        }
     }
 
     // Función para crear un usuario nuevo.

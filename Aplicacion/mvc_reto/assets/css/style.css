@@ -825,10 +825,15 @@ nav[aria-label="Paginación de preguntas"] ul{
     animation: fadeIn 0.5s ease-out;
 }
 
-#formLogin .mensajeError{
+#formLogin .mensajeError, #formRecuperarContra .mensajeError{
     color: var(--error-color);
     font-size: 0.8em;
     display: block;
+}
+
+.pag_recuperar #codigo{
+    text-align: center;
+    font-size: 18px;
 }
 
 
