@@ -29,13 +29,18 @@ class PreguntaController {
         // Si no hay filtrado por tema, el tema permanecerá vacío.
 
         // Comprobar si hay un filtro de búsqueda por palabras clave.
-        if (!empty($_GET['filtroBusqueda'])) {
+        if (!empty($_GET['filtroBusqueda'])){
             $palabraClave = $_GET['filtroBusqueda'];
+        }
+
+        // Comprobar qué tipo de orden de fecha está seleccionado en el filtro.
+        if (!empty($_GET['filtroFecha'])){
+            $fechaOrden = $_GET['filtroFecha'];
         }
 
         // Obtener todas las preguntas, paginadas y con filtros.
         // Se podrán combinar filtro_tema y filtro_busqueda a la vez.
-        list($preguntas, $currentPage, $totalPages) = $this->model->getPreguntasPaginated($tema, $palabraClave, $page);
+        list($preguntas, $currentPage, $totalPages) = $this->model->getPreguntasPaginated($tema, $palabraClave, $fechaOrden, $page);
 
         $respuestaController = new RespuestaController();
         $preguntasConRespuestas = [];
