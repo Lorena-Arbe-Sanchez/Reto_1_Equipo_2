@@ -8,4 +8,9 @@ document.addEventListener("DOMContentLoaded", function(){
 
         document.documentElement.style.setProperty('--altura-contenido', nuevaAlturaContenido + 'px');
     }
+    else{
+        let nuevaAlturaContenido = 450;
+
+        document.documentElement.style.setProperty('--altura-contenido', nuevaAlturaContenido + 'px');
+    }
 });

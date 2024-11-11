@@ -13,7 +13,7 @@ require_once __DIR__ . "/../layout/header.php";
     </div>
 
     <?php
-    if (isset($dataToView["data"]) && is_array($dataToView["data"])) {
+    if (isset($dataToView["data"]) && is_array($dataToView["data"]) && count($dataToView["data"])>0) {
         ?>
         <table class="tabla_respuestas">
             <thead>
