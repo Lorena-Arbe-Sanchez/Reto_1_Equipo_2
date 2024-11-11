@@ -158,7 +158,9 @@ $filtroBusqueda = isset($_GET['filtroBusqueda']) ? $_GET['filtroBusqueda'] : '';
                             </div>
                             <div class="botonesGusta">
                                 <div class="bFavorito">
-                                    <a href="index.php?controller=respuesta&action=modificarLikes&id_pregunta=<?php echo $pregunta["id"]; ?>">Añadir a favoritos</a>
+                                    <form action="index.php?controller=favorito&action=save&id_respuesta=<?php echo $respuesta["id"]; ?>" method="POST">
+                                        <button type="submit">Añadir a favoritos</button>
+                                    </form>
                                 </div>
                             </div>
                             <?php

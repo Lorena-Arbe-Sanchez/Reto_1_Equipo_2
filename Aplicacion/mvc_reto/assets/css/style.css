@@ -107,13 +107,13 @@ footer{
 
 /* MISMOS ESTILOS EN ELEMENTOS DE PÁGINAS DIFERENTES (Y PROPIEDADES RELACIONADAS CON LOS CONTENIDOS) */
 
-.pag_foro, .pag_frecuentes, .pag_crearPregunta, .pag_gestionarCuenta, .pag_perfil, .pag_misPreguntas, .pag_crearRespuesta{
+.pag_foro, .pag_frecuentes, .pag_crearPregunta, .pag_gestionarCuenta, .pag_perfil, .pag_misPreguntas, .pag_crearRespuesta, .pag_anadirFavorito{
     background: linear-gradient(to bottom, #BCCAD6, white);
     min-height: 100vh; /* Al menos el 100% de la ventana. */
     background-attachment: fixed; /* Mantiener el degradado fijo mientras se hace scroll. */
 }
 
-.pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_crearRespuesta .contenido, .pag_foro .contenido, .pag_frecuentes .contenido, .pag_misPreguntas .contenido{
+.pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_crearRespuesta .contenido, .pag_foro .contenido, .pag_frecuentes .contenido, .pag_misPreguntas .contenido, .pag_anadirFavorito .contenido{
     position: relative;
     flex-direction: column;
     text-align: center;
@@ -125,11 +125,11 @@ footer{
     margin-top: 1em;
 }
 
-.pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_foro .contenido, .pag_frecuentes .contenido, .pag_crearRespuesta .contenido{
+.pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_foro .contenido, .pag_frecuentes .contenido, .pag_crearRespuesta .contenido, .pag_anadirFavorito .contenido{
     background-color: #8d9db67e;
 }
 
-.pag_crearPregunta, .pag_perfil, .pag_gestionarCuenta{
+.pag_crearPregunta, .pag_perfil, .pag_gestionarCuenta, .pag_anadirFavorito{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -140,6 +140,10 @@ footer{
     padding: 2em;
     margin-top: 17em;
     border-radius: 10px;
+}
+
+.pag_anadirFavorito .contenido{
+    margin-top: 470px;
 }
 
 .contenido{
