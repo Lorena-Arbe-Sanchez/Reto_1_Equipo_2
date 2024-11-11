@@ -361,7 +361,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     flex-grow: 1;
 }
 
-.pag_gestionarCuenta #bCrear, .bResponder, .bFavorito{
+.pag_gestionarCuenta #bCrear, .bResponder{
     display: inline-block;
     padding: 0.75em 1.5em;
     margin-top: 2em;
@@ -482,14 +482,14 @@ nav[aria-label="Paginación de preguntas"] ul{
 }
 */
 
-.pag_foro .pregunta .respuestas .botonesGusta{
+.pag_foro .pregunta .respuestas{
     display: flex;
     justify-content: flex-start;
     margin: 0;
     margin-bottom: 1em;
 }
 
-.pag_foro .pregunta .respuestas .botonesGusta .bFavorito{
+.pag_foro .pregunta .respuestas{
     width: auto;
     margin: 0;
 }
@@ -519,7 +519,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     z-index: 1;
 }
 
-.bResponder a, .bFavorito a{
+.bResponder a{
     text-decoration: none;
 }
 
@@ -547,10 +547,6 @@ nav[aria-label="Paginación de preguntas"] ul{
     background-color: #e0e0e0;
     border: 1px solid #ccc;
     border-radius: 8px;
-}
-
-.botonesGusta{
-    gap: 4em;
 }
 
 /* Para la ventana de "crearPregunta". */
@@ -936,11 +932,14 @@ nav[aria-label="Paginación de preguntas"] ul{
     top: 95px; /* Debajo del botón de perfil. */
     right: 0;
     background-color: #fff;
-    border: .2em solid gainsboro;
+    border: .1em solid gainsboro;
     box-shadow: 0 7px 30px #667292;
     border-radius: .8em;
     z-index: 3;
     /* TODO : Poner que tanga un mínimo de 5em de width y que si se agranda la ventana el menú tambn. */
+    min-width: 10em; /* Ancho mínimo de 10em .*/
+    width: auto; /* Ajuste automático de ancho. */
+    max-width: 100%; /* Máximo ancho permitido al tamaño de la ventana. */
 }
 
 .menuDesplegable ul{
@@ -1119,6 +1118,14 @@ nav[aria-label="Paginación de preguntas"] ul{
 
 .pag_foro .respuesta{
     background-color: var(--answer-color);
+}
+
+.pag_foro .d_bFavorito{
+    /* TODO : Posicionar. */
+}
+
+.pag_foro .bFavorito{
+    cursor: pointer;
 }
 
 
