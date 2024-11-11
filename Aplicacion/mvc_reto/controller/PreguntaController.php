@@ -19,7 +19,8 @@ class PreguntaController {
         $this->view = 'foro';
         $page = isset($_GET['page']) ? $_GET['page'] : 1;
         $tema = null;
-        $palabraClave  = null;
+        $palabraClave = null;
+        $fechaOrden = null;
 
         // Comprobar si se ha seleccionado un tema en el filtro.
         if (!empty($_GET['filtroTema'])){
