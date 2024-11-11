@@ -38,58 +38,78 @@ $filtroBusqueda = isset($_GET['filtroBusqueda']) ? $_GET['filtroBusqueda'] : '';
 
 <div class="contenido">
 
-    <!-- Contenedor que dispone de un filtro de búsqueda por tema y otro por palabras clave. -->
+    <!--
+    Contenedor que dispone de un filtro de búsqueda por tema y otro por palabras clave.
+    Para poder combinar los 2 filtros a la vez, habrá que especificar primero uno (clicando
+    el botón correspondiente) y luego especificar el otro.
+    Se puede elegir primero el tema y luego especificar el texto, o al revés.
+     -->
     <div class="apartadoFiltrar">
 
         <!-- Filtrar preguntas por tema. -->
 
-        <label for="filtroTema">Filtrar por tema:</label>
+        <div class="filtrarPorTema">
 
-        <!-- El formulario usa el method GET para pasar el filtro como parámetro en la URL. -->
-        <form action="index.php" method="get">
+            <label for="filtroTema">Filtrar por tema:</label>
 
-            <!-- Asegurar que el controlador y acción sean enviados correctamente. -->
-            <input type="hidden" name="controller" value="pregunta">
-            <input type="hidden" name="action" value="list_paginated">
+            <!-- El formulario usa el method GET para pasar el filtro como parámetro en la URL. -->
+            <form action="index.php" method="get">
 
-            <select name="filtroTema" id="filtroTema" required>
-                <option value="todas" <?= $filtroTema === 'todas' ? 'selected' : '' ?> style="font-style: oblique">Todas las opciones</option>
-                <?php
-                // Generar las opciones del select dinámicamente.
-                foreach ($temas as $valor => $nombre){
-                    // Si el valor coincide con el filtro seleccionado, marcarlo como seleccionado.
-                    $selected = $filtroTema === $valor ? 'selected' : '';
-                    echo "<option value=\"$valor\" $selected>$nombre</option>";
-                }
-                ?>
-            </select>
+                <!-- Asegurar que el controlador y acción sean enviados correctamente. -->
+                <input type="hidden" name="controller" value="pregunta">
+                <input type="hidden" name="action" value="list_paginated">
 
-            <input type="submit" id="bFiltrar" class="bFiltrar" value="Filtrar">
+                <!-- Campo oculto para mantener el valor del input (texto especificado) cuando se combina con el tema seleccionado. -->
+                <input type="hidden" name="filtroBusqueda" value="<?= $filtroBusqueda ?>">
 
-        </form>
+                <select name="filtroTema" id="filtroTema" required>
+                    <option value="todas" <?= $filtroTema === 'todas' ? 'selected' : '' ?> style="font-style: oblique">Todas las opciones</option>
+                    <?php
+                    // Generar las opciones del select dinámicamente.
+                    foreach ($temas as $valor => $nombre){
+                        // Si el valor coincide con el filtro seleccionado, marcarlo como seleccionado.
+                        $selected = $filtroTema === $valor ? 'selected' : '';
+                        echo "<option value=\"$valor\" $selected>$nombre</option>";
+                    }
+                    ?>
+                </select>
+
+                <input type="submit" id="bFiltrar" class="bFiltrar" value="Filtrar">
+
+            </form>
+
+        </div>
 
         <!-- Filtrar preguntas (buscar en títulos y descripciones) por palabras clave. -->
 
-        <label for="filtroBusqueda">Buscar texto:</label>
+        <div class="filtrarPorTexto">
 
-        <form action="index.php" method="get">
+            <label for="filtroBusqueda">Buscar texto:</label>
 
-            <input type="hidden" name="controller" value="pregunta">
-            <input type="hidden" name="action" value="list_paginated">
+            <form action="index.php" method="get">
 
-            <!--
-            $filtroBusqueda ?? ''
-            Es lo mismo que:
-            isset($filtroBusqueda) ? $filtroBusqueda : ''
-            -->
-            <input type="text" id="filtroBusqueda" name="filtroBusqueda" placeholder="Escriba aquí su texto" value="<?= $filtroBusqueda ?? '' ?>">
+                <input type="hidden" name="controller" value="pregunta">
+                <input type="hidden" name="action" value="list_paginated">
 
-            <input type="submit" id="bFiltrar" class="bFiltrar" value="Buscar">
+                <!-- Campo oculto para mantener el valor del combobox (tema seleccionado) cuando se combina con la búsqueda de texto. -->
+                <input type="hidden" name="filtroTema" value="<?= $filtroTema ?>">
 
-        </form>
+                <!--
+                $filtroBusqueda ?? ''
+                Es lo mismo que:
+                isset($filtroBusqueda) ? $filtroBusqueda : ''
+                -->
+                <input type="text" id="filtroBusqueda" name="filtroBusqueda" placeholder="Escriba aquí su texto" value="<?= $filtroBusqueda ?? '' ?>">
+
+                <input type="submit" id="bFiltrar" class="bFiltrar" value="Buscar">
+
+            </form>
+
+        </div>
 
     </div>
 
+    <!-- TODO : Ya que esto está duplicado (frecuentes) hayq eu reutilizarlo. -->
     <?php
     if(!empty($dataToView["data"][0]) && count($dataToView["data"])>0){
 
