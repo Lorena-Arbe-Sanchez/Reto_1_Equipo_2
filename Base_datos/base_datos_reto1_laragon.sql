@@ -19,6 +19,59 @@
 CREATE DATABASE IF NOT EXISTS `grupo2_2425` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `grupo2_2425`;
 
+-- Volcando estructura para tabla grupo2_2425.usuarios
+CREATE TABLE IF NOT EXISTS `usuarios` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `administrador` tinyint(1) NOT NULL,
+    `dni` varchar(9) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+    `nombre` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+    `apellido1` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+    `apellido2` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+    `email` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+    `telefono` varchar(9) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+    `usuario` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+    `contrasena` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+    `imagen` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `dni` (`dni`),
+    UNIQUE KEY `usuario` (`usuario`)
+    ) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Volcando datos para la tabla grupo2_2425.usuarios: ~30 rows (aproximadamente)
+INSERT INTO `usuarios` (`id`, `administrador`, `dni`, `nombre`, `apellido1`, `apellido2`, `email`, `telefono`,
+                        `usuario`, `contrasena`, `imagen`)
+VALUES
+    (1, 1, '12345678Z', 'Ana', 'Pérez', 'García', 'ana.perez@aergibide.com', '600123456', 'aperez', 'Admin123', './uploads/672c7a2cc8383_6729f9de2cca2_OIP.jpg'),
+    (2, 1, '12345679N', 'Carlos', 'Lopez', 'Martínez', 'carlos.lopez@aergibide.com', NULL, 'clopez', 'Pass1234', NULL),
+    (3, 1, '12345680M', 'Beatriz', 'Ruiz', 'Fernández', 'beatriz.ruiz@aergibide.com', '600345678', 'bruiz', 'Secure45', NULL),
+    (4, 1, '12345681L', 'David', 'Sánchez', 'Hernández', 'david.sanchez@aergibide.com', NULL, 'dsanchez', 'Key12345', NULL),
+    (5, 1, '12345682K', 'Elena', 'Gómez', 'Jiménez', 'elena.gomez@aergibide.com', '600567890', 'egomez', 'PassW0rd', NULL),
+    (6, 0, '98765432T', 'Juan', 'Alvarez', 'Domínguez', 'juan.alvarez@aergibide.com', '700123456', 'jalvarez', 'Admin007', NULL),
+    (7, 0, '98765433R', 'Lucía', 'Castro', 'Soto', 'lucia.castro@aergibide.com', NULL, 'lcastro', 'User5678', NULL),
+    (8, 0, '98765434W', 'Mario', 'Hernández', 'Ortiz', 'mario.hernandez@aergibide.com', '700345678', 'mhernandez', 'Secret99', NULL),
+    (9, 0, '98765435A', 'Sara', 'Morales', 'Pérez', 'sara.morales@aergibide.com', NULL, 'smorales', 'Login432', NULL),
+    (10, 0, '98765436G', 'Pedro', 'Vega', 'Rojas', 'pedro.vega@aergibide.com', '700567890', 'pvega', 'Token678', NULL),
+    (11, 0, '98765437F', 'Raúl', 'Martínez', 'Cruz', 'raul.martinez@aergibide.com', '701123456', 'rmartinez', 'Nexus456', NULL),
+    (12, 0, '98765438D', 'Sonia', 'Ramos', 'López', 'sonia.ramos@aergibide.com', NULL, 'sramos', 'Base7890', NULL),
+    (13, 0, '98765439B', 'Manuel', 'Gutiérrez', 'Pascual', 'manuel.gutierrez@aergibide.com', '701345678', 'mgutierrez', 'Node1234', NULL),
+    (14, 0, '98765440P', 'Isabel', 'Torres', 'Cabrera', 'isabel.torres@aergibide.com', NULL, 'itorres', 'AdminX123', NULL),
+    (15, 0, '98765441Q', 'Rafael', 'Flores', 'Ramírez', 'rafael.flores@aergibide.com', '701567890', 'rflores', 'CodeX900', NULL),
+    (16, 0, '98765442L', 'Pilar', 'Muñoz', 'Gómez', 'pilar.munoz@aergibide.com', '702123456', 'pmunoz', 'Value123', NULL),
+    (17, 0, '98765443Z', 'Adrián', 'Cano', 'Ruiz', 'adrian.cano@aergibide.com', '702234567', 'acano', 'FlexPass1', NULL),
+    (18, 0, '98765444X', 'Marta', 'Serrano', 'Núñez', 'marta.serrano@aergibide.com', NULL, 'mserrano', 'Key4321P', NULL),
+    (19, 0, '98765445S', 'Luis', 'Navarro', 'Molina', 'luis.navarro@aergibide.com', '702456789', 'lnavarro', 'Sky45678', NULL),
+    (20, 0, '98765446J', 'Teresa', 'Romero', 'Domínguez', 'teresa.romero@aergibide.com', '702567890', 'tromero', 'Gate9876', NULL),
+    (21, 0, '98765447H', 'Álvaro', 'Rojas', 'López', 'alvaro.rojas@aergibide.com', NULL, 'arojas', 'Port1234', NULL),
+    (22, 0, '98765448V', 'Carolina', 'Martín', 'Vega', 'carolina.martin@aergibide.com', '703234567', 'cmartin', 'Key9876', NULL),
+    (23, 0, '98765449N', 'Francisco', 'Vázquez', 'Ortega', 'francisco.vazquez@aergibide.com', '703345678', 'fvazquez', 'Safe1234', NULL),
+    (24, 0, '98765450T', 'Carmen', 'Benítez', 'Mendoza', 'carmen.benitez@aergibide.com', NULL, 'cbenitez', 'Start890', NULL),
+    (25, 0, '98765451C', 'Antonio', 'Díaz', 'López', 'antonio.diaz@aergibide.com', '703567890', 'adiaz', 'Top56789', NULL),
+    (26, 0, '98765452M', 'Paula', 'Santos', 'Fernández', 'paula.santos@aergibide.com', '704123456', 'psantos', 'Pilot123', NULL),
+    (27, 0, '98765453K', 'Sergio', 'Pérez', 'Muñoz', 'sergio.perez@aergibide.com', NULL, 'sperez', 'Line3456', NULL),
+    (28, 0, '98765454L', 'Lorena', 'Luna', 'Rojas', 'lorena.luna@aergibide.com', '704345678', 'lluna', 'DataPass1', NULL),
+    (29, 0, '98765455Y', 'Víctor', 'Méndez', 'Cabrera', 'victor.mendez@aergibide.com', NULL, 'vmendez', 'EasyPass8', NULL),
+    (30, 0, '98765456R', 'Eva', 'Naranjo', 'García', 'eva.naranjo@aergibide.com', '704567890', 'enaranjo', 'Prime567', NULL);
+
 -- Volcando estructura para tabla grupo2_2425.preguntas
 CREATE TABLE IF NOT EXISTS `preguntas` (
     `id` int NOT NULL AUTO_INCREMENT,
@@ -98,58 +151,19 @@ VALUES
     (15, 'Para simulación de vuelo, hemos utilizado X-Plane y FlightGear debido a su precisión en la simulación de diferentes condiciones de vuelo y por ser altamente personalizables.', NULL, 12, 2, 8, 20, '2024-04-11'),
     (16, 'Te recomendaría también considerar simuladores como Simulink, que permiten la integración con modelos de control de vuelo en tiempo real, lo cual es esencial para pruebas precisas.', NULL, 9, 0, 8, 21, '2024-04-12');
 
--- Volcando estructura para tabla grupo2_2425.usuarios
-CREATE TABLE IF NOT EXISTS `usuarios` (
-    `id` int NOT NULL AUTO_INCREMENT,
-    `administrador` tinyint(1) NOT NULL,
-    `dni` varchar(9) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-    `nombre` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-    `apellido1` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-    `apellido2` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-    `email` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-    `telefono` varchar(9) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-    `usuario` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-    `contrasena` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-    `imagen` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-    PRIMARY KEY (`id`),
-    UNIQUE KEY `dni` (`dni`),
-    UNIQUE KEY `usuario` (`usuario`)
-    ) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+-- Volcando estructura para tabla grupo2_2425.favoritos
+CREATE TABLE IF NOT EXISTS `favoritos` (
+    `id_favorito` int NOT NULL AUTO_INCREMENT,
+    `id_usuario` int NOT NULL,
+    `id_respuesta` int NOT NULL,
+    PRIMARY KEY (`id_favorito`),
+    KEY `FAV_ID_USU_FK` (`id_usuario`),
+    KEY `FAV_ID_RES_FK` (`id_respuesta`),
+    CONSTRAINT `favoritos_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`) ON UPDATE CASCADE,
+    CONSTRAINT `favoritos_ibfk_2` FOREIGN KEY (`id_respuesta`) REFERENCES `respuestas` (`id`) ON UPDATE CASCADE
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla grupo2_2425.usuarios: ~30 rows (aproximadamente)
-INSERT INTO `usuarios` (`id`, `administrador`, `dni`, `nombre`, `apellido1`, `apellido2`, `email`, `telefono`,
-                        `usuario`, `contrasena`, `imagen`)
-VALUES
-    (1, 1, '12345678Z', 'Ana', 'Pérez', 'García', 'ana.perez@aergibide.com', '600123456', 'aperez', 'Admin123', './uploads/672c7a2cc8383_6729f9de2cca2_OIP.jpg'),
-    (2, 1, '12345679N', 'Carlos', 'Lopez', 'Martínez', 'carlos.lopez@aergibide.com', NULL, 'clopez', 'Pass1234', NULL),
-    (3, 1, '12345680M', 'Beatriz', 'Ruiz', 'Fernández', 'beatriz.ruiz@aergibide.com', '600345678', 'bruiz', 'Secure45', NULL),
-    (4, 1, '12345681L', 'David', 'Sánchez', 'Hernández', 'david.sanchez@aergibide.com', NULL, 'dsanchez', 'Key12345', NULL),
-    (5, 1, '12345682K', 'Elena', 'Gómez', 'Jiménez', 'elena.gomez@aergibide.com', '600567890', 'egomez', 'PassW0rd', NULL),
-    (6, 0, '98765432T', 'Juan', 'Alvarez', 'Domínguez', 'juan.alvarez@aergibide.com', '700123456', 'jalvarez', 'Admin007', NULL),
-    (7, 0, '98765433R', 'Lucía', 'Castro', 'Soto', 'lucia.castro@aergibide.com', NULL, 'lcastro', 'User5678', NULL),
-    (8, 0, '98765434W', 'Mario', 'Hernández', 'Ortiz', 'mario.hernandez@aergibide.com', '700345678', 'mhernandez', 'Secret99', NULL),
-    (9, 0, '98765435A', 'Sara', 'Morales', 'Pérez', 'sara.morales@aergibide.com', NULL, 'smorales', 'Login432', NULL),
-    (10, 0, '98765436G', 'Pedro', 'Vega', 'Rojas', 'pedro.vega@aergibide.com', '700567890', 'pvega', 'Token678', NULL),
-    (11, 0, '98765437F', 'Raúl', 'Martínez', 'Cruz', 'raul.martinez@aergibide.com', '701123456', 'rmartinez', 'Nexus456', NULL),
-    (12, 0, '98765438D', 'Sonia', 'Ramos', 'López', 'sonia.ramos@aergibide.com', NULL, 'sramos', 'Base7890', NULL),
-    (13, 0, '98765439B', 'Manuel', 'Gutiérrez', 'Pascual', 'manuel.gutierrez@aergibide.com', '701345678', 'mgutierrez', 'Node1234', NULL),
-    (14, 0, '98765440P', 'Isabel', 'Torres', 'Cabrera', 'isabel.torres@aergibide.com', NULL, 'itorres', 'AdminX123', NULL),
-    (15, 0, '98765441Q', 'Rafael', 'Flores', 'Ramírez', 'rafael.flores@aergibide.com', '701567890', 'rflores', 'CodeX900', NULL),
-    (16, 0, '98765442L', 'Pilar', 'Muñoz', 'Gómez', 'pilar.munoz@aergibide.com', '702123456', 'pmunoz', 'Value123', NULL),
-    (17, 0, '98765443Z', 'Adrián', 'Cano', 'Ruiz', 'adrian.cano@aergibide.com', '702234567', 'acano', 'FlexPass1', NULL),
-    (18, 0, '98765444X', 'Marta', 'Serrano', 'Núñez', 'marta.serrano@aergibide.com', NULL, 'mserrano', 'Key4321P', NULL),
-    (19, 0, '98765445S', 'Luis', 'Navarro', 'Molina', 'luis.navarro@aergibide.com', '702456789', 'lnavarro', 'Sky45678', NULL),
-    (20, 0, '98765446J', 'Teresa', 'Romero', 'Domínguez', 'teresa.romero@aergibide.com', '702567890', 'tromero', 'Gate9876', NULL),
-    (21, 0, '98765447H', 'Álvaro', 'Rojas', 'López', 'alvaro.rojas@aergibide.com', NULL, 'arojas', 'Port1234', NULL),
-    (22, 0, '98765448V', 'Carolina', 'Martín', 'Vega', 'carolina.martin@aergibide.com', '703234567', 'cmartin', 'Key9876', NULL),
-    (23, 0, '98765449N', 'Francisco', 'Vázquez', 'Ortega', 'francisco.vazquez@aergibide.com', '703345678', 'fvazquez', 'Safe1234', NULL),
-    (24, 0, '98765450T', 'Carmen', 'Benítez', 'Mendoza', 'carmen.benitez@aergibide.com', NULL, 'cbenitez', 'Start890', NULL),
-    (25, 0, '98765451C', 'Antonio', 'Díaz', 'López', 'antonio.diaz@aergibide.com', '703567890', 'adiaz', 'Top56789', NULL),
-    (26, 0, '98765452M', 'Paula', 'Santos', 'Fernández', 'paula.santos@aergibide.com', '704123456', 'psantos', 'Pilot123', NULL),
-    (27, 0, '98765453K', 'Sergio', 'Pérez', 'Muñoz', 'sergio.perez@aergibide.com', NULL, 'sperez', 'Line3456', NULL),
-    (28, 0, '98765454L', 'Lorena', 'Luna', 'Rojas', 'lorena.luna@aergibide.com', '704345678', 'lluna', 'DataPass1', NULL),
-    (29, 0, '98765455Y', 'Víctor', 'Méndez', 'Cabrera', 'victor.mendez@aergibide.com', NULL, 'vmendez', 'EasyPass8', NULL),
-    (30, 0, '98765456R', 'Eva', 'Naranjo', 'García', 'eva.naranjo@aergibide.com', '704567890', 'enaranjo', 'Prime567', NULL);
+-- Volcando datos para la tabla grupo2_2425.favoritos: ~0 rows (aproximadamente)
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

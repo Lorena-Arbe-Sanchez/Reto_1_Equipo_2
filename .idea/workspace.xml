@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b6abb039-d7f5-4f73-8b47-492ba288a50f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/PreguntaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/controller/PreguntaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/model/Pregunta.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/model/Pregunta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/pregunta/foro.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aplicacion/mvc_reto/view/pregunta/foro.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base_datos/base_datos_reto1_laragon.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Base_datos/base_datos_reto1_laragon.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +38,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "develop",
+    "git-widget-placeholder": "feature/Lorena",
     "last_opened_file_path": "C:/laragon/www/workspace-dwes-Lorena-Arbe-Sanchez",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",

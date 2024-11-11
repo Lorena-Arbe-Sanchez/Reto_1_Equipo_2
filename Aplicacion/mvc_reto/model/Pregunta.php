@@ -73,13 +73,13 @@ class Pregunta {
         return $stml->rowCount();
     }
 
-    // Función para obtener todas las preguntas existentes, por fecha en orden descendente y con posibles filtros.
+    // Función para obtener todas las preguntas existentes, por defecto estará ordenada por fecha en orden descendente y con posibles filtros.
     /*
      * Es necesario pasar primero los parámetros sin valor predeterminado, ya que
      * en PHP "Los parámetros con valores predeterminados deben ir después de
      * los parámetros obligatorios que no tienen valor predeterminado".
     */
-    public function getPreguntasPaginated($tema, $palabraClave, $page=1){
+    public function getPreguntasPaginated($tema, $palabraClave, $fechaOrden, $page=1){
         // Número de elementos por página (ya definido en el "config.php").
         $limit = PAGINATION;
         $offset = ($page - 1) * $limit;
@@ -103,7 +103,18 @@ class Pregunta {
             $sql .= " AND (titulo LIKE :palabraClave OR descripcion LIKE :palabraClave)";
         }
 
-        $sql .= " ORDER BY fecha DESC LIMIT :limit OFFSET :offset";
+        /*
+         * Ordenar la consulta dependiendo de si está seleccionada la opción de ordenar
+         * por fecha en orden descendente (de más recientes a más antiguas), o no.
+         * Por defecto aparecerá por 'desc'.
+        */
+        if (!$fechaOrden && $fechaOrden == 'desc'){
+            $sql .= " ORDER BY fecha DESC LIMIT :limit OFFSET :offset";
+        }
+        else{
+            $sql .= " ORDER BY fecha ASC LIMIT :limit OFFSET :offset";
+        }
+
         $stmt = $this->connection->prepare($sql);
 
         // Enlace de parámetros condicionales.

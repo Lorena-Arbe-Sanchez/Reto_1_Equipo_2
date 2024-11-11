@@ -57,6 +57,12 @@ $filtroFecha = $_GET['filtroFecha'] ?? '';
 
         <!-- Filtrar preguntas por tema. -->
 
+        <!-- TODO
+        Los formularios para filtrar por tema, texto y fecha están casi duplicados.
+        Crear una función o incluso un archivo PHP que genere dinámicamente estos
+        formularios, pasando solo los parámetros relevantes.
+        -->
+
         <div class="filtrarPorTema">
 
             <label for="filtroTema">Filtrar por tema:</label>
