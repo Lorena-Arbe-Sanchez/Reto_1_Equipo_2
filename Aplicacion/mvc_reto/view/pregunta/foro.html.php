@@ -29,20 +29,29 @@ $temas = [
 ];
 
 // Obtener el filtro de tema si está presente en la URL.
+/*
+$filtroTema = $_GET['filtroTema'] ?? '';
+Es lo mismo que:
 $filtroTema = isset($_GET['filtroTema']) ? $_GET['filtroTema'] : '';
+*/
+$filtroTema = $_GET['filtroTema'] ?? '';
 
-// Obtener el filtro de búsqueda por palabras clave si está presente en la URL.
-$filtroBusqueda = isset($_GET['filtroBusqueda']) ? $_GET['filtroBusqueda'] : '';
+// Obtener el filtro de búsqueda por palabras clave.
+$filtroBusqueda = $_GET['filtroBusqueda'] ?? '';
+
+// Obtener el filtro de búsqueda por fecha.
+$filtroFecha = $_GET['filtroFecha'] ?? '';
 
 ?>
 
 <div class="contenido">
 
     <!--
-    Contenedor que dispone de un filtro de búsqueda por tema y otro por palabras clave.
-    Para poder combinar los 2 filtros a la vez, habrá que especificar primero uno (clicando
-    el botón correspondiente) y luego especificar el otro.
-    Se puede elegir primero el tema y luego especificar el texto, o al revés.
+    Contenedor que dispone de un filtro de búsqueda por tema, otro por palabras clave y otro por fecha.
+    Para poder combinar varios filtros a la vez, habrá que especificar primero uno (clicando en el botón
+    correspondiente) y luego especificar los otros. Es decir, por cada filtro que se debe aplicar hay
+    que clicar en su correspondiente botón.
+    Se pueden elegir/especificar los filtros en cualquier orden deseado.
      -->
     <div class="apartadoFiltrar">
 
@@ -59,11 +68,15 @@ $filtroBusqueda = isset($_GET['filtroBusqueda']) ? $_GET['filtroBusqueda'] : '';
                 <input type="hidden" name="controller" value="pregunta">
                 <input type="hidden" name="action" value="list_paginated">
 
-                <!-- Campo oculto para mantener el valor del input (texto especificado) cuando se combina con el tema seleccionado. -->
-                <input type="hidden" name="filtroBusqueda" value="<?= $filtroBusqueda ?>">
+                <!--
+                Campos ocultos para mantener los valores de los filtros (input de texto y comboBox de fecha) cuando se combinan entre ellos.
+                El propósito de 'htmlspecialchars' es convertir ciertos caracteres especiales a entidades HTML, protegiendo así la salida del navegador.
+                -->
+                <input type="hidden" name="filtroBusqueda" value="<?= htmlspecialchars($filtroBusqueda) ?>">
+                <input type="hidden" name="filtroFecha" value="<?= htmlspecialchars($filtroFecha) ?>">
 
                 <select name="filtroTema" id="filtroTema" required>
-                    <option value="todas" <?= $filtroTema === 'todas' ? 'selected' : '' ?> style="font-style: oblique">Todas las opciones</option>
+                    <option value="todas" <?= htmlspecialchars($filtroTema) === 'todas' ? 'selected' : '' ?> style="font-style: oblique">Todas las opciones</option>
                     <?php
                     // Generar las opciones del select dinámicamente.
                     foreach ($temas as $valor => $nombre){
@@ -91,14 +104,10 @@ $filtroBusqueda = isset($_GET['filtroBusqueda']) ? $_GET['filtroBusqueda'] : '';
                 <input type="hidden" name="controller" value="pregunta">
                 <input type="hidden" name="action" value="list_paginated">
 
-                <!-- Campo oculto para mantener el valor del combobox (tema seleccionado) cuando se combina con la búsqueda de texto. -->
-                <input type="hidden" name="filtroTema" value="<?= $filtroTema ?>">
+                <!-- Campos ocultos para mantener los valores de los filtros (comboBox de tema y comboBox de fecha) cuando se combinan entre ellos. -->
+                <input type="hidden" name="filtroTema" value="<?= htmlspecialchars($filtroTema) ?>">
+                <input type="hidden" name="filtroFecha" value="<?= htmlspecialchars($filtroFecha) ?>">
 
-                <!--
-                $filtroBusqueda ?? ''
-                Es lo mismo que:
-                isset($filtroBusqueda) ? $filtroBusqueda : ''
-                -->
                 <input type="text" id="filtroBusqueda" name="filtroBusqueda" placeholder="Escriba aquí su texto" value="<?= $filtroBusqueda ?? '' ?>">
 
                 <input type="submit" id="bFiltrar" class="bFiltrar" value="Buscar">
@@ -107,9 +116,32 @@ $filtroBusqueda = isset($_GET['filtroBusqueda']) ? $_GET['filtroBusqueda'] : '';
 
         </div>
 
+        <!-- Filtrar preguntas por fecha (en orden descendente o ascendente). -->
+
+        <div class="filtrarPorFecha">
+
+            <label for="filtroFecha">Ordenar por fecha:</label>
+
+            <form action="index.php" method="get">
+
+                <!-- Campos ocultos para mantener los valores de los filtros (comboBox de tema e input de texto) cuando se combinan entre ellos. -->
+                <input type="hidden" name="filtroTema" value="<?= htmlspecialchars($filtroTema) ?>">
+                <input type="hidden" name="filtroBusqueda" value="<?= htmlspecialchars($filtroBusqueda) ?>">
+
+                <select name="filtroFecha" id="filtroFecha" required>
+                    <option value="desc" <?= htmlspecialchars($filtroFecha) === 'desc' ? 'selected' : '' ?> style="font-style: oblique">Más recientes primero</option>
+                    <option value="asc" <?= htmlspecialchars($filtroFecha) === 'asc' ? 'selected' : '' ?>>Más antiguos primero</option>
+                </select>
+
+                <input type="submit" id="bFiltrar" class="bFiltrar" value="Ordenar">
+
+            </form>
+
+        </div>
+
     </div>
 
-    <!-- TODO : Ya que esto está duplicado (frecuentes) hayq eu reutilizarlo. -->
+    <!-- TODO : Ya que esto está duplicado (frecuentes) hay q reutilizarlo. -->
     <?php
     if(!empty($dataToView["data"][0]) && count($dataToView["data"])>0){
 

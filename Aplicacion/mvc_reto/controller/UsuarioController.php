@@ -292,7 +292,7 @@ class UsuarioController {
         $idUsuario = $_POST['id'];
 
         $admin = $_POST['administrador'];
-        error_log("Controller Admin -> " . $admin);
+        error_log("Controller Admin -> " . $param['administrador']);
         // Buscar si existe otro usuario con el mismo nombre
         $usuarioExistente = $this->model->getUsuarioByUsuario($usuario);
 

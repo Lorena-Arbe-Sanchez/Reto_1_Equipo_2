@@ -139,17 +139,16 @@ class Usuario {
         }
     }
 
-    public function modificarUsuario($param){
-
-        $id = $dni = $nombre = $apellido1 = $apellido2 = $email = $telefono = $usuario = $contrasena = $administrador = "";
+    public function modificarUsuario($param) {
+        $id = $dni = $nombre = $apellido1 = $apellido2 = $email = $telefono = $usuario = $contrasena = "";
+        $administrador = 0; // Inicializa como 0 por defecto
 
         $exist = false;
 
-        if (isset($param["dni"]) && $param["dni"] != ''){
-
+        if (isset($param["dni"]) && $param["dni"] != '') {
             $actualUsuario = $this->getUsuarioByDNI($param["dni"]);
 
-            if (isset($actualUsuario["dni"])){
+            if (isset($actualUsuario["dni"])) {
                 $exist = true;
                 $id = $actualUsuario["id"];
                 $dni = $param["dni"];
@@ -171,12 +170,13 @@ class Usuario {
             if (isset($param["telefono"])) $telefono = $param["telefono"];
             if (isset($param["usuario"])) $usuario = $param["usuario"];
             if (isset($param["contrasena"])) $contrasena = $param["contrasena"];
-            if (isset($param["administrador"])){
-                error_log("Administrador -> " . $administrador);
-                $administrador = ($param["administrador"] === 1) ? 1 : 0;
+
+            // Asegúrate de que `administrador` sea 1 o 0
+            if (isset($param["administrador"])) {
+                $administrador = ($param["administrador"] == '1') ? 1 : 0;
             }
 
-            if ($exist){
+            if ($exist) {
                 $sql = "UPDATE " . $this->tabla . " SET dni=?, nombre=?, apellido1=?, apellido2=?, email=?, telefono=?, usuario=?, contrasena=?, administrador=? WHERE id=?";
                 $stmt = $this->connection->prepare($sql);
                 $res = $stmt->execute([$dni, $nombre, $apellido1, $apellido2, $email, $telefono, $usuario, $contrasena, $administrador, $id]);
@@ -184,6 +184,7 @@ class Usuario {
             return $id;
         }
     }
+
 
     public function borrarUsuario($dni){
         $sql = "DELETE FROM " . $this->tabla . " WHERE dni = ?";
