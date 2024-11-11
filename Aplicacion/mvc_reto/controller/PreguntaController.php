@@ -22,13 +22,13 @@ class PreguntaController {
         $palabraClave  = null;
 
         // Comprobar si se ha seleccionado un tema en el filtro.
-        if (isset($_GET['filtroTema']) && !empty($_GET['filtroTema'])){
+        if (!empty($_GET['filtroTema'])){
             $tema = $_GET['filtroTema'];
         }
         // Si no hay filtrado por tema, el tema permanecerá vacío.
 
         // Comprobar si hay un filtro de búsqueda por palabras clave.
-        if (isset($_GET['filtroBusqueda']) && !empty($_GET['filtroBusqueda'])) {
+        if (!empty($_GET['filtroBusqueda'])) {
             $palabraClave = $_GET['filtroBusqueda'];
         }
 

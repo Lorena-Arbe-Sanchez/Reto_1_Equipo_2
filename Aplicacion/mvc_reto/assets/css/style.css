@@ -1059,6 +1059,7 @@ nav[aria-label="Paginación de preguntas"] ul{
 .apartadoFiltrar label{
     font-size: 20px;
     width: auto;
+    margin-right: 1em;
 }
 
 .apartadoFiltrar form{
