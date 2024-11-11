@@ -103,6 +103,7 @@ class RespuestaController {
     }
 
     public function verFavoritas() {
+        $this->view = "verFavoritas";
         // Verificar si el usuario está logueado
         if (!isset($_SESSION['id'])) {
             // Si no está logueado, redirigir al login
@@ -120,7 +121,7 @@ class RespuestaController {
         $dataToView["data"] = $respuestasFavoritas;
     
         // Cargar la vista de respuestas favoritas
-        require_once __DIR__ . "/../view/favorito/verFavorito.html.php";
+        require_once __DIR__ . "/../view/respuesta/verFavoritas.html.php";
     }
 
     

@@ -14,6 +14,20 @@ class Favorito {
         $this->connection = $dbObj ->connection;
     }
 
+    public function getRespuestasFavoritas() {
+        // Suponiendo que quieres obtener las respuestas favoritas para el usuario logueado
+        $id_usuario = $_SESSION["id"];  // Obtener el ID del usuario logueado
+        $sql = "SELECT f.id, r.solucion, r.archivo, p.titulo AS pregunta_titulo
+                FROM " . $this->tabla . " f
+                JOIN respuestas r ON f.id_respuesta = r.id
+                JOIN preguntas p ON r.id_pregunta = p.id
+                WHERE f.id_usuario = ?";
+        
+        $stm = $this->connection->prepare($sql);
+        $stm->execute([$id_usuario]);
+        return $stm->fetchAll();  // Devuelve todas las respuestas favoritas del usuario
+    }
+
     public function anadir(){
         $this->page_title ='Añadir a favoritos';
         $this->view ='anadir';
@@ -37,6 +51,7 @@ class Favorito {
             return $id;
         }
     }
+    
 
     public function getFavoritoById($id){
         $sql = "SELECT * FROM ". $this->tabla ." WHERE id = ?";
@@ -52,7 +67,9 @@ class Favorito {
         return $stm->fetchColumn() > 0;
     }
 
-    public function getRespuestasFavoritas(){
-
+    public function deleteFavorito($id){
+        $sql = "DELETE FROM " . $this->tabla . " WHERE id = ?";
+        $stml = $this->connection->prepare($sql);
+        return $stml ->execute([$id]);
     }
 }

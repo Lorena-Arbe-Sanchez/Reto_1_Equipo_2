@@ -31,23 +31,26 @@ class FavoritoController {
         }
     }
 
-    public function misFavoritas(){
-        $this->view = "misFavoritas";
+    public function verFavoritas() {
+        $this->view = "verFavoritas";
     
-        // Obtener preguntas del usuario
+        // Obtener respuestas favoritas
         $respuestas = $this->model->getRespuestasFavoritas();
-        
-        // Instanciar el RespuestaController
-        $respuestaController = new RespuestaController();
-        
-        $preguntasConRespuestas = [];
-        
-        // Obtener respuestas para cada pregunta
-        foreach ($preguntas as $pregunta) {
-            $pregunta['respuestas'] = $respuestaController->view($pregunta['id']);
-            $preguntasConRespuestas[] = $pregunta;
-        }
-
-        return $preguntasConRespuestas ?: [];
+        return $respuestas ?: [];  // Retorna las respuestas favoritas o un array vacío si no hay
     }
+
+    public function borrar() {
+        // Asegúrate de que exista el parámetro `id` en la solicitud GET
+        if (isset($_GET['id'])) {
+            $id_favorito = $_GET['id'];
+            // Llama al método deleteRespuesta en el modelo para eliminar el favorito
+            $this->model->deleteFavorito($id_favorito);
+        }
+        // Redirige de vuelta a la lista de favoritos después de la eliminación
+        header("Location: index.php?controller=favorito&action=verFavoritas");
+        exit();
+    }
+    
+    
 }
+    
