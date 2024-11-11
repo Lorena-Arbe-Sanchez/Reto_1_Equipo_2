@@ -66,6 +66,9 @@
                 <li class="l_botonPerfil" <?php if ($botonBloqueado == "l_botonPerfil") echo 'id="botonBloqueado"'; ?>>
                     <a href="index.php?controller=usuario&action=perfil">Ver perfil</a>
                 </li>
+                <li class="l_botonFavoritas" <?php if ($botonBloqueado == "l_botonFavoritas") echo 'id="botonBloqueado"'; ?>>
+                    <a href="index.php?controller=respuesta&action=verFavoritas">Mis respuestas favoritas</a>
+                </li>
                 <!-- Solo para administradores la opción de gestionar cuentas. -->
                 <li id="opcionGestionarCuenta" class="l_botonCuentas"
                     <?php if ($botonBloqueado == "l_botonCuentas") echo 'id="botonBloqueado"'; ?>>

@@ -107,13 +107,13 @@ footer{
 
 /* MISMOS ESTILOS EN ELEMENTOS DE PÁGINAS DIFERENTES (Y PROPIEDADES RELACIONADAS CON LOS CONTENIDOS) */
 
-.pag_foro, .pag_frecuentes, .pag_crearPregunta, .pag_gestionarCuenta, .pag_perfil, .pag_misPreguntas, .pag_crearRespuesta, .pag_anadirFavorito{
+.pag_foro, .pag_frecuentes, .pag_crearPregunta, .pag_gestionarCuenta, .pag_perfil, .pag_misPreguntas, .pag_crearRespuesta, .pag_anadirFavorito, .pag_misFavoritas{
     background: linear-gradient(to bottom, #BCCAD6, white);
     min-height: 100vh; /* Al menos el 100% de la ventana. */
     background-attachment: fixed; /* Mantiener el degradado fijo mientras se hace scroll. */
 }
 
-.pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_crearRespuesta .contenido, .pag_foro .contenido, .pag_frecuentes .contenido, .pag_misPreguntas .contenido, .pag_anadirFavorito .contenido{
+.pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_crearRespuesta .contenido, .pag_foro .contenido, .pag_frecuentes .contenido, .pag_misPreguntas .contenido, .pag_anadirFavorito .contenido, .pag_misFavoritas .contenido{
     position: relative;
     flex-direction: column;
     text-align: center;
@@ -125,7 +125,7 @@ footer{
     margin-top: 1em;
 }
 
-.pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_foro .contenido, .pag_frecuentes .contenido, .pag_crearRespuesta .contenido, .pag_anadirFavorito .contenido{
+.pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_foro .contenido, .pag_frecuentes .contenido, .pag_crearRespuesta .contenido, .pag_anadirFavorito .contenido, .pag_misFavoritas .contenido{
     background-color: #8d9db67e;
 }
 
@@ -156,22 +156,22 @@ footer{
     width: auto;
 }
 
-.pag_misPreguntas, .pag_crearRespuesta{
+.pag_misPreguntas, .pag_crearRespuesta, .pag_misFavoritas{
     flex-direction: column;
 }
 
-.pag_misPreguntas .contenido, .pag_crearRespuesta .contenido{
+.pag_misPreguntas .contenido, .pag_crearRespuesta .contenido, .pag_misFavoritas .contenido{
     margin-top: 400px;
     width: 1200px;
     margin-bottom: 1em;
 }
 
-.pag_misPreguntas .contenido{
+.pag_misPreguntas .contenido, .pag_misFavoritas .contenido{
     margin-top: var(--altura-contenido, 0px); /* TODO : ¿Error? */
     width: 1300px;
 }
 
-.pag_misPreguntas thead{
+.pag_misPreguntas thead, .pag_misFavoritas thead{
     position: sticky;
     top: 116.59px;
 }

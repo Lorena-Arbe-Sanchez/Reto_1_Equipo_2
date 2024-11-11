@@ -101,6 +101,28 @@ class RespuestaController {
 
         $_GET["response"] = true;
     }
+
+    public function verFavoritas() {
+        // Verificar si el usuario está logueado
+        if (!isset($_SESSION['id'])) {
+            // Si no está logueado, redirigir al login
+            header("Location: index.php?controller=usuario&action=login");
+            exit();
+        }
+    
+        // Obtener el ID del usuario desde la sesión
+        $usuarioId = $_SESSION['id'];
+    
+        // Obtener las respuestas favoritas del usuario
+        $respuestasFavoritas = $this->model->getRespuestasFavoritas($usuarioId);
+    
+        // Pasar las respuestas favoritas a la vista
+        $dataToView["data"] = $respuestasFavoritas;
+    
+        // Cargar la vista de respuestas favoritas
+        require_once __DIR__ . "/../view/favorito/verFavorito.html.php";
+    }
+
     
     //Funcion cuando des al boton like
     public function modificarLikes(){

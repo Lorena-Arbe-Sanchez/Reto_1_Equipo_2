@@ -111,6 +111,22 @@ class Respuesta {
         return $stml ->execute([$id]);
     
     }
+
+    public function getRespuestasFavoritas($usuarioId) {
+        // Consulta SQL para obtener respuestas favoritas del usuario, incluyendo el título de la pregunta
+        $sql = "SELECT r.solucion, r.archivo, p.titulo AS pregunta_titulo, r.id, r.id_usuario
+                  FROM respuestas AS r
+                  JOIN preguntas AS p ON r.id_pregunta = p.id
+                  JOIN favoritos AS f ON f.id_respuesta = r.id
+                  WHERE f.id_usuario = :usuarioId"; // Filtramos por el id del usuario
+    
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindParam(":usuarioId", $usuarioId);
+        $stmt->execute();
+    
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
     
     public function modificarLikes($id){
 

@@ -30,4 +30,24 @@ class FavoritoController {
             $_GET["response"] = "exito";
         }
     }
+
+    public function misFavoritas(){
+        $this->view = "misFavoritas";
+    
+        // Obtener preguntas del usuario
+        $respuestas = $this->model->getRespuestasFavoritas();
+        
+        // Instanciar el RespuestaController
+        $respuestaController = new RespuestaController();
+        
+        $preguntasConRespuestas = [];
+        
+        // Obtener respuestas para cada pregunta
+        foreach ($preguntas as $pregunta) {
+            $pregunta['respuestas'] = $respuestaController->view($pregunta['id']);
+            $preguntasConRespuestas[] = $pregunta;
+        }
+
+        return $preguntasConRespuestas ?: [];
+    }
 }

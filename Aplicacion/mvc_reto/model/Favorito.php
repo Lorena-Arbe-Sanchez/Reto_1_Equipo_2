@@ -51,4 +51,8 @@ class Favorito {
         $stm->execute([$id_usuario, $id_respuesta]);
         return $stm->fetchColumn() > 0;
     }
+
+    public function getRespuestasFavoritas(){
+
+    }
 }
