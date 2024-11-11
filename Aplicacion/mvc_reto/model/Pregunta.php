@@ -108,7 +108,7 @@ class Pregunta {
          * por fecha en orden descendente (de más recientes a más antiguas), o no.
          * Por defecto aparecerá por 'desc'.
         */
-        if (!$fechaOrden && $fechaOrden == 'desc'){
+        if (!$fechaOrden || $fechaOrden == 'desc'){
             $sql .= " ORDER BY fecha DESC LIMIT :limit OFFSET :offset";
         }
         else{

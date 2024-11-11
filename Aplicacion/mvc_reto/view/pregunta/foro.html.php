@@ -53,15 +53,16 @@ $filtroFecha = $_GET['filtroFecha'] ?? '';
     que clicar en su correspondiente botón.
     Se pueden elegir/especificar los filtros en cualquier orden deseado.
      -->
-    <div class="apartadoFiltrar">
 
-        <!-- Filtrar preguntas por tema. -->
-
-        <!-- TODO
+    <!-- TODO
         Los formularios para filtrar por tema, texto y fecha están casi duplicados.
         Crear una función o incluso un archivo PHP que genere dinámicamente estos
         formularios, pasando solo los parámetros relevantes.
         -->
+
+    <div class="apartadoFiltrar">
+
+        <!-- Filtrar preguntas por tema. -->
 
         <div class="filtrarPorTema">
 
@@ -93,7 +94,7 @@ $filtroFecha = $_GET['filtroFecha'] ?? '';
                     ?>
                 </select>
 
-                <input type="submit" id="bFiltrar" class="bFiltrar" value="Filtrar">
+                <input type="submit" class="bFiltrar" value="Filtrar">
 
             </form>
 
@@ -116,7 +117,7 @@ $filtroFecha = $_GET['filtroFecha'] ?? '';
 
                 <input type="text" id="filtroBusqueda" name="filtroBusqueda" placeholder="Escriba aquí su texto" value="<?= $filtroBusqueda ?? '' ?>">
 
-                <input type="submit" id="bFiltrar" class="bFiltrar" value="Buscar">
+                <input type="submit" class="bFiltrar" value="Buscar">
 
             </form>
 
@@ -130,6 +131,9 @@ $filtroFecha = $_GET['filtroFecha'] ?? '';
 
             <form action="index.php" method="get">
 
+                <input type="hidden" name="controller" value="pregunta">
+                <input type="hidden" name="action" value="list_paginated">
+
                 <!-- Campos ocultos para mantener los valores de los filtros (comboBox de tema e input de texto) cuando se combinan entre ellos. -->
                 <input type="hidden" name="filtroTema" value="<?= htmlspecialchars($filtroTema) ?>">
                 <input type="hidden" name="filtroBusqueda" value="<?= htmlspecialchars($filtroBusqueda) ?>">
@@ -139,10 +143,20 @@ $filtroFecha = $_GET['filtroFecha'] ?? '';
                     <option value="asc" <?= htmlspecialchars($filtroFecha) === 'asc' ? 'selected' : '' ?>>Más antiguos primero</option>
                 </select>
 
-                <input type="submit" id="bFiltrar" class="bFiltrar" value="Ordenar">
+                <input type="submit" class="bFiltrar" value="Ordenar">
 
             </form>
 
+        </div>
+
+        <!-- Botón que limpia todos los filtros aplicados. Redireccionará al usuario a la página inicial del foro sin filtros. -->
+
+        <div class="resetearFiltros">
+            <form action="index.php" method="get">
+                <input type="hidden" name="controller" value="pregunta">
+                <input type="hidden" name="action" value="list_paginated">
+                <input type="submit" class="bResetearFiltros" value="Resetear Filtros">
+            </form>
         </div>
 
     </div>
@@ -171,7 +185,7 @@ $filtroFecha = $_GET['filtroFecha'] ?? '';
                             </td>
                             <td>
                                 <?php
-                                // TODO : Poner que muestre el nombe del usuario y no el id (select BD).
+                                // TODO : Poner que muestre el nombe del usuario y no el id (select BD). También si no obtiene el id (porque el usuario se ha podido borrar), sacará "Usuario anónimo".
                                 echo $pregunta["id_usuario"] ?? "Usuario inexistente";
                                 ?>
                             </td>

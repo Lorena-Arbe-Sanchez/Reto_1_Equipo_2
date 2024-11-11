@@ -1077,7 +1077,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     font-size: 17px;
 }
 
-.apartadoFiltrar .bFiltrar{
+.apartadoFiltrar .bFiltrar, .apartadoFiltrar .bResetearFiltros{
     margin: 0;
     padding: .7em;
     background-color: var(--primary-color);
@@ -1094,8 +1094,16 @@ nav[aria-label="Paginación de preguntas"] ul{
     background-color: var(--primary-dark);
 }
 
-.apartadoFiltrar .bFiltrar:active{
+.apartadoFiltrar .bFiltrar:active, .apartadoFiltrar .bResetearFiltros{
     transform: scale(0.98);
+}
+
+.apartadoFiltrar .bResetearFiltros{
+    background-color: var(--gradient-start);
+}
+
+.apartadoFiltrar .bResetearFiltros:hover{
+    background-color: var(--primary-dark);
 }
 
 .pag_foro .pregunta{

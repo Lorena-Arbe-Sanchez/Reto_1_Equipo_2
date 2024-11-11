@@ -5,7 +5,7 @@ class Favorito {
     private $tabla = "favoritos";
     private $connection;
 
-    public function __construct() {
+    public function __construct(){
         $this->getConexion();
     }
 
@@ -14,7 +14,8 @@ class Favorito {
         $this->connection = $dbObj ->connection;
     }
 
-    public function getRespuestasFavoritas() {
+    // TODO : Revisar
+    public function getRespuestasFavoritas(){
         // Suponiendo que quieres obtener las respuestas favoritas para el usuario logueado
         $id_usuario = $_SESSION["id"];  // Obtener el ID del usuario logueado
         $sql = "SELECT f.id, r.solucion, r.archivo, p.titulo AS pregunta_titulo
@@ -33,7 +34,7 @@ class Favorito {
         $this->view ='anadir';
     }
     
-    public function save($param) {
+    public function save($param){
         $id_usuario = $_SESSION['id'];
         $id_respuesta = $_GET["id_respuesta"];
 
