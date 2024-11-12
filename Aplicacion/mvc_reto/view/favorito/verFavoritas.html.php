@@ -41,7 +41,7 @@ require_once __DIR__ . "/../layout/header.php";
                     </td>
                     <td><?php echo htmlspecialchars($respuesta['pregunta_titulo']); ?></td>
                     <td>
-                        <a href="index.php?controller=favorito&action=borrar&id=<?php echo urlencode($respuesta['id']); ?>" id="bEliminar">Eliminar</a>
+                        <a href="index.php?controller=favorito&action=borrar&id=<?php echo urlencode($respuesta['id_favorito']); ?>" id="bEliminar">Eliminar</a>
                     </td>
                 </tr>
                 <?php

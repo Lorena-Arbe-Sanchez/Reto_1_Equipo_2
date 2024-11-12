@@ -18,7 +18,7 @@ class Favorito {
     public function getRespuestasFavoritas(){
         // Suponiendo que quieres obtener las respuestas favoritas para el usuario logueado
         $id_usuario = $_SESSION["id"];  // Obtener el ID del usuario logueado
-        $sql = "SELECT f.id, r.solucion, r.archivo, p.titulo AS pregunta_titulo
+        $sql = "SELECT f.id_favorito, r.solucion, r.archivo, p.titulo AS pregunta_titulo
                 FROM " . $this->tabla . " f
                 JOIN respuestas r ON f.id_respuesta = r.id
                 JOIN preguntas p ON r.id_pregunta = p.id

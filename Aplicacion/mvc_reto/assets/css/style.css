@@ -1121,10 +1121,15 @@ nav[aria-label="Paginación de preguntas"] ul{
 }
 
 .pag_foro .d_bFavorito{
-    /* TODO : Posicionar. */
+    all: unset;
+}
+
+.pag_foro .form_estrella{
+    all: unset;
 }
 
 .pag_foro .bFavorito{
+    all: unset;
     cursor: pointer;
 }
 

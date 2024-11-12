@@ -230,11 +230,11 @@ $filtroFecha = $_GET['filtroFecha'] ?? '';
                             </div>
                             <div class="d_bFavorito">
                                 <!-- Imagen de una estrella que será un enlace para guardar la respuesta en "Mis favoritos". -->
-                                <form action="index.php?controller=favorito&action=save&id_respuesta=<?php echo $respuesta["id"]; ?>" method="POST">
+                                <form action="index.php?controller=favorito&action=save&id_respuesta=<?php echo $respuesta["id"]; ?>" method="POST" class="form_estrella">
                                     <button type="submit" class="bFavorito" style="border: none; background: none;">
                                         <img class="icono_estrella"
                                              src="/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/icono_estrella.png"
-                                             alt="Símbolo de estrella" width="50" height="auto">
+                                             alt="Símbolo de estrella" width="40" height="auto">
                                     </button>
                                 </form>
                             </div>
