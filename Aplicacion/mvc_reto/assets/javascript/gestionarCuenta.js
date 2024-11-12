@@ -9,6 +9,8 @@
 *   Al clicar en eliminar, aparecerá un mensaje de confirmación.
 * */
 
+// TODO : Reutilizar código (hacer funciones).
+
 let contador;
 
 let botonCrear = document.getElementById("bCrear");
@@ -36,44 +38,43 @@ function validarDatos(event, idBoton){
 
     let dniCasilla = document.getElementById("dni");
     let dni = dniCasilla.value;
-    alert(dni)
+    console.log(dni); // TODO : Luego quitarlos.
     //let administradorCasilla = document.querySelectorAll('input[name="admin"]');
     //let adminSeleccionado = [...administradorCasilla].find(radio => radio.checked).value;
     let nombreCasilla = document.getElementById("nombre");
     let nombre = nombreCasilla.value;
-    alert(nombre)
+    console.log(nombre)
 
     let primerApellidoCasilla = document.getElementById("primerApellido");
     let primerApellido = primerApellidoCasilla.value;
-    alert(primerApellido)
+    console.log(primerApellido)
 
     let segundoApellidoCasilla = document.getElementById("segundoApellido");
     let segundoApellido = segundoApellidoCasilla.value;
-    alert(segundoApellido)
+    console.log(segundoApellido)
 
     let emailCasilla = document.getElementById("email");
     let email = emailCasilla.value;
-    alert(email)
+    console.log(email)
 
     let telefonoCasilla = document.getElementById("telefono");
     let telefono = telefonoCasilla.value;
-    alert(telefono)
+    console.log(telefono)
 
     let usuarioCasilla = document.getElementById("usuario");
     let usuario = usuarioCasilla.value;
-    alert(usuario)
+    console.log(usuario)
 
     let contrasenaCasilla = document.getElementById("contrasena");
     let contrasena = contrasenaCasilla.value;
-    alert(contrasena)
+    console.log(contrasena)
 
     let repetirContrasenaCasilla = document.getElementById("repetirContrasena");
     let repetirContrasena = repetirContrasenaCasilla.value;
-    alert(repetirContrasena)
+    console.log(repetirContrasena)
 
 
     // Patrón para validar el DNI.
-    // TODO : Luego habrá que poner que tenga la operación matemática de lo de que sumando los números te calcula la letra...
     let expregDni = new RegExp("^[0-9]{8}[A-Z]$");
     // Patrón para validar que contenga un texto tal como un nombre con posibles tildes.
     let expregTexto = new RegExp("^[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+( [A-Za-zÁÉÍÓÚÑáéíóúñ]+)*$");
@@ -95,7 +96,19 @@ function validarDatos(event, idBoton){
             dniCasilla.focus();
             contador+=1;
         }
-        else if (!expregTexto.test(nombre)){
+        else{
+            // Extraer los números y la letra del DNI.
+            let numeroDNI = parseInt(dni.slice(0, 8), 10);
+            let letraDNI = dni.charAt(8);
+            let letraCalculada = calcularLetraDni(numeroDNI);
+
+            if (letraDNI !== letraCalculada){
+                alert("La letra del DNI no es correcta.");
+                dniCasilla.focus();
+                contador += 1;
+            }
+        }
+        if (!expregTexto.test(nombre)){
             alert("El nombre debe estar formado por letras, empezar por mayúscula y tener mínimamente 2 caracteres.");
             nombreCasilla.focus();
             contador+=1;
@@ -133,11 +146,14 @@ function validarDatos(event, idBoton){
 
         // Si no hay errores (casillas vacías y/o patrones incorrectos), se creará o actualizará la cuenta.
         if(contador === 0){
-
             formulario.submit();
-
         }
 
     }
 
+}
+
+function calcularLetraDni(numero){
+    const letras = 'TRWAGMYFPDXBNJZSQVHLCKE';
+    return letras[numero % 23];
 }

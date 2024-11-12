@@ -1,5 +1,5 @@
 <?php
-$pageTitle = "Mis preguntas";
+$pageTitle = "Mis publicaciones";
 $bodyClass = "pag_misPreguntas";
 $botonBloqueado = "d_botonMisPreguntas";
 $conMenu = true;
@@ -14,12 +14,14 @@ require_once __DIR__ . "/../layout/header.php";
 
     <div class="d_bCrear"><a href="index.php?controller=pregunta&action=crear" class="bCrear">+ Crear Pregunta</a></div>
 
+    <!-- TODO : Poner que si no hay datos que no muestre ni los 'thead'; que muestre mensaje de q no hay registros. -->
+
     <?php
     //MIS PREGUNTAS
     // Verificamos si $dataToView["data"] está definido y es un array
     if (isset($dataToView["data"]) && is_array($dataToView["data"]) && count($dataToView["data"]) > 0) {
         ?>
-        <table class="tabla_cuentas">
+        <table class="tabla_preguntas">
             <thead>
             <tr>
                 <th>Título</th>

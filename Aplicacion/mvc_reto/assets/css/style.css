@@ -377,24 +377,28 @@ nav[aria-label="Paginación de preguntas"] ul{
     visibility: hidden; /* Ocultar el elemento, pero sigue ocupando espacio en el diseño. */
 }
 
-.tabla_cuentas, .tabla_respuestas{
+.tabla_cuentas, .tabla_preguntas, .tabla_respuestas{
     width: 100%;
     overflow-x: auto; /* Añadirá scroll horizontal si el contenido de la tabla se desborda. */
     border-collapse: collapse;
     margin: 2em;
 }
 
-.tabla_cuentas th, .tabla_cuentas td, .tabla_respuestas th, .tabla_respuestas td{
+.tabla_preguntas, .tabla_respuestas{
+    margin: 2em 0;
+}
+
+.tabla_cuentas th, .tabla_cuentas td, .tabla_preguntas th, .tabla_preguntas td, .tabla_respuestas th, .tabla_respuestas td{
     border: 1px solid black;
     padding: .8em;
     white-space: nowrap; /* Evita que el contenido se divida en varias líneas. */
 }
 
-.tabla_cuentas th, .tabla_respuestas th{
+.tabla_cuentas th, .tabla_preguntas th, .tabla_respuestas th{
     background-color: gainsboro;
 }
 
-.tabla_cuentas td, .tabla_respuestas td{
+.tabla_cuentas td, .tabla_preguntas td, .tabla_respuestas td{
     background-color: white;
 }
 
@@ -837,11 +841,11 @@ nav[aria-label="Paginación de preguntas"] ul{
 }
 
 
-/* ESTILOS DEL HEADER Y FOOTER DE TODAS LAS PÁGINAS */
+/* ESTILOS DEL HEADER, BODY Y FOOTER DE TODAS LAS PÁGINAS */
 /* TODO : PONER PARA LAS DEMÁS PÁGS TAMBN */
 
 /*body{*/
-.pag_foro{
+.pag_foro, .pag_frecuentes, .pag_misPreguntas{
     all: unset;
     line-height: 1.6;
     color: var(--text-color);
@@ -850,13 +854,15 @@ nav[aria-label="Paginación de preguntas"] ul{
 }
 
 /*header, .contenido, footer{*/
-.pag_foro header, .pag_foro .contenido, .pag_foro footer{
+.pag_foro header, .pag_foro .contenido, .pag_foro footer,
+.pag_frecuentes header, .pag_frecuentes .contenido, .pag_frecuentes footer
+.pag_misPreguntas header, .pag_misPreguntas .contenido, .pag_misPreguntas footer{
     all: unset;
     width: 100%;
     max-width: 1200px;
 }
 
-.pag_foro header{
+.pag_foro header, .pag_frecuentes header, .pag_misPreguntas header{
     all: unset;
     position: relative;
     background-color: var(--background-color);
@@ -870,15 +876,15 @@ nav[aria-label="Paginación de preguntas"] ul{
     margin-bottom: 4em;
 }
 
-.pag_foro header a{
+.pag_foro header a, .pag_frecuentes header a, .pag_misPreguntas header a{
     width: auto;
 }
 
-.pag_foro .d_logo_empresa{
+.pag_foro .d_logo_empresa, .pag_frecuentes .d_logo_empresa, .pag_misPreguntas .d_logo_empresa{
     flex-shrink: 0;
 }
 
-.pag_foro .menu-toggle{
+.pag_foro .menu-toggle, .pag_frecuentes .menu-toggle, .pag_misPreguntas .menu-toggle{
     all: unset;
     display: none; /* El menú de las ventanas está oculto por defecto. */
     background: none;
@@ -888,7 +894,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     color: var(--text-color);
 }
 
-.pag_foro .d_botonesHeader{
+.pag_foro .d_botonesHeader, .pag_frecuentes .d_botonesHeader, .pag_misPreguntas .d_botonesHeader{
     display: flex;
     align-items: center;
     margin: 0 auto;
@@ -896,23 +902,23 @@ nav[aria-label="Paginación de preguntas"] ul{
 }
 
 /* TODO : Poner que tengan el mismo ancho cuando están en fila. */
-.pag_foro .d_botonesHeader a{
+.pag_foro .d_botonesHeader a, .pag_frecuentes .d_botonesHeader a, .pag_misPreguntas .d_botonesHeader a{
     border-radius: 10px;
-    color: var(--text-color);
+    color: #374151;
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
     padding: .8em 1em;
 }
 
-.pag_foro .d_botonPerfil{
+.pag_foro .d_botonPerfil, .pag_frecuentes .d_botonPerfil, .pag_misPreguntas .d_botonPerfil{
     display: flex;
     align-items: center;
     gap: 1.5rem;
     padding: 0;
 }
 
-.pag_foro .theme-toggle{
+.pag_foro .theme-toggle, .pag_frecuentes .theme-toggle, .pag_misPreguntas .theme-toggle{
     all: unset;
     cursor: pointer;
     font-size: 1.2em;
@@ -922,7 +928,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     justify-content: center;
 }
 
-.pag_foro .theme-toggle:hover{
+.pag_foro .theme-toggle:hover, .pag_frecuentes .theme-toggle:hover, .pag_misPreguntas .theme-toggle:hover{
     transform: rotate(25deg);
 }
 
@@ -961,11 +967,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     border-bottom: none;
 }
 
-.pag_foro .d_botonesHeader a{
-    color: #374151;
-}
-
-.pag_foro footer{
+.pag_foro footer, .pag_frecuentes footer, .pag_misPreguntas footer{
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -977,7 +979,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     max-width: 100%;
 }
 
-.pag_foro .d_telefonoDireccion{
+.pag_foro .d_telefonoDireccion, .pag_frecuentes .d_telefonoDireccion, .pag_misPreguntas .d_telefonoDireccion{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -986,11 +988,11 @@ nav[aria-label="Paginación de preguntas"] ul{
     text-align: center;
 }
 
-.pag_foro .d_botonesRS a{
+.pag_foro .d_botonesRS a, .pag_frecuentes .d_botonesRS a, .pag_misPreguntas .d_botonesRS a{
     margin: .2em;
 }
 
-.pag_foro .d_equipo img{
+.pag_foro .d_equipo img, .pag_frecuentes .d_equipo img, .pag_misPreguntas .d_equipo img{
     margin-left: 0.5em;
     vertical-align: middle;
 }
@@ -998,11 +1000,11 @@ nav[aria-label="Paginación de preguntas"] ul{
 /* 'Media' para los elementos adaptables del header y footer. */
 /* TODO : Poner medias para los tamaños de móvil, tablet y PC. */
 @media (max-width: 1020px){
-    .pag_foro .menu-toggle{
+    .pag_foro .menu-toggle, .pag_frecuentes .menu-toggle, .pag_misPreguntas .menu-toggle{
         display: block; /* Poner visible el menú. */
     }
 
-    .pag_foro .d_botonesHeader{
+    .pag_foro .d_botonesHeader, .pag_frecuentes .d_botonesHeader, .pag_misPreguntas .d_botonesHeader{
         display: none;
         position: absolute;
         top: 100%;
@@ -1014,17 +1016,17 @@ nav[aria-label="Paginación de preguntas"] ul{
         padding-bottom: 1em;
     }
 
-    .pag_foro .d_botonesHeader.active{
+    .pag_foro .d_botonesHeader.active, .pag_frecuentes .d_botonesHeader.active, .pag_misPreguntas .d_botonesHeader.active{
         display: flex;
     }
 
-    .pag_foro .d_botonesHeader div{
+    .pag_foro .d_botonesHeader div, .pag_frecuentes .d_botonesHeader div, .pag_misPreguntas .d_botonesHeader div{
         margin: 0;
         text-align: center;
         width: 100%;
     }
 
-    .pag_foro .d_botonesHeader div a{
+    .pag_foro .d_botonesHeader div a, .pag_frecuentes .d_botonesHeader div a, .pag_misPreguntas .d_botonesHeader div a{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1032,16 +1034,16 @@ nav[aria-label="Paginación de preguntas"] ul{
         width: 100%;
     }
 
-    .pag_foro footer{
+    .pag_foro footer, .pag_frecuentes footer, .pag_misPreguntas footer{
         flex-direction: column;
         text-align: center;
     }
 
-    .pag_foro .d_telefonoDireccion{
+    .pag_foro .d_telefonoDireccion, .pag_frecuentes .d_telefonoDireccio, .pag_misPreguntas .d_telefonoDireccion{
         padding-top: 2.5em;
     }
 
-    .pag_foro .d_botonesRS{
+    .pag_foro .d_botonesRS, .pag_frecuentes .d_botonesRS, .pag_misPreguntas .d_botonesRS{
         padding-top: 2em;
     }
 }
@@ -1105,7 +1107,9 @@ nav[aria-label="Paginación de preguntas"] ul{
     background-color: var(--primary-dark);
 }
 
-.pag_foro .pregunta{
+/* ESTILOS TAMBIÉN DE LAS PREGUNTAS FRECUENTES */
+
+.pag_foro .pregunta, .pag_frecuentes .pregunta{
     background-color: var(--border-color);
     width: 80%;
     display: flex;
@@ -1116,21 +1120,29 @@ nav[aria-label="Paginación de preguntas"] ul{
     margin: 20px auto; /* Centrar el bloque en el contenedor principal. */
 }
 
-.pag_foro .respuesta{
+.pag_foro .respuesta, .pag_frecuentes .respuesta{
     background-color: var(--answer-color);
 }
 
-.pag_foro .d_bFavorito{
+.pag_foro .d_bFavorito, .pag_frecuentes .d_bFavorito{
     all: unset;
 }
 
-.pag_foro .form_estrella{
+.pag_foro .form_estrella, .pag_frecuentes .form_estrella{
     all: unset;
 }
 
-.pag_foro .bFavorito{
+.pag_foro .bFavorito, .pag_frecuentes .bFavorito{
     all: unset;
     cursor: pointer;
+}
+
+
+/* ESTILOS DE 'MIS PUBLICACIONES' */
+
+/* TODO : Ponerlo más como un botón. */
+.pag_misPreguntas .bCrear{
+    color: var(--text-color);
 }
 
 
