@@ -325,12 +325,12 @@ nav[aria-label="Paginación de preguntas"] ul{
     transition: background-color 0.3s, color 0.3s;
 }
 
-.page-link:hover {
+.page-link:hover{
     background-color: #aab1ba;
     color: #fff;
 }
 
-.page-item.active .page-link {
+.page-item.active .page-link{
     color: #f1e3dd;
     background-color: #778a95;
     cursor: default;
@@ -486,14 +486,14 @@ nav[aria-label="Paginación de preguntas"] ul{
 }
 */
 
-.pag_foro .pregunta .respuestas{
+.pag_foro .pregunta .respuestas, .pag_frecuentes .pregunta .respuestas{
     display: flex;
     justify-content: flex-start;
     margin: 0;
     margin-bottom: 1em;
 }
 
-.pag_foro .pregunta .respuestas{
+.pag_foro .pregunta .respuestas, .pag_frecuentes .pregunta .respuestas{
     width: auto;
     margin: 0;
 }
@@ -510,7 +510,7 @@ nav[aria-label="Paginación de preguntas"] ul{
 }
 
 /*Cambiar de tamaño teniendo en cuenta la cantidad de preguntas*/
-:root {
+:root{
     --question-count: 1; /* Valor inicial, se actualizará con JavaScript */
     --base-margin: 400px; /* Margen base por pregunta */
 }
@@ -578,7 +578,7 @@ nav[aria-label="Paginación de preguntas"] ul{
 
 /* Para los botones con la imagen de la suma por delante. */
 
-#anadirImg {
+#anadirImg{
     display: inline-flex; /* Usar flex para centrar contenido. */
     align-items: center; /* Centra verticalmente la imagen y el texto. */
 }
@@ -855,7 +855,7 @@ nav[aria-label="Paginación de preguntas"] ul{
 
 /*header, .contenido, footer{*/
 .pag_foro header, .pag_foro .contenido, .pag_foro footer,
-.pag_frecuentes header, .pag_frecuentes .contenido, .pag_frecuentes footer
+.pag_frecuentes header, .pag_frecuentes .contenido, .pag_frecuentes footer,
 .pag_misPreguntas header, .pag_misPreguntas .contenido, .pag_misPreguntas footer{
     all: unset;
     width: 100%;
