@@ -297,12 +297,11 @@ class UsuarioController {
         $usuarioExistente = $this->model->getUsuarioByUsuario($usuario);
 
         // Verificar que no existe otro usuario con el mismo nombre
-        if ($usuarioExistente && $usuarioExistente['usuario'] != $usuario){
+        if ($usuarioExistente || $usuarioExistente['usuario'] != $usuario){
             error_log("COMPARACION -> " . $usuario . $usuarioExistente['usuario']);
             header("Location: index.php?controller=usuario&action=cuentas&error=2");
             exit();
-        }
-        else{
+        }else{
             // Actualizar el usuario si no existe conflicto de nombre
             $dni = $this->model->modificarUsuario($param);
 
@@ -325,8 +324,7 @@ class UsuarioController {
 
         if ($dniActual != $dniEliminar){
             $this->model->borrarUsuario($dniEliminar);
-        }
-        else{
+        }else{
             header("Location: index.php?controller=usuario&action=cuentas&error=3");
             exit();
         }
