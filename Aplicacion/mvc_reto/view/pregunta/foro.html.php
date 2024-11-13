@@ -1,8 +1,8 @@
 <!--
 Cargar de la base de datos los datos de las preguntas, respuestas y usuarios.
 Título de la pregunta, tema, nombre de usuario, fecha (se guardara la del mismo día de la creación de la pregunta),
-descripción de la pregunta, botón de añadir respuesta, respuestas existentes con nombre de usuario, fecha,
-botón de 'like' y botón de 'dislike'.
+descripción de la pregunta, botón de añadir respuesta, respuestas existentes con nombre de usuario, fecha y botón
+para añadir a 'favoritos'.
 -->
 
 <?php
