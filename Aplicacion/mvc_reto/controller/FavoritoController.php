@@ -33,7 +33,7 @@ class FavoritoController {
 
     public function verFavoritas() {
         $this->view = "verFavoritas";
-    
+
         // Obtener respuestas favoritas
         $respuestas = $this->model->getRespuestasFavoritas();
         return $respuestas ?: [];  // Retorna las respuestas favoritas o un array vacío si no hay
@@ -50,7 +50,6 @@ class FavoritoController {
         header("Location: index.php?controller=favorito&action=verFavoritas");
         exit();
     }
-    
-    
+
+
 }
-    

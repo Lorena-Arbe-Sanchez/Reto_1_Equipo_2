@@ -133,8 +133,7 @@ class Usuario {
         $resultado = $stmt->fetch();
         if ($resultado){
             return $resultado;
-        }
-        else{
+        } else{
             return false;
         }
     }

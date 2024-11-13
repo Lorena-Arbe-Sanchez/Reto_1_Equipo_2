@@ -1,16 +1,23 @@
 <?php
 
 require_once "model/Usuario.php";
+require_once "model/Pregunta.php";
+require_once "PreguntaController.php";
 
 class UsuarioController {
 
     public $view;
     public $model;
 
+
     public function __construct() {
         $this->view = "login";
         $this->model = new Usuario();
+
     }
+
+
+
 
     public function login(){
         $this->view= "login";
@@ -281,7 +288,15 @@ class UsuarioController {
         if(isset($_GET["dniBuscar"])) $dni = $_GET["dniBuscar"];
         error_log("buscar:" . $dni);
 
-        return $this->model->getUsuarioByDNI($dni);
+        $datos = $this->model->getUsuarioByDNI($dni);
+
+
+        if($datos === false){
+            header("Location: index.php?controller=usuario&action=cuentas&error=4");
+            exit();
+        }else{
+            return $this->model->getUsuarioByDNI($dni);
+        }
     }
 
     public function editar(){
@@ -314,16 +329,15 @@ class UsuarioController {
     //Funcion para eliminar usuario  CREAR VENTANITA PARA CONFIRMACION
     public function eliminar(){
         $this->view="gestionarCuenta";
-
         $dniEliminar = $_GET["dniEliminar"];
 
-
         $this -> model -> getUsuarioByDNI($dniEliminar);
-
         $dniActual = $_SESSION['usuarioDB']["dni"];
 
         if ($dniActual != $dniEliminar){
+
             $this->model->borrarUsuario($dniEliminar);
+
         }else{
             header("Location: index.php?controller=usuario&action=cuentas&error=3");
             exit();

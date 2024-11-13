@@ -35,6 +35,8 @@ if(isset($dataToView["data"]["dniBuscar"])) $dniBuscar = $dataToView["data"]["dn
         <div id="mensajeErrorDNI" class="mensajeError">DNI o usuario ya creado</div>
     <?php elseif (isset($_GET['error']) && $_GET['error'] == 3):?>
         <div id="mensajeErrorEliminar" class="mensajeError">No puedes borrar la cuenta en la que has iniciado sesion</div>
+    <?php elseif (isset($_GET['error']) && $_GET['error'] == 4):?>
+        <div id="mensajeErrorEliminar" class="mensajeError">No hay nadie con ese DNI</div>
     <?php endif; ?>
 
     <!-- TODO : Repasar esto. -->

@@ -73,6 +73,17 @@ class Pregunta {
         return $stml->rowCount();
     }
 
+    public function deletePreguntaByIDUsuario($id){
+        // Corrección de la consulta SQL
+        $sql = "DELETE FROM " . $this->tabla . " WHERE id_usuario = ?";
+        $stml = $this->connection->prepare($sql);
+        // Ejecutar la consulta
+        $stml->execute([$id]);
+        // Retornar el número de filas afectadas (puedes cambiar esto según tus necesidades)
+        return $stml->rowCount();
+    }
+
+
     // Función para obtener todas las preguntas existentes, por defecto estará ordenada por fecha en orden descendente y con posibles filtros.
     /*
      * Es necesario pasar primero los parámetros sin valor predeterminado, ya que
