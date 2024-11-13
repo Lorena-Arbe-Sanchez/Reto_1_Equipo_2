@@ -1305,3 +1305,7 @@ nav[aria-label="Paginación de preguntas"] ul{
         width: 100%;
     }
 }
+
+.pag_perfil .info{
+    color: #4b5563;
+}
