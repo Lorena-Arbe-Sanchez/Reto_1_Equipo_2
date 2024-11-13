@@ -42,9 +42,9 @@ class FavoritoController {
     public function borrar() {
         // Asegúrate de que exista el parámetro `id` en la solicitud GET
         if (isset($_GET['id'])) {
-            $id_favorito = $_GET['id'];
+            $id = $_GET['id'];
             // Llama al método deleteRespuesta en el modelo para eliminar el favorito
-            $this->model->deleteFavorito($id_favorito);
+            $this->model->deleteFavorito($id);
         }
         // Redirige de vuelta a la lista de favoritos después de la eliminación
         header("Location: index.php?controller=favorito&action=verFavoritas");
