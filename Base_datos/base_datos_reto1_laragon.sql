@@ -153,10 +153,10 @@ VALUES
 
 -- Volcando estructura para tabla grupo2_2425.favoritos
 CREATE TABLE IF NOT EXISTS `favoritos` (
-    `id_favorito` int NOT NULL AUTO_INCREMENT,
+    `id` int NOT NULL AUTO_INCREMENT,
     `id_usuario` int NOT NULL,
     `id_respuesta` int NOT NULL,
-    PRIMARY KEY (`id_favorito`),
+    PRIMARY KEY (`id`),
     KEY `FAV_ID_USU_FK` (`id_usuario`),
     KEY `FAV_ID_RES_FK` (`id_respuesta`),
     CONSTRAINT `favoritos_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`) ON UPDATE CASCADE,

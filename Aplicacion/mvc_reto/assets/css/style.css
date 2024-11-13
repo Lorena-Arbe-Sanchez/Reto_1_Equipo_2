@@ -95,7 +95,6 @@ footer{
     width: 100%;
     display: flex;
     justify-content: space-around;
-    height: 90px;
     background-color: #8D9DB6;
     position: sticky;
     bottom: 0;
@@ -161,14 +160,25 @@ footer{
 }
 
 .pag_misPreguntas .contenido, .pag_crearRespuesta .contenido, .pag_misFavoritas .contenido{
-    margin-top: 400px;
+    margin-top: 800px;
     width: 1200px;
     margin-bottom: 1em;
+}
+
+.pag_crearRespuesta .contenido{
+    margin-top: 300px;
 }
 
 .pag_misPreguntas .contenido, .pag_misFavoritas .contenido{
     margin-top: var(--altura-contenido, 0px); /* TODO : ¿Error? */
     width: 1300px;
+}
+
+.pag_misPreguntas .contenido{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
 }
 
 .pag_misPreguntas thead, .pag_misFavoritas thead{
@@ -377,28 +387,25 @@ nav[aria-label="Paginación de preguntas"] ul{
     visibility: hidden; /* Ocultar el elemento, pero sigue ocupando espacio en el diseño. */
 }
 
-.tabla_cuentas, .tabla_preguntas, .tabla_respuestas{
-    width: 100%;
+.tabla_preguntas, .tabla_respuestas{
+    width: auto;
+    max-width: 1000px;
     overflow-x: auto; /* Añadirá scroll horizontal si el contenido de la tabla se desborda. */
     border-collapse: collapse;
-    margin: 2em;
+    margin: 2em auto;
 }
 
-.tabla_preguntas, .tabla_respuestas{
-    margin: 2em 0;
-}
-
-.tabla_cuentas th, .tabla_cuentas td, .tabla_preguntas th, .tabla_preguntas td, .tabla_respuestas th, .tabla_respuestas td{
+.tabla_preguntas th, .tabla_preguntas td, .tabla_respuestas th, .tabla_respuestas td{
     border: 1px solid black;
     padding: .8em;
     white-space: nowrap; /* Evita que el contenido se divida en varias líneas. */
 }
 
-.tabla_cuentas th, .tabla_preguntas th, .tabla_respuestas th{
+.tabla_preguntas th, .tabla_respuestas th{
     background-color: gainsboro;
 }
 
-.tabla_cuentas td, .tabla_preguntas td, .tabla_respuestas td{
+.tabla_preguntas td, .tabla_respuestas td{
     background-color: white;
 }
 
@@ -430,6 +437,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     padding: .5em;
     margin: .2em 0;
     border-radius: 10px;
+    text-decoration: none;
 }
 
 #bEliminar::before{
@@ -444,11 +452,11 @@ nav[aria-label="Paginación de preguntas"] ul{
     vertical-align: middle;
 }
 
-.tabla_cuentas a, .tabla_respuestas a{
+.tabla_respuestas a{
     text-decoration: none;
 }
 
-.tabla_cuentas #bEliminar, .tabla_respuestas #bEliminar{
+.tabla_respuestas #bEliminar{
     margin-left: .5em;
 }
 
@@ -977,6 +985,10 @@ nav[aria-label="Paginación de preguntas"] ul{
     padding: 0;
     margin-top: 4em;
     max-width: 100%;
+}
+
+.pag_misPreguntas footer{
+    margin-top: 10em;
 }
 
 .pag_foro .d_telefonoDireccion, .pag_frecuentes .d_telefonoDireccion, .pag_misPreguntas .d_telefonoDireccion{
