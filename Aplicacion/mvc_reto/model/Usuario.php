@@ -176,6 +176,11 @@ class Usuario {
                 $administrador = ($param["administrador"] == '1') ? 1 : 0;
             }
 
+
+
+
+
+
             if ($exist) {
                 $sql = "UPDATE " . $this->tabla . " SET dni=?, nombre=?, apellido1=?, apellido2=?, email=?, telefono=?, usuario=?, contrasena=?, administrador=? WHERE id=?";
                 $stmt = $this->connection->prepare($sql);
