@@ -31,7 +31,7 @@ class Pregunta {
         $titulo = $descripcion = $tema = $archivo = "";
         $fecha = date('Y-m-d');
         $id_usuario = $_SESSION['id'];
-        $votosLike = $votosDislike = 0;
+//        $votosLike = $votosDislike = 0;
 
         if (isset($param["titulo"])) $titulo = $param["titulo"];
         if (isset($param["descripcion"])) $descripcion = $param["descripcion"];
@@ -43,14 +43,19 @@ class Pregunta {
             $id_usuario = $_SESSION['usuario'];
         }
         if (isset($param["archivo"])) $archivo = $param["archivo"];
-        if (isset($param["votosLike"])) $votosLike = $param["votosLike"];
-        if (isset($param["votosDislike"])) $votosDislike = $param["votosDislike"];
+//        if (isset($param["votosLike"])) $votosLike = $param["votosLike"];
+//        if (isset($param["votosDislike"])) $votosDislike = $param["votosDislike"];
 
-        $sql = "INSERT INTO " . $this->tabla . " (titulo, descripcion, tema, fecha, id_usuario, archivo, votosLike, votosDislike) 
+        /*
+         $sql = "INSERT INTO " . $this->tabla . " (titulo, descripcion, tema, fecha, id_usuario, archivo, votosLike, votosDislike)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+         */
+        $sql = "INSERT INTO " . $this->tabla . " (titulo, descripcion, tema, fecha, id_usuario, archivo) 
+            VALUES (?, ?, ?, ?, ?, ?)";
 
         $stm = $this->connection->prepare($sql);
-        $stm->execute([$titulo, $descripcion, $tema, $fecha, $id_usuario, $archivo, $votosLike, $votosDislike]);
+//        $stm->execute([$titulo, $descripcion, $tema, $fecha, $id_usuario, $archivo, $votosLike, $votosDislike]);
+        $stm->execute([$titulo, $descripcion, $tema, $fecha, $id_usuario, $archivo]);
 
         $id = $this->connection->lastInsertId();
         return $id;
@@ -168,7 +173,9 @@ class Pregunta {
     public function getPreguntasFrecuentesPaginated($page=1){
         $limit = PAGINATION;
         $offset = ($page - 1) * $limit;
-        $sql = "SELECT * FROM ". $this->tabla ." ORDER BY votosLike DESC LIMIT :limit OFFSET :offset";
+        // TODO : "ORDER BY votosLike DESC ..." (favoritos)
+//        $sql = "SELECT * FROM ". $this->tabla ." ORDER BY votosLike DESC LIMIT :limit OFFSET :offset";
+        $sql = "SELECT * FROM ". $this->tabla ." LIMIT :limit OFFSET :offset";
         $stmt = $this->connection->prepare($sql);
         $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
         $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);

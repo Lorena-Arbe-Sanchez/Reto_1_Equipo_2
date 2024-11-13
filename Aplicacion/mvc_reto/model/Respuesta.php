@@ -35,7 +35,7 @@ class Respuesta {
 
     public function save($param) {
         $solucion = $archivo = "";
-        $votosLike = $votosDislike = 0;
+//        $votosLike = $votosDislike = 0;
         $id_pregunta = $_GET['id_pregunta'];
         $id_usuario = $_SESSION['id'];
         $fecha = date('Y-m-d');
@@ -43,8 +43,8 @@ class Respuesta {
         if (isset($param["solucion"])) $solucion = $param["solucion"];
         if (isset($param["archivo"])) $archivo = $param["archivo"];
 
-        if (isset($param["votosLike"])) $votosLike = $param["votosLike"];
-        if (isset($param["votosDislike"])) $votosDislike = $param["votosDislike"];
+//        if (isset($param["votosLike"])) $votosLike = $param["votosLike"];
+//        if (isset($param["votosDislike"])) $votosDislike = $param["votosDislike"];
 
         if (isset($param["id_pregunta"]) && !empty($param["id_pregunta"])){
             $id_pregunta = $_GET['id_pregunta'];
@@ -54,12 +54,16 @@ class Respuesta {
         }
         if (isset($param["fecha"])) $fecha = $param["fecha"];
     
-
-        $sql = "INSERT INTO " . $this->tabla . " (solucion, archivo, votosLike, votosDislike, id_pregunta, id_usuario, fecha) 
+        /*
+         $sql = "INSERT INTO " . $this->tabla . " (solucion, archivo, votosLike, votosDislike, id_pregunta, id_usuario, fecha)
             VALUES (?, ?, ?, ?, ?, ?, ?)";
+         */
+        $sql = "INSERT INTO " . $this->tabla . " (solucion, archivo, id_pregunta, id_usuario, fecha) 
+            VALUES (?, ?, ?, ?, ?)";
 
         $stm = $this->connection->prepare($sql);
-        $stm->execute([$solucion, $archivo, $votosLike, $votosDislike, $id_pregunta, $id_usuario, $fecha]);
+//        $stm->execute([$solucion, $archivo, $votosLike, $votosDislike, $id_pregunta, $id_usuario, $fecha]);
+        $stm->execute([$solucion, $archivo, $id_pregunta, $id_usuario, $fecha]);
 
         $id = $this->connection->lastInsertId();
         return $id;
@@ -127,7 +131,8 @@ class Respuesta {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     
-    
+
+    /*
     public function modificarLikes($id){
 
         $sql = "UPDATE " . $this->tabla . " SET votosLike = votosLike + 1 WHERE id_pregunta = ?";
@@ -143,5 +148,6 @@ class Respuesta {
         $stm->execute([$id]);
     
     }
+    */
 
 }

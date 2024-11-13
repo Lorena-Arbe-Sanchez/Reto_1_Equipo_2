@@ -107,13 +107,13 @@ footer{
 
 /* MISMOS ESTILOS EN ELEMENTOS DE PÁGINAS DIFERENTES (Y PROPIEDADES RELACIONADAS CON LOS CONTENIDOS) */
 
-.pag_foro, .pag_frecuentes, .pag_crearPregunta, .pag_gestionarCuenta, .pag_perfil, .pag_misPreguntas, .pag_crearRespuesta, .pag_anadirFavorito, .pag_misFavoritas{
+.pag_foro, .pag_frecuentes, .pag_crearPregunta, .pag_gestionarCuenta, .pag_perfil, .pag_misPreguntas, .pag_gestionarCuenta, .pag_crearRespuesta, .pag_anadirFavorito, .pag_misFavoritas{
     background: linear-gradient(to bottom, #BCCAD6, white);
     min-height: 100vh; /* Al menos el 100% de la ventana. */
     background-attachment: fixed; /* Mantiener el degradado fijo mientras se hace scroll. */
 }
 
-.pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_crearRespuesta .contenido, .pag_foro .contenido, .pag_frecuentes .contenido, .pag_misPreguntas .contenido, .pag_anadirFavorito .contenido, .pag_misFavoritas .contenido{
+.pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_crearRespuesta .contenido, .pag_foro .contenido, .pag_frecuentes .contenido, .pag_misPreguntas .contenido, .pag_gestionarCuenta .contenido, .pag_anadirFavorito .contenido, .pag_misFavoritas .contenido{
     position: relative;
     flex-direction: column;
     text-align: center;
@@ -129,7 +129,7 @@ footer{
     background-color: #8d9db67e;
 }
 
-.pag_crearPregunta, .pag_perfil, .pag_gestionarCuenta, .pag_anadirFavorito{
+.pag_crearPregunta, .pag_perfil, .pag_gestionarCuenta, .pag_anadirFavorito, .pag_misFavoritas{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -156,11 +156,11 @@ footer{
     width: auto;
 }
 
-.pag_misPreguntas, .pag_crearRespuesta, .pag_perfil, .pag_crearPregunta, .pag_misFavoritas{
+.pag_misPreguntas, .pag_gestionarCuenta, .pag_anadirFavorito, .pag_misFavoritas, .pag_crearRespuesta, .pag_perfil, .pag_crearPregunta, .pag_misFavoritas{
     flex-direction: column;
 }
 
-.pag_misPreguntas .contenido, .pag_crearRespuesta .contenido, .pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_misFavoritas .contenido{
+.pag_misPreguntas .contenido, .pag_gestionarCuenta .contenido, .pag_anadirFavorito .contenido, .pag_misFavoritas .contenido, .pag_crearRespuesta .contenido, .pag_perfil .contenido, .pag_crearPregunta .contenido, .pag_misFavoritas .contenido{
     margin-top: 400px;
     width: 1200px;
     margin-bottom: 1em;
@@ -458,14 +458,14 @@ nav[aria-label="Paginación de preguntas"] ul{
 
 /* Para la ventana del foro. */
 
-.pag_foro, .pag_frecuentes, .pag_misPreguntas, .pag_crearRespuesta, .pag_perfil, .pag_crearPregunta{
+.pag_foro, .pag_frecuentes, .pag_misPreguntas, .pag_anadirFavorito, .pag_gestionarCuenta, .pag_anadirFavorito, .pag_misFavoritas, .pag_crearRespuesta, .pag_perfil, .pag_crearPregunta{
     flex-direction: column;
     padding-top: 116.59px;
     margin-top: 0;
     min-height: 100vh;
 }
 
-.pag_foro footer, .pag_frecuentes footer, .pag_misPreguntas footer, .pag_crearRespuesta footer, .pag_perfil footer, .pag_crearPregunta footer{
+.pag_foro footer, .pag_frecuentes footer, .pag_misPreguntas footer, .pag_gestionarCuenta footer, .pag_anadirFavorito footer, .pag_misFavoritas footer, .pag_crearRespuesta footer, .pag_perfil footer, .pag_crearPregunta footer{
     position: relative;
 }
 
@@ -557,12 +557,12 @@ nav[aria-label="Paginación de preguntas"] ul{
 
 /* Para la ventana de "crearPregunta". */
 
-#formCrearPregunta, #formRecuperarContra{
+#formCrearPregunta, #formCrearRespuesta, #formRecuperarContra{
     display: block;
     padding: 3em 2em 0 2em;
 }
 
-#formCrearPregunta textarea{
+#formCrearPregunta textarea, #formCrearRespuesta textarea{
     width: 100%;
 }
 
@@ -847,7 +847,7 @@ nav[aria-label="Paginación de preguntas"] ul{
 /* TODO : PONER PARA LAS DEMÁS PÁGS TAMBN */
 
 /*body{*/
-.pag_foro, .pag_frecuentes, .pag_misPreguntas, .pag_crearRespuesta, .pag_perfil, .pag_crearPregunta{
+.pag_foro, .pag_frecuentes, .pag_misPreguntas, .pag_gestionarCuenta, .pag_anadirFavorito, .pag_misFavoritas, .pag_crearRespuesta, .pag_perfil, .pag_crearPregunta{
     all: unset;
     line-height: 1.6;
     color: var(--text-color);
@@ -859,6 +859,9 @@ nav[aria-label="Paginación de preguntas"] ul{
 .pag_foro header, .pag_foro .contenido, .pag_foro footer,
 .pag_frecuentes header, .pag_frecuentes .contenido, .pag_frecuentes footer,
 .pag_misPreguntas header, .pag_misPreguntas .contenido, .pag_misPreguntas footer,
+.pag_gestionarCuenta header, .pag_gestionarCuenta .contenido, .pag_gestionarCuenta footer,
+.pag_anadirFavorito header, .pag_anadirFavorito .contenido, .pag_anadirFavorito footer,
+.pag_misFavoritas header, .pag_misFavoritas .contenido, .pag_misFavoritas footer,
 .pag_crearRespuesta header, .pag_crearRespuesta .contenido, .pag_crearRespuesta footer,
 .pag_perfil header, .pag_perfil .contenido, .pag_perfil footer,
 .pag_crearPregunta header, .pag_crearPregunta .contenido, .pag_crearPregunta footer{
@@ -867,7 +870,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     max-width: 1200px;
 }
 
-.pag_foro header, .pag_frecuentes header, .pag_misPreguntas header, .pag_crearRespuesta header, .pag_perfil header, .pag_crearPregunta header{
+.pag_foro header, .pag_frecuentes header, .pag_misPreguntas header, .pag_gestionarCuenta header, .pag_anadirFavorito header, .pag_misFavoritas header, .pag_crearRespuesta header, .pag_perfil header, .pag_crearPregunta header{
     all: unset;
     position: relative;
     background-color: var(--background-color);
@@ -878,18 +881,18 @@ nav[aria-label="Paginación de preguntas"] ul{
     align-items: center;
     max-width: 100%;
     margin: 0 auto;
-    margin-bottom: 4em;
+    margin-bottom: 5em;
 }
 
-.pag_foro header a, .pag_frecuentes header a, .pag_misPreguntas header a, .pag_crearRespuesta header a, .pag_perfil header a, .pag_crearPregunta header a{
+.pag_foro header a, .pag_frecuentes header a, .pag_misPreguntas header a, .pag_gestionarCuenta header a, .pag_anadirFavorito header a, .pag_misFavoritas header a, .pag_crearRespuesta header a, .pag_perfil header a, .pag_crearPregunta header a{
     width: auto;
 }
 
-.pag_foro .d_logo_empresa, .pag_frecuentes .d_logo_empresa, .pag_misPreguntas .d_logo_empresa, .pag_crearRespuesta .d_logo_empresa, .pag_perfil .d_logo_empresa, .pag_crearPregunta .d_logo_empresa{
+.pag_foro .d_logo_empresa, .pag_frecuentes .d_logo_empresa, .pag_misPreguntas .d_logo_empresa, .pag_gestionarCuenta .d_logo_empresa, .pag_anadirFavorito .d_logo_empresa, .pag_misFavoritas .d_logo_empresa, .pag_crearRespuesta .d_logo_empresa, .pag_perfil .d_logo_empresa, .pag_crearPregunta .d_logo_empresa{
     flex-shrink: 0;
 }
 
-.pag_foro .menu-toggle, .pag_frecuentes .menu-toggle, .pag_misPreguntas .menu-toggle, .pag_crearRespuesta .menu-toggle, .pag_perfil .menu-toggle, .pag_crearPregunta .menu-toggle{
+.pag_foro .menu-toggle, .pag_frecuentes .menu-toggle, .pag_misPreguntas .menu-toggle, .pag_gestionarCuenta .menu-toggle, .pag_anadirFavorito .menu-toggle, .pag_misFavoritas .menu-toggle, .pag_crearRespuesta .menu-toggle, .pag_perfil .menu-toggle, .pag_crearPregunta .menu-toggle{
     all: unset;
     display: none; /* El menú de las ventanas está oculto por defecto. */
     background: none;
@@ -899,7 +902,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     color: var(--text-color);
 }
 
-.pag_foro .d_botonesHeader, .pag_frecuentes .d_botonesHeader, .pag_misPreguntas .d_botonesHeader, .pag_crearRespuesta .d_botonesHeader, .pag_perfil .d_botonesHeader, .pag_crearPregunta .d_botonesHeader{
+.pag_foro .d_botonesHeader, .pag_frecuentes .d_botonesHeader, .pag_misPreguntas .d_botonesHeader, .pag_gestionarCuenta .d_botonesHeader, .pag_anadirFavorito .d_botonesHeader, .pag_misFavoritas .d_botonesHeader, .pag_crearRespuesta .d_botonesHeader, .pag_perfil .d_botonesHeader, .pag_crearPregunta .d_botonesHeader{
     display: flex;
     align-items: center;
     margin: 0 auto;
@@ -907,7 +910,7 @@ nav[aria-label="Paginación de preguntas"] ul{
 }
 
 /* TODO : Poner que tengan el mismo ancho cuando están en fila. */
-.pag_foro .d_botonesHeader a, .pag_frecuentes .d_botonesHeader a, .pag_misPreguntas .d_botonesHeader a, .pag_crearRespuesta .d_botonesHeader a, .pag_perfil .d_botonesHeader a, .pag_crearPregunta .d_botonesHeader a{
+.pag_foro .d_botonesHeader a, .pag_frecuentes .d_botonesHeader a, .pag_misPreguntas .d_botonesHeader a, .pag_gestionarCuenta .d_botonesHeader a, .pag_anadirFavorito .d_botonesHeader a, .pag_misFavoritas .d_botonesHeader a, .pag_crearRespuesta .d_botonesHeader a, .pag_perfil .d_botonesHeader a, .pag_crearPregunta .d_botonesHeader a{
     border-radius: 10px;
     color: #374151;
     text-decoration: none;
@@ -916,14 +919,14 @@ nav[aria-label="Paginación de preguntas"] ul{
     padding: .8em 1em;
 }
 
-.pag_foro .d_botonPerfil, .pag_frecuentes .d_botonPerfil, .pag_misPreguntas .d_botonPerfil, .pag_crearRespuesta .d_botonPerfil, .pag_perfil .d_botonPerfil, .pag_crearPregunta .d_botonPerfil{
+.pag_foro .d_botonPerfil, .pag_frecuentes .d_botonPerfil, .pag_misPreguntas .d_botonPerfil, .pag_gestionarCuenta .d_botonPerfil, .pag_anadirFavorito .d_botonPerfil, .pag_misFavoritas .d_botonPerfil, .pag_crearRespuesta .d_botonPerfil, .pag_perfil .d_botonPerfil, .pag_crearPregunta .d_botonPerfil{
     display: flex;
     align-items: center;
     gap: 1.5rem;
     padding: 0;
 }
 
-.pag_foro .theme-toggle, .pag_frecuentes .theme-toggle, .pag_misPreguntas .theme-toggle, .pag_crearRespuesta .theme-toggle, .pag_perfil .theme-toggle, .pag_crearPregunta .theme-toggle{
+.pag_foro .theme-toggle, .pag_frecuentes .theme-toggle, .pag_misPreguntas .theme-toggle, .pag_gestionarCuenta .theme-toggle, .pag_anadirFavorito .theme-toggle, .pag_misFavoritas .theme-toggle, .pag_crearRespuesta .theme-toggle, .pag_perfil .theme-toggle, .pag_crearPregunta .theme-toggle{
     all: unset;
     cursor: pointer;
     font-size: 1.2em;
@@ -933,7 +936,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     justify-content: center;
 }
 
-.pag_foro .theme-toggle:hover, .pag_frecuentes .theme-toggle:hover, .pag_misPreguntas .theme-toggle:hover, .pag_crearRespuesta .theme-toggle:hover, .pag_perfil .theme-toggle:hover, .pag_crearPregunta .theme-toggle:hover{
+.pag_foro .theme-toggle:hover, .pag_frecuentes .theme-toggle:hover, .pag_misPreguntas .theme-toggle:hover, .pag_gestionarCuenta .theme-toggle:hover, .pag_anadirFavorito .theme-toggle:hover, .pag_misFavoritas .theme-toggle:hover, .pag_crearRespuesta .theme-toggle:hover, .pag_perfil .theme-toggle:hover, .pag_crearPregunta .theme-toggle:hover{
     transform: rotate(25deg);
 }
 
@@ -972,7 +975,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     border-bottom: none;
 }
 
-.pag_foro footer, .pag_frecuentes footer, .pag_misPreguntas footer, .pag_crearRespuesta footer, .pag_perfil footer, .pag_crearPregunta footer{
+.pag_foro footer, .pag_frecuentes footer, .pag_misPreguntas footer, .pag_gestionarCuenta footer, .pag_anadirFavorito footer, .pag_misFavoritas footer, .pag_crearRespuesta footer, .pag_perfil footer, .pag_crearPregunta footer{
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -984,7 +987,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     max-width: 100%;
 }
 
-.pag_foro .d_telefonoDireccion, .pag_frecuentes .d_telefonoDireccion, .pag_misPreguntas .d_telefonoDireccion, .pag_crearRespuesta .d_telefonoDireccion, .pag_perfil .d_telefonoDireccion, .pag_crearPregunta .d_telefonoDireccion{
+.pag_foro .d_telefonoDireccion, .pag_frecuentes .d_telefonoDireccion, .pag_misPreguntas .d_telefonoDireccion, .pag_gestionarCuenta .d_telefonoDireccion, .pag_anadirFavorito .d_telefonoDireccion, .pag_misFavoritas .d_telefonoDireccion, .pag_crearRespuesta .d_telefonoDireccion, .pag_perfil .d_telefonoDireccion, .pag_crearPregunta .d_telefonoDireccion{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -993,11 +996,11 @@ nav[aria-label="Paginación de preguntas"] ul{
     text-align: center;
 }
 
-.pag_foro .d_botonesRS a, .pag_frecuentes .d_botonesRS a, .pag_misPreguntas .d_botonesRS a, .pag_crearRespuesta .d_botonesRS a, .pag_perfil .d_botonesRS a, .pag_crearPregunta .d_botonesRS a{
+.pag_foro .d_botonesRS a, .pag_frecuentes .d_botonesRS a, .pag_misPreguntas .d_botonesRS a, .pag_gestionarCuenta .d_botonesRS a, .pag_anadirFavorito .d_botonesRS a, .pag_misFavoritas .d_botonesRS a, .pag_crearRespuesta .d_botonesRS a, .pag_perfil .d_botonesRS a, .pag_crearPregunta .d_botonesRS a{
     margin: .2em;
 }
 
-.pag_foro .d_equipo img, .pag_frecuentes .d_equipo img, .pag_misPreguntas .d_equipo img, .pag_crearRespuesta .d_equipo img, .pag_perfil .d_equipo img, .pag_crearPregunta .d_equipo img{
+.pag_foro .d_equipo img, .pag_frecuentes .d_equipo img, .pag_misPreguntas .d_equipo img, .pag_gestionarCuenta .d_equipo img, .pag_anadirFavorito .d_equipo img, .pag_misFavoritas .d_equipo img, .pag_crearRespuesta .d_equipo img, .pag_perfil .d_equipo img, .pag_crearPregunta .d_equipo img{
     margin-left: 0.5em;
     vertical-align: middle;
 }
@@ -1005,11 +1008,11 @@ nav[aria-label="Paginación de preguntas"] ul{
 /* 'Media' para los elementos adaptables del header y footer. */
 /* TODO : Poner medias para los tamaños de móvil, tablet y PC. */
 @media (max-width: 1020px){
-    .pag_foro .menu-toggle, .pag_frecuentes .menu-toggle, .pag_misPreguntas .menu-toggle, .pag_crearRespuesta .menu-toggle, .pag_perfil .menu-toggle, .pag_crearPregunta .menu-toggle{
+    .pag_foro .menu-toggle, .pag_frecuentes .menu-toggle, .pag_misPreguntas .menu-toggle, .pag_gestionarCuenta .menu-toggle, .pag_anadirFavorito .menu-toggle, .pag_misFavoritas .menu-toggle, .pag_crearRespuesta .menu-toggle, .pag_perfil .menu-toggle, .pag_crearPregunta .menu-toggle{
         display: block; /* Poner visible el menú. */
     }
 
-    .pag_foro .d_botonesHeader, .pag_frecuentes .d_botonesHeader, .pag_misPreguntas .d_botonesHeader, .pag_crearRespuesta .d_botonesHeader, .pag_perfil .d_botonesHeader, .pag_crearPregunta .d_botonesHeader{
+    .pag_foro .d_botonesHeader, .pag_frecuentes .d_botonesHeader, .pag_misPreguntas .d_botonesHeader, .pag_gestionarCuenta .d_botonesHeader, .pag_anadirFavorito .d_botonesHeader, .pag_misFavoritas .d_botonesHeader, .pag_crearRespuesta .d_botonesHeader, .pag_perfil .d_botonesHeader, .pag_crearPregunta .d_botonesHeader{
         display: none;
         position: absolute;
         top: 100%;
@@ -1022,17 +1025,17 @@ nav[aria-label="Paginación de preguntas"] ul{
         z-index: 4;
     }
 
-    .pag_foro .d_botonesHeader.active, .pag_frecuentes .d_botonesHeader.active, .pag_misPreguntas .d_botonesHeader.active, .pag_crearRespuesta .d_botonesHeader.active, .pag_perfil .d_botonesHeader.active, .pag_crearPregunta .d_botonesHeader.active{
+    .pag_foro .d_botonesHeader.active, .pag_frecuentes .d_botonesHeader.active, .pag_misPreguntas .d_botonesHeader.active, .pag_gestionarCuenta .d_botonesHeader.active, .pag_anadirFavorito .d_botonesHeader.active, .pag_misFavoritas .d_botonesHeader.active, .pag_crearRespuesta .d_botonesHeader.active, .pag_perfil .d_botonesHeader.active, .pag_crearPregunta .d_botonesHeader.active{
         display: flex;
     }
 
-    .pag_foro .d_botonesHeader div, .pag_frecuentes .d_botonesHeader div, .pag_misPreguntas .d_botonesHeader div, .pag_crearRespuesta .d_botonesHeader div, .pag_perfil .d_botonesHeader div, .pag_crearPregunta .d_botonesHeader div{
+    .pag_foro .d_botonesHeader div, .pag_frecuentes .d_botonesHeader div, .pag_misPreguntas .d_botonesHeader div, .pag_gestionarCuenta .d_botonesHeader div, .pag_anadirFavorito .d_botonesHeader div, .pag_misFavoritas .d_botonesHeader div, .pag_crearRespuesta .d_botonesHeader div, .pag_perfil .d_botonesHeader div, .pag_crearPregunta .d_botonesHeader div{
         margin: 0;
         text-align: center;
         width: 100%;
     }
 
-    .pag_foro .d_botonesHeader div a, .pag_frecuentes .d_botonesHeader div a, .pag_misPreguntas .d_botonesHeader div a, .pag_crearRespuesta .d_botonesHeader div a, .pag_perfil .d_botonesHeader div a, .pag_crearPregunta .d_botonesHeader div a{
+    .pag_foro .d_botonesHeader div a, .pag_frecuentes .d_botonesHeader div a, .pag_misPreguntas .d_botonesHeader div a, .pag_gestionarCuenta .d_botonesHeader div a, .pag_anadirFavorito .d_botonesHeader div a, .pag_misFavoritas .d_botonesHeader div a, .pag_crearRespuesta .d_botonesHeader div a, .pag_perfil .d_botonesHeader div a, .pag_crearPregunta .d_botonesHeader div a{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1040,13 +1043,13 @@ nav[aria-label="Paginación de preguntas"] ul{
         width: 100%;
     }
 
-    .pag_foro footer, .pag_frecuentes footer, .pag_misPreguntas footer, .pag_crearRespuesta footer, .pag_perfil footer, .pag_crearPregunta footer{
+    .pag_foro footer, .pag_frecuentes footer, .pag_misPreguntas footer, .pag_gestionarCuenta footer, .pag_anadirFavorito footer, .pag_misFavoritas footer, .pag_crearRespuesta footer, .pag_perfil footer, .pag_crearPregunta footer{
         flex-direction: column;
         text-align: center;
         padding-top: 2em;
     }
 
-    .pag_foro .d_botonesRS, .pag_frecuentes .d_botonesRS, .pag_misPreguntas .d_botonesRS, .pag_crearRespuesta .d_botonesRS, .pag_perfil .d_botonesRS, .pag_crearPregunta .d_botonesRS{
+    .pag_foro .d_botonesRS, .pag_frecuentes .d_botonesRS, .pag_misPreguntas .d_botonesRS, .pag_gestionarCuenta .d_botonesRS, .pag_anadirFavorito .d_botonesRS, .pag_misFavoritas .d_botonesRS, .pag_crearRespuesta .d_botonesRS, .pag_perfil .d_botonesRS, .pag_crearPregunta .d_botonesRS{
         padding-top: 2em;
     }
 }
@@ -1141,17 +1144,165 @@ nav[aria-label="Paginación de preguntas"] ul{
 }
 
 
-/* ESTILOS DE 'MIS PUBLICACIONES' */
+/* ESTILOS CONCRETOS */
 
 /* TODO : Ponerlo más como un botón. */
 .pag_misPreguntas .bCrear{
     color: var(--text-color);
 }
 
-.pag_misPreguntas table{
+.pag_misPreguntas table, .pag_misFavoritas table, .pag_gestionarCuenta table{
     color: #374151;
 }
 
 
-/* ESTILOS DEL CONTENIDO DE TODAS LAS PÁGINAS */
+.pag_anadirFavorito .contenido{
+    text-align: center;
+}
+
+
+.pag_misPreguntas table, .pag_misFavoritas table{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.pag_misPreguntas table, .pag_misFavoritas table, .pag_gestionarCuenta table{
+    /* TODO : PONER BONITO */
+}
+
+
+.pag_crearPregunta .contenido, .pag_crearRespuesta .contenido{
+    width: 100%;
+    max-width: 600px;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+}
+
+.pag_crearPregunta #divTitulo h2, .pag_crearRespuesta #divTitulo h2{
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.pag_crearPregunta form, .pag_crearRespuesta form{
+    gap: 1em;
+}
+
+.pag_crearPregunta form div:not(.d_botones), .pag_crearRespuesta form div:not(.d_botones){
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.pag_crearPregunta label, .pag_crearRespuesta label{
+    margin-bottom: 1rem;
+}
+
+.pag_crearPregunta textarea, .pag_crearPregunta select, .pag_crearRespuesta textarea{
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--gradient-middle);
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.15s ease;
+    background-color: white;
+}
+
+.pag_crearPregunta textarea, .pag_crearRespuesta textarea{
+    min-height: 100px;
+    resize: vertical;
+}
+
+.pag_crearPregunta textarea:focus, .pag_crearRespuesta textarea:focus, .pag_crearPregunta select:focus{
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.pag_crearPregunta .d_botones, .pag_crearRespuesta .d_botones{
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.pag_crearRespuesta #anadirImg{
+    background-color: #9495ec;
+    color: black;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pag_crearPregunta .bCrearPregunta, .pag_crearPregunta .bVolver, .pag_crearRespuesta .bCrearRespuesta, .pag_crearRespuesta .bVolver{
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pag_crearPregunta .bCrearPregunta, .pag_crearRespuesta .bCrearRespuesta{
+    background-color: #6366f1;
+    color: white;
+    border: none;
+}
+
+.pag_crearPregunta .bCrearPregunta:hover, .pag_crearRespuesta .bCrearRespuesta:hover, .pag_crearRespuesta #anadirImg:hover{
+    background-color: #4f46e5;
+}
+
+.pag_crearRespuesta #anadirImg:hover{
+    color: white;
+}
+
+.pag_crearPregunta .bVolver, .pag_crearRespuesta .bVolver{
+    background-color: white;
+    color: #4b5563;
+    border: 1px solid #e5e7eb;
+}
+
+.pag_crearPregunta .bVolver:hover, .pag_crearRespuesta .bVolver:hover{
+    background-color: #f9fafb;
+    color: #111827;
+}
+
+.pag_crearPregunta select{
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1.25rem;
+    padding-right: 2.5rem;
+}
+
+@media (max-width: 640px){
+    .pag_crearPregunta .contenido, .pag_crearRespuesta .contenido{
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .pag_crearPregunta .d_botones, .pag_crearRespuesta .d_botones{
+        flex-direction: column-reverse;
+    }
+
+    .pag_crearPregunta .bCrearPregunta, .pag_crearPregunta .bVolver, .bCrearRespuesta .bCrearRespuesta, .bCrearRespuesta .bVolver{
+        width: 100%;
+    }
+}
 

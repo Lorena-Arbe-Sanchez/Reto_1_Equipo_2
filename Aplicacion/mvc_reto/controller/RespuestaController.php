@@ -126,6 +126,7 @@ class RespuestaController {
 
     
     //Funcion cuando des al boton like
+    /*
     public function modificarLikes(){
         $this -> model -> modificarLikes($_GET["id_pregunta"]);
     }
@@ -133,6 +134,7 @@ class RespuestaController {
     public function modificarDislikes(){
         $this -> model -> modificarDislikes($_GET["id_pregunta"]);
     }
+    */
 
 }
 

@@ -55,7 +55,7 @@ class PreguntaController {
         return [$preguntasConRespuestas, $currentPage, $totalPages];
     }
 
-    // Obtener los datos de las preguntas frecuentes (con más likes; más recurridas) y mostrarlas en su ventana.
+    // Obtener los datos de las preguntas frecuentes (que estén el los 'favoritos' de más usuarios; más recurridas) y mostrarlas en su ventana.
     public function frecuentes(){
         $this->view = 'frecuentes';
         $page = isset($_GET['page']) ? $_GET['page'] : 1;
