@@ -2,9 +2,9 @@
 
 ## Documentos explicativos:
 - [Manual de Usuario](https://github.com/Lorena-Arbe-Sanchez/Reto_1_Equipo_2/blob/main/Documentos/Manual.pdf)
-- [Documentación del Proyecto](https://github.com/Lorena-Arbe-Sanchez/Reto_1_Equipo_2/blob/main/Documentos/Documentaci%C3%B3n.pdf)
+- [Documentación del Proyecto](https://github.com/Lorena-Arbe-Sanchez/Reto_1_Equipo_2/blob/main/Documentos/Documentacion.pdf)
 - [Contrato del Equipo](https://github.com/Lorena-Arbe-Sanchez/Reto_1_Equipo_2/blob/main/Documentos/CONTRATO%20EQUIPO.pdf)
-- [Cuaderno del Equipo](https://github.com/Lorena-Arbe-Sanchez/Reto_1_Equipo_2/blob/main/Documentos/EL%20CUADERNO%20DEL%20EQUIPO_PLANTILLA.docx.pdf)
+- [Cuaderno del Equipo](https://github.com/Lorena-Arbe-Sanchez/Reto_1_Equipo_2/blob/main/Documentos/EL%20CUADERNO%20DEL%20EQUIPO.docx.pdf)
 - [Diarios Reflexivos Semanales](https://github.com/Lorena-Arbe-Sanchez/Reto_1_Equipo_2/blob/main/Documentos/DIARIOS%20REFLEXIVOS_semanal.pdf)
 - [Planificación](https://github.com/Lorena-Arbe-Sanchez/Reto_1_Equipo_2/blob/main/Documentos/Planificacion.png)
 
