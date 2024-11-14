@@ -96,26 +96,21 @@ class Usuario {
             $administrador = ($param["administrador"] === 'si') ? 1 : 0;
         }
 
-        /*
-         * // Verificar si el DNI ya existe
-        $checkSql = "SELECT COUNT(*) FROM " . $this->tabla . " WHERE dni = ?";
-        $checkStmt = $this->connection->prepare($checkSql);
-        $checkStmt->execute([$dni]);
-        $exists = $checkStmt->fetchColumn();
 
-        if ($exists > 0) {
-            // Manejar el error: el DNI ya existe en la base de datos
-            throw new Exception("El DNI ya está registrado. Intente con uno diferente.");
+        $buscarDni = $this->getUsuarioByDNI($dni);
+
+
+        if ($buscarDni === false){
+
+            // Si no hay duplicados, proceder con la inserción
+            $sql = "INSERT INTO " . $this->tabla . " (administrador, dni, nombre, apellido1, apellido2, email, telefono, usuario, contrasena) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $stmt = $this->connection->prepare($sql);
+            $stmt->execute([$administrador, $dni, $nombre, $apellido1, $apellido2, $email, $telefono, $usuario, $contrasena]);
+
+            $id = $this->connection->lastInsertId();
+
         }
 
-         *
-         * */
-        // Si no hay duplicados, proceder con la inserción
-        $sql = "INSERT INTO " . $this->tabla . " (administrador, dni, nombre, apellido1, apellido2, email, telefono, usuario, contrasena) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        $stmt = $this->connection->prepare($sql);
-        $stmt->execute([$administrador, $dni, $nombre, $apellido1, $apellido2, $email, $telefono, $usuario, $contrasena]);
-
-        $id = $this->connection->lastInsertId();
         return $id;
     }
 
@@ -174,10 +169,6 @@ class Usuario {
             if (isset($param["administrador"])) {
                 $administrador = ($param["administrador"] == '1') ? 1 : 0;
             }
-
-
-
-
 
 
             if ($exist) {

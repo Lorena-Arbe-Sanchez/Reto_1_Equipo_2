@@ -9,10 +9,10 @@ correcta con la base de datos.
 <?php
 
 // Para la BD de Laragon:
-define("DB_HOST", "localhost");
+//define("DB_HOST", "localhost");
 
 // Para la BD de phpMyAdmin en el aula:
-//define("DB_HOST", "172.20.227.241");
+define("DB_HOST", "172.20.227.241");
 
 // Para la BD de phpMyAdmin fuera del aula:
 // TODO
@@ -24,17 +24,17 @@ define("DB", "grupo2_2425");
 
 
 // Para Laragon:
-define("DB_USER", "root");
+//define("DB_USER", "root");
 
 // Para phpMyAdmin:
-//define("DB_USER", "grupo2_2425");
+define("DB_USER", "grupo2_2425");
 
 
 // Para Laragon:
-define("DB_PASS", "");
+//define("DB_PASS", "");
 
 // Para phpMyAdmin:
-//define("DB_PASS", "Rn/AjQi[jgh5pxxz");
+define("DB_PASS", "Rn/AjQi[jgh5pxxz");
 
 
 // Controlador que entra por defecto.

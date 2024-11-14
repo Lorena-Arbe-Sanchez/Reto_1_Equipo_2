@@ -150,7 +150,7 @@ if(isset($dataToView["data"]["dniBuscar"])) $dniBuscar = $dataToView["data"]["dn
 
                     <div>
                         <label for="telefono">Teléfono</label>
-                        <input type="tel" id="telefono" name="telefono" value="<?php echo $telefono; ?>"  required>
+                        <input type="tel" id="telefono" name="telefono" value="<?php echo $telefono; ?>"  >
                     </div>
 
                     <div>
