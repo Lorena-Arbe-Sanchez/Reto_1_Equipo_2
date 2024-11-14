@@ -9,31 +9,21 @@ correcta con la base de datos.
 <?php
 
 // Para la BD de Laragon:
-//define("DB_HOST", "localhost");
+
+/*
+
+define("DB_HOST", "localhost");
+define("DB", "grupo2_2425");
+define("DB_USER", "root");
+define("DB_PASS", "");
+
+*/
 
 // Para la BD de phpMyAdmin en el aula:
+
 define("DB_HOST", "172.20.227.241");
-
-// Para la BD de phpMyAdmin fuera del aula:
-// TODO
-//define("DB_HOST", "");
-
-
-// Nombre de la base de datos: "grupo2_2425".
-define("DB", "grupo2_2425");
-
-
-// Para Laragon:
-//define("DB_USER", "root");
-
-// Para phpMyAdmin:
 define("DB_USER", "grupo2_2425");
-
-
-// Para Laragon:
-//define("DB_PASS", "");
-
-// Para phpMyAdmin:
+define("DB", "grupo2_2425");
 define("DB_PASS", "Rn/AjQi[jgh5pxxz");
 
 
