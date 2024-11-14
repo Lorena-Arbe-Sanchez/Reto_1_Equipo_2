@@ -8,19 +8,21 @@ require_once __DIR__ . "/../layout/header.php";
 
 <div class="contenido">
 
-    <div id="divTitulo">
-        <h2>Creación de pregunta</h2>
-    </div>
     <form id="formCrearPregunta" action="index.php?controller=pregunta&action=save" method="post">
+
+        <div id="divTitulo">
+            <h2>Creación de pregunta</h2>
+        </div>
 
         <div>
             <label for="titulo">Titulo</label>
             <textarea id="titulo" name="titulo" maxlength="100" required></textarea>
         </div>
+
         <div>
             <label for="tema">Tema</label>
             <select name="tema" id="tema" required>
-                <option>Seleccionar opción</option>
+                <option style="font-style: oblique">Seleccionar opción</option>
                 <option value="diseno_aeronaves">Diseño y Desarrollo de Aeronaves</option>
                 <option value="fabricacion_produccion">Fabricación y Producción</option>
                 <option value="mantenimiento_operaciones">Mantenimiento y Operaciones</option>
