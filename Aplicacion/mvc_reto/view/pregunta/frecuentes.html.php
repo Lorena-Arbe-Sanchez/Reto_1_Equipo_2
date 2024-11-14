@@ -91,6 +91,7 @@ $temas = [
                             </div>
                             <div class="botonesGusta">
                                 <div class="bFavorito">
+                                    <!-- TODO : Cambiar nombre función. -->
                                     <a href="index.php?controller=respuesta&action=modificarLikes&id_pregunta=<?php echo $pregunta["id"]; ?>">Añadir a favoritos</a>
                                 </div>
                             </div>
