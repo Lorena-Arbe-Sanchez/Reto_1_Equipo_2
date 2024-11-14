@@ -185,8 +185,10 @@ $filtroFecha = $_GET['filtroFecha'] ?? '';
                             </td>
                             <td>
                                 <?php
+                                /*
                                 // TODO : Poner que muestre el nombe del usuario y no el id (select BD). También si no obtiene el id (porque el usuario se ha podido borrar), sacará "Usuario anónimo".
                                 echo $pregunta["id_usuario"] ?? "Usuario inexistente";
+                                */
                                 ?>
                             </td>
                             <td>

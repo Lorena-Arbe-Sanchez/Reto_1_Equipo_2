@@ -170,14 +170,12 @@ if(isset($dataToView["data"]["dniBuscar"])) $dniBuscar = $dataToView["data"]["dn
 
                 </div>
 
-                <div id="botones">
-
-                    <!-- A este botón se le irá cambiando el "value" dependiendo de la acción seleccionada ("Registrar" / "Modificar"). -->
-                    <input type="submit" id="bCrear" class="bCrear" value="Crear">
-
+                <div class="d_botones">
+                    <!-- TODO : A este botón se le irá cambiando el "value" dependiendo de la acción seleccionada ("Registrar" / "Modificar"). -->
+                    <input type="submit" id="bCrear" class="bCrearRespuesta" value="Crear">
+                    <a class="bVolver" href="">Cerrar</a>
                 </div>
 
-                <a class="" href="">Cerrar</a>
             </form>
 
         </div>
