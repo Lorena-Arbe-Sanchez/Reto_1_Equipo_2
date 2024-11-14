@@ -305,28 +305,11 @@ class UsuarioController {
 
         $usuario = $_POST['usuario'];
         error_log("editar:" . $usuario);
-        $idUsuario = $_POST['id'];
 
-        $admin = $_POST['administrador'];
-        error_log("Controller Admin -> " . $param['administrador']);
-        // Buscar si existe otro usuario con el mismo nombre
-        $usuarioExistente = $this->model->getUsuarioByUsuario($usuario);
+        $dni = $this->model->modificarUsuario($param);
+        header("Location: index.php?controller=usuario&action=cuentas&response=success");
+        exit();
 
-        // Verificar que no existe otro usuario con el mismo nombre
-   /*     if ($usuarioExistente){
-
-                error_log("COMPARACION -> " . $usuario . $usuarioExistente['usuario']);
-                header("Location: index.php?controller=usuario&action=cuentas&error=2");
-                exit();
-
-        }else{*/
-            // Actualizar el usuario si no existe conflicto de nombre
-            $dni = $this->model->modificarUsuario($param);
-
-            // Opcional: redirigir con mensaje de éxito en lugar de usar $_GET directamente
-            header("Location: index.php?controller=usuario&action=cuentas&response=success");
-            exit();
-      // }
     }
 
     //Funcion para eliminar usuario  CREAR VENTANITA PARA CONFIRMACION

@@ -72,7 +72,7 @@ if(isset($dataToView["data"]["administrador"])) $administrador = $dataToView["da
 
                     <div>
                         <label for="usuario">Usuario</label>
-                        <input type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>" required>
+                        <input type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>" readonly>
                     </div>
 
                     <div>
