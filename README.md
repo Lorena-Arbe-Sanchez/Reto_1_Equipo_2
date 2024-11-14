@@ -1,4 +1,14 @@
-# Reto_1_Equipo_2
+# Aplicación para la empresa del sector aeronáutico "Aergibide SL"
 
-FIGMA:
-https://www.figma.com/design/tdkUhXmaEdS6xoPDb1ZG6N/Bocetos---Reto-1?node-id=16-2&node-type=canvas&t=ygG3L0J5lP4wjHdW-0
+## Documentos explicativos:
+- [Manual de Usuario](https://github.com/Lorena-Arbe-Sanchez/Reto_1_Equipo_2/blob/main/Documentos/Manual.pdf)
+- [Documentación del Proyecto](https://github.com/Lorena-Arbe-Sanchez/Reto_1_Equipo_2/blob/main/Documentos/Documentaci%C3%B3n.pdf)
+- [Contrato del Equipo](https://github.com/Lorena-Arbe-Sanchez/Reto_1_Equipo_2/blob/main/Documentos/CONTRATO%20EQUIPO.pdf)
+- [Cuaderno del Equipo](https://github.com/Lorena-Arbe-Sanchez/Reto_1_Equipo_2/blob/main/Documentos/EL%20CUADERNO%20DEL%20EQUIPO_PLANTILLA.docx.pdf)
+- [Diarios Reflexivos Semanales](https://github.com/Lorena-Arbe-Sanchez/Reto_1_Equipo_2/blob/main/Documentos/DIARIOS%20REFLEXIVOS_semanal.pdf)
+- [Planificación](https://github.com/Lorena-Arbe-Sanchez/Reto_1_Equipo_2/blob/main/Documentos/Planificacion.png)
+
+## Colaboradores:
+- [Lorena Arbe Sanchez](https://github.com/Lorena-Arbe-Sanchez)
+- [Julen Corpas](https://github.com/JulenCorpas2004)
+- [Aritz Saiz](https://github.com/AritzSaiz)
