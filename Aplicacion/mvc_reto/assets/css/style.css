@@ -1228,7 +1228,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     margin-top: 2rem;
 }
 
-.pag_crearRespuesta #anadirImg{
+.pag_crearRespuesta #anadirImg, .pag_perfil #anadirImg{
     background-color: #9495ec;
     color: black;
     border: none;
@@ -1263,11 +1263,11 @@ nav[aria-label="Paginación de preguntas"] ul{
     border: none;
 }
 
-.pag_crearPregunta .bCrearPregunta:hover, .pag_crearRespuesta .bCrearRespuesta:hover, .pag_crearRespuesta #anadirImg:hover{
+.pag_crearPregunta .bCrearPregunta:hover, .pag_crearRespuesta .bCrearRespuesta:hover, .pag_crearRespuesta #anadirImg:hover, .pag_perfil #anadirImg:hover{
     background-color: #4f46e5;
 }
 
-.pag_crearRespuesta #anadirImg:hover{
+.pag_crearRespuesta #anadirImg:hover, .pag_perfil #anadirImg:hover{
     color: white;
 }
 
@@ -1306,6 +1306,73 @@ nav[aria-label="Paginación de preguntas"] ul{
     }
 }
 
+.pag_perfil .info label{
+    color: var(--text-color);
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.pag_perfil .contenido{
+    all: unset;
+    background-color: var(--border-color);
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 20px auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    gap: 6em;
+}
+
+.pag_perfil #formCambiarImg{
+    padding-bottom: 1em;
+}
+
 .pag_perfil .info{
-    color: #4b5563;
+    all: unset;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.pag_perfil .info > div{
+    display: flex;
+    flex-direction: column;
+}
+.pag_perfil .emailDiv{
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 2;
+}
+.pag_perfil input{
+    padding: 10px;
+    border: 1px solid var(--text-color);
+    border-radius: 4px;
+    font-size: 17px;
+}
+.pag_perfil input:read-only{
+    background-color: #f9f9f9;
+}
+
+@media (max-width: 1024px){
+    .pag_perfil .info{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .pag_perfil .emailDiv{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 4;
+    }
+}
+@media (max-width: 600px){
+    .pag_perfil .info{
+        grid-template-columns: 1fr;
+    }
+    .pag_perfil .emailDiv{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 7;
+    }
 }

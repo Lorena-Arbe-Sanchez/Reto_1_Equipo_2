@@ -67,7 +67,7 @@ if(isset($dataToView["data"]["administrador"])) $administrador = $dataToView["da
 
                     <div>
                         <label for="telefono">Teléfono</label>
-                        <input type="tel" id="telefono" name="telefono" value="<?php echo $telefono; ?>" >
+                        <input type="tel" id="telefono" name="telefono" value="<?php echo $telefono; ?>">
                     </div>
 
                     <div>
