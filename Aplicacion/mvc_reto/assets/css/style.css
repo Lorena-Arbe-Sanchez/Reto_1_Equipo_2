@@ -163,11 +163,6 @@ footer{
     width: 1300px;
 }
 
-.pag_misPreguntas thead, .pag_misFavoritas thead{
-    position: sticky;
-    top: 116.59px;
-}
-
 .bVolver{
     margin: 1em;
     padding: .7em;
@@ -353,6 +348,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     flex-grow: 1;
 }
 
+/* TODO : Ponerle dibujo de suma al primero, hover a los 2... */
 .pag_gestionarCuenta #bCrear, .bResponder{
     display: inline-block;
     padding: 0.75em 1.5em;
@@ -363,6 +359,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     border: 1px solid black;
     text-decoration: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 #contenedor2, #contenedor3{
@@ -1213,7 +1210,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
-.pag_crearPregunta .d_botones, .pag_crearRespuesta .d_botones{
+.pag_crearPregunta .d_botones, .pag_crearRespuesta .d_botones, .pag_gestionarCuenta .d_botones{
     display: flex;
     justify-content: flex-end;
     gap: 1rem;
@@ -1236,7 +1233,7 @@ nav[aria-label="Paginación de preguntas"] ul{
     justify-content: center;
 }
 
-.pag_crearPregunta .bCrearPregunta, .pag_crearPregunta .bVolver, .pag_crearRespuesta .bCrearRespuesta, .pag_crearRespuesta .bVolver{
+.pag_crearPregunta .bCrearPregunta, .pag_crearPregunta .bVolver, .pag_crearRespuesta .bCrearRespuesta, .pag_crearRespuesta .bVolver, .pag_gestionarCuenta .bCrearRespuesta, .pag_gestionarCuenta .bVolver{
     padding: 0.75rem 1.5rem;
     border-radius: 6px;
     font-size: 0.95rem;
@@ -1249,13 +1246,13 @@ nav[aria-label="Paginación de preguntas"] ul{
     justify-content: center;
 }
 
-.pag_crearPregunta .bCrearPregunta, .pag_crearRespuesta .bCrearRespuesta{
+.pag_crearPregunta .bCrearPregunta, .pag_crearRespuesta .bCrearRespuesta, .pag_gestionarCuenta .bCrearRespuesta{
     background-color: #6366f1;
     color: white;
     border: none;
 }
 
-.pag_crearPregunta .bCrearPregunta:hover, .pag_crearRespuesta .bCrearRespuesta:hover, .pag_crearRespuesta #anadirImg:hover, .pag_perfil #anadirImg:hover{
+.pag_crearPregunta .bCrearPregunta:hover, .pag_crearRespuesta .bCrearRespuesta:hover, .pag_gestionarCuenta .bCrearRespuesta:hover, .pag_crearRespuesta #anadirImg:hover, .pag_perfil #anadirImg:hover{
     background-color: #4f46e5;
 }
 
@@ -1263,13 +1260,13 @@ nav[aria-label="Paginación de preguntas"] ul{
     color: white;
 }
 
-.pag_crearPregunta .bVolver, .pag_crearRespuesta .bVolver{
+.pag_crearPregunta .bVolver, .pag_crearRespuesta .bVolver, .pag_gestionarCuenta .bVolver{
     background-color: white;
     color: #4b5563;
     border: 1px solid #e5e7eb;
 }
 
-.pag_crearPregunta .bVolver:hover, .pag_crearRespuesta .bVolver:hover{
+.pag_crearPregunta .bVolver:hover, .pag_crearRespuesta .bVolver:hover, .pag_gestionarCuenta .bVolver:hover{
     background-color: #f9fafb;
     color: #111827;
 }
@@ -1289,11 +1286,11 @@ nav[aria-label="Paginación de preguntas"] ul{
         padding: 1.5rem;
     }
 
-    .pag_crearPregunta .d_botones, .pag_crearRespuesta .d_botones{
+    .pag_crearPregunta .d_botones, .pag_crearRespuesta .d_botones, .pag_gestionarCuenta .d_botones{
         flex-direction: column-reverse;
     }
 
-    .pag_crearPregunta .bCrearPregunta, .pag_crearPregunta .bVolver, .bCrearRespuesta .bCrearRespuesta, .bCrearRespuesta .bVolver{
+    .pag_crearPregunta .bCrearPregunta, .pag_crearPregunta .bVolver, .pag_crearRespuesta .bCrearRespuesta, .pag_crearRespuesta .bVolver, .pag_gestionarCuenta .bCrearRespuesta, .pag_gestionarCuenta .bVolver{
         width: 100%;
     }
 }
@@ -1379,4 +1376,63 @@ nav[aria-label="Paginación de preguntas"] ul{
     word-break: break-word; /* Para cortar palabras largas. */
     overflow-wrap: break-word; /* Ajusta el contenido para que quepa dentro del contenedor. */
     white-space: normal; /* Permite que el texto envuelto se divida en varias líneas. */
+}
+
+/* TODO : Añadir medias. */
+
+.pag_gestionarCuenta .mitades{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pag_gestionarCuenta .contenido1{
+    display: flex;
+    flex-direction: column;
+}
+
+.pag_gestionarCuenta .busqueda form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding-bottom: 0;
+}
+
+.pag_gestionarCuenta #bBuscar{
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.pag_gestionarCuenta #bBuscar:hover{
+    background-color: var(--primary-dark);
+}
+
+.pag_gestionarCuenta #bBuscar:active{
+    transform: scale(0.98);
+}
+
+
+
+
+/* FOOTER ALTURA NUEVA (para que no se quede más arriba) */
+.pag_anadirFavorito footer{
+    margin-top: 41em;
+}
+
+.pag_perfil footer{
+    margin-top: 13em;
+}
+
+.pag_gestionarCuenta footer{
+    margin-top: 16em;
 }
