@@ -24,7 +24,7 @@ if(isset($dataToView["data"]["archivo"])) $archivo = $dataToView["data"]["archiv
 
             <div>
                 <label for="solucion">Solucion</label>
-                <textarea id="solucion" name="solucion" maxlength="100"><?php echo $solucion; ?></textarea>
+                <textarea id="solucion" name="solucion" maxlength="300"><?php echo $solucion; ?></textarea>
             </div>
 
             <!-- Para mostrar el nombre del archivo seleccionado -->

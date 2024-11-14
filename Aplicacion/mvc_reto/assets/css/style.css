@@ -7,26 +7,18 @@
     font-family: 'Roboto', sans-serif;
 }
 
-body{
+.pag_login, .pag_recuperar{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url( "/Proyecto1/Reto_1_Equipo_2/Aplicacion/mvc_reto/assets/imagenes/fondo1_gif.gif");
-    background-size: cover; /* Cubrir toda la pantalla. */
-    background-position: center; /* Centrar el GIF. */
-    background-attachment: fixed; /* Fijar el fondo para que no se desplace con el scroll. */
-    background-repeat: no-repeat;
     max-width: 100%;
 }
 
 
 /* HEADER, FOOTER E HIJOS */
 
-/* TODO : Poner que se empequeñezca el contenido con cambio del tamaño de la página. */
-/* TODO : Poner que se cambien de sitio los elementos dependiendo del dispositivo (ponerlo en las páginas que lo necesiten). */
-
-header{
+.pag_login header, .pag_recuperar header{
     top: 0;
     left: 0;
     width: 100%;
@@ -1375,4 +1367,16 @@ nav[aria-label="Paginación de preguntas"] ul{
         grid-column-end: 2;
         grid-row-start: 7;
     }
+}
+
+.pag_misPreguntas img, .pag_misFavoritas img{
+    max-width: 100%; /* Ajustar al ancho del contenedor sin excederlo. */
+    height: auto; /* Mantener la relación de aspecto de la imagen. */
+}
+
+.pag_misPreguntas td, .pag_misFavoritas td{
+    max-width: 5em;
+    word-break: break-word; /* Para cortar palabras largas. */
+    overflow-wrap: break-word; /* Ajusta el contenido para que quepa dentro del contenedor. */
+    white-space: normal; /* Permite que el texto envuelto se divida en varias líneas. */
 }

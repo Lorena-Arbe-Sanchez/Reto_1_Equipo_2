@@ -16,7 +16,7 @@ require_once __DIR__ . "/../layout/header.php";
 
         <div>
             <label for="solucion">Solucion</label>
-            <textarea id="solucion" name="solucion" maxlength="100" required></textarea>
+            <textarea id="solucion" name="solucion" maxlength="300" required></textarea>
         </div>
 
         <div>

@@ -37,7 +37,7 @@ require_once __DIR__ . "/../layout/header.php";
         </div>
         <div>
             <label for="descripcion">Descripción</label>
-            <textarea id="descripcion" name="descripcion" maxlength="100" required></textarea>
+            <textarea id="descripcion" name="descripcion" maxlength="300" required></textarea>
         </div>
         <!-- TODO : AÑADIR OPCIÓN DE "ARCHIVO" -->
         <div class="d_botones">
