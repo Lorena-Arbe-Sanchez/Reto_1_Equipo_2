@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: mysql:3306
--- Tiempo de generación: 13-11-2024 a las 16:43:42
+-- Tiempo de generación: 15-11-2024 a las 11:37:14
 -- Versión del servidor: 11.5.2-MariaDB-ubu2404
 -- Versión de PHP: 8.2.25
 
@@ -28,8 +28,6 @@ USE `grupo2_2425`;
 --
 -- Estructura de tabla para la tabla `favoritos`
 --
--- Creación: 13-11-2024 a las 15:48:11
---
 
 DROP TABLE IF EXISTS `favoritos`;
 CREATE TABLE `favoritos` (
@@ -38,13 +36,18 @@ CREATE TABLE `favoritos` (
                              `id_respuesta` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 
+--
+-- Volcado de datos para la tabla `favoritos`
+--
+
+INSERT INTO `favoritos` (`id`, `id_usuario`, `id_respuesta`) VALUES
+                                                                 (1, 2, 1),
+                                                                 (2, 23, 23);
+
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `preguntas`
---
--- Creación: 13-11-2024 a las 15:47:26
--- Última actualización: 13-11-2024 a las 16:34:16
 --
 
 DROP TABLE IF EXISTS `preguntas`;
@@ -99,9 +102,6 @@ INSERT INTO `preguntas` (`id`, `titulo`, `descripcion`, `tema`, `fecha`, `id_usu
 --
 -- Estructura de tabla para la tabla `respuestas`
 --
--- Creación: 13-11-2024 a las 16:41:50
--- Última actualización: 13-11-2024 a las 16:42:01
---
 
 DROP TABLE IF EXISTS `respuestas`;
 CREATE TABLE `respuestas` (
@@ -138,15 +138,13 @@ INSERT INTO `respuestas` (`id`, `solucion`, `archivo`, `id_pregunta`, `id_usuari
                                                                                                  (18, 'En cuanto al mantenimiento predictivo, también hemos logrado buenos resultados con sistemas de análisis de aceite que monitorean el desgaste y la contaminación, lo que permite prever la necesidad de mantenimiento antes de que se presenten fallos.', NULL, 5, 23, '2024-05-09'),
                                                                                                  (19, 'Para los procesos de fabricación, una excelente alternativa a la fabricación aditiva es la estampación de metales de alta precisión, que puede ser más rentable y producir piezas con tolerancias más estrictas.', NULL, 12, 24, '2024-05-10'),
                                                                                                  (20, 'Para mejorar la seguridad en vuelo, recomendamos el uso de sistemas de alerta temprana basados en inteligencia artificial que analicen los datos de los sensores en tiempo real y prevean posibles fallos en los sistemas de vuelo.', NULL, 17, 25, '2024-05-12'),
-                                                                                                 (21, 'En el ámbito de la simulación de vuelo, he tenido buenas experiencias con simuladores que integran sistemas de modelado de aviónica, ya que permiten realizar pruebas realistas de fallos y emergencias durante el vuelo.', NULL, 8, 26, '2024-05-14');
+                                                                                                 (21, 'En el ámbito de la simulación de vuelo, he tenido buenas experiencias con simuladores que integran sistemas de modelado de aviónica, ya que permiten realizar pruebas realistas de fallos y emergencias durante el vuelo.', NULL, 8, 26, '2024-05-14'),
+                                                                                                 (23, 'Siemens NX: Es una solución muy utilizada en la industria aeronáutica debido a su capacidad para integrar diseño, simulación y fabricación en un solo entorno. Ofrece herramientas avanzadas para diseño paramétrico, análisis estructural  generación de superficies complejas.', 'img_6737321c071ed1.07780399.jpg', 19, 23, '2024-11-15');
 
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `usuarios`
---
--- Creación: 13-11-2024 a las 16:19:13
--- Última actualización: 13-11-2024 a las 16:19:38
 --
 
 DROP TABLE IF EXISTS `usuarios`;
@@ -198,7 +196,7 @@ INSERT INTO `usuarios` (`id`, `administrador`, `dni`, `nombre`, `apellido1`, `ap
                                                                                                                                                       (27, 0, '98765453K', 'Sergio', 'Pérez', 'Muñoz', 'sergio.perez@aergibide.com', NULL, 'sperez', 'Sperez027', NULL),
                                                                                                                                                       (28, 0, '98765454L', 'Laura', 'Luna', 'Rojas', 'laura.luna@aergibide.com', '704345678', 'lluna', 'Lluna028', NULL),
                                                                                                                                                       (29, 0, '98765455Y', 'Víctor', 'Méndez', 'Cabrera', 'victor.mendez@aergibide.com', NULL, 'vmendez', 'Vmendez029', NULL),
-                                                                                                                                                      (30, 0, '98765456R', 'Eva', 'Naranjo', 'García', 'eva.naranjo@aergibide.com', '704567890', 'enaranjo', 'Enaranjo030', NULL);
+                                                                                                                                                      (30, 1, '98765456R', 'Eva', 'Naranjo', 'García', 'ilarranaga@egibide.org', '704567890', 'enaranjo', '12345', NULL);
 
 --
 -- Índices para tablas volcadas
@@ -243,7 +241,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `favoritos`
 --
 ALTER TABLE `favoritos`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `preguntas`
@@ -255,7 +253,7 @@ ALTER TABLE `preguntas`
 -- AUTO_INCREMENT de la tabla `respuestas`
 --
 ALTER TABLE `respuestas`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
@@ -286,13 +284,6 @@ ALTER TABLE `preguntas`
 ALTER TABLE `respuestas`
     ADD CONSTRAINT `RESP_ID_PREG_FK` FOREIGN KEY (`id_pregunta`) REFERENCES `preguntas` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `RESP_ID_USU_FK` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE;
-
---
--- Filtros para la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-    ADD CONSTRAINT `USU_ADMIN_CK` CHECK (`administrador` IN (0, 1));
-
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
