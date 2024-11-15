@@ -9,6 +9,6 @@
 - [Planificación](https://github.com/Lorena-Arbe-Sanchez/Reto_1_Equipo_2/blob/main/Documentos/Planificacion.png)
 
 ## Colaboradores:
-- [Lorena Arbe Sanchez](https://github.com/Lorena-Arbe-Sanchez)
+- [Lorena Arbé](https://github.com/Lorena-Arbe-Sanchez)
 - [Julen Corpas](https://github.com/JulenCorpas2004)
 - [Aritz Saiz](https://github.com/AritzSaiz)
