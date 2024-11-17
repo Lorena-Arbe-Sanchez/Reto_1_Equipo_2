@@ -196,7 +196,7 @@ INSERT INTO `usuarios` (`id`, `administrador`, `dni`, `nombre`, `apellido1`, `ap
                                                                                                                                                       (27, 0, '98765453K', 'Sergio', 'Pérez', 'Muñoz', 'sergio.perez@aergibide.com', NULL, 'sperez', 'Sperez027', NULL),
                                                                                                                                                       (28, 0, '98765454L', 'Laura', 'Luna', 'Rojas', 'laura.luna@aergibide.com', '704345678', 'lluna', 'Lluna028', NULL),
                                                                                                                                                       (29, 0, '98765455Y', 'Víctor', 'Méndez', 'Cabrera', 'victor.mendez@aergibide.com', NULL, 'vmendez', 'Vmendez029', NULL),
-                                                                                                                                                      (30, 1, '98765456R', 'Eva', 'Naranjo', 'García', 'ilarranaga@egibide.org', '704567890', 'enaranjo', '12345', NULL);
+                                                                                                                                                      (30, 1, '98765456R', 'Eva', 'Naranjo', 'García', 'ilarranaga@egibide.org', '704567890', 'enaranjo', 'Enaranjo030', NULL);
 
 --
 -- Índices para tablas volcadas
